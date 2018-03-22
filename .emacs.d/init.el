@@ -44,9 +44,32 @@
    (quote
     ("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
  '(package-selected-packages (quote (flatui-theme powershell))))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
+ '(org-capture-templates
+   (quote
+    (("t" "generic \"to do\" capture template" entry
+      (file "~/Dropbox/org/refile-beorg.org")
+      "" :immediate-finish t))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;; custom org mode hotkeys 
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; search across agenda files when refiling:
+(setq org-refile-targets '((nil :maxlevel . 9)
+                                (org-agenda-files :maxlevel . 9)))
+(setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
+
+;; add files to agenda:
+(setq org-agenda-files '("~/Dropbox/org/"))
