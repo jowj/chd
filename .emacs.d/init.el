@@ -49,7 +49,7 @@
     ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
  '(org-capture-templates
    (quote
-    (("t" "generic \"to do\" capture template" entry
+    (("c" "generic \"to do\" capture template" entry
       (file "~/Dropbox/org/refile-beorg.org")
       "" :immediate-finish t))))
 
@@ -73,3 +73,13 @@
 
 ;; add files to agenda:
 (setq org-agenda-files '("~/Dropbox/org/"))
+
+;; define generic org capture shit
+(setq org-directory "~/Dropbox/org/")
+(setq org-default-notes-file (concat org-directory "/refile-beorg.org"))
+(define-key global-map "\C-cc" 'org-capture)
+
+;; tell emacs to stop writing bullshit in all my folders
+;; and just put all backups in a single folder
+;; technically i'm doing this in a dumb way, but for now it should be fine.
+(setq backup-directory-alist `(("." . "~/Dropbox/org/.saves")))
