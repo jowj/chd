@@ -43,7 +43,7 @@
  '(custom-safe-themes
    (quote
     ("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
- '(package-selected-packages (quote (flatui-theme powershell))))
+ '(package-selected-packages (quote (markdown-mode flatui-theme powershell))))
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
