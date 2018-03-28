@@ -83,3 +83,7 @@
 ;; and just put all backups in a single folder
 ;; technically i'm doing this in a dumb way, but for now it should be fine.
 (setq backup-directory-alist `(("." . "~/Dropbox/org/.saves")))
+
+;; set default font
+(set-default-font "Consolas 12")
+
