@@ -87,3 +87,5 @@
 ;; set default font
 (set-default-font "Consolas 12")
 
+;; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
+(global-visual-line-mode t)
