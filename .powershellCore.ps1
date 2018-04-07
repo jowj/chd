@@ -270,11 +270,20 @@ function Test-ProgressBar {
     }
 }
 
+# make 'ls -la' actually work in powershell since i type it by
+# default all the fucking time:
+function ls     {
+    param(
+        [switch] $la
+    )
+    get-childitem
+}
 
 # Run commands
 Set-UserPrompt
 set-alias clerr Clear-Error
 #C:\Users\me\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+remove-alias "ls"
 
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
@@ -283,3 +292,4 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
+
