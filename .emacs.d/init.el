@@ -89,3 +89,9 @@
 
 ;; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
 (global-visual-line-mode t)
+
+;; run emacs as server (connect to it with `emacsclient`)
+(server-start)
+
+;; set default init file so it stops fucking trying to write to bullshit files
+(setq user-init-file "~/Documents/projects/agares/.emacs/init.el")
