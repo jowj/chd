@@ -43,7 +43,7 @@
  '(custom-safe-themes
    (quote
     ("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
- '(package-selected-packages (quote (markdown-mode flatui-theme powershell))))
+ '(package-selected-packages (quote (markdown-mode flatui-theme powershell ))))
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
@@ -95,3 +95,7 @@
 
 ;; set default init file so it stops fucking trying to write to bullshit files
 (setq user-init-file "~/Documents/projects/agares/.emacs/init.el")
+
+;; neotree customizations:
+(setq neo-smart-open t) ;; opens with current working dir as root
+(neotree) ;; open neo tree on emacs start
