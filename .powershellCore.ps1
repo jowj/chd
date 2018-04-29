@@ -292,4 +292,6 @@ if (Test-Path($ChocolateyProfile)) {
 }
 
 Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
+Import-Module "~\Documents\projects\agares\powershell\AsciiArt.psm1"
 
+Show-AsciiCurvyWindowsLogo
