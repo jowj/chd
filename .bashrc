@@ -70,6 +70,9 @@ export PS1="\t:\[$(tput sgr0)\]\[\033[38;5;93m\]\h\[$(tput sgr0)\]\[\033[38;5;15
 
 tmux attach &> /dev/null
 
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
