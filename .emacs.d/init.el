@@ -2,7 +2,6 @@
 ;; Disable the splash screen (to enable it agin, replace the t with 0)
 (setq inhibit-splash-screen t)
 
-
 ;; open primary org file on launch
 (find-file "~/Dropbox/org/personal.org") 
 ;; Enable transient mark mode
@@ -43,7 +42,7 @@
  '(custom-safe-themes
    (quote
     ("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
- '(package-selected-packages (quote (markdown-mode flatui-theme powershell ))))
+ '(package-selected-packages (quote (markdown-mode flatui-theme powershell csharp-mode ))))
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
