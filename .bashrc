@@ -9,6 +9,8 @@ shopt -s histappend
 # fix line wrap issues
 shopt -s checkwinsize
 
+# ignore case when tab-completing
+set completion-ignore-case on
 # find paths inside agares
 export AGARES=${AGARES:-"$HOME/.agares"}
 
@@ -66,7 +68,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-export PS1="\t:\[$(tput sgr0)\]\[\033[38;5;93m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+export PS1="\t:\[$(tput sgr0)\]\[\033[38;5;93m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]✨ >> "
 
 tmux attach &> /dev/null
 
