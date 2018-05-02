@@ -17,9 +17,12 @@ export AGARES=${AGARES:-"$HOME/.agares"}
 # update paths with installed executables:
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
+export PATH=/Users/jowj/Library/Python/3.6/bin:$PATH
+
 # blatantly steal micah's ls aliases because they make SO MUCH SENSE omg.
 alias python="python3"
 alias py="python3"
+alias pip="pip3"
 alias lsa='ls -a'
 alias lsl='ls -a -l'
 alias lsli='lsl -i' # lsl+inodes
