@@ -31,7 +31,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;;(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -84,7 +84,8 @@
 (setq backup-directory-alist `(("." . "~/Dropbox/org/.saves")))
 
 ;; set default font
-(set-default-font "Consolas 12")
+;; some versions of emacs may require set-default-font.
+(set-frame-font "Consolas 12")
 
 ;; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
 (global-visual-line-mode t)
