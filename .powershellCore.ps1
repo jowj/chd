@@ -285,6 +285,9 @@ set-alias clerr Clear-Error
 #C:\Users\me\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 remove-alias "ls"
 
+set-alias lsl Get-ChildItem
+set-alias emacsclient emacsclientw.exe
+
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
