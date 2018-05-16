@@ -99,3 +99,7 @@
 ;; neotree customizations:
 (setq neo-smart-open t) ;; opens with current working dir as root
 (neotree) ;; open neo tree on emacs start
+
+;; deal with mac command key problems:
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'meta))
