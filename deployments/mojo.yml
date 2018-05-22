@@ -1,0 +1,11 @@
+- hosts: dockerhosts
+  vars:
+    SLACK_BOT_TOKEN: 200
+  remote_user: josiah
+  tasks:
+  - name: Pull latest version from github
+    command: cd ~/mojojojo-bot && git pull
+  - name: Build from the latest version
+    command: cd ~/mojojojo-bot && docker build -t mojo -f docker/dockerfile .
+  - name: Run the newly built docker container
+    command: docker container run --restart-always mojo -e SLACK_BOT_TOKEN={{ SLACK_BOT_TOKEN }}
