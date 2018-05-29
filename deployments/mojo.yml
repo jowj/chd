@@ -9,4 +9,4 @@
   - name: Build from the latest version
     command: cd ~/mojojojo-bot && docker build -t mojo -f docker/dockerfile .
   - name: Run the newly built docker container
-    command: docker container run --restart "always" mojo -e SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}
+    command: docker container run --restart "always" mojo -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}"
