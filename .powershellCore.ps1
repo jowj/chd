@@ -39,20 +39,10 @@ Function Get-DiskSpace  {
 $env:path += ";" + (Get-Item "Env:ProgramFiles").Value + "\Git\bin"
 $env:path += ";" + (Get-Item "Env:ProgramFiles").Value + "\Git\usr\bin"
 
-## Load SSH agent utils
-. (Resolve-Path ~/Documents/WindowsPowershell/ssh-agent-utils.ps1)
-
 ## Spoof terminal environment for git color.
 $env:TERM = 'cygwin'
 
-## Load posh-git example profile, which will setup a prompt
-. 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\profile.example.ps1'
-
 Pop-Location
-
-Add-SshKey
-
-. (Resolve-Path ~/Documents/WindowsPowershell/ssh-agent-utils.ps1)
 
 # mrled's code
 function Clear-Error {
