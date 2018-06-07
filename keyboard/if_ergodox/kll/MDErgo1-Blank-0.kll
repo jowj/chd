@@ -43,10 +43,10 @@ U"HOME" : U"HOME";
 U"END" : U"END";
 U"DELETE" : U"DELETE";
 U"BACKSPACE" : U"SPACE";
-U"FUNCTION5" : U"FUNCTION5";
-U"FUNCTION4" : U"FUNCTION4";
-U"FUNCTION3" : U"FUNCTION3";
-U"BACKTICK" : U"F2";
+U"FUNCTION5" : U"F8";
+U"FUNCTION4" : U"LALT";
+U"FUNCTION3" : U"F7";
+U"BACKTICK" : U"F6";
 U"LGUI" : U"PREV LAYER";
 U"FUNCTION6" : U"FUNCTION6";
 U"6" : U"6";
@@ -89,5 +89,7 @@ U"RGUI" : U"RGUI";
 
 
 
+A[all_on] <= start, pfunc:interp;
+A[all_on, 1] <= P[c:0%](255), P[c:100%](255);
 
 
