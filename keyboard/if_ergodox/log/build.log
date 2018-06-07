@@ -1,12 +1,12 @@
-cgi-bin/build_layout.bash bfe72305865286340388572915e0318e15b195ecd74aaf MDErgo1 standard "MDErgo1-Blank-0.kll" "MDErgo1-Blank-1.kll" "MDErgo1-Blank-2.kll"  2>&1
+cgi-bin/build_layout.bash 898a95ce502809e1429e6ab4b73e8da815b1972790ba5a MDErgo1 standard "MDErgo1-Blank-0.kll" "MDErgo1-Blank-1.kll" "MDErgo1-Blank-2.kll"  2>&1
 + DefaultMapOverride='infinity_ergodox/lcdFuncMap MDErgo1-Blank-0'
 + PartialMapsExpandedOverride='infinity_ergodox/lcdFuncMap MDErgo1-Blank-1;infinity_ergodox/lcdFuncMap MDErgo1-Blank-2'
 + CMakeExtraArgs=-DCONFIGURATOR=1
-+ /srv/KiiConf/controller/Keyboards/ergodox-l.bash -c /srv/KiiConf/controller -o /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left
++ /srv/KiiConf/controller/Keyboards/ergodox-l.bash -c /srv/KiiConf/controller -o /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left
 linux-gnu/Linux is supported.
 Unix Build
 Selected Generator: Ninja
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left
 -- Build CPU Detected:
 x86_64
 -- Build Kernel Detected:
@@ -30,7 +30,7 @@ dfu
 -- Detected Scan Module Source Files:
 Scan/Devices/ISSILed/i2c.c;Scan/Devices/ISSILed/led_scan.c;Scan/Devices/MatrixARMPeriodic/matrix_scan.c;Scan/Devices/STLcd/lcd_scan.c;Scan/Devices/UARTConnect/connect_scan.c;Scan/Infinity_Ergodox/scan_loop.c
 -- Detected Macro Module Source Files:
-Macro/PartialMap/kll.c;Macro/PartialMap/layer.c;Macro/PartialMap/macro.c;Macro/PartialMap/result.c;Macro/PartialMap/trigger.c;Macro/PixelMap/pixel.c;/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/generatedPixelmap.c
+Macro/PartialMap/kll.c;Macro/PartialMap/layer.c;Macro/PartialMap/macro.c;Macro/PartialMap/result.c;Macro/PartialMap/trigger.c;Macro/PixelMap/pixel.c;/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/generatedPixelmap.c
 -- Detected Output Module Source Files:
 Output/HID-IO/hidio_com.c;Output/Interface/output_gen.c;Output/USB/output_com.c;Output/USB/output_usb.c;Output/USB/arm/usb_desc.c;Output/USB/arm/usb_dev.c;Output/USB/arm/usb_joystick.c;Output/USB/arm/usb_keyboard.c;Output/USB/arm/usb_mem.c;Output/USB/arm/usb_mouse.c;Output/USB/arm/usb_rawio.c;Output/USB/arm/usb_serial.c
 -- Detected Debug Module Source Files:
@@ -58,22 +58,22 @@ ctags-exuberant: cannot open tag file : Permission denied
 /srv/KiiConf/controller/Scan/Infinity_Ergodox/slave1.kll
 /srv/KiiConf/controller/Scan/Infinity_Ergodox/rightHand.kll
 /srv/KiiConf/controller/kll/layouts/infinity_ergodox/lcdFuncMap.kll
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/MDErgo1-Blank-0.kll
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/MDErgo1-Blank-0.kll
 /srv/KiiConf/controller/kll/layouts/infinity_ergodox/lcdFuncMap.kll
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/MDErgo1-Blank-1.kll
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/MDErgo1-Blank-1.kll
 /srv/KiiConf/controller/kll/layouts/infinity_ergodox/lcdFuncMap.kll
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/MDErgo1-Blank-2.kll
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/MDErgo1-Blank-2.kll
 -- Found DFU_SUFFIX: /usr/local/bin/dfu-suffix (found version "0.8") 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left
+-- Build files have been written to: /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left
 [1/39] Generating KLL Layout
 kll BETA 0.5c.f42eca6a53c84bcd093a0e12149789db4f14f98c - 2018-04-08 20:48:41 -0700
 -- Generating --
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/kll_defs.h
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/generatedKeymap.h
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/generatedPixelmap.c
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/kll.json
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/kll_defs.h
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/generatedKeymap.h
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/generatedPixelmap.c
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/kll.json
 [2/39] Building C object CMakeFiles/kiibohd.dir/main.c.o
 [3/39] Building C object CMakeFiles/kiibohd.dir/Lib/kinetis.c.o
 [4/39] Building C object CMakeFiles/kiibohd.dir/Lib/delay.c.o
@@ -120,19 +120,19 @@ See lsusb -d 1c11: -v and look for iInterface 4 Kiibohd DFU Secure.
 Otherwise, use the kiibohd.dfu.bin file when it says iInterface 4 Kiibohd DFU.
 Use the physical reset button on the back of the keyboard to temporarily disable secure mode.
 NOTE2: Secure mode is disabled currently, but will be enabled when key negotiation is supported.
-	 SRAM: 	18% 	12128/65536	bytes
-	Flash: 	27% 	69924/253952	bytes
-Firmware has been compiled into: '/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left'
+	 SRAM: 	18% 	12136/65536	bytes
+	Flash: 	27% 	69936/253952	bytes
+Firmware has been compiled into: '/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left'
 /srv/KiiConf/dist
 + RETVAL_L=0
 + DefaultMapOverride='infinity_ergodox/lcdFuncMap MDErgo1-Blank-0'
 + PartialMapsExpandedOverride='infinity_ergodox/lcdFuncMap MDErgo1-Blank-1;infinity_ergodox/lcdFuncMap MDErgo1-Blank-2'
 + CMakeExtraArgs=-DCONFIGURATOR=1
-+ /srv/KiiConf/controller/Keyboards/ergodox-r.bash -c /srv/KiiConf/controller -o /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right
++ /srv/KiiConf/controller/Keyboards/ergodox-r.bash -c /srv/KiiConf/controller -o /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right
 linux-gnu/Linux is supported.
 Unix Build
 Selected Generator: Ninja
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right
 -- Build CPU Detected:
 x86_64
 -- Build Kernel Detected:
@@ -156,7 +156,7 @@ dfu
 -- Detected Scan Module Source Files:
 Scan/Devices/ISSILed/i2c.c;Scan/Devices/ISSILed/led_scan.c;Scan/Devices/MatrixARMPeriodic/matrix_scan.c;Scan/Devices/STLcd/lcd_scan.c;Scan/Devices/UARTConnect/connect_scan.c;Scan/Infinity_Ergodox/scan_loop.c
 -- Detected Macro Module Source Files:
-Macro/PartialMap/kll.c;Macro/PartialMap/layer.c;Macro/PartialMap/macro.c;Macro/PartialMap/result.c;Macro/PartialMap/trigger.c;Macro/PixelMap/pixel.c;/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/generatedPixelmap.c
+Macro/PartialMap/kll.c;Macro/PartialMap/layer.c;Macro/PartialMap/macro.c;Macro/PartialMap/result.c;Macro/PartialMap/trigger.c;Macro/PixelMap/pixel.c;/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/generatedPixelmap.c
 -- Detected Output Module Source Files:
 Output/HID-IO/hidio_com.c;Output/Interface/output_gen.c;Output/USB/output_com.c;Output/USB/output_usb.c;Output/USB/arm/usb_desc.c;Output/USB/arm/usb_dev.c;Output/USB/arm/usb_joystick.c;Output/USB/arm/usb_keyboard.c;Output/USB/arm/usb_mem.c;Output/USB/arm/usb_mouse.c;Output/USB/arm/usb_rawio.c;Output/USB/arm/usb_serial.c
 -- Detected Debug Module Source Files:
@@ -184,22 +184,22 @@ ctags-exuberant: cannot open tag file : Permission denied
 /srv/KiiConf/controller/Scan/Infinity_Ergodox/slave1.kll
 /srv/KiiConf/controller/Scan/Infinity_Ergodox/leftHand.kll
 /srv/KiiConf/controller/kll/layouts/infinity_ergodox/lcdFuncMap.kll
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/MDErgo1-Blank-0.kll
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/MDErgo1-Blank-0.kll
 /srv/KiiConf/controller/kll/layouts/infinity_ergodox/lcdFuncMap.kll
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/MDErgo1-Blank-1.kll
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/MDErgo1-Blank-1.kll
 /srv/KiiConf/controller/kll/layouts/infinity_ergodox/lcdFuncMap.kll
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/MDErgo1-Blank-2.kll
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/MDErgo1-Blank-2.kll
 -- Found DFU_SUFFIX: /usr/local/bin/dfu-suffix (found version "0.8") 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right
+-- Build files have been written to: /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right
 [1/39] Generating KLL Layout
 kll BETA 0.5c.f42eca6a53c84bcd093a0e12149789db4f14f98c - 2018-04-08 20:48:41 -0700
 -- Generating --
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/kll_defs.h
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/generatedKeymap.h
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/generatedPixelmap.c
-/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/kll.json
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/kll_defs.h
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/generatedKeymap.h
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/generatedPixelmap.c
+/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/kll.json
 [2/39] Building C object CMakeFiles/kiibohd.dir/main.c.o
 [3/39] Building C object CMakeFiles/kiibohd.dir/Lib/kinetis.c.o
 [4/39] Building C object CMakeFiles/kiibohd.dir/Lib/delay.c.o
@@ -246,23 +246,23 @@ See lsusb -d 1c11: -v and look for iInterface 4 Kiibohd DFU Secure.
 Otherwise, use the kiibohd.dfu.bin file when it says iInterface 4 Kiibohd DFU.
 Use the physical reset button on the back of the keyboard to temporarily disable secure mode.
 NOTE2: Secure mode is disabled currently, but will be enabled when key negotiation is supported.
-	 SRAM: 	18% 	12256/65536	bytes
-	Flash: 	27% 	70188/253952	bytes
-Firmware has been compiled into: '/srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right'
+	 SRAM: 	18% 	12264/65536	bytes
+	Flash: 	27% 	70200/253952	bytes
+Firmware has been compiled into: '/srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right'
 /srv/KiiConf/dist
 + RETVAL_R=0
 + (( 0 != 0 ))
 + (( 0 != 0 ))
 + RETVAL=0
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/kiibohd.dfu.bin /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left_kiibohd.dfu.bin
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/kiibohd.secure.dfu.bin /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left_kiibohd.secure.dfu.bin
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/kll.json /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left_kll.json
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/log/generatedKeymap.h /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left_generatedKeymap.h
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left/log/kll_defs.h /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/left_kll_defs.h
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/kiibohd.dfu.bin /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right_kiibohd.dfu.bin
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/kiibohd.secure.dfu.bin /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right_kiibohd.secure.dfu.bin
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/kll.json /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right_kll.json
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/log/generatedKeymap.h /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right_generatedKeymap.h
-+ ln -s /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right/log/kll_defs.h /srv/KiiConf/tmp/bfe72305865286340388572915e0318e15b195ecd74aaf/right_kll_defs.h
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/kiibohd.dfu.bin /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left_kiibohd.dfu.bin
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/kiibohd.secure.dfu.bin /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left_kiibohd.secure.dfu.bin
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/kll.json /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left_kll.json
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/log/generatedKeymap.h /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left_generatedKeymap.h
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left/log/kll_defs.h /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/left_kll_defs.h
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/kiibohd.dfu.bin /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right_kiibohd.dfu.bin
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/kiibohd.secure.dfu.bin /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right_kiibohd.secure.dfu.bin
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/kll.json /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right_kll.json
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/log/generatedKeymap.h /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right_generatedKeymap.h
++ ln -s /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right/log/kll_defs.h /srv/KiiConf/tmp/898a95ce502809e1429e6ab4b73e8da815b1972790ba5a/right_kll_defs.h
 + set +x
 Compilation Completed.

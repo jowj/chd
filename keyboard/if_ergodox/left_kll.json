@@ -1080,12 +1080,12 @@
                 ]
             },
             ":0 S029": {
-                "kll": "S0x01d : U0x03a;",
+                "kll": "S0x01d : U0x02d;",
                 "result": [
                     [
                         {
                             "type": "USBCode",
-                            "uid": 58
+                            "uid": 45
                         }
                     ]
                 ],
@@ -1319,12 +1319,12 @@
                 ]
             },
             ":0 S041": {
-                "kll": "S0x029 : U0x041;",
+                "kll": "S0x029 : U0x0e2;",
                 "result": [
                     [
                         {
                             "type": "USBCode",
-                            "uid": 65
+                            "uid": 226
                         }
                     ]
                 ],
@@ -1338,12 +1338,12 @@
                 ]
             },
             ":0 S042": {
-                "kll": "S0x02a : U0x0e2;",
+                "kll": "S0x02a : U0x041;",
                 "result": [
                     [
                         {
                             "type": "USBCode",
-                            "uid": 226
+                            "uid": 65
                         }
                     ]
                 ],
@@ -1854,14 +1854,14 @@
                 ]
             },
             ":1 S030": {
-                "kll": "S0x04b : layerShift(7) + LCDLayerDisplay();",
+                "kll": "S0x04b : layerShift(2) + LCDLayerDisplay();",
                 "result": [
                     [
                         {
                             "args": [
                                 {
                                     "type": "CapArgValue",
-                                    "value": 7
+                                    "value": 2
                                 }
                             ],
                             "name": "layerShift",

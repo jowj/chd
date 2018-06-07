@@ -319,8 +319,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "F1",
-                    "label": "F1"
+                    "key": "MINUS",
+                    "label": "-"
                 }
             }
         },
@@ -475,8 +475,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "F8",
-                    "label": "F8"
+                    "key": "LALT",
+                    "label": "LALT"
                 }
             }
         },
@@ -488,8 +488,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LALT",
-                    "label": "LALT"
+                    "key": "F8",
+                    "label": "F8"
                 }
             }
         },
@@ -834,8 +834,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "FUNCTION7",
-                    "label": "\u01927"
+                    "key": "FUN2",
+                    "label": "\u01922"
                 }
             }
         },
