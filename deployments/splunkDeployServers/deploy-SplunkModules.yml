@@ -1,0 +1,13 @@
+- name: Copy splunk modules to corp deploy server
+  hosts: corp
+#  vars_files:
+#    - mojo-vars-vault.yml
+  remote_user: josiah
+  tasks:
+  - name: Copy item to remote server
+    copy: 
+      src: ~/profile/.emacs.d
+      # src must not end in "/" or it will only copy files inside dir instead of entire dir
+      dst: /home/Josiah_Ledbetter/
+      owner: splunk
+      group: splunk
