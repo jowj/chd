@@ -306,8 +306,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "LALT",
-                    "label": "LALT"
+                    "key": "LGUI",
+                    "label": "LGUI"
                 }
             }
         },
@@ -540,8 +540,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "FUNCTION6",
-                    "label": "\u01926"
+                    "key": "\\",
+                    "label": "\\"
                 }
             }
         },
@@ -555,6 +555,10 @@
                 "0": {
                     "key": "6",
                     "label": "6"
+                },
+                "1": {
+                    "key": "F6",
+                    "label": "F6"
                 }
             }
         },
@@ -568,6 +572,10 @@
                 "0": {
                     "key": "7",
                     "label": "7"
+                },
+                "1": {
+                    "key": "F7",
+                    "label": "F7"
                 }
             }
         },
@@ -581,6 +589,10 @@
                 "0": {
                     "key": "8",
                     "label": "8"
+                },
+                "1": {
+                    "key": "F8",
+                    "label": "F8"
                 }
             }
         },
@@ -594,6 +606,10 @@
                 "0": {
                     "key": "9",
                     "label": "9"
+                },
+                "1": {
+                    "key": "F9",
+                    "label": "F9"
                 }
             }
         },
@@ -607,6 +623,10 @@
                 "0": {
                     "key": "0",
                     "label": "0"
+                },
+                "1": {
+                    "key": "F10",
+                    "label": "F10"
                 },
                 "2": {
                     "key": "#:flashMode()",
@@ -808,8 +828,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RALT",
-                    "label": "RALT"
+                    "key": "RGUI",
+                    "label": "RGUI"
                 }
             }
         },
@@ -821,8 +841,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RCTRL",
-                    "label": "RCTRL"
+                    "key": "=",
+                    "label": "="
                 }
             }
         },
@@ -1029,8 +1049,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RGUI",
-                    "label": "RGUI"
+                    "key": "NEXT LAYER",
+                    "label": "NEXT-\u0192"
                 }
             }
         }
