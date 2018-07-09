@@ -1,21 +1,5 @@
 all:
   children:
-    vdc:
-      hosts:
-        v1-cs-sec-splunk01:
-            ProxyCommand: "ssh -W %h:%p my_bastion_host.example.org"
-
     corp:
       hosts:
         AUS01GMSPLUNK01:
-
-    pci:
-      hosts:
-        aus01vpsplunk01:
-    
-    bastion-vdc:
-      hosts:
-        linuxjumpbox.vdc.volusion.com:
-    bastion-vault:
-      hosts:
-        linuxjumpbox.vault.com:
