@@ -1,0 +1,3 @@
+C:\Users\me\AppData\Roaming\Mozilla\Firefox\Profiles\bs1ceth8.default\chrome
+
+^^ basically, win-r "%APPDATA%" Mozilla > Firefox > profiles > your profile > chrome > userchrome.css
