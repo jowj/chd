@@ -14,50 +14,15 @@
 ;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ;; The above is the default in recent emacsen
 
-;; packages
-(require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-  (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
-
-;; load custom themes
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-;;(package-initialize)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (flatui)))
- '(custom-safe-themes
-   (quote
-    ("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default)))
- '(package-selected-packages (quote (markdown-mode flatui-theme powershell csharp-mode ))))
- '(org-agenda-files
-   (quote
-    ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
- '(org-capture-templates
-   (quote
-    (("c" "generic \"to do\" capture template" entry
-      (file "~/Dropbox/org/refile-beorg.org")
-      "" :immediate-finish t))))
-
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+  '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.2))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
+  '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
+  '(org-level-5 ((t (:inherit outline-5 :height 1.1))))
+)
+
+
 ;; custom org mode hotkeys 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
@@ -76,7 +41,51 @@
 ;; define generic org capture shit
 (setq org-directory "~/Dropbox/org/")
 (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))
-(define-key global-map "\C-cc" 'org-capture)
+
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  ;;(add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; load custom themes
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(flatui))
+ '(custom-safe-themes
+   '("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default))
+ '(package-selected-packages
+   '(doom-themes outline-magic pylint python-mode markdown-mode powershell csharp-mode)))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
+ '(org-capture-templates
+   (quote
+    (("c" "generic \"to do\" capture template" entry
+      (file "~/Dropbox/org/refile-beorg.org")
+      "" :immediate-finish t))))
+
+;; trialing a new thing here; sometimes not all my packages actually get set up.
+(unless package--initialized (package-initialize t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
 
 ;; tell emacs to stop writing bullshit in all my folders
 ;; and just put all backups in a single folder
@@ -99,3 +108,12 @@
 ;; deal with mac command key problems:
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta))
+
+;; custom emacsland functions
+(defun find-user-init-file ()
+  "Edit the `user-init-file', in another window."
+  (interactive)
+  (find-file-other-window user-init-file))
+(global-set-key (kbd "C-c I") 'find-user-init-file)
+
+
