@@ -14,6 +14,12 @@
 ;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 ;; The above is the default in recent emacsen
 
+
+;; set flyspell's spellchecker
+(setq ispell-program-name "/usr/local/bin/ispell")
+;; enable flyspell-mode in all org-mode enabled files
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+
 (custom-set-faces
   '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
   '(org-level-2 ((t (:inherit outline-2 :height 1.2))))
@@ -42,7 +48,9 @@
 (setq org-directory "~/Dropbox/org/")
 (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))
 
+;; packages
 (require 'package)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
@@ -52,20 +60,35 @@
   (when (< emacs-major-version 24)
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
+;;(package-initialize)
 
 (unless package-archive-contents
   (package-refresh-contents))
 
 ;; load custom themes
+
+;; doom theme bullshit
+  (require 'doom-themes)
+
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+  ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each
+  ;; theme may have their own settings.
+  (load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(flatui))
- '(custom-safe-themes
-   '("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default))
+ ;;'(custom-enabled-themes '(flatui))
+ ;;'(custom-safe-themes
+  ;; '("15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" default))
  '(package-selected-packages
    '(doom-themes outline-magic pylint python-mode markdown-mode powershell csharp-mode)))
  '(org-agenda-files
@@ -77,8 +100,6 @@
       (file "~/Dropbox/org/refile-beorg.org")
       "" :immediate-finish t))))
 
-;; trialing a new thing here; sometimes not all my packages actually get set up.
-(unless package--initialized (package-initialize t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
