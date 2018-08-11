@@ -4,6 +4,7 @@
 (setq inhibit-splash-screen t)       ; Disable the splash screen (to enable it agin, replace the t with 0)
 (global-linum-mode t)                ; set linenummode
 (global-visual-line-mode t)          ; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
+(menu-bar-mode -1)                   ; disable visual menu on emacs
 
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)) ; deal with mac command key problems:
@@ -53,12 +54,16 @@
 (setq org-directory "~/Dropbox/org/")                 ; define generic org capture shit
 (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))
 
-;; packages lists
+;; packages
+
+;;;;list package targets
+(setq package-archives
+      '(("melpa" . "http://melpa.milkbox.net/packages/")
+        ("gnu" . "http://elpa.gnu.org/packages/")
+	("elpy" . "http://jorgenschaefer.github.io/packages/")))
+;;;;Refresh package contents
 (unless package-archive-contents
   (package-refresh-contents))
-
-;; new way of installing packages
-(package-refresh-contents) ;if you dont' do this the below install won't work
 
 (defvar myPackages
   '(doom-themes
@@ -71,14 +76,14 @@
     ein
     elpy
     flycheck
+    magit
+    exec-path-from-shell
     py-autopep8))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
       (package-install package)))
       myPackages)
-
-;;(elpy-enable)
 
 ;; load custom themes
 
@@ -109,7 +114,7 @@
     (("c" "generic \"to do\" capture template" entry
       (file "~/Dropbox/org/refile-beorg.org")
       "" :immediate-finish t))))
-
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -118,4 +123,24 @@
  )
 
 ;; run emacs as server (connect to it with `emacsclient`)
+
+;; PYTHON CONFIGURATION
+;; --------------------------------------
+
+(setq python-shell-interpreter "python"
+      python-shell-interpreter-args "-i")
+
+;; use flycheck not flymake with elpy
+(require 'elpy)
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; enable autopep8 formatting on save
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+;; shell confs
+(exec-path-from-shell-copy-env "PATH") ; copy PATH from shell
+
 (server-start)
