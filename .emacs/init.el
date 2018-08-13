@@ -2,7 +2,9 @@
 
 ;; Set global vars
 (setq inhibit-splash-screen t)       ; Disable the splash screen (to enable it agin, replace the t with 0)
-(global-linum-mode t)                ; set linenummode
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode)); show line numbers; use this instead of linum if you can because FUCK linum sucks
+
 (global-visual-line-mode t)          ; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
 (menu-bar-mode -1)                   ; disable visual menu on emacs
 (setq indent-tabs-mode nil)          ; always use spaces, not tabs, when indenting
@@ -27,7 +29,6 @@
   (interactive)
   (find-file-other-window user-init-file))
 (global-set-key (kbd "C-c I") 'find-user-init-file)
-
 
 ;;Org mode configuration
 (require 'org)                                       ; Enable Org mode
@@ -129,6 +130,7 @@
 ;; PYTHON CONFIGURATION
 ;; --------------------------------------
 
+(elpy-enable)
 (setq python-shell-interpreter "python"
       python-shell-interpreter-args "-i")
 
