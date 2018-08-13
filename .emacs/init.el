@@ -5,6 +5,11 @@
 (global-linum-mode t)                ; set linenummode
 (global-visual-line-mode t)          ; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
 (menu-bar-mode -1)                   ; disable visual menu on emacs
+(setq indent-tabs-mode nil)          ; always use spaces, not tabs, when indenting
+(setq case-fold-search t)            ; ignore case when searching
+
+; require final newlines in files when they are saved
+(setq require-final-newline t)
 
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)) ; deal with mac command key problems:
@@ -30,12 +35,15 @@
 (add-hook 'org-mode-hook 'turn-on-flyspell)          ; enable flyspell-mode in all org-mode enabled files
 
 (custom-set-faces
-  '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
-  '(org-level-2 ((t (:inherit outline-2 :height 1.2))))
-  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
-  '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
-  '(org-level-5 ((t (:inherit outline-5 :height 1.1))))
-)
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-level-1 ((t (:inherit outline-1 :height 1.3))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.2))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.1)))))
 
 ;;;; custom org mode hotkeys 
 (global-set-key "\C-cl" 'org-store-link)
@@ -107,20 +115,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   (quote
-    ("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org")))
+   '("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org"))
  '(org-capture-templates
-   (quote
-    (("c" "generic \"to do\" capture template" entry
+   '(("c" "generic \"to do\" capture template" entry
       (file "~/Dropbox/org/refile-beorg.org")
-      "" :immediate-finish t))))
-)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+      "" :immediate-finish t)))
+ '(package-selected-packages
+   '(jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+
 
 ;; run emacs as server (connect to it with `emacsclient`)
 
