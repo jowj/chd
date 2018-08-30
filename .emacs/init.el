@@ -116,13 +116,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org"))
+   '("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org" "~/Dropbox/org/someday.org"))
  '(org-capture-templates
    '(("c" "generic \"to do\" capture template" entry
       (file "~/Dropbox/org/refile-beorg.org")
       "" :immediate-finish t)))
  '(package-selected-packages
-   '(jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 
 ;; run emacs as server (connect to it with `emacsclient`)
