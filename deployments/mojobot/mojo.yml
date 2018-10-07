@@ -5,7 +5,7 @@
   remote_user: josiah
   tasks:
   - name: Pull latest version from github
-    command: cd ~/mojojojo-bot && git pull
+    command: cd ~/mojojojo-bot/ && git pull
   - name: Build from the latest version
     command: cd ~/mojojojo-bot && docker build -t mojo -f docker/dockerfile .
   - name: Check if there are any existing mojo containers running and kill it
