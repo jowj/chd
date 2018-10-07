@@ -20,4 +20,4 @@
     # this has to be a shell because command: isn't interactive
     shell: docker ps | grep -E 'Up|Restarting' | awk '{print $1}' | xargs docker kill
   - name: Run the newly built docker container
-    command: docker container run -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}" --restart "always" -d mojo
+    command: docker container run -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}" --restart "always" -d --mount source=towervol,target=/shared/ mojo
