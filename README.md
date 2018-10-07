@@ -12,3 +12,4 @@ automate syncing and configuration of machines in my inventory so that i don't h
     * set windows privacy settings
     * remove bloatware
 * sync emacs config
+* sync keyboard config for infinity ergodox
