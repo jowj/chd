@@ -13,7 +13,7 @@
     register: ls
   - debug: msg="{{ ls.stdout }}"
   - name: Pull latest version from github
-    shell: cd /home/josiah/mojojojo-bot/ # && git pull
+    shell: cd /home/josiah/mojojojo-bot/ && git pull
   - name: Build from the latest version
     shell: cd ~/mojojojo-bot && docker build -t mojo -f docker/dockerfile .
   - name: Check if there are any existing mojo containers running and kill it
