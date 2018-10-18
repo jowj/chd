@@ -4,12 +4,20 @@
     - mojo-vars-vault.yml
   remote_user: josiah
   tasks:
+  - name: print hostname
+    command: hostname
+    register: hostname
+  - debug: msg="{{ hostname.stdout }}"
+  - name: print working directory
+    shell: ls -la | grep 'mojo'
+    register: ls
+  - debug: msg="{{ ls.stdout }}"
   - name: Pull latest version from github
-    command: cd ~/mojojojo-bot && git pull
+    shell: cd /home/josiah/mojojojo-bot/ && git pull
   - name: Build from the latest version
-    command: cd ~/mojojojo-bot && docker build -t mojo -f docker/dockerfile .
+    shell: cd ~/mojojojo-bot && docker build -t mojo -f docker/dockerfile .
   - name: Check if there are any existing mojo containers running and kill it
     # this has to be a shell because command: isn't interactive
-    shell: docker ps | grep 'mojo' | awk '{print $1}' | xargs docker kill
+    shell: docker ps | grep -E 'Up|Restarting' | awk '{print $1}' | xargs docker kill
   - name: Run the newly built docker container
-    command: docker container run -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}" --restart "always" -d mojo
+    command: docker container run -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}" --restart "always" -d --mount source=towervol,target=/shared/ mojo
