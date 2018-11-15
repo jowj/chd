@@ -1,6 +1,13 @@
 ;; -*- mode: elisp -*-
 
 ;; Set global vars
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq inhibit-splash-screen t)       ; Disable the splash screen (to enable it agin, replace the t with 0)
 (when (version<= "26.0.50" emacs-version )
   (global-display-line-numbers-mode)); show line numbers; use this instead of linum if you can because FUCK linum sucks
@@ -124,7 +131,7 @@
       (file "~/Dropbox/org/refile-beorg.org")
       "" :immediate-finish t)))
  '(package-selected-packages
-   '(weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(yaml-mode ansible weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 
 ;; run emacs as server (connect to it with `emacsclient`)
