@@ -1,4 +1,4 @@
-deploy: - name znc server
+- name: deploy znc server
   hosts: dockerhosts
   remote_user: josiah
   tasks:
