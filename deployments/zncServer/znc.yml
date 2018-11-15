@@ -11,7 +11,7 @@
     - command: cd /home/josiah && git clone https://github.com/jowj/znc-docker.git
       when: result is failed
     - name: build from latest version
-      shell: cd ~/znc-docker && docker build -t znc -f full/Dockerfile .
+      shell: cd ~/znc-docker/full && docker build -t znc -f Dockerfile .
     - name: Check if there are any existing mojo containers running and kill it
       shell: docker ps | grep 'znc' | awk '{print $1}' | xargs docker kill
     - name: Remove any existing containers using the znc name, its mine and i must have it
