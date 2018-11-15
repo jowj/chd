@@ -1,9 +1,9 @@
-- name: deploy znc server
+deploy: - name znc server
   hosts: dockerhosts
   remote_user: josiah
   tasks:
     - name: update or create the directory
-      command: cd /home/josiah/znc-docker/ && git pull
+      shell: cd /home/josiah/znc-docker/ && git pull
       register: result
       ignore_errors: True
 
