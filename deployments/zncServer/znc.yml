@@ -18,5 +18,5 @@
       # this has to be a shell because command: isn't interactive
       shell: docker container rm znc
     - name: run the container (assumes the volume is already set up)
-      command: docker run -d -p 5000:5000 -v znc-cfg:/znc-data znc
+      command: docker run -d -p 5000:5000 --mount type="bind",source="/mnt/volume_sfo2_znc/",target=/znc-data znc
 
