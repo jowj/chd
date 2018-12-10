@@ -4,9 +4,36 @@ import argparse
 import subprocess
 import pdb
 
-reposToAdd = "ppa:nextcloud-devs/client"
+add_Repos_Args = [
+    "sudo",
+    "add-apt-repository",
+    "ppa:nextcloud-devs/client"
+]
 
-aptProgramsToAdd = [
+download_Powershell_Keys = [
+    "wget",
+    "-q",
+    "https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb"
+]
+
+add_Powershell_Keys = [
+    "sudo",
+    "dpkg",
+    "-i",
+    "packages-microsoft-prod.deb"
+]
+
+update_Apt_Repos = [
+    "sudo",
+    "apt",
+    "update"
+]
+
+add_Apt_Programs = [
+    "sudo",
+    "apt-get",
+    "install",
+    "-y",
     "powershell",
     "emacs",
     "python3.7",
@@ -14,21 +41,30 @@ aptProgramsToAdd = [
     "dropbox",
     "docker",
     "nextcloud-client"
-] 
+]
+
+
+
 snapProgramsToAdd = [
     "slack",
     "discord",
 ]
 
-subprocess.run('sudo apt add-repo ' + reposToAdd)
 print("adding repos")
+subprocess.run(add_Repos_Args,shell=True)
 
-subprocess.run('sudo apt update')
+print("download powershell key")
+subprocess.run(download_Powershell_Keys)
+
+print("add powershell key")
+subprocess.run(add_Powershell_Keys)
+
 print("updating apt")
+subprocess.run(update_Apt_Repos)
 
-subprocess.run('sudo apt-get install ' + aptProgramsToAdd)
 print("installing apt packages")
+subprocess.run(add_Apt_Programs)
 
-subprocess.run('sudo snap install ' + snapProgramsToAdd)
 print("installing snap packages")
+subprocess.run('sudo snap install ' + snapProgramsToAdd)
 
