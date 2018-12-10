@@ -43,8 +43,6 @@ add_Apt_Programs = [
     "nextcloud-client"
 ]
 
-
-
 snapProgramsToAdd = [
     "slack",
     "discord",
@@ -65,6 +63,22 @@ subprocess.run(update_Apt_Repos)
 print("installing apt packages")
 subprocess.run(add_Apt_Programs)
 
-print("installing snap packages")
-subprocess.run('sudo snap install ' + snapProgramsToAdd)
+#print("installing snap packages")
+#subprocess.run('sudo snap install ' + snapProgramsToAdd)
 
+# post processing for firefox userChrome.css
+# cp userChrome.css to the profile directory > chrome > userChrome.css
+create_Firefox_Chrome_Folder = [
+    "mkdir",
+    "-p",
+    "~/.mozilla/firefox/*.default/chrome/"
+]
+
+configure_Firefox = [
+    "cp"
+    "~/Documents/projects/agares/applicationConfiguration/firefox/userChrome.css",
+    "~/.mozilla/firefox/*.default/chrome/userChrome.css"
+]
+
+subprocess.run(create_Firefox_Chrome_Folder)
+subprocess.run(configure_Firefox)
