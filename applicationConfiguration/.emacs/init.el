@@ -131,7 +131,7 @@
 ;; --------------------------------------
 
 (elpy-enable)
-(setq python-shell-interpreter "python"
+(setq python-shell-interpreter "python3"
       python-shell-interpreter-args "-i")
 
 ;; use flycheck not flymake with elpy
