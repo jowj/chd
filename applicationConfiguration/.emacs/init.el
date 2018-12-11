@@ -19,7 +19,7 @@
 (setq backup-directory-alist `(("." . "~/Dropbox/org/.saves"))) ; deal with bullshit files in every dir.
 (set-frame-font "Consolas 12")                                  ; set default font,  versions of emacs may require set-default-font
 
-(setq user-init-file "~/Documents/projects/agares/.emacs/init.el") ;set default init file to agares
+(setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el") ;set default init file to agares
 (find-file "~/Dropbox/org/personal.org")                           ;open primary org file on launch
 (transient-mark-mode 1)                                            ; Enable transient mark mode
 
