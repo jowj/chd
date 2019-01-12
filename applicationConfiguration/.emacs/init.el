@@ -20,7 +20,7 @@
 (set-frame-font "Consolas 12")                                  ; set default font,  versions of emacs may require set-default-font
 
 (setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el") ;set default init file to agares
-(find-file "~/Dropbox/org/personal.org")                           ;open primary org file on launch
+(find-file "~/Nextcloud/Documents/org/personal.org")                           ;open primary org file on launch
 (transient-mark-mode 1)                                            ; Enable transient mark mode
 
 ;; custom emacsland functions
@@ -57,10 +57,10 @@
                                 (org-agenda-files :maxlevel . 9)))
 (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
 (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
-(setq org-agenda-files '("~/Dropbox/org/"))           ; add files to agenda:
+(setq org-agenda-files '("~/Nextcloud/Documents/org/"))           ; add files to agenda:
 
 
-(setq org-directory "~/Dropbox/org/")                 ; define generic org capture shit
+(setq org-directory "~/Nextcloud/Documents/org/")                 ; define generic org capture shit
 (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))
 
 ;; packages
@@ -116,10 +116,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/Dropbox/org/work.org" "~/Dropbox/org/refile-beorg.org" "~/Dropbox/org/personal.org" "~/Dropbox/org/someday.org"))
+   '("~/Nextcloud/Documents/org/work.org" "~/Nextcloud/Documents/org/refile-beorg.org" "~/Nextcloud/Documents/org/personal.org" "~/Nextcloud/Documents/org/someday.org"))
  '(org-capture-templates
    '(("c" "generic \"to do\" capture template" entry
-      (file "~/Dropbox/org/refile-beorg.org")
+      (file "~/Nextcloud/Documentsy/org/refile-beorg.org")
       "" :immediate-finish t)))
  '(package-selected-packages
    '(weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
