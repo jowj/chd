@@ -27,4 +27,31 @@ services:
       - "/home/josiah/Documents/apps/Lidarr:/config"
       - "/storage/private/usenet-complete/:/downloads"
       - "/storage/private/usenet-complete/audio/:/music"
+  radarr:
+    image: "linuxserver/radarr"
+    ports:
+      - "7878:7878"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/home/josiah/Documents/apps/radarr:/config"
+      - "/storage/private/usenet-complete/:/downloads"
+      - "/storage/private/usenet-complete/movies/:/music"
+  sabnzb:
+    image: "linuxserver/sabnzbd"
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/home/josiah/Documents/apps/sabnzbd:/config"
+      - "/storage/private/usenet-complete/:/downloads"
+      - "/storage/private/usenet-incomplete/:/music"
 
