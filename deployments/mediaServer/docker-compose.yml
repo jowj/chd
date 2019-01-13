@@ -11,7 +11,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/.config/NzbDrone:/config"
+      - "/Users/josiah/.config/NzbDrone:/config"
       - "/Volumes/usenet/:/downloads"
       - "/Volumes/usenet/tv/:/tv"
   lidarr:
@@ -24,7 +24,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/Documents/apps/Lidarr:/config"
+      - "/Users/josiah/Documents/apps/Lidarr:/config"
       - "/Volumes/usenet/:/downloads"
       - "/Volumes/usenet/audio/:/music"
   radarr:
@@ -37,7 +37,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/Documents/apps/radarr:/config"
+      - "/Users/josiah/Documents/apps/radarr:/config"
       - "/Volumes/usenet/:/downloads"
       - "/Volumes/usenet/movies/:/music"
   sabnzb:
@@ -51,7 +51,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/Documents/apps/sabnzbd:/config"
+      - "/Users/josiah/Documents/apps/sabnzbd:/config"
       - "/Volumes/usenet/:/downloads"
       - "/Volumes/usenet/audio/:/music"
 
