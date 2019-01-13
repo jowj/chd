@@ -12,8 +12,8 @@ services:
       TZ: America/Chicago
     volumes:
       - "/home/josiah/.config/NzbDrone:/config"
-      - "/storage/private/usenet-complete/:/downloads"
-      - "/storage/private/usenet-complete/tv/:/tv"
+      - "/Volumes/usenet/:/downloads"
+      - "/Volumes/usenet/tv/:/tv"
   lidarr:
     image: "linuxserver/lidarr"
     ports:
@@ -25,8 +25,8 @@ services:
       TZ: America/Chicago
     volumes:
       - "/home/josiah/Documents/apps/Lidarr:/config"
-      - "/storage/private/usenet-complete/:/downloads"
-      - "/storage/private/usenet-complete/audio/:/music"
+      - "/Volumes/usenet/:/downloads"
+      - "/Volumes/usenet/audio/:/music"
   radarr:
     image: "linuxserver/radarr"
     ports:
@@ -38,8 +38,8 @@ services:
       TZ: America/Chicago
     volumes:
       - "/home/josiah/Documents/apps/radarr:/config"
-      - "/storage/private/usenet-complete/:/downloads"
-      - "/storage/private/usenet-complete/movies/:/music"
+      - "/Volumes/usenet/:/downloads"
+      - "/Volumes/usenet/movies/:/music"
   sabnzb:
     image: "linuxserver/sabnzbd"
     ports:
@@ -52,6 +52,6 @@ services:
       TZ: America/Chicago
     volumes:
       - "/home/josiah/Documents/apps/sabnzbd:/config"
-      - "/storage/private/usenet-complete/:/downloads"
-      - "/storage/private/usenet-incomplete/:/music"
+      - "/Volumes/usenet/:/downloads"
+      - "/Volumes/usenet/audio/:/music"
 
