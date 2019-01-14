@@ -11,7 +11,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/.config/sonarr:/config"
+      - "/Users/josiah/Documents/apps/sonarr:/config"
       - "/Users/josiah/Downloads/usenet/:/downloads"
       - "/Volumes/usenet/tv/:/tv"
   lidarr:
