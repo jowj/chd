@@ -39,7 +39,7 @@ services:
     volumes:
       - "/Users/josiah/Documents/apps/radarr:/config"
       - "/Users/josiah/Downloads/usenet/:/downloads"
-      - "/Volumes/usenet/movies/:/music"
+      - "/Volumes/usenet/movies/:/movies"
   sabnzb:
     image: "linuxserver/sabnzbd"
     ports:
@@ -52,6 +52,7 @@ services:
       TZ: America/Chicago
     volumes:
       - "/Users/josiah/Documents/apps/sabnzbd:/config"
-      - "/Users/josiah/Downloads/usenet/:/downloads"
-      - "/Volumes/usenet/audio/:/music"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/Users/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
+      - "/Users/josiah/Downloads/usenet-watched/:/watched-folder"      
 
