@@ -12,7 +12,7 @@ services:
       TZ: America/Chicago
     volumes:
       - "/Users/josiah/Documents/apps/sonarr:/config"
-      - "/Users/josiah/Downloads/usenet/:/downloads"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/tv/:/tv"
   lidarr:
     image: "linuxserver/lidarr"
@@ -25,7 +25,7 @@ services:
       TZ: America/Chicago
     volumes:
       - "/Users/josiah/Documents/apps/lidarr:/config"
-      - "/Users/josiah/Downloads/usenet/:/downloads"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/audio/:/music"
   radarr:
     image: "linuxserver/radarr"
@@ -38,7 +38,7 @@ services:
       TZ: America/Chicago
     volumes:
       - "/Users/josiah/Documents/apps/radarr:/config"
-      - "/Users/josiah/Downloads/usenet/:/downloads"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/movies/:/movies"
   sabnzb:
     image: "linuxserver/sabnzbd"
