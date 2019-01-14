@@ -55,4 +55,7 @@ services:
       - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Users/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
       - "/Users/josiah/Downloads/usenet-watched/:/watched-folder"      
+      - "/Volumes/usenet/tv:/tv"
+      - "/Volumes/usenet/audio/:/music"
+      - "/Volumes/usenet/movies/:/movies"
 
