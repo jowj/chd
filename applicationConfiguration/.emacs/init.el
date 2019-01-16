@@ -16,7 +16,7 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)) ; deal with mac command key problems:
 
-(setq backup-directory-alist `(("." . "~/Nextcloud/Documents/org/.saves"))) ; deal with bullshit files in every dir.
+(setq backup-directory-alist `(("." . "~/Dropbox/org/.saves"))) ; deal with bullshit files in every dir.
 (set-frame-font "Consolas 12")                                  ; set default font,  versions of emacs may require set-default-font
 
 (setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el") ;set default init file to agares
@@ -34,9 +34,6 @@
 (require 'org)                                       ; Enable Org mode
 (setq ispell-program-name "/usr/local/bin/ispell")   ; set flyspell's spellchecker
 (add-hook 'org-mode-hook 'turn-on-flyspell)          ; enable flyspell-mode in all org-mode enabled files
-
-(org-babel-do-load-languages
- 'org-babel-load-languages '((python . t)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -122,7 +119,7 @@
    '("~/Nextcloud/Documents/org/work.org" "~/Nextcloud/Documents/org/refile-beorg.org" "~/Nextcloud/Documents/org/personal.org" "~/Nextcloud/Documents/org/someday.org"))
  '(org-capture-templates
    '(("c" "generic \"to do\" capture template" entry
-      (file "~/Nextcloud/Documents/org/refile-beorg.org")
+      (file "~/Nextcloud/Documentsy/org/refile-beorg.org")
       "" :immediate-finish t)))
  '(package-selected-packages
    '(pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))

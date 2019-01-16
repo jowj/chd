@@ -1,0 +1,61 @@
+version: '3'
+
+services:
+  sonarr:
+    image: "linuxserver/sonarr"
+    ports:
+      - "8989:8989"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/Users/josiah/Documents/apps/sonarr:/config"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/Volumes/usenet/tv/:/tv"
+  lidarr:
+    image: "linuxserver/lidarr"
+    ports:
+      - "8686:8686"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/Users/josiah/Documents/apps/lidarr:/config"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/Volumes/usenet/audio/:/music"
+  radarr:
+    image: "linuxserver/radarr"
+    ports:
+      - "7878:7878"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/Users/josiah/Documents/apps/radarr:/config"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/Volumes/usenet/movies/:/movies"
+  sabnzb:
+    image: "linuxserver/sabnzbd"
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/Users/josiah/Documents/apps/sabnzbd:/config"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/Users/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
+      - "/Users/josiah/Downloads/usenet-watched/:/watched-folder"      
+      - "/Volumes/usenet/tv:/tv"
+      - "/Volumes/usenet/audio/:/music"
+      - "/Volumes/usenet/movies/:/movies"
+
