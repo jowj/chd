@@ -144,11 +144,6 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-;; enable org-babel-load python
-(org-babel-do-load-languages
-  'org-babel-load-languages
-    '((python . t)
-
 ;; shell confs
 (exec-path-from-shell-copy-env "PATH") ; copy PATH from shell
 
