@@ -130,6 +130,12 @@
 ;; PYTHON CONFIGURATION
 ;; --------------------------------------
 
+;; enable org-mode babel python code blocks
+(org-babel-do-load-languages
+  'org-babel-load-languages
+    '((python . t)
+      (matlab . t)))
+
 (elpy-enable)
 (setq python-shell-interpreter "python3"
       python-shell-interpreter-args "-i")
