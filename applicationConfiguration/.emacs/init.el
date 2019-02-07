@@ -121,8 +121,10 @@
    '(("c" "generic \"to do\" capture template" entry
       (file "~/Nextcloud/Documentsy/org/refile-beorg.org")
       "" :immediate-finish t)))
+ '(org-modules
+   '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(package-selected-packages
-   '(pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 
 ;; run emacs as server (connect to it with `emacsclient`)
