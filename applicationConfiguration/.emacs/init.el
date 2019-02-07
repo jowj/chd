@@ -34,6 +34,13 @@
 (require 'org)                                       ; Enable Org mode
 (setq ispell-program-name "/usr/local/bin/ispell")   ; set flyspell's spellchecker
 (add-hook 'org-mode-hook 'turn-on-flyspell)          ; enable flyspell-mode in all org-mode enabled files
+(setq org-src-fontify-natively t
+    org-src-window-setup 'current-window
+    org-src-strip-leading-and-trailing-blank-lines t
+    org-src-preserve-indentation t
+    org-src-tab-acts-natively t
+    org-edit-src-content-indentation 0)
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
