@@ -41,6 +41,14 @@
     org-src-tab-acts-natively t
     org-edit-src-content-indentation 0)
 
+(setq org2blog/wp-blog-alist
+      '(("wordpress"
+         :url "https://web1/xmlrpc.php"
+         :username "josiah"
+         :default-title "published from org"
+         :default-categories ("org2blog" "emacs" "homelab")
+         :tags-as-categories nil)
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -131,7 +139,7 @@
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(package-selected-packages
-   '(multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 
 ;; run emacs as server (connect to it with `emacsclient`)
