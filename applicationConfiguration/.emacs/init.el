@@ -41,14 +41,18 @@
     org-src-tab-acts-natively t
     org-edit-src-content-indentation 0)
 
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (visual-line-mode -1)
+            (toggle-truncate-lines 1)))
+
 (setq org2blog/wp-blog-alist
       '(("wordpress"
          :url "https://web1/xmlrpc.php"
          :username "josiah"
          :default-title "published from org"
          :default-categories ("org2blog" "emacs" "homelab")
-         :tags-as-categories nil)
-
+         :tags-as-categories nil)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -92,6 +96,7 @@
 (defvar myPackages
   '(doom-themes
     outline-magic
+    org2blog
     pylint
     python-mode
     markdown-mode
