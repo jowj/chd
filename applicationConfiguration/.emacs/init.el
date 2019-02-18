@@ -16,7 +16,7 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)) ; deal with mac command key problems:
 
-(setq backup-directory-alist `(("." . "~/Dropbox/org/.saves"))) ; deal with bullshit files in every dir.
+(setq backup-directory-alist `(("." . "~/Nextcloud/Documents/org/.saves"))) ; deal with bullshit files in every dir.
 (set-frame-font "Consolas 12")                                  ; set default font,  versions of emacs may require set-default-font
 
 (setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el") ;set default init file to agares
