@@ -49,9 +49,11 @@
 ;; org-agenda configs
 (setq org-habit-show-habits-only-for-today nil)
 (setq org-agenda-repeating-timestamp-show-all nil)
-(setq org-deadline-warning-days 1O)
+(setq org-deadline-warning-days 1)
 (setq org-global-properties
-    '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))
+      '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))
+(setq org-columns-default-format
+      '(("%25ITEM %TODO %3PRIORITY %TAGS")))
 
 (setq org2blog/wp-blog-alist
       '(("wordpress"
