@@ -46,6 +46,13 @@
             (visual-line-mode -1)
             (toggle-truncate-lines 1)))
 
+;; org-agenda configs
+(setq org-habit-show-habits-only-for-today nil)
+(setq org-agenda-repeating-timestamp-show-all nil)
+(setq org-deadline-warning-days 1O)
+(setq org-global-properties
+    '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))
+
 (setq org2blog/wp-blog-alist
       '(("wordpress"
          :url "https://web1/xmlrpc.php"
