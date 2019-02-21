@@ -152,8 +152,8 @@
    '("~/Nextcloud/Documents/org/work.org" "~/Nextcloud/Documents/org/refile-beorg.org" "~/Nextcloud/Documents/org/personal.org" "~/Nextcloud/Documents/org/someday.org"))
  '(org-capture-templates
    '(("c" "generic \"to do\" capture template" entry
-      (file "~/Nextcloud/Documentsy/org/refile-beorg.org")
-      "" :immediate-finish t)))
+      (file "~/Nextcloud/Documents/org/refile-beorg.org")
+      "" :prepend t)))
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(package-selected-packages
