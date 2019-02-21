@@ -7,6 +7,7 @@
 
 (global-visual-line-mode t)          ; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
 (menu-bar-mode -1)                   ; disable visual menu on emacs
+(tool-bar-mode -1)
 (setq indent-tabs-mode nil)          ; always use spaces, not tabs, when indenting
 (setq case-fold-search t)            ; ignore case when searching
 
