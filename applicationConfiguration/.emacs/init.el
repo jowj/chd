@@ -7,6 +7,7 @@
 
 (global-visual-line-mode t)          ; turn on word-wrap globally (probably a mistake, but wanted for org-mode)
 (menu-bar-mode -1)                   ; disable visual menu on emacs
+(tool-bar-mode -1)
 (setq indent-tabs-mode nil)          ; always use spaces, not tabs, when indenting
 (setq case-fold-search t)            ; ignore case when searching
 
@@ -16,7 +17,7 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)) ; deal with mac command key problems:
 
-(setq backup-directory-alist `(("." . "~/Dropbox/org/.saves"))) ; deal with bullshit files in every dir.
+(setq backup-directory-alist `(("." . "~/Nextcloud/Documents/org/.saves"))) ; deal with bullshit files in every dir.
 (set-frame-font "Consolas 12")                                  ; set default font,  versions of emacs may require set-default-font
 
 (setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el") ;set default init file to agares
@@ -45,6 +46,15 @@
           (lambda ()
             (visual-line-mode -1)
             (toggle-truncate-lines 1)))
+
+;; org-agenda configs
+(setq org-habit-show-habits-only-for-today nil)
+(setq org-agenda-repeating-timestamp-show-all nil)
+(setq org-deadline-warning-days 1)
+(setq org-global-properties
+      '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))
+(setq org-columns-default-format
+      '(("%25ITEM %TODO %3PRIORITY %TAGS")))
 
 (setq org2blog/wp-blog-alist
       '(("wordpress"
@@ -117,35 +127,38 @@
 
 ;; load custom themes
 
-;;;; doom theme bullshit
-  (require 'doom-themes)
+;; ;;;; doom theme bullshit
+;;   (require 'doom-themes)
 
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+;;   ;; Global settings (defaults)
+;;   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+;;         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-  ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each
-  ;; theme may have their own settings.
-  (load-theme 'doom-one t)
+;;   ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each
+;;   ;; theme may have their own settings.
+;;   (load-theme 'doom-one t)
 
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
+;;   ;; Enable flashing mode-line on errors
+;;   (doom-themes-visual-bell-config)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(manoj-dark))
+ '(custom-safe-themes
+   '("356e5cbe0874b444263f3e1f9fffd4ae4c82c1b07fe085ba26e2a6d332db34dd" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default))
  '(org-agenda-files
    '("~/Nextcloud/Documents/org/work.org" "~/Nextcloud/Documents/org/refile-beorg.org" "~/Nextcloud/Documents/org/personal.org" "~/Nextcloud/Documents/org/someday.org"))
  '(org-capture-templates
    '(("c" "generic \"to do\" capture template" entry
-      (file "~/Nextcloud/Documentsy/org/refile-beorg.org")
-      "" :immediate-finish t)))
+      (file "~/Nextcloud/Documents/org/refile-beorg.org")
+      "" :prepend t)))
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(package-selected-packages
-   '(org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 
 ;; run emacs as server (connect to it with `emacsclient`)
