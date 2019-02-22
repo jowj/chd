@@ -96,6 +96,7 @@
 (defvar myPackages
   '(doom-themes
     outline-magic
+    multiple-cursors
     org2blog
     pylint
     python-mode
