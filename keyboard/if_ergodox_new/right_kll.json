@@ -3167,6 +3167,245 @@
                     ]
                 ]
             }
+        },
+        "4": {
+            ":0 S003": {
+                "kll": "S0x003 : layerShift(6) + LCDLayerDisplay();",
+                "result": [
+                    [
+                        {
+                            "args": [
+                                {
+                                    "type": "CapArgValue",
+                                    "value": 6
+                                }
+                            ],
+                            "name": "layerShift",
+                            "type": "Capability"
+                        },
+                        {
+                            "args": [],
+                            "name": "LCDLayerDisplay",
+                            "type": "Capability"
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 3
+                        }
+                    ]
+                ]
+            },
+            ":0 S030": {
+                "kll": "S0x01e : layerShift(7) + LCDLayerDisplay();",
+                "result": [
+                    [
+                        {
+                            "args": [
+                                {
+                                    "type": "CapArgValue",
+                                    "value": 7
+                                }
+                            ],
+                            "name": "layerShift",
+                            "type": "Capability"
+                        },
+                        {
+                            "args": [],
+                            "name": "LCDLayerDisplay",
+                            "type": "Capability"
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 30
+                        }
+                    ]
+                ]
+            },
+            ":1 S009": {
+                "kll": "S0x036 : U0x035;",
+                "result": [
+                    [
+                        {
+                            "type": "USBCode",
+                            "uid": 53
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 9
+                        }
+                    ]
+                ]
+            },
+            ":1 S012": {
+                "kll": "S0x039 : layerShift(1) + LCDLayerDisplay();",
+                "result": [
+                    [
+                        {
+                            "args": [
+                                {
+                                    "type": "CapArgValue",
+                                    "value": 1
+                                }
+                            ],
+                            "name": "layerShift",
+                            "type": "Capability"
+                        },
+                        {
+                            "args": [],
+                            "name": "LCDLayerDisplay",
+                            "type": "Capability"
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 12
+                        }
+                    ]
+                ]
+            },
+            ":1 S027": {
+                "kll": "S0x048 : U0x0e4;",
+                "result": [
+                    [
+                        {
+                            "type": "USBCode",
+                            "uid": 228
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 27
+                        }
+                    ]
+                ]
+            },
+            ":1 S030": {
+                "kll": "S0x04b : layerShift(2) + LCDLayerDisplay();",
+                "result": [
+                    [
+                        {
+                            "args": [
+                                {
+                                    "type": "CapArgValue",
+                                    "value": 2
+                                }
+                            ],
+                            "name": "layerShift",
+                            "type": "Capability"
+                        },
+                        {
+                            "args": [],
+                            "name": "LCDLayerDisplay",
+                            "type": "Capability"
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 30
+                        }
+                    ]
+                ]
+            },
+            ":1 S041": {
+                "kll": "S0x056 : U0x0e6;",
+                "result": [
+                    [
+                        {
+                            "type": "USBCode",
+                            "uid": 230
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 41
+                        }
+                    ]
+                ]
+            },
+            ":1 S042": {
+                "kll": "S0x057 : layerShift(4) + LCDLayerDisplay();",
+                "result": [
+                    [
+                        {
+                            "args": [
+                                {
+                                    "type": "CapArgValue",
+                                    "value": 4
+                                }
+                            ],
+                            "name": "layerShift",
+                            "type": "Capability"
+                        },
+                        {
+                            "args": [],
+                            "name": "LCDLayerDisplay",
+                            "type": "Capability"
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 42
+                        }
+                    ]
+                ]
+            },
+            ":1 S043": {
+                "kll": "S0x058 : layerShift(3) + LCDLayerDisplay();",
+                "result": [
+                    [
+                        {
+                            "args": [
+                                {
+                                    "type": "CapArgValue",
+                                    "value": 3
+                                }
+                            ],
+                            "name": "layerShift",
+                            "type": "Capability"
+                        },
+                        {
+                            "args": [],
+                            "name": "LCDLayerDisplay",
+                            "type": "Capability"
+                        }
+                    ]
+                ],
+                "trigger": [
+                    [
+                        {
+                            "type": "ScanCode",
+                            "uid": 43
+                        }
+                    ]
+                ]
+            }
         }
     },
     "PixelIds": {

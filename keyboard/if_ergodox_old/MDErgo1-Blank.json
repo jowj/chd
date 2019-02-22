@@ -41,6 +41,10 @@
                 "1": {
                     "key": "F5",
                     "label": "F5"
+                },
+                "2": {
+                    "key": "F10",
+                    "label": "F10"
                 }
             }
         },
@@ -58,6 +62,10 @@
                 "1": {
                     "key": "F4",
                     "label": "F4"
+                },
+                "2": {
+                    "key": "F9",
+                    "label": "F9"
                 }
             }
         },
@@ -75,6 +83,10 @@
                 "1": {
                     "key": "F3",
                     "label": "F3"
+                },
+                "2": {
+                    "key": "F8",
+                    "label": "F8"
                 }
             }
         },
@@ -92,6 +104,10 @@
                 "1": {
                     "key": "F2",
                     "label": "F2"
+                },
+                "2": {
+                    "key": "F7",
+                    "label": "F7"
                 }
             }
         },
@@ -109,6 +125,10 @@
                 "1": {
                     "key": "F1",
                     "label": "F1"
+                },
+                "2": {
+                    "key": "F6",
+                    "label": "F6"
                 }
             }
         },
@@ -124,6 +144,10 @@
                     "label": "`"
                 },
                 "2": {
+                    "key": "#:None",
+                    "label": "NONE"
+                },
+                "3": {
                     "key": "#:flashMode()",
                     "label": "FLASH"
                 }
@@ -137,8 +161,8 @@
             "h": 6,
             "layers": {
                 "0": {
-                    "key": "LCK1",
-                    "label": "LOCK-1"
+                    "key": "FUN2",
+                    "label": "\u01922"
                 }
             }
         },
@@ -293,8 +317,8 @@
             "h": 4,
             "layers": {
                 "0": {
-                    "key": "RCTRL",
-                    "label": "RCTRL"
+                    "key": "LCTRL",
+                    "label": "LCTRL"
                 }
             }
         },

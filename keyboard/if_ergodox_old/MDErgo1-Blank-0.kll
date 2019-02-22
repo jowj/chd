@@ -17,7 +17,7 @@ U"3" : U"3";
 U"2" : U"2";
 U"1" : U"1";
 U"EQUALS" : U"BACKTICK";
-U"FUNCTION1" : U"LCK1";
+U"FUNCTION1" : U"FUN2";
 U"T" : U"T";
 U"R" : U"R";
 U"E" : U"E";
@@ -29,7 +29,7 @@ U"F" : U"F";
 U"D" : U"D";
 U"S" : U"S";
 U"A" : U"A";
-U"TAB" : U"RCTRL";
+U"TAB" : U"LCTRL";
 U"LALT" : U"LGUI";
 U"LCTRL" : U"MINUS";
 U"FUNCTION2" : U"FUN1";
@@ -89,5 +89,7 @@ U"RGUI" : U"NEXT LAYER";
 
 
 
+A[all_on] <= start, pfunc:interp;
+A[all_on, 1] <= P[c:0%](255), P[c:100%](255);
 
 

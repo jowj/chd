@@ -150,6 +150,10 @@
                 "3": {
                     "key": "#:flashMode()",
                     "label": "FLASH"
+                },
+                "4": {
+                    "key": "BACKTICK",
+                    "label": "`"
                 }
             }
         },
@@ -319,6 +323,10 @@
                 "0": {
                     "key": "LCTRL",
                     "label": "LCTRL"
+                },
+                "4": {
+                    "key": "RCTRL",
+                    "label": "RCTRL"
                 }
             }
         },
@@ -501,6 +509,10 @@
                 "0": {
                     "key": "LALT",
                     "label": "LALT"
+                },
+                "4": {
+                    "key": "RALT",
+                    "label": "RALT"
                 }
             }
         },

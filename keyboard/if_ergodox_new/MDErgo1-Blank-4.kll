@@ -8,9 +8,9 @@ KLL = "0.3c";
 Date = "2015-09-12";
 Generator = "KIICONF 0.2";
 
-U"EQUALS" : flashMode();
-U"0" : flashMode();
-U"MINUS" : flashMode();
+U"EQUALS" : U"BACKTICK";
+U"TAB" : U"RCTRL";
+U"FUNCTION5" : U"RALT";
 
 
 
