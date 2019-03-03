@@ -14,19 +14,19 @@ services:
       - "/Users/josiah/Documents/apps/sonarr:/config"
       - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/tv/:/tv"
-  # lidarr:
-  #   image: "linuxserver/lidarr"
-  #   ports:
-  #     - "8686:8686"
-  #   restart: unless-stopped
-  #   environment:
-  #     PUID: 1000
-  #     PGID: 1000
-  #     TZ: America/Chicago
-  #   volumes:
-  #     - "/Users/josiah/Documents/apps/lidarr:/config"
-  #     - "/Users/josiah/Downloads/usenet-complete/:/downloads"
-  #     - "/Volumes/usenet/audio/:/music"
+ lidarr:
+   image: "linuxserver/lidarr"
+   ports:
+     - "8686:8686"
+   restart: unless-stopped
+   environment:
+     PUID: 1000
+     PGID: 1000
+     TZ: America/Chicago
+   volumes:
+     - "/Users/josiah/Documents/apps/lidarr:/config"
+     - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+     - "/Volumes/usenet/audio/:/music"
   headphones:
     image: "linuxserver/headphones"
     ports:
