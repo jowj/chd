@@ -107,6 +107,11 @@
   '(doom-themes
     outline-magic
     multiple-cursors
+    rust-mode
+    cargo
+    flycheck-rust
+    racer
+    ;;company-mode
     org2blog
     pylint
     python-mode
@@ -158,10 +163,8 @@
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(package-selected-packages
-   '(color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
-
-;; run emacs as server (connect to it with `emacsclient`)
 
 ;; PYTHON CONFIGURATION
 ;; --------------------------------------
@@ -196,4 +199,21 @@
 ;; shell confs
 (exec-path-from-shell-copy-env "PATH") ; copy PATH from shell
 
+;; run emacs as server (connect to it with `emacsclient`)
 (server-start)
+
+;; RUST CONFIGURATION
+;; --------------------------------------
+
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+(add-hook 'rust-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c <tab>") #'rust-format-buffer)))
+
+(setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
+(setq racer-rust-src-path "~/gitshit/rust/src") ;; Rust source code PATH
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
