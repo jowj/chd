@@ -54,7 +54,7 @@ services:
       - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/movies/:/movies"
   sabnzb:
-    image: "linuxserver/sabnzbd"
+    image: "funkypenguin/sabnzbd"
     ports:
       - "8080:8080"
       - "9090:9090"
