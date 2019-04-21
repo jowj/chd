@@ -23,6 +23,7 @@ catch {
     $osv = /usr/bin/uname -a
 }
 
+
 ## Exported functions
 
 function Show-AsciiHatchet {
@@ -64,7 +65,7 @@ function Show-AsciiBWWindowsLogo {
 
 function Show-AsciiCurvyWindowsLogo {
     newline
-    whw -f red  '       ,-~ ~-,' ; whw -f green       ' ,_~ ~-,  ' ; newline
+    whw -f red  '       ,-~ ~-,' ; whw -f green       ' ,_~ ~-,  ' ; whw $env:COMPUTERNAME ; newline
     whw -f red  '      /     /'  ; whw -f green      ' /     /   ' ; newline
     whw -f red  '     /,- -,/'   ; whw -f green     ' /,- -,/    ' ; whw $psv ; newline
     whw -f blue '    ,-~ ~-,'    ; whw -f yellow   ' ,_~ ~-,     ' ; newline

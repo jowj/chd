@@ -67,13 +67,13 @@ function Set-UserPrompt {
 	    
             Write-Host $(get-date -format HH:mm:ss) -nonewline -foregroundcolor White
             Write-Host " ǰ " -nonewline -foregroundcolor Blue
-            Write-Host "$DoublePrompt" -nonewline -foregroundcolor Green
+
             $SoyAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
             if ($SoyAdmin) {
-                Write-Host " $($SpecialCharacters.HammerSickle) " -NoNewLine -ForegroundColor Red -BackgroundColor Yellow
+                Write-Host " $HammerSickle " -NoNewLine -ForegroundColor Red -BackgroundColor Yellow
             }
             else {
-                Write-Host $SpecialCharacters.DoublePrompt -NoNewLine -ForegroundColor White
+                Write-Host " $DoublePrompt " -NoNewLine -ForegroundColor Green
             }
             # Always return a string or PS will echo the standard "PS>" prompt and it will append to yours
             return " "
