@@ -71,4 +71,4 @@ services:
       - "/Volumes/usenet/tv:/tv"
       - "/Volumes/usenet/audio/:/music"
       - "/Volumes/usenet/movies/:/movies"
-
+      - "/Volumes/usenet/itunes-synology/iTunes Media/Automatically Add to iTunes.localized/:/itunes"
