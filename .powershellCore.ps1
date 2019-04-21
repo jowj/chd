@@ -1,39 +1,7 @@
 Set-PSReadLineOption -EditMode Emacs
-Function Get-DiskSpace  {
 
-    <#
-    .SYNOPSIS
-      Returns disk usage for each drive letter disk in GB
-    #>
-    [CmdletBinding()] 
-        param (
-            [Parameter(Mandatory=$True,
-            ValueFromPipeline=$True)]
-            [string[]]$computername
-    )
-
-    process     {
-        $DiskReport = ForEach($c in ($computername))  {
-            Invoke-Command -ComputerName $c -scriptblock { 
-                $selectObjProps = @(
-                    @{Label = "Server Name";Expression = {$_.SystemName}}, 
-                    @{Label = "Drive Letter";Expression = {$_.DeviceID}}, 
-                    @{Label = "Total Capacity (GB)";Expression = {"{0:N1}" -f( $_.Size / 1gb)}}, 
-                    @{Label = "Free Space (GB)";Expression = {"{0:N1}" -f( $_.Freespace / 1gb ) }}, 
-                    @{Label = 'Free Space (%)'; Expression = {"{0:P0}" -f ($_.freespace/$_.size)}}
-                )
-
-                $wmiObjs = Get-WmiObject win32_logicaldisk -Filter "Drivetype=3" -ErrorAction SilentlyContinue
-                Select-Object -property $selectObjProps -inputObject $wmiObjs 
-            }
-        }
-    } 
-
-    end {
-        return $DiskReport
-    }
-}
-
+# a metric fuck town of this came from @mrled
+# he's very great. thanks for the kick start
 # Add git, register ssh utils
 ## Update path for SSH (Loaded in PowerShell Profile)
 $env:path += ";" + (Get-Item "Env:ProgramFiles").Value + "\Git\bin"
@@ -43,12 +11,6 @@ $env:path += ";" + (Get-Item "Env:ProgramFiles").Value + "\Git\usr\bin"
 $env:TERM = 'cygwin'
 
 Pop-Location
-
-# mrled's code
-function Clear-Error {
-    $error.clear()
-    $global:LASTEXITCODE = 0
-}
 
 function ConvertTo-MaskLength {
   <#
@@ -81,71 +43,13 @@ function set-capsToCtrl {
     New-ItemProperty -Path $kbLayout -Name "Scancode Map" -PropertyType Binary -Value ([byte[]]$hexified)
 }
 
-$SpecialCharacters = New-Object PSObject -Property @{
-    Beep         = [char]7      # beeps @ u
-    DoublePrompt = [char]187    # ?? (RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK)
-    Lambda       = [char]955    # ?? (GREEK LETTER LAMBDA)
-    HammerSickle = [char]9773   # ??? (HAMMER AND SICKLE)
-    VisualStudio = [char]42479  # ??? (VAI SYLLABLE GBE)
-}   
 
-function Get-DisplayPath {
-    param(
-        $path
-    )
-    switch ($path.gettype()) {
-        'PathInfo' {
-            $path = $path.providerpath
-        }
-        'DirectoryInfo' {
-            $path = $path.fullname
-        }
-    }
-    $path = $path -replace [regex]::Escape($home),"~"
-    $splitpath = $path -split '\\'
-    if ($splitpath.count -gt 2) {
-        $displaypath = $splitpath[0] # drive letter or ~
-        $displaypath+= '\...\'
-        $displaypath+= $splitpath[$splitpath.count-1] #the last folder in the path
-    }
-    else {
-        $displaypath = $path
-    }
-    return $displaypath
-}
-
-function Get-JobStateColor {
-    param(
-        [string[]] $status
-    )
-    $jobStateTable = @{ 
-        NeedsAttention = @('Blocked','Disconnected','Failed','Stopped','Stopping','Suspended','Suspending')
-        InProgress = @('NotStarted','Running')
-        Completed = @('Completed')
-    }
-    $jobStateTable['All'] = $jobStateTable.Values | % {$_} 
-
-    if ($status.length -eq 0) { 
-        return 'DarkGray'
-    }
-    elseif ($status |? { $jobStateTable.All -notcontains $_ }) {
-        write-error 'Unknown job status'
-        return 'Yellow'
-    }
-    elseif ($status |? { $jobStateTable.NeedsAttention -contains $_ }) {
-        return 'Red'
-    }
-    elseif ($status |? { $jobStateTable.InProgress -contains $_ }) {
-        return 'Cyan'
-    }
-    elseif ($status |? { $jobStateTable.Completed -contains $_ }) {
-        return 'White'
-    }
-    else {
-        write-error 'Unknown job status'
-        return 'Yellow'
-    }
-}
+$Beep         = [char]7      # beeps @ u
+$DoublePrompt = [char]187    # ?? (RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK)
+$Lambda       = [char]955    # ?? (GREEK LETTER LAMBDA)
+$HammerSickle = [char]9773   # ??? (HAMMER AND SICKLE)
+$VisualStudio = [char]42479  # ??? (VAI SYLLABLE GBE)
+   
 
 function Set-UserPrompt {
     [CmdletBinding(DefaultParameterSetName='BuiltIn')] param(
@@ -160,18 +64,8 @@ function Set-UserPrompt {
             # Useful with ConEmu's status bar's "Console Title" field - always puts your CWD in the status bar
             $Host.UI.RawUI.WindowTitle = $pwd
             Write-Host $(get-date -format HH:mm:ss) -nonewline -foregroundcolor White
-            $eColor = if ($error -or $LASTEXITCODE) { "Red" } else { "DarkGray" }
-            $lastExitDisplay = if ("$LASTEXITCODE") { $LASTEXITCODE } else { "0" }
-            write-host " E:$($error.count):$lastExitDisplay" -nonewline -foreground $ecolor
-            Write-Host " $env:COMPUTERNAME" -nonewline -foregroundcolor Blue
-            $jobs = get-job
-            if ($jobs) { 
-                write-host " J$($jobs.count)" -nonewline -foreground (Get-JobStateColor $jobs.State) 
-            }
-            else { 
-                write-host " J0" -nonewline -foreground White
-            }
-            Write-Host " $(Get-DisplayPath $pwd) " -nonewline -foregroundcolor Green
+            Write-Host " ǰ $Lambda " -nonewline -foregroundcolor Blue
+            #return " $Lambda "
             $SoyAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
             if ($SoyAdmin) {
                 Write-Host " $($SpecialCharacters.HammerSickle) " -NoNewLine -ForegroundColor Red -BackgroundColor Yellow
@@ -271,9 +165,7 @@ function ls     {
 
 # Run commands
 Set-UserPrompt
-set-alias clerr Clear-Error
-#C:\Users\me\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
-remove-alias "ls"
+remove-item alias:ls
 
 set-alias lsl Get-ChildItem
 set-alias emacsclient emacsclientw.exe
@@ -284,7 +176,6 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
 Import-Module "~\Documents\projects\agares\powershell\AsciiArt.psm1"
 
 Show-AsciiCurvyWindowsLogo
