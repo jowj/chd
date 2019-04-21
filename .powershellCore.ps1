@@ -43,12 +43,6 @@ function set-capsToCtrl {
     New-ItemProperty -Path $kbLayout -Name "Scancode Map" -PropertyType Binary -Value ([byte[]]$hexified)
 }
 
-
-$Beep         = [char]7      # beeps @ u
-$DoublePrompt = [char]187    # ?? (RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK)
-$Lambda       = [char]955    # ?? (GREEK LETTER LAMBDA)
-$HammerSickle = [char]9773   # ??? (HAMMER AND SICKLE)
-$VisualStudio = [char]42479  # ??? (VAI SYLLABLE GBE)
    
 
 function Set-UserPrompt {
@@ -60,12 +54,20 @@ function Set-UserPrompt {
     $builtIns = @{
         # A color prompt that looks like my bash prompt. Colors require write-host, which sometimes
         # doesn't play nice with other things. 
+	
         Color = {
             # Useful with ConEmu's status bar's "Console Title" field - always puts your CWD in the status bar
             $Host.UI.RawUI.WindowTitle = $pwd
+
+	    $Beep         = [char]7      # beeps @ u
+	    $DoublePrompt = [char]187    # ?? (RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK)
+	    $Lambda       = [char]955    # ?? (GREEK LETTER LAMBDA)
+	    $HammerSickle = [char]9773   # ??? (HAMMER AND SICKLE)
+	    $VisualStudio = [char]42479  # ??? (VAI SYLLABLE GBE)
+	    
             Write-Host $(get-date -format HH:mm:ss) -nonewline -foregroundcolor White
-            Write-Host " ǰ $Lambda " -nonewline -foregroundcolor Blue
-            #return " $Lambda "
+            Write-Host " ǰ " -nonewline -foregroundcolor Blue
+            Write-Host "$DoublePrompt" -nonewline -foregroundcolor Green
             $SoyAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
             if ($SoyAdmin) {
                 Write-Host " $($SpecialCharacters.HammerSickle) " -NoNewLine -ForegroundColor Red -BackgroundColor Yellow
