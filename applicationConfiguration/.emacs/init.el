@@ -166,6 +166,13 @@
    '(racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 
+;; eshell configuration
+;; -------------------------------------
+(setq eshell-prompt-function
+  (lambda ()
+    (concat (format-time-string "%H:%M:%S" (current-time))
+      (if (= (user-uid) 0) " ☭  " " ǰ "))))
+
 ;; PYTHON CONFIGURATION
 ;; --------------------------------------
 
