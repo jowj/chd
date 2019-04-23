@@ -40,6 +40,7 @@
     org-src-strip-leading-and-trailing-blank-lines t
     org-src-preserve-indentation t
     org-src-tab-acts-natively t
+    setq x-selection-timeout 10 ;; this fixes a freeze when org-capture is called. lol.
     org-edit-src-content-indentation 0)
 
 (add-hook 'org-agenda-mode-hook
