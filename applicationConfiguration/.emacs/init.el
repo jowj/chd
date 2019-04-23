@@ -38,11 +38,10 @@
       (package-install package)))
       myPackages)
 
-(require
- (jlj-misc.el)
- (jlj-org.el)
- (jlj-python.el)
- (jlj-rust.el))
+(load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-misc.el")
+(load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-org.el")
+(load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-python.el")
+(load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-rust.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
