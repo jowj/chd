@@ -17,6 +17,10 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)) ; deal with mac command key problems:
 
+(if (eq system-type 'windows-nt)
+    (message "i am windows and suck") ; deal with mac command key problems
+  (exec-path-from-shell-copy-env "PATH"))
+
 (setq backup-directory-alist `(("." . "~/Nextcloud/Documents/org/.saves"))) ; deal with bullshit files in every dir.
 (set-frame-font "Consolas 12")                                  ; set default font,  versions of emacs may require set-default-font
 
@@ -45,5 +49,3 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;; shell confs
-(exec-path-from-shell-copy-env "PATH") ; copy PATH from shell
