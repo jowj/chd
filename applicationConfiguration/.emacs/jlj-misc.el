@@ -35,6 +35,12 @@
   (find-file-other-window user-init-file))
 (global-set-key (kbd "C-c I") 'find-user-init-file)
 
+;; Custom frame management chords
+(global-set-key (kbd "C-x O") 'other-frame)
+(global-set-key (kbd "C-x T") 'make-frame-command)
+(global-set-key (kbd "C-x W") 'delete-frame)
+
+
 ;; eshell configuration
 ;; -------------------------------------
 (setq eshell-prompt-function
