@@ -20,6 +20,7 @@
     flycheck-rust
     racer
     helm
+    eyebrowse
     ;;company-mode
     org2blog
     pylint
@@ -62,7 +63,7 @@
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(package-selected-packages
-   '(helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(eyebrowse helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 ;;;; run emacs as server (connect to it with `emacsclient`)
 (server-start)
