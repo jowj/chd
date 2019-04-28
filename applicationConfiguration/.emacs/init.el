@@ -11,7 +11,8 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-(defvar myPackages
+
+(defvar jlj-Packages
   '(doom-themes
     outline-magic
     multiple-cursors
@@ -38,13 +39,18 @@
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
       (package-install package)))
-      myPackages)
+jlj-Packages)
+
+;;;;gpg shit
+(setf epa-pinentry-mode 'loopback)
+(setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
 
 (load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-misc.el")
 (load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-helm.el")
 (load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-org.el")
 (load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-python.el")
 (load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-rust.el")
+(load "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-erc.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -63,7 +69,7 @@
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
  '(package-selected-packages
-   '(eyebrowse helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   '(znc eyebrowse helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
 
 ;;;; run emacs as server (connect to it with `emacsclient`)
 (server-start)
@@ -78,3 +84,4 @@
  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
  '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
  '(org-level-5 ((t (:inherit outline-5 :height 1.1)))))
+
