@@ -57,19 +57,28 @@ jlj-Packages)
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(manoj-dark))
+ '(custom-enabled-themes (quote (manoj-dark)))
  '(custom-safe-themes
-   '("356e5cbe0874b444263f3e1f9fffd4ae4c82c1b07fe085ba26e2a6d332db34dd" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default))
- '(org-agenda-files
-   '("~/Nextcloud/Documents/org/work.org" "~/Nextcloud/Documents/org/refile-beorg.org" "~/Nextcloud/Documents/org/personal.org" "~/Nextcloud/Documents/org/someday.org"))
+   (quote
+    ("356e5cbe0874b444263f3e1f9fffd4ae4c82c1b07fe085ba26e2a6d332db34dd" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
  '(org-capture-templates
-   '(("c" "generic \"to do\" capture template" entry
+   (quote
+    (("c" "generic \"to do\" capture template" entry
       (file "~/Nextcloud/Documents/org/refile-beorg.org")
-      "" :prepend t)))
+      "" :prepend t))))
  '(org-modules
-   '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m))
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
  '(package-selected-packages
-   '(znc eyebrowse helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+   (quote
+    (znc eyebrowse helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+ '(znc-servers
+   (\`
+    (("bouncer.awful.club" 5000 t
+      ((freenode "blindidiotgod/freenode"
+		 (\, znc-password))
+       (OFTC "blindidiotgod/OFTC"
+	     (\, znc-password))))))))
 
 ;;;; run emacs as server (connect to it with `emacsclient`)
 (server-start)
