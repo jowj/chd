@@ -15,7 +15,12 @@
 (setq require-final-newline t)
 
 (when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta)) ; deal with mac command key problems:
+  (setq mac-command-modifier 'meta) ; deal with mac command key problems:
+  ;; Make emacs use a different default than the OS
+  ;; only really useful on work computers, but there we go.
+  (setq browse-url-browser-function #'browse-url-generic
+	browse-url-generic-program "open"
+	browse-url-generic-args '("-a" "Firefox")))
 
 (if (eq system-type 'windows-nt)
     (message "i am windows and suck") ; deal with mac command key problems
