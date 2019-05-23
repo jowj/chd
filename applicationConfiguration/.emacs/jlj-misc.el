@@ -60,3 +60,7 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
+;; twittering-mode
+(setq twittering-icon-mode t)
+(setq twittering-reverse-mode t)
+(twittering-enable-unread-status-notifier)
