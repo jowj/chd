@@ -63,4 +63,5 @@
 ;; twittering-mode
 (setq twittering-icon-mode t)
 (setq twittering-reverse-mode t)
-(twittering-enable-unread-status-notifier)
+(setq twittering-enable-unread-status-notifier t)
+(with-eval-after-load "twittering-mode" (define-key twittering-mode-map (kbd "C-c C-o") `twittering-view-user-page))
