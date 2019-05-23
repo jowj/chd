@@ -34,6 +34,7 @@
     flycheck
     znc
     twittering-mode
+    pdf-tools
     magit
     exec-path-from-shell
     py-autopep8))
