@@ -97,3 +97,5 @@ jlj-Packages)
  '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
  '(org-level-5 ((t (:inherit outline-5 :height 1.1)))))
 
+;; set some more keybindings
+(global-set-key "\M-`" 'other-frame) ; mimic the way macosx switches between windows of the same application
