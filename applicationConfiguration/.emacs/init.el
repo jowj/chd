@@ -99,3 +99,6 @@ jlj-Packages)
   (if (eq (desktop-owner) (emacs-pid))
       (desktop-save desktop-dirname)))
 (add-hook 'auto-save-hook 'jlj-desktop-save)
+
+;; always create two brackets
+(electric-pair-mode 1)
