@@ -38,7 +38,7 @@
   "Edit the `user-init-file', in another window."
   (interactive)
   (find-file-other-window user-init-file))
-(global-set-key (kbd "C-c I") 'find-user-init-file)
+(global-set-key (kbd "C-c J") 'find-user-init-file)
 
 ;; Custom frame management chords
 (global-set-key (kbd "C-x O") 'other-frame)
