@@ -59,7 +59,7 @@
     shell: docker container rm arke
     ignore_errors: True
   - name: Run the newly built docker container
-    command: docker run -d --name arke --mount source=towervol,target=/shared/ arke:latest
+    command: docker run -d --name arke --mount type="bind",source="/mnt/volume_sfo2_znc",target=/shared/ arke:latest
 
 - name: Deploy Mojo JoJo 
   hosts: dockerhosts
@@ -85,4 +85,4 @@
     shell: docker ps | grep 'mojo' | awk '{print $1}' | xargs docker kill
     ignore_errors: True
   - name: Run the newly built docker container
-    command: docker container run -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}" --restart "always" -d --mount source=towervol,target=/shared/ mojo
+    command: docker container run -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}" --restart "always" -d --mount type="bind",source="/mnt/volume_sfo2_znc",target=/shared/ mojo
