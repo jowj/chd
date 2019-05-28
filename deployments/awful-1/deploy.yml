@@ -71,13 +71,10 @@
     command: hostname
     register: hostname
   - debug: msg="{{ hostname.stdout }}"
-  - name: print working directory
-    shell: ls -la | grep 'mojo'
-    register: ls
-  - debug: msg="{{ ls.stdout }}"
   - name: Pull latest version from github, or log an error if the dir doesn't exist'
     shell: cd /home/josiah/mojojojo-bot/ && git pull
     register: result
+    ignore_errors: True
   - name: If previous step failed, clone repo down
     shell: cd /home/josiah/ && git clone https://github.com/jowj/mojojojo-bot.git
     when: result is failed
