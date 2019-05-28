@@ -17,7 +17,6 @@
     outline-magic
     multiple-cursors
     rust-mode
-    cargo
     flycheck-rust
     racer
     helm
