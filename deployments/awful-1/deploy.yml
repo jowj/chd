@@ -41,7 +41,7 @@
     shell: cd /home/josiah/arke/ && git pull
     register: result
     ignore_errors: True
-  - name: Pull latest version from github
+  - name: If last step failed, clone the repo.
     shell: cd /home/josiah/ && git clone https://github.com/jowj/arke.git
     when: result is failed
   - name: Build from the latest version
