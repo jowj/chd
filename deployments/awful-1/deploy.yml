@@ -3,7 +3,7 @@
   remote_user: josiah
   tasks:
     - name: update or create the directory
-      shell: cd /home/josiah/znc-docker/ && git pull
+      command: cd /home/josiah/znc-docker/ && git pull
       register: result
       ignore_errors: True
 
