@@ -1,0 +1,80 @@
+- name: deploy znc server
+  hosts: dockerhosts
+  remote_user: josiah
+  tasks:
+    - name: update or create the directory
+      shell: cd /home/josiah/znc-docker/ && git pull
+      register: result
+      ignore_errors: True
+
+      # if the folder doesn't exist, clone source.
+    - command: cd /home/josiah && git clone https://github.com/jowj/znc-docker.git
+      when: result is failed
+    - name: build from latest version
+      shell: cd ~/znc-docker/full && docker build -t znc -f Dockerfile .
+    - name: Check if there are any existing ZNC containers running and kill it
+      shell: docker ps | grep 'znc' | awk '{print $1}'
+      register: result
+    - name: if there are running containers, remove them
+      shell: docker ps | grep 'znc' | awk '{print $1}' | xargs docker kill
+      when: result.stdout != ""
+    - name: discover if any containers with ZNC in name
+      # this has to be a shell because command: isn't interactive
+      shell: docker container ls | grep 'znc'
+      register: result
+      ignore_errors: True
+    - name: remove any existing containers with ZNC in name
+      shell: docker container rm znc
+      when: result is succeeded
+    - name: run the container (assumes the volume is already set up)
+      command: docker run -d -p 5000:5000 --mount type="bind",source="/mnt/volume_sfo2_znc/",target=/znc-data znc
+
+- name: Deploy Arke
+  hosts: dockerhosts
+  remote_user: josiah
+  tasks:
+  - name: Get hostname for troubleshooting
+    command: hostname
+    register: hostname
+  - debug: msg="{{ hostname.stdout }}"
+  - name: Pull latest version from github
+    shell: cd /home/josiah/arke/ && git pull
+  - name: Build from the latest version
+    shell: cd ~/arke/ && docker build -t arke -f dockerfile .
+  
+  - name: Check if there are any existing arke containers running
+    shell: docker ps | grep 'arke' | awk '{print $1}'
+    register: result
+  - name: and kill it
+    # this has to be a shell because command: isn't interactive
+    shell: docker ps | grep 'arke' | awk '{print $1}' | xargs docker kill
+    when: result.stdout != ""
+  - name: Remove any existing containers using the arke name, its mine and i must have it
+    # this has to be a shell because command: isn't interactive
+    shell: docker container rm arke
+  - name: Run the newly built docker container
+    command: docker run -d --name arke --mount source=towervol,target=/shared/ arke:latest
+
+- name: Deploy Mojo JoJo 
+  hosts: dockerhosts
+  vars_files:
+    - mojo-vars-vault.yml
+  remote_user: josiah
+  tasks:
+  - name: print hostname
+    command: hostname
+    register: hostname
+  - debug: msg="{{ hostname.stdout }}"
+  - name: print working directory
+    shell: ls -la | grep 'mojo'
+    register: ls
+  - debug: msg="{{ ls.stdout }}"
+  - name: Pull latest version from github
+    shell: cd /home/josiah/mojojojo-bot/ && git pull
+  - name: Build from the latest version
+    shell: cd ~/mojojojo-bot && docker build -t mojo -f docker/dockerfile .
+  - name: Check if there are any existing mojo containers running and kill it
+    # this has to be a shell because command: isn't interactive
+    shell: docker ps | grep 'mojo' | awk '{print $1}' | xargs docker kill
+  - name: Run the newly built docker container
+    command: docker container run -e "SLACK_BOT_TOKEN={{ VAULT_SLACK_BOT_TOKEN }}" --restart "always" -d --mount source=towervol,target=/shared/ mojo
