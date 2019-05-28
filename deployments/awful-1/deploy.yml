@@ -3,12 +3,12 @@
   remote_user: josiah
   tasks:
     - name: update or create the directory
-      command: cd /home/josiah/znc-docker/ && git pull
+      shell: cd /home/josiah/znc-docker/ && git pull
       register: result
       ignore_errors: True
 
       # if the folder doesn't exist, clone source.
-    - command: cd /home/josiah && git clone https://github.com/jowj/znc-docker.git
+    - shell: cd /home/josiah && git clone https://github.com/jowj/znc-docker.git
       when: result is failed
     - name: build from latest version
       shell: cd ~/znc-docker/full && docker build -t znc -f Dockerfile .
