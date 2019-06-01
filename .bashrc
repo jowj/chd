@@ -65,7 +65,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # this looks like garbage but its just color initation and termination
-export PS1="\t \e[34mǰ \e[91m☭\e[0m "
+export PS1="\t \[\e[34m\]ǰ \[\e[91m\]☭\[\e[0m\] "
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
