@@ -38,6 +38,7 @@
     racer
     helm
     eyebrowse
+    emojify
     ;;company-mode
     org2blog
     pylint
@@ -90,14 +91,18 @@ jlj-Packages)
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
  '(package-selected-packages
    (quote
+<<<<<<< HEAD
     (ace-window which-key try use-package dockerfile-mode ansible yaml-mode smex twittering-mode znc eyebrowse helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+=======
+    (emojify dockerfile-mode docker yaml-mode ansible smex twittering-mode znc eyebrowse helm racer flycheck-rust rust-mode color-theme-sanityinc-tomorrow org2blog multiple-cursors flymake-python-pyflakes pdf-tools weechat jedi python-mode pylint py-autopep8 powershell outline-magic markdown-mode magit flycheck exec-path-from-shell elpygen elpy ein doom-themes csharp-mode)))
+>>>>>>> 062ecaf2c8b8ed10fb8a015d83cfbd710440d260
  '(znc-servers
    (\`
     (("bouncer.awful.club" 5000 t
       ((freenode "blindidiotgod/freenode"
-		 (\, znc-password))
+                 (\, znc-password))
        (OFTC "blindidiotgod/OFTC"
-	     (\, znc-password))))))))
+             (\, znc-password))))))))
 
 ;;;; run emacs as server (connect to it with `emacsclient`)
 (server-start)

@@ -83,3 +83,8 @@
 
 
 (require 'smex)
+
+;; emojify-mode
+(setq emojify-company-tooltips-p t)
+
+(require emojify)
