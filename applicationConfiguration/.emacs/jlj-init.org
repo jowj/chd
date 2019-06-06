@@ -1,0 +1,393 @@
+* interface tweaks
+This section is configuring some global defaults i like.
+
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-splash-screen t)       ; Disable the splash screen
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode)); show line numbers; use this instead of linum if you can
+
+(global-visual-line-mode t)          ; turn on word-wrap globally
+(menu-bar-mode -1)                   ; disable visual menu on emacs
+(tool-bar-mode -1)                   ; disable toolbar
+
+(setq case-fold-search t)            ; ignore case when searching
+(fset 'yes-or-no-p 'y-or-n-p)        ; make it easier to answer qs.
+(set-frame-font "Consolas 12")       ; set default font
+(transient-mark-mode 1)              ; Enable transient mark mode (highlights)
+(load-theme 'manoj-dark)             ; loads my favorite default theme
+#+END_SRC
+
+#+RESULTS:
+: t
+
+* OS specific tweaks
+This helps with work-device configuration, as well as handling a specific windows edge-case.
+#+BEGIN_SRC emacs-lisp
+  (when (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta)
+    ;; Make emacs use a different default than the OS
+    ;; only really useful on work computers, but there we go.
+    (setq browse-url-browser-function #'browse-url-generic
+	  browse-url-generic-program "open"
+	  browse-url-generic-args '("-a" "Firefox")))
+
+  ;; (if (eq system-type 'windows-nt)
+  ;;     (message "i am windows and suck") ; deal with mac command key problems
+  ;;   (exec-path-from-shell-copy-env "PATH"))
+#+END_SRC
+
+* custom functions, package independent hotkeys.
+
+#+BEGIN_SRC emacs-lisp
+;; custom emacsland functions
+(defun find-user-init-file ()
+  "Edit the `user-init-file', in another window."
+  (interactive)
+  (find-file-other-window user-init-file))
+(global-set-key (kbd "C-c J") 'find-user-init-file)
+
+;; Custom frame management chords
+(global-set-key (kbd "C-x O") 'other-frame)
+(global-set-key (kbd "C-x T") 'make-frame-command)
+(global-set-key (kbd "C-x W") 'delete-frame)
+(global-set-key "\M-`" 'other-frame) ; mimic the way macosx switches 
+#+END_SRC
+
+* smex
+
+#+BEGIN_SRC emacs-lisp
+(use-package smex
+  :ensure t
+  :config
+  (progn
+    (defadvice smex (around space-inserts-hyphen activate compile)
+      (let ((ido-cannot-complete-command 
+	     `(lambda ()
+		(interactive)
+		(if (string= " " (this-command-keys))
+		    (insert ?-)
+		  (funcall ,ido-cannot-complete-command)))))
+	ad-do-it))
+
+    (global-set-key (kbd "M-x") 'smex)
+    (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+    ;; This is your old M-x.
+    (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
+#+END_SRC
+* org-mode
+#+BEGIN_SRC emacs-lisp
+(use-package org
+  :ensure t
+  :config
+  (progn
+    ;;Org mode configuration
+    (require 'org)                                       ; Enable Org mode
+    (setq ispell-program-name "/usr/local/bin/ispell")   ; set flyspell's spellchecker
+    (add-hook 'org-mode-hook 'turn-on-flyspell)          ; enable flyspell-mode in all org-mode enabled files
+    (setq org-src-fontify-natively t
+	  org-src-window-setup 'current-window
+	  org-src-strip-leading-and-trailing-blank-lines t
+	  org-src-preserve-indentation t
+	  org-src-tab-acts-natively t
+	  x-selection-timeout 10 ;; this fixes a freeze when org-capture is called. lol.
+	  org-edit-src-content-indentation 0)
+
+    (add-hook 'org-agenda-mode-hook
+	      (lambda ()
+		(visual-line-mode -1)
+		(toggle-truncate-lines 1)))
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((python . t)
+       (matlab . t)))
+
+    ;; org-agenda configs
+    (setq org-habit-show-habits-only-for-today nil)
+    (setq org-agenda-repeating-timestamp-show-all nil)
+    (setq org-deadline-warning-days 1)
+    (setq org-global-properties
+	  '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))
+    (setq org-columns-default-format
+	  '(("%25ITEM %TODO %3PRIORITY %TAGS")))
+
+;;;; custom org mode hotkeys 
+    (global-set-key "\C-cl" 'org-store-link)
+    (global-set-key "\C-ca" 'org-agenda)
+    (global-set-key "\C-cc" 'org-capture)
+    (global-set-key "\C-cb" 'org-iswitchb)
+
+;;;; search across agenda files when refiling:
+    (setq org-refile-targets '((nil :maxlevel . 9)
+			       (org-agenda-files :maxlevel . 9)))
+    (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+    (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
+    (setq org-agenda-files '("~/Nextcloud/Documents/org/"))           ; add files to agenda:
+
+
+    (setq org-directory "~/Nextcloud/Documents/org/")                 ; define generic org capture shit
+    (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
+#+END_SRC
+
+* try 
+#+BEGIN_SRC emacs-lisp
+(use-package try
+  :ensure t)
+
+#+END_SRC
+
+* which-key
+#+BEGIN_SRC emacs-lisp
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+#+END_SRC
+* ace-window
+#+BEGIN_SRC emacs-lisp
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)))
+#+END_SRC
+* outline-magic
+I don't remember what this does or why i have it.
+- an emacs story
+#+BEGIN_SRC emacs-lisp
+(use-package outline-magic
+  :ensure t)
+#+END_SRC
+* multiple-cursors
+#+BEGIN_SRC emacs-lisp
+(use-package multiple-cursors
+  :ensure t
+  :config
+  (progn
+    (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+    (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+    (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+    (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)))
+#+END_SRC
+* rust stuff
+I fucked around with rust like 4 times and that's it. 
+- this configuration i stole from a website that I don't remember (sorry guy who wrote that)
+- it worked pretty well
+- Cargo was weird to get used to but eventually made sense.
+#+BEGIN_SRC emacs-lisp
+(use-package rust-mode
+  :ensure t
+  :config
+  (progn
+    (add-hook 'rust-mode-hook 'cargo-minor-mode)
+    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+    (add-hook 'rust-mode-hook
+	      (lambda ()
+		(local-set-key (kbd "C-c <tab>") #'rust-format-buffer)))
+
+    (setq racer-cmd "~/.cargo/bin/racer") ;; Rustup binaries PATH
+    (setq racer-rust-src-path "~/gitshit/rust/src") ;; Rust source code PATH
+
+    (add-hook 'rust-mode-hook #'racer-mode)
+    (add-hook 'racer-mode-hook #'eldoc-mode)
+    (add-hook 'racer-mode-hook #'company-mode)))
+
+(use-package flycheck-rust
+  :ensure t)
+
+(use-package racer
+  :ensure t)
+#+END_SRC
+* eyebrowse
+this is a mostly aspirational package; i don't do anything with it.
+- eventually i'd maybe like to
+- but running a ton of shit in emacs is almost counter productive
+#+BEGIN_SRC emacs-lisp
+(use-package eyebrowse
+  :ensure t)
+#+END_SRC
+* helm
+I really use this for just the searching from emacs
+- this ties to the [[OS specific tweaks]] entry
+#+BEGIN_SRC emacs-lisp
+(use-package helm
+  :ensure t
+  :config
+  (progn
+    (defun helm-surfraw-duck (x)
+      "Search duckduckgo in default browser"
+      (interactive "sSEARCH:")
+      (helm-surfraw x "duckduckgo" ))
+    (global-set-key (kbd "C-c s") 'helm-surfraw-duck)))
+#+END_SRC
+* python stuff
+#+BEGIN_SRC emacs-lisp
+(use-package pylint
+  :ensure t)
+
+(use-package python-mode
+  :ensure t)
+(use-package elpy
+  :ensure t
+  :config
+  (progn
+    (require 'elpy)
+    (when (require 'flycheck nil t)
+      (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+      (add-hook 'elpy-mode-hook 'flycheck-mode))
+    (elpy-enable)
+    (setq python-shell-interpreter "python3"
+	  python-shell-interpreter-args "-i")))
+
+(use-package py-autopep8
+  :ensure t
+  :config
+  (progn
+    (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)))
+
+#+END_SRC
+
+#+RESULTS:
+: t
+* * markdown-mode
+#+BEGIN_SRC emacs-lisp
+(use-package markdown-mode
+  :ensure t)
+#+END_SRC
+* powershell
+#+BEGIN_SRC emacs-lisp
+(use-package powershell
+  :ensure t)
+#+END_SRC
+* ein
+lets you run jupyter notebooks within emacs.
+- i've never used this feature once, but it seems cool.
+#+BEGIN_SRC emacs-lisp
+(use-package ein
+  :ensure t)
+#+END_SRC
+* flycheck
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck
+  :ensure t)
+#+END_SRC
+* znc / erc config
+This is such a pain in the dick. Its really nice to be able to chat within emacs
+- but i think i regret not using weechat 
+#+BEGIN_SRC emacs-lisp
+(use-package znc
+  :ensure t
+  :config
+  (progn
+    (setf epa-pinentry-mode 'loopback)
+    (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
+    (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
+
+    (require 'epa)
+
+    ;; handle annoying gpg shit.
+    (defun lookup-password (host user port)
+      "Lookup encrypted password given HOST, USER and PORT for service."
+      (require 'auth-source)
+      (funcall (plist-get
+		(car (auth-source-search
+		      :host host
+		      :user user
+		      :type 'netrc
+		      :port port))
+		:secret)))
+
+    (setq znc-password(lookup-password "bouncer.awful.club" "blindidiotgod/OFTC" 5000))
+
+    ;; by default, erc alerts you on any activity. I only want to hear
+    ;; about mentions of nick or keyword
+    (custom-set-variables
+     '(znc-servers
+       `(("bouncer.awful.club" 5000 t
+	  ((freenode "blindidiotgod/freenode" ,znc-password)
+	   (OFTC "blindidiotgod/OFTC" ,znc-password))))))
+     (setq erc-current-nick-highlight-type 'all)
+     (setq erc-keywords '("security"))
+     (setq erc-track-exclude-types '("JOIN" "PART" "NICK" "MODE" "QUIT"))
+     (setq erc-track-use-faces t)
+     (setq erc-track-faces-priority-list
+	   '(erc-current-nick-face erc-keyword-face))
+     (setq erc-track-priority-faces-only 'all)
+     (setq erc-hide-list '("PART" "QUIT" "JOIN"))
+     (setq erc-join-buffer 'bury)))
+#+END_SRC
+
+#+RESULTS:
+: t
+
+* twittering-mode
+the only thing that isn't pretty much stock is
+- i rebound C-c C-o to open links, so it would mimic org-mode's layout.
+#+BEGIN_SRC emacs-lisp
+(use-package twittering-mode
+  :ensure t
+  :config
+  (progn
+    (setq twittering-icon-mode t)
+    (setq twittering-reverse-mode t)
+    (setq twittering-enable-unread-status-notifier t)
+    (with-eval-after-load "twittering-mode" (define-key twittering-mode-map (kbd "C-c C-o") `twittering-view-user-page))))
+#+END_SRC
+
+#+RESULTS:
+: t
+
+* pdf-tools
+#+BEGIN_SRC emacs-lisp
+(use-package pdf-tools
+  :ensure t)
+#+END_SRC
+
+#+RESULTS:
+
+* magit
+#+BEGIN_SRC emacs-lisp
+(use-package magit
+  :ensure t)
+#+END_SRC
+
+#+RESULTS:
+
+* desktop configuration
+#+BEGIN_SRC emacs-lisp
+(require 'desktop)
+(desktop-save-mode 1)
+(defun jlj-desktop-save ()
+  (interactive)
+  ;; Don't call desktop-save-in-desktop-dir, as it prints a message.
+  (if (eq (desktop-owner) (emacs-pid))
+      (desktop-save desktop-dirname)))
+(add-hook 'auto-save-hook 'jlj-desktop-save)
+#+END_SRC
+
+#+RESULTS:
+| jlj-desktop-save |
+
+* misc
+#+BEGIN_SRC elisp
+(setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el")
+(setq indent-tabs-mode nil)                          ; always use spaces when indenting
+(setq require-final-newline t)
+(setq backup-directory-alist `(("." . "~/Nextcloud/Documents/org/.saves")))
+(find-file "~/Nextcloud/Documents/org/personal.org") ;open primary org file on launch
+(electric-pair-mode 1)                               ; create paired brackets.
+#+END_SRC
+
+#+RESULTS:
+: t
+
+I don't remember why i have this exec-path-from-shell thing;
+- i think it was an issue with xplatform mac > windows movement
+- but i'm not really on windows all that often anymore.
+#+BEGIN_SRC emacs-lisp
+;(use-package exec-path-from-shell
+;  :ensure t)
+#+END_SRC
+
+I can't believe you still have to do this and emacs doens't do it for you:
+#+BEGIN_SRC emacs-lisp
+(server-start)
+#+END_SRC
