@@ -29,37 +29,68 @@
   (progn
     (global-set-key [remap other-window] 'ace-window)))
 
-(defvar jlj-Packages
-  '(doom-themes
-    outline-magic
-    multiple-cursors
-    rust-mode
-    flycheck-rust
-    racer
-    helm
-    eyebrowse
-    ;;company-mode
-    org2blog
-    pylint
-    python-mode
-    markdown-mode
-    powershell
-    csharp-mode
-    ein
-    elpy
-    flycheck
-    znc
-    twittering-mode
-    pdf-tools
-    magit
-    exec-path-from-shell
-    py-autopep8))
+(use-package outline-magic
+  :ensure t)
 
-(mapc #'(lambda (package)
-    (unless (package-installed-p package)
-      (package-install package)))
-jlj-Packages)
+(use-package multiple-cursors
+  :ensure t)
 
+(use-package rust-mode
+  :ensure t)
+
+(use-package flycheck-rust
+  :ensure t)
+
+(use-package racer
+  :ensure t)
+
+(use-package helm
+  :ensure t)
+
+(use-package eyebrowse
+  :ensure t)
+(use-package pylint
+  :ensure t)
+
+(use-package python-mode
+  :ensure t)
+
+(use-package markdown-mode
+  :ensure t)
+
+(use-package powershell
+  :ensure t)
+
+(use-package ein
+  :ensure t)
+
+(use-package elpy
+  :ensure t)
+
+(use-package elpy
+  :ensure t)
+
+(use-package flycheck
+  :ensure t)
+
+(use-package znc
+  :ensure t)
+
+(use-package twittering-mode
+  :ensure t)
+
+(use-package pdf-tools
+  :ensure t)
+
+(use-package magit
+  :ensure t)
+
+(use-package exec-path-from-shell
+  :ensure t)
+
+(use-package py-autopep8
+  :ensure t)
+  
 ;;;;gpg shit
 (setf epa-pinentry-mode 'loopback)
 (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
