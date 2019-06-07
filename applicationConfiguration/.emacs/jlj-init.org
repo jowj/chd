@@ -368,7 +368,7 @@ the only thing that isn't pretty much stock is
 
 * misc
 #+BEGIN_SRC elisp
-(setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el")
+
 (setq indent-tabs-mode nil)                          ; always use spaces when indenting
 (setq require-final-newline t)
 (setq backup-directory-alist `(("." . "~/Nextcloud/Documents/org/.saves")))

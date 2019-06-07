@@ -2,6 +2,8 @@
 
 ;; Bootstrap's bootstraps
 ;;;; bootstrap's bootstraps
+
+(setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el")
 (package-initialize)
 (require 'package)
 (setq package-archives
