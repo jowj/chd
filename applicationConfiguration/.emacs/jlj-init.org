@@ -134,7 +134,6 @@ This helps with work-device configuration, as well as handling a specific window
   :ensure t)
 
 #+END_SRC
-
 * which-key
 #+BEGIN_SRC emacs-lisp
 (use-package which-key
