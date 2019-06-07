@@ -101,6 +101,9 @@ This helps with work-device configuration, as well as handling a specific window
      '((python . t)
        (matlab . t)))
 
+    
+
+    (setq org-babel-python-command "/usr/local/bin/python3")
     ;; org-agenda configs
     (setq org-habit-show-habits-only-for-today nil)
     (setq org-agenda-repeating-timestamp-show-all nil)
@@ -127,6 +130,9 @@ This helps with work-device configuration, as well as handling a specific window
     (setq org-directory "~/Nextcloud/Documents/org/")                 ; define generic org capture shit
     (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
 #+END_SRC
+
+#+RESULTS:
+: t
 
 * try 
 #+BEGIN_SRC emacs-lisp
