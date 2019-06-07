@@ -3,8 +3,8 @@ This section is configuring some global defaults i like.
 
 #+BEGIN_SRC emacs-lisp
 (setq inhibit-splash-screen t)       ; Disable the splash screen
-(when (version<= "26.0.50" emacs-version )
-  (global-display-line-numbers-mode)); show line numbers; use this instead of linum if you can
+;; (when (version<= "26.0.50" emacs-version )
+;;   (global-display-line-numbers-mode)); show line numbers; use this instead of linum if you can
 
 (global-visual-line-mode t)          ; turn on word-wrap globally
 (menu-bar-mode -1)                   ; disable visual menu on emacs
