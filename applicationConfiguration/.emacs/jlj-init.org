@@ -423,7 +423,7 @@ Iedit lets you "find all instances of this string" with C-;
 
 #+RESULTS:
 
-I can't believe you still have to do this and emacs doens't do it for you:
+why isn't this handled for me :( 
 #+BEGIN_SRC emacs-lisp
 (server-start)
 #+END_SRC
