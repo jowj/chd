@@ -221,6 +221,9 @@ I really use this for just the searching from emacs
 * python stuff
 - pylint is required (pip install pylint, yada yada)
 - pep8 (pip install pep8)
+- don't use python-mode because JESUS CHRIST.
+  - it throws everything off!
+- Jedi requires virtualenv to be installed
 #+BEGIN_SRC emacs-lisp
 (use-package pylint
   :ensure t)
@@ -235,10 +238,16 @@ I really use this for just the searching from emacs
   (progn
     (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)))
 
+(use-package jedi
+  :ensure t
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (add-hook 'python-mode-hook 'jedi:ac-setup))
+
+
 #+END_SRC
 
 #+RESULTS:
-: t
 * markdown-mode
 #+BEGIN_SRC emacs-lisp
 (use-package markdown-mode
