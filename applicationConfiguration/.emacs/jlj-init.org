@@ -411,13 +411,16 @@ You can either use a CDN to deliver the reveal.js, or you can download source. B
 #+RESULTS:
 : t
 
-I don't remember why i have this exec-path-from-shell thing;
-- i think it was an issue with xplatform mac > windows movement
-- but i'm not really on windows all that often anymore.
+Iedit lets you "find all instances of this string" with C-;
+- its /great/
+- same sorta niche as ~multiple-cursors~
 #+BEGIN_SRC emacs-lisp
-;(use-package exec-path-from-shell
-;  :ensure t)
+(use-package iedit
+  :ensure t)
+
 #+END_SRC
+
+#+RESULTS:
 
 I can't believe you still have to do this and emacs doens't do it for you:
 #+BEGIN_SRC emacs-lisp
