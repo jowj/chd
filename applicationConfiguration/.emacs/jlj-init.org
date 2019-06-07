@@ -234,7 +234,7 @@ I really use this for just the searching from emacs
       (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
       (add-hook 'elpy-mode-hook 'flycheck-mode))
     (elpy-enable)
-    (setq python-shell-interpreter "python3"
+    (setq python-shell-interpreter "/usr/local/bin/python3"
 	  python-shell-interpreter-args "-i")))
 
 (use-package py-autopep8
@@ -267,8 +267,13 @@ lets you run jupyter notebooks within emacs.
 * flycheck
 #+BEGIN_SRC emacs-lisp
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :init
+  (global-flycheck-mode t))
 #+END_SRC
+
+#+RESULTS:
+
 * znc / erc config
 This is such a pain in the dick. Its really nice to be able to chat within emacs
 - but i think i regret not using weechat 
