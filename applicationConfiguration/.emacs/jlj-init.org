@@ -219,29 +219,21 @@ I really use this for just the searching from emacs
     (global-set-key (kbd "C-c s") 'helm-surfraw-duck)))
 #+END_SRC
 * python stuff
+- pylint is required (pip install pylint, yada yada)
+- pep8 (pip install pep8)
 #+BEGIN_SRC emacs-lisp
 (use-package pylint
   :ensure t)
 
-(use-package python-mode
-  :ensure t)
-(use-package elpy
-  :ensure t
-  :config
-  (progn
-    (require 'elpy)
-    (when (require 'flycheck nil t)
-      (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-      (add-hook 'elpy-mode-hook 'flycheck-mode))
-    (elpy-enable)
-    (setq python-shell-interpreter "/usr/local/bin/python3"
-	  python-shell-interpreter-args "-i")))
+
+(setq python-shell-interpreter "/usr/local/bin/python3"
+      python-shell-interpreter-args "-i")
 
 (use-package py-autopep8
   :ensure t
   :config
   (progn
-    (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)))
+    (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)))
 
 #+END_SRC
 
