@@ -130,10 +130,25 @@ This helps with work-device configuration, as well as handling a specific window
 
     (setq org-directory "~/Nextcloud/Documents/org/")                 ; define generic org capture shit
     (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
+
+;; org-capture templates
+(setq org-capture-templates
+    '(("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+       "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
+    ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+       "* TODO %?\n%U" :empty-lines 1 :prepend t)))
+
+
+;; Set up bullets
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 #+END_SRC
 
 #+RESULTS:
 : t
+
 
 * try 
 #+BEGIN_SRC emacs-lisp
@@ -398,6 +413,31 @@ You can either use a CDN to deliver the reveal.js, or you can download source. B
 #+END_SRC
 
 #+RESULTS:
+
+* web-mode
+This is for basic web development usage;
+- html
+- css
+
+I probably don't need it for much, but it should help when editing any of my own pages.
+
+#+BEGIN_SRC emacs-lisp
+(use-package web-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (setq web-mode-engines-alist
+	'(("django"    . "\\.html\\'")))
+  (setq web-mode-ac-sources-alist
+	'(("css" . (ac-source-css-property))
+	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+
+  (setq web-mode-enable-auto-closing t)
+  (setq web-mode-enable-auto-quoting t)) ; this fixes the quote problem I mentioned
+#+END_SRC
+
+#+RESULTS:
+: t
 
 * misc
 #+BEGIN_SRC elisp
