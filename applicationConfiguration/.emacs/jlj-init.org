@@ -305,11 +305,12 @@ The bit about ~;(setf epa-pinentry-mode 'loopback)~ is important:
 - comment out if you want gpg to be handled through seahorse/gnome keyring.
 
 #+BEGIN_SRC emacs-lisp
+(when (eq system-type 'darwin)
+  (setf epa-pinentry-mode 'loopback))
 (use-package znc
   :ensure t
   :config
   (progn
-    ;(setf epa-pinentry-mode 'loopback)
     (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
     (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
 
@@ -370,6 +371,11 @@ the only thing that isn't pretty much stock is
 * pdf-tools
 #+BEGIN_SRC emacs-lisp
 (use-package pdf-tools
+  :ensure t
+  :config
+  (pdf-tools-install))
+
+(use-package org-pdfview
   :ensure t)
 #+END_SRC
 
