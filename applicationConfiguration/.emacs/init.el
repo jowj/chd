@@ -3,7 +3,7 @@
 ;; Bootstrap's bootstraps
 ;;;; bootstrap's bootstraps
 
-(setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el")
+(setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-init.org")
 (package-initialize)
 (require 'package)
 (setq package-archives
@@ -29,7 +29,7 @@
  '(global-hl-line-mode t)
  '(package-selected-packages
    (quote
-    (org-bullets org-bulle web-mode jedi znc yaml-mode which-key use-package twittering-mode try smex racer python-mode pylint py-autopep8 powershell pdf-tools outline-magic org2blog multiple-cursors magit helm flycheck-rust eyebrowse exec-path-from-shell emojify elpy ein doom-themes dockerfile-mode docker csharp-mode ansible anaconda-mode ace-window)))
+    (org-pdfview jedi znc yaml-mode which-key use-package twittering-mode try smex racer python-mode pylint py-autopep8 powershell pdf-tools outline-magic org2blog multiple-cursors magit helm flycheck-rust eyebrowse exec-path-from-shell emojify elpy ein doom-themes dockerfile-mode docker csharp-mode ansible anaconda-mode ace-window)))
  '(znc-servers
    (\`
     (("bouncer.awful.club" 5000 t
