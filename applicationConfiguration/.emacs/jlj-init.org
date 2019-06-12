@@ -299,12 +299,17 @@ lets you run jupyter notebooks within emacs.
 * znc / erc config
 This is such a pain in the dick. Its really nice to be able to chat within emacs
 - but i think i regret not using weechat 
+
+The bit about ~;(setf epa-pinentry-mode 'loopback)~ is important:
+- uncomment if you want to only use emacs to input/manage the gpg key
+- comment out if you want gpg to be handled through seahorse/gnome keyring.
+
 #+BEGIN_SRC emacs-lisp
 (use-package znc
   :ensure t
   :config
   (progn
-    (setf epa-pinentry-mode 'loopback)
+    ;(setf epa-pinentry-mode 'loopback)
     (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
     (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
 
