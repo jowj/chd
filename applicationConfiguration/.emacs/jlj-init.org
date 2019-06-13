@@ -489,6 +489,13 @@ Iedit lets you "find all instances of this string" with C-;
 
 #+RESULTS:
 
+Unbound the idiot org-goto function that i have never used ( I HAVE PLAINTEXT SEARCH YOU FOOL ). Now I should be able to create my own hotkeys off of C-c C-j as I want.
+#+BEGIN_SRC emacs-lisp
+(define-key org-mode-map (kbd "C-c C-j") nil)
+(define-key python-mode-map (kbd "C-c C-j") nil)
+(global-set-key (kbd "C-c C-j p") 'run-python)
+#+END_SRC
+
 why isn't this handled for me :( 
 #+BEGIN_SRC emacs-lisp
 (server-start)
