@@ -413,6 +413,7 @@ The idea here is to use reveal.js and org-mode to present stuff
 You can either use a CDN to deliver the reveal.js, or you can download source. Both examples are given here:
   ~(setq org-reveal-root "file:///~/Documents/projects/agares/applicationConfiguration/.emacs/src/reveal.js-3.8.0"))~
   ~(setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))~
+
 #+BEGIN_SRC emacs-lisp
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
