@@ -35,6 +35,9 @@ This helps with work-device configuration, as well as handling a specific window
   ;; (if (eq system-type 'windows-nt)
   ;;     (message "i am windows and suck") ; deal with mac command key problems
   ;;   (exec-path-from-shell-copy-env "PATH"))
+
+   (if (string-equal "darwin" (symbol-name system-type))
+      (setenv "PATH" (concat "/usr/local/bin:/usr/local/sbin:" (getenv "PATH"))))
 #+END_SRC
 
 * custom functions, package independent hotkeys.
