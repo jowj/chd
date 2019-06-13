@@ -265,6 +265,11 @@ I really use this for just the searching from emacs
   (add-hook 'python-mode-hook 'jedi:setup)
   (add-hook 'python-mode-hook 'jedi:ac-setup))
 
+(use-package pipenv
+  :ensure t)
+
+(use-package pyvenv
+  :ensure t)
 
 #+END_SRC
 
