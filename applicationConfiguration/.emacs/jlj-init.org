@@ -251,7 +251,10 @@ I really use this for just the searching from emacs
 - don't use python-mode because JESUS CHRIST.
   - it throws everything off!
 - Jedi requires virtualenv to be installed
-#+BEGIN_SRC emacs-lisp
+
+virtualenvs in emacs fucking suck and i can't believe how bad these are.
+- pipenv seems pretty good, but has a depency on pyvenv which i cannot get to /work/.
+#+BEGIN_SRC elisp
 (use-package pylint
   :ensure t)
 
