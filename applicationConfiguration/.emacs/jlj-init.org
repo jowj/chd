@@ -32,13 +32,16 @@ This helps with work-device configuration, as well as handling a specific window
 	  browse-url-generic-program "open"
 	  browse-url-generic-args '("-a" "Firefox")))
 
-  ;; (if (eq system-type 'windows-nt)
-  ;;     (message "i am windows and suck") ; deal with mac command key problems
-  ;;   (exec-path-from-shell-copy-env "PATH"))
+  (if (eq system-type 'windows-nt)
+      (message "i am windows and suck") ; deal with mac command key problems
+    (exec-path-from-shell-copy-env "PATH"))
 
-   (if (string-equal "darwin" (symbol-name system-type))
-      (setenv "PATH" (concat "/usr/local/bin:/usr/local/sbin:" (getenv "PATH"))))
+   ;; (if (string-equal "darwin" (symbol-name system-type))
+   ;;    (setenv "PATH" (concat "/usr/local/bin:/usr/local/sbin:" (getenv "PATH"))))
 #+END_SRC
+
+#+RESULTS:
+: /opt/local/bin:/opt/local/sbin:/Users/jowj/Library/Python/3.6/bin:/usr/local/share/python:/usr/local/bin:/usr/local/lib/python3.7/site-packages:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:/Users/jowj/Library/Python/3.6/bin:/usr/local/share/python:/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_14:/Applications/Emacs.app/Contents/MacOS/libexec-x86_64-10_14
 
 * custom functions, package independent hotkeys.
 
