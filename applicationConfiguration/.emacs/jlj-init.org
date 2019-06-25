@@ -47,11 +47,19 @@ This helps with work-device configuration, as well as handling a specific window
 
 #+BEGIN_SRC emacs-lisp
 ;; custom emacsland functions
+
 (defun find-user-init-file ()
   "Edit the `user-init-file', in another window."
   (interactive)
   (find-file-other-window user-init-file))
 (global-set-key (kbd "C-c J") 'find-user-init-file)
+
+(setq user-home-file "~/Nextcloud/Documents/org/personal.org")
+(defun find-user-home-file ()
+  "Edit the `user-home-file' in this window"
+  (interactive)
+  (find-file user-home-file))
+(global-set-key (kbd "C-c C-j h") 'find-user-home-file)
 
 ;; Custom frame management chords
 (global-set-key (kbd "C-x O") 'other-frame)
@@ -59,6 +67,9 @@ This helps with work-device configuration, as well as handling a specific window
 (global-set-key (kbd "C-x W") 'delete-frame)
 (global-set-key "\M-`" 'other-frame) ; mimic the way macosx switches 
 #+END_SRC
+
+#+RESULTS:
+: other-frame
 
 * smex
 
@@ -492,11 +503,70 @@ Iedit lets you "find all instances of this string" with C-;
 Unbound the idiot org-goto function that i have never used ( I HAVE PLAINTEXT SEARCH YOU FOOL ). Now I should be able to create my own hotkeys off of C-c C-j as I want.
 #+BEGIN_SRC emacs-lisp
 (define-key org-mode-map (kbd "C-c C-j") nil)
-(define-key python-mode-map (kbd "C-c C-j") nil)
+(with-eval-after-load "python-mode" (define-key python-mode-map (kbd "C-c C-j") nil))
 (global-set-key (kbd "C-c C-j p") 'run-python)
 #+END_SRC
+
+#+RESULTS:
+: run-python
 
 why isn't this handled for me :( 
 #+BEGIN_SRC emacs-lisp
 (server-start)
 #+END_SRC
+
+#+RESULTS:
+
+* golang
+this is a remediary golang config. my goals are to:
+- have gofmt run on save
+- have good syntax highlighting
+- compile, test, run gocode through emacs:
+
+#+BEGIN_SRC emacs-lisp
+(use-package go-eldoc
+  :ensure)
+
+(use-package gotest
+  :ensure)
+
+(use-package company-go
+  :ensure)
+
+(use-package go-guru
+  :ensure)
+
+(use-package go-mode
+  :init
+  :ensure t
+  :config
+  (add-hook 'before-save-hook #'gofmt-before-save)
+
+  ;; stolen from luipan.pl/dotemacs/
+  (defun jlj-go-mode-hook ()
+    (go-eldoc-setup)
+    (set (make-local-variable 'company-backends) '(company-go))
+    (company-mode)
+    ;; Customize compile command to run go build
+
+    (let ((goimports (executable-find "goimports")))
+      (when goimports
+	(setq gofmt-command goimports)))
+    
+    (smartparens-mode 1)
+    (flycheck-mode 1)
+    (setq imenu-generic-expression
+          '(("type" "^type *\\([^ \t\n\r\f]*\\)" 1)
+            ("func" "^func *\\(.*\\) {" 1))))
+
+    (setq compile-command "echo Building... && go build -v && go test -v && go vet")
+    (local-set-key (kbd "C-c C-b") 'compile)
+
+  (add-hook 'go-mode-hook #'jlj-go-mode-hook nil 'make-it-local))
+
+#+END_SRC
+
+#+RESULTS:
+: t
+
+
