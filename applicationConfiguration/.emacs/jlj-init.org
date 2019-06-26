@@ -560,13 +560,12 @@ this is a remediary golang config. my goals are to:
             ("func" "^func *\\(.*\\) {" 1))))
 
     (setq compile-command "echo Building... && go build -v && go test -v && go vet")
-    (local-set-key (kbd "C-c C-b") 'compile)
+  (add-hook 'go-mode-hook 'jlj-go-mode-hook))
 
-  (add-hook 'go-mode-hook #'jlj-go-mode-hook nil 'make-it-local))
-
+(with-eval-after-load "go-mode" (define-key go-mode-map (kbd "C-c C-c") 'compile))
 #+END_SRC
 
 #+RESULTS:
-: t
+: compile
 
 
