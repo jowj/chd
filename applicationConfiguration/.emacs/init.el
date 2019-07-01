@@ -18,8 +18,15 @@
 (eval-when-compile
   (require 'use-package))
 
+;; load my files
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-generic.el")
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-golang.el")
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-org.el")
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-python.el")
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-rust.el")
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-social.el")
 
-(org-babel-load-file (expand-file-name "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-init.org"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
