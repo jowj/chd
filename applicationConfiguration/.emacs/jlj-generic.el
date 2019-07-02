@@ -57,6 +57,15 @@
 (global-set-key (kbd "C-x W") 'delete-frame)
 (global-set-key "\M-`" 'other-frame) ; mimic the way macosx switches
 
+(use-package helm
+  :ensure t
+  :config
+  (progn
+    (defun helm-surfraw-duck (x)
+      "Search duckduckgo in default browser"
+      (interactive "sSEARCH:")
+      (helm-surfraw x "duckduckgo" ))
+    (global-set-key (kbd "C-c s") 'helm-surfraw-duck)))
 
 (use-package smex
   :ensure t
