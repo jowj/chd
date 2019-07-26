@@ -1,0 +1,49 @@
+2019-07-08 11:17:22	zws	help
+2019-07-08 11:17:42	--	NickServ: ***** NickServ Help *****
+2019-07-08 11:17:42	--	NickServ: NickServ allows users to 'register' a nickname, and stop
+2019-07-08 11:17:42	--	NickServ: others from using that nick. NickServ allows the owner of a
+2019-07-08 11:17:42	--	NickServ: nickname to disconnect a user from the network that is using
+2019-07-08 11:17:42	--	NickServ: their nickname.
+2019-07-08 11:17:42	--	NickServ: 
+2019-07-08 11:17:42	--	NickServ: For more information on a command, type:
+2019-07-08 11:17:42	--	NickServ: /msg NickServ help <command>
+2019-07-08 11:17:42	--	NickServ: For a verbose listing of all commands, type:
+2019-07-08 11:17:42	--	NickServ: /msg NickServ help commands
+2019-07-08 11:17:42	--	NickServ: 
+2019-07-08 11:17:42	--	NickServ: The following commands are available:
+2019-07-08 11:17:42	--	NickServ: GHOST           Reclaims use of a nickname.
+2019-07-08 11:17:42	--	NickServ: IDENTIFY        Identifies to services for a nickname.
+2019-07-08 11:17:42	--	NickServ: INFO            Displays information on registrations.
+2019-07-08 11:17:42	--	NickServ: LISTCHANS       Lists channels that you have access to.
+2019-07-08 11:17:42	--	NickServ: REGISTER        Registers a nickname.
+2019-07-08 11:17:42	--	NickServ: RELEASE         Releases a services enforcer.
+2019-07-08 11:17:42	--	NickServ: SENDPASS        Email registration passwords.
+2019-07-08 11:17:42	--	NickServ: 
+2019-07-08 11:17:42	--	NickServ: Other commands: ACC, ACCESS, CERT, DROP, HELP, LOGOUT,
+2019-07-08 11:17:42	--	NickServ:                 REGAIN, SETPASS, STATUS, TAXONOMY, VERIFY
+2019-07-08 11:17:42	--	NickServ: ***** End of Help *****
+2019-07-08 11:18:04	zws	identify help
+2019-07-08 11:18:04	--	NickServ: zws is not a registered nickname.
+2019-07-08 11:18:07	zws	help identify
+2019-07-08 11:18:07	--	NickServ: ***** NickServ Help *****
+2019-07-08 11:18:07	--	NickServ: Help for IDENTIFY:
+2019-07-08 11:18:07	--	NickServ: 
+2019-07-08 11:18:07	--	NickServ: IDENTIFY identifies you with services so that you
+2019-07-08 11:18:07	--	NickServ: can perform general maintenance and commands that
+2019-07-08 11:18:07	--	NickServ: require you to be logged in.
+2019-07-08 11:18:07	--	NickServ: 
+2019-07-08 11:18:07	--	NickServ: Syntax: IDENTIFY <password>
+2019-07-08 11:18:07	--	NickServ: 
+2019-07-08 11:18:07	--	NickServ: You can also identify for another nick than you
+2019-07-08 11:18:07	--	NickServ: are currently using.
+2019-07-08 11:18:07	--	NickServ: 
+2019-07-08 11:18:07	--	NickServ: Syntax: IDENTIFY <nick> <password>
+2019-07-08 11:18:07	--	NickServ: 
+2019-07-08 11:18:07	--	NickServ: Example:
+2019-07-08 11:18:07	--	NickServ:     /msg NickServ IDENTIFY foo
+2019-07-08 11:18:07	--	NickServ:     /msg NickServ IDENTIFY jilles foo
+2019-07-08 11:18:07	--	NickServ: ***** End of Help *****
+2019-07-08 11:18:21	zws	identify zws convene-scab-irritate-jerk
+2019-07-08 11:18:21	--	NickServ: zws is not a registered nickname.
+2019-07-08 11:18:29	zws	identify blindidiotgod convene-scab-irritate-jerk
+2019-07-08 11:18:29	--	NickServ: You are now identified for blindidiotgod.

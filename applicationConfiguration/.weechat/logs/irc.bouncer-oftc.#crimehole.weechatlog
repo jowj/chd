@@ -1,0 +1,462 @@
+2019-07-05 13:54:04	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-05 13:54:04	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-05 13:54:04	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-05 13:54:04	--	Channel #crimehole: 20 nicks (1 op, 0 voices, 19 normals)
+2019-07-05 13:54:04	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-05 13:54:17	<--	zws (~blindidio@134.209.53.112) has left #crimehole
+2019-07-05 13:54:26	zws	test
+2019-07-05 13:54:31	zws	cool, that seems to work.
+2019-07-05 14:28:50	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-05 14:28:50	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-05 14:28:50	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-05 14:28:50	--	Channel #crimehole: 20 nicks (1 op, 0 voices, 19 normals)
+2019-07-05 14:28:52	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-08 09:35:09	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-08 09:35:09	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-08 09:35:09	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-08 09:35:09	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-08 09:35:10	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-08 09:36:09	ignatz	I have a mongodb up me
+2019-07-08 09:37:42	riking	Did it hurt?
+2019-07-08 09:38:20	ignatz	it's the worst
+2019-07-08 09:38:41	ignatz	massive production outage due to bad design decisions made 2+ years ago
+2019-07-08 09:39:49	zws	oh noooooo
+2019-07-08 09:39:56	zws	extremely rip :|
+2019-07-08 09:40:09	ignatz	asshole dev "fixed" it and disappeared
+2019-07-08 09:50:34	ignatz	concall has massive echo issues
+2019-07-08 09:51:14	riking	plan on writing a report to ask for resources to fix the problems
+2019-07-08 09:51:32	zws	i miss doing thatt part, i liked the write up
+2019-07-08 09:51:32	ignatz	i think someone's just gonna get fired
+2019-07-08 09:51:38	zws	but i don't miss the inevitable "no"
+2019-07-08 09:53:19	ignatz	the guy fucked up, alienated everyone along the way, hoarded info, and now has disappeared in a huge outage
+2019-07-08 09:54:01	riking	Oh wait you mean they disappeared right now?
+2019-07-08 09:54:21	riking	Engage cya mode
+2019-07-08 09:58:38	riking	which means... Document everything, create a timeline?
+2019-07-08 09:59:55	zws	oof
+2019-07-08 10:00:01	zws	good luck ignatz :\
+2019-07-08 10:36:35	riking	[world news] "The bill foresees a 3% tax on the French revenues of digital companies with global revenue of more than 750 million euros ($847 million), and French revenue over 25 million euros." seems reasonable to me
+2019-07-08 10:39:15	ignatz	headline: Admiral poised to lead Navy retires over ‘professional relationship’ with disgraced ‘bad Santa’ press officer
+2019-07-08 11:00:29	--	irc: disconnected from server
+2019-07-08 11:06:04	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:06:07	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:06:37	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:07:07	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:07:37	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:08:07	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:12:32	--	irc: disconnected from server
+2019-07-08 11:12:48	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:13:07	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:13:37	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:14:07	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:14:37	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:15:01	--	irc: disconnected from server
+2019-07-08 11:15:19	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:15:38	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:16:08	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:16:38	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:16:39	--	irc: disconnected from server
+2019-07-08 11:16:55	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:17:14	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:17:44	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:18:14	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:18:44	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:19:14	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:19:44	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:20:14	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:20:15	--	#crimehole: Cannot join channel (+i)
+2019-07-08 11:20:44	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-08 11:20:44	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-08 11:20:44	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-08 11:20:44	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-08 11:20:44	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-08 11:20:44	--	PvNotice(ChanServ): .
+2019-07-09 10:08:24	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-09 10:08:24	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-09 10:08:24	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-09 10:08:24	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-09 10:08:24	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-09 10:08:29	zws	good morning to my friends
+2019-07-09 10:08:42	zws	Zoom.us fun is consuming my morning
+2019-07-09 10:08:58	zws	how's everyone doing?
+2019-07-09 10:09:02	riking	Oh no
+2019-07-09 10:09:26	riking	Slow start, bad sleep, still in transit
+2019-07-09 10:09:32	zws	booo :\ sorry to hear
+2019-07-09 10:09:43	zws	rough day ahead or will it be p slow?
+2019-07-09 10:10:15	riking	There's some rough stuff happening for sure
+2019-07-09 10:11:52	zws	Sorry :( i hope it goes well
+2019-07-09 11:26:52	caurinus	JFC, one of my coworkers passed away
+2019-07-09 11:28:11	caurinus	one of the few decent ones
+2019-07-09 13:52:07	Ash	:( :(
+2019-07-09 14:05:59	riking	Oh no
+2019-07-09 14:06:05	riking	Sympathies
+2019-07-10 09:57:23	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-10 09:57:23	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-10 09:57:23	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-10 09:57:23	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-10 09:57:23	--	PvNotice(ChanServ): .
+2019-07-10 09:57:25	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-10 10:45:10	alexandria	I once bought a stack of L Ron Hubbard books because I confused him and robert silverberg
+2019-07-10 10:45:36	alexandria	I still have them, I have no idea what to do with them; burning them is heresy, giving them away -- I wouldn't wish them on my worst enemy
+2019-07-10 11:56:28	@Allie	alexandria: need to level a piano?
+2019-07-10 12:16:52	zws	on a call with a vendor
+2019-07-10 12:17:00	zws	the fuckre will not stop saying "utilize"
+2019-07-10 12:17:05	zws	just say 'use' god damnit
+2019-07-10 12:17:44	caurinus	usetilizatize
+2019-07-10 12:22:57	zws	i hate it so much
+2019-07-10 12:23:34	zws	'is this actionable' 'utilize' 'bringing this to the top of ur inbox'
+2019-07-10 12:23:48	zws	we had perfectly servicable words for these things
+2019-07-10 12:24:01	zws	"Can we do anything with that data" "use" "spamming you 4 money"
+2019-07-10 12:24:38	caurinus	knowledge transfer
+2019-07-10 12:25:03	caurinus	"HWAT!" I of the information technology support people in the day of now have borne witness to a Lexmark which fell slain as I erased its nonvolatile memory, which held its mindstuff, so that it no longer booted and became useless.
+2019-07-10 12:26:01	caurinus	But I spoke to Lexmark support and the lady on the other end is sending a new one via next day shipping
+2019-07-10 12:26:18	caurinus	because she said the control board went bad
+2019-07-10 12:26:29	@Allie	zws: it's _leverage_. honestly
+2019-07-10 12:26:31	@Allie	we don't use printers
+2019-07-10 12:26:38	@Allie	we LEVERAGE MODERN PRINTING TECHNOLOGIES
+2019-07-10 12:26:41	caurinus	I'm pretty sure she's making the control board thing up just so she can replace it
+2019-07-10 12:27:14	zws	ok caurinus i want to use "..held its mindstuff" in a real work email sometime lmao
+2019-07-10 12:27:16	caurinus	implementing solutions for actionable synergy
+2019-07-10 12:27:26	zws	ALLIE NOOOO
+2019-07-10 12:27:55	caurinus	zws the phrase is mine you have to pay royalties but it's very reasonable, only $1 per email
+2019-07-10 12:28:03	caurinus	*per email recipient
+2019-07-10 12:29:02	caurinus	here installing my licensing server software and give it unlimited permission to read everything on your email server
+2019-07-10 12:29:24	caurinus	to scan for occurrences
+2019-07-10 12:30:00	franklyrosalind	ah caurinus i didn't realize you worked for zoom
+2019-07-10 12:31:19	caurinus	FW:s and inline quotes in replies count
+2019-07-10 12:31:48	caurinus	where i work is a trade secret
+2019-07-10 12:32:18	caurinus	franklyrosalind: how did you come to that conclusion
+2019-07-10 12:32:36	caurinus	i mean, not that it's correct or anything
+2019-07-10 13:10:49	franklyrosalind	'installing licensing server software and give it unlimited permission'
+2019-07-10 13:10:53	franklyrosalind	that was the big zoom thing
+2019-07-10 13:10:54	franklyrosalind	or almost?
+2019-07-10 13:10:55	franklyrosalind	idk
+2019-07-10 13:17:41	zws	naw, zoom installed a local listener that would never be uninstalled even when you uninstalled the zoom app, so that zoom.us could remove friction in using links.
+2019-07-10 13:18:32	zws	and they bypassed the CORS restriction by send an image of specific dimensions to the home zoom servers! like "[1, 0] == update thing, [1, 1] means reinstall" etc
+2019-07-10 13:18:44	zws	fuckers (and also huge lmao) 
+2019-07-10 13:18:53	zws	in using /zoom/ links
+2019-07-10 13:19:18	zws	they refused to use the regular URI handler schema on macs because of some jankiness with safari which i am not terribly familiar with, i think it was basically adding 1-2 clicks of friction to the process
+2019-07-10 13:19:44	franklyrosalind	actually that owns
+2019-07-10 13:19:53	franklyrosalind	EXTREMELY cursed engineering
+2019-07-10 13:20:18	zws	lmao right
+2019-07-10 13:20:31	zws	frankly the entire thing was incredible
+2019-07-10 13:20:40	zws	zoom tried to buy the researchers silence
+2019-07-10 13:20:59	zws	you could just embed specific js on a page and auto boot everyone into a specific meeting id (omg)
+2019-07-10 13:21:13	franklyrosalind	REALLY
+2019-07-10 13:21:15	franklyrosalind	oh my GOD
+2019-07-10 13:21:31	franklyrosalind	HAHAHAHAHAHA
+2019-07-10 13:21:43	zws	the researcher hosted an 'exploit meeting' and linked to it from his announcement post
+2019-07-10 13:22:00	zws	so people would click on it while reading the article, then you just see a bunch of nerds in a channel going 'whoaaaaaaaaaaa'
+2019-07-10 13:22:05	zws	it was, frankly, incredible
+2019-07-10 13:22:41	franklyrosalind	i love that
+2019-07-10 13:33:55	Ash	oh wow that is amazing
+2019-07-10 13:34:01	Ash	i didn't hear that part
+2019-07-10 13:34:02	Ash	haaaa
+2019-07-10 14:21:26	riking	Haha I didn't join the meeting
+2019-07-10 14:21:33	Ash	https://imgur.com/8Ij70sI
+2019-07-10 14:21:48	ignatz	russian chat roulette
+2019-07-10 14:21:55	Ash	pow
+2019-07-10 16:29:43	alexandria	zws: The client is leveraging their artisanally crafted verbiage to deliver you a better experience
+2019-07-10 16:41:49	--	irc: disconnected from server
+2019-07-10 16:50:50	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-10 16:50:50	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-10 16:50:50	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-10 16:50:50	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-10 16:50:54	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-10 18:41:52	--	irc: disconnected from server
+2019-07-10 18:42:02	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-10 18:42:02	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-10 18:42:02	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-10 18:42:03	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-10 18:42:06	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-10 20:43:39	--	irc: disconnected from server
+2019-07-10 20:43:50	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-10 20:43:50	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-10 20:43:50	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-10 20:43:50	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-10 20:43:54	--	irc: disconnected from server
+2019-07-10 22:43:58	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-10 22:43:58	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-10 22:43:58	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-10 22:43:58	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-10 22:44:02	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-11 00:44:17	--	irc: disconnected from server
+2019-07-11 00:44:27	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-11 00:44:27	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-11 00:44:27	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-11 00:44:27	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-11 00:44:33	--	irc: disconnected from server
+2019-07-11 02:44:37	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-11 02:44:37	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-11 02:44:37	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-11 02:44:37	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-11 02:44:41	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-11 09:15:34	--	irc: disconnected from server
+2019-07-11 09:15:45	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-11 09:15:45	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-11 09:15:45	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-11 09:15:45	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-11 09:15:48	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-11 12:04:04	zws	good morning dear friends
+2019-07-11 12:04:26	zws	tonight i fly to seattle for a wedding and must return to the Deep South (west) sunday morning
+2019-07-11 12:04:32	zws	i am gonna be riding a lot of planes
+2019-07-11 12:04:48	zws	but i get to stop in slc for like 3 hours, i've never been there before and at least i'll get to see its airport that will be fun
+2019-07-11 12:44:31	franklyrosalind	SLC is my airport!!! It's also my favorite airport
+2019-07-11 12:44:47	franklyrosalind	safe travels zws
+2019-07-11 13:32:31	zws	thank you :3 
+2019-07-15 09:48:28	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-15 09:48:28	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-15 09:48:28	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-15 09:48:28	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-15 09:48:28	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-15 10:00:46	kalium_puceon	The first time I had coffee was directly before a technical drawing exam and I had caffeine shakes for the whole thing
+2019-07-15 10:01:00	kalium_puceon	it was like one cup of coffee my tolerances are shite
+2019-07-15 10:02:50	<--	kalium_puceon (~kalium@178.62.246.247) has quit (Quit: Server Maintenance)
+2019-07-15 10:22:01	alexandria	one of the few panic attacks I had at work was when I was on coffee
+2019-07-15 10:22:20	alexandria	I tried to go off it shortly after but I kept on getting brain splitting migraines and vision loss
+2019-07-15 10:44:07	-->	kalium_puceon (~kalium@178.62.246.247) has joined #crimehole
+2019-07-15 12:17:36	franklyrosalind	caurinus: i actually have a bed desk because i was studing for my SATs when I got mono and I would do it in bed
+2019-07-15 12:17:36	franklyrosalind	it
+2019-07-15 12:17:49	franklyrosalind	was pretty neat
+2019-07-15 14:04:39	--	irc: disconnected from server
+2019-07-15 14:07:17	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-15 14:07:17	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-15 14:07:17	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-15 14:07:17	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-15 14:07:21	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-15 14:49:55	<--	ignatz (~ignatz@tarquin.fringehead.org) has quit (charon.oftc.net liquid.oftc.net)
+2019-07-15 14:49:55	<--	dutchie (~jholland@000192a3.user.oftc.net) has quit (charon.oftc.net liquid.oftc.net)
+2019-07-15 14:51:20	-->	ignatz (~ignatz@tarquin.fringehead.org) has joined #crimehole
+2019-07-15 14:51:20	-->	dutchie (~jholland@000192a3.user.oftc.net) has joined #crimehole
+2019-07-15 14:51:30	<--	ignatz (~ignatz@tarquin.fringehead.org) has quit (Quit: .)
+2019-07-15 14:52:39	-->	ignatz (~ignatz@tarquin.fringehead.org) has joined #crimehole
+2019-07-15 15:03:40	<--	dutchie (~jholland@000192a3.user.oftc.net) has quit (charon.oftc.net liquid.oftc.net)
+2019-07-15 15:05:00	-->	dutchie (~jholland@000192a3.user.oftc.net) has joined #crimehole
+2019-07-15 16:37:48	caurinus	bounce bounce bounce
+2019-07-15 16:37:57	ignatz	bouncin' corvid
+2019-07-16 09:45:36	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-16 09:45:36	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-16 09:45:36	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-16 09:45:36	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-16 09:45:36	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-16 09:45:45	zws	good morning friends
+2019-07-16 12:28:00	Ash	hello
+2019-07-16 14:05:12	caurinus	i get to have a couple of hours of driving today
+2019-07-16 14:05:14	caurinus	weeeee
+2019-07-16 14:13:03	Ash	VROOM
+2019-07-18 10:02:44	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-18 10:02:44	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-18 10:02:44	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-18 10:02:45	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-18 10:02:45	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-18 10:02:50	zws	good morning my friends
+2019-07-18 10:03:33	zws	last night i fucked around with the firefox color scheme creator thing that they have? i /sorta/ like it but wow shit looks ugly once you start customizing tab placement :\
+2019-07-18 10:04:21	zws	it doesn't know what to do with the treestyle tab config i guess? its weird
+2019-07-18 10:04:47	zws	any of the sidebars, really, bookmarks looks hilarious with the skin. totally unaffected
+2019-07-18 10:22:04	dutchie	hmm, maybe I should invest some time into firefox theming
+2019-07-18 10:22:18	dutchie	although i already waste way too much of my life on ricing up my pc
+2019-07-18 10:23:34	zws	its limited themeing, but its a lot more than you can do with other browsers ime?
+2019-07-18 10:24:05	zws	i don't really spend any time in apps that aren't: $terminal, emacs, firefox :# so i don't have to do much besides those three application configurations
+2019-07-18 10:24:16	dutchie	heh, same
+2019-07-18 10:24:29	dutchie	I just gave up on "let's try using a text editor which isn't emacs"
+2019-07-18 10:24:36	riking	If it lets you change the layout at all, is more than chrome
+2019-07-18 10:25:01	riking	I only use solid color themes in chrome tho
+2019-07-18 10:25:11	dutchie	not sure how to feel that the main thing to go back to it was everything else i tried sucking at email and todo more than mu4e/org
+2019-07-18 10:25:32	dutchie	used kakoune for just long enough to fuck up my muscle memory though :(
+2019-07-18 10:25:33	zws	the layout isn't changable with the color.firefox.com theming, but there are 3rd party apps that let you do it (treestyle tab, etc) if you're willing to fuck with userChrome.css
+2019-07-18 10:25:57	zws	i have never got into using mu4e, but yeah i can't find anythign that competes with org-mode
+2019-07-18 10:26:22	zws	its just, the best. stock, it met a ton of my needs. and its also the only system that'll let me extend it however i want!
+2019-07-18 10:26:47	dutchie	yep! although i need to get back into the habit of actually looking at it
+2019-07-18 10:27:07	dutchie	also having enough willpower to do the things i'm supposed to do, but that's not the todo list's fault
+2019-07-18 10:36:39	zws	haha
+2019-07-18 10:36:42	zws	right exactly
+2019-07-18 10:37:02	zws	ios has a /really good/ mobile org app in beorg
+2019-07-18 10:37:17	zws	i have heard good things about orgzly?  but haven't tried it. 
+2019-07-18 10:37:22	zws	for android, i mean
+2019-07-18 10:37:36	zws	that mobile app helps me a shitload in terms of capturing shit when i'm not at my computer.
+2019-07-18 10:38:05	dutchie	orgzly is ok, though I don't think I've ever actually added anything to org with it
+2019-07-18 10:38:21	dutchie	mainly I use it for reading recipes on my phone in the kitchen
+2019-07-18 10:52:45	caurinus	Google keep, Google docs
+2019-07-18 10:53:03	caurinus	keep is actually not good but it syncs so w/e
+2019-07-18 11:15:56	zws	beorg is really good for adding and basic todo manipulation.
+2019-07-18 11:16:17	riking	+1 on 'keep is not good'
+2019-07-18 11:16:17	zws	it also has a built in scheme repl for scripting if you want to be MObile First or whatever
+2019-07-18 11:16:31	riking	i'm now using habitca for my TODOs
+2019-07-18 11:16:50	zws	that is not something i've ever used because I am a Desktop First person and also i don't want to learn a different lisp when I already have to know elisp for my config language ;;
+2019-07-18 13:29:28	--	irc: disconnected from server
+2019-07-18 13:30:48	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-18 13:30:48	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-18 13:30:48	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-18 13:30:48	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-18 13:30:52	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-18 14:04:26	Ash	beorg is really good yes
+2019-07-19 10:01:48	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-19 10:01:48	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-19 10:01:48	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-19 10:01:48	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-19 10:01:48	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-22 09:21:22	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-22 09:21:22	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-22 09:21:22	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-22 09:21:22	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-22 09:21:22	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-22 16:14:42	--	irc: disconnected from server
+2019-07-22 16:37:08	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-22 16:37:08	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-22 16:37:08	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-22 16:37:08	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-22 16:37:12	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-22 18:14:13	--	irc: disconnected from server
+2019-07-23 09:08:32	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-23 09:08:32	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-23 09:08:32	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-23 09:08:32	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-23 09:08:36	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-23 09:25:49	--	Nicks #crimehole: [@Allie \ae abstiles alexandria Ash atonal440 caurinus cromulan- dutchie franklyrosalind gewt glowpelt ignatz ingridofcrows joe_no_body kalium_puceon linkshot oftc-template riking wxcafe zws]
+2019-07-23 09:25:49	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-23 14:38:39	<--	ignatz (~ignatz@tarquin.fringehead.org) has quit (Quit: .)
+2019-07-23 14:46:17	-->	ignatz (~ignatz@tarquin.fringehead.org) has joined #crimehole
+2019-07-23 16:45:34	--	irc: disconnected from server
+2019-07-23 20:49:43	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-23 20:49:43	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-23 20:49:43	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-23 20:49:43	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-23 20:49:48	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-23 22:50:07	--	irc: disconnected from server
+2019-07-24 00:50:20	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-24 00:50:20	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-24 00:50:20	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-24 00:50:20	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-24 00:50:24	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-24 02:50:40	--	irc: disconnected from server
+2019-07-24 02:50:51	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-24 02:50:51	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-24 02:50:52	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-24 02:50:52	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-24 02:50:56	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-24 02:50:58	--	irc: disconnected from server
+2019-07-24 04:46:28	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-24 04:46:28	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-24 04:46:28	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-24 04:46:28	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-24 04:46:32	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-24 09:23:37	--	irc: disconnected from server
+2019-07-24 09:23:47	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-24 09:23:47	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-24 09:23:47	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-24 09:23:47	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-24 09:23:51	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-24 10:22:46	\ae	memagmetic hazard
+2019-07-24 11:33:13	Ash	caurinus: these days i hear the start of "imagine" and wait for the smash mouth lyrics to start
+2019-07-24 11:33:24	Ash	neilcic is my hero
+2019-07-24 11:33:36	Ash	lol at this wikipedia page https://en.wikipedia.org/wiki/Mouth_Sounds
+2019-07-24 11:34:47	Ash	caurinus: also, if you like three hundred megabytes of storage capacity you might enjoy https://soundcloud.com/datashat/businessfunk-one
+2019-07-24 14:34:52	gewt	i love businessfunk
+2019-07-24 14:35:02	gewt	some friends and i use it for hold music on our phone systems
+2019-07-24 14:35:14	Ash	oh nice!
+2019-07-24 16:21:59	--	irc: disconnected from server
+2019-07-25 09:36:45	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-25 09:36:45	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-25 09:36:45	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-25 09:36:45	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-25 09:36:49	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-25 13:30:53	--	irc: disconnected from server
+2019-07-25 13:31:04	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-25 13:31:04	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-25 13:31:04	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-25 13:31:04	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-25 13:31:08	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-25 14:43:12	zws	hi friends
+2019-07-25 14:43:38	zws	i'm curious - i use macOS for work and linux at home. is anyone familiar with a single tool like hammerspoon that works on linux?
+2019-07-25 14:44:00	zws	none of the functionality is unique, but it usually requires using several Other Tools rather than a single one with a single config language
+2019-07-25 14:59:51	ignatz	Never heard of this thing, looks cool.
+2019-07-25 15:00:55	kalium_puceon	I think linuxes might be too varied in how they implement this stuff to make One Universal Tool, perhaps
+2019-07-25 15:23:39	Ash	zws: macro-ish stuff is so bad on linux :( it's a bummer
+2019-07-25 15:24:05	zws	ignatz: its really nice tbh, i'm very pleasantly surprised
+2019-07-25 15:24:17	zws	kalium_puceon: yeah i think that's a reasonable take
+2019-07-25 15:24:17	Ash	no karabiner/autohotkey/etc type things that work as well either
+2019-07-25 15:24:40	Ash	the random linux tools don't add up to what's available on macOS/windows unfortunately
+2019-07-25 15:24:56	zws	:| using it at work makes me want it real bad at home haha
+2019-07-25 15:25:09	zws	i'm gonna Have To Compromise i suppose
+2019-07-25 15:25:18	Ash	time 2 mac
+2019-07-25 15:25:19	Ash	hehe
+2019-07-25 15:25:28	Ash	but yeah sigh
+2019-07-25 15:27:00	ignatz	just integrate it with Gnome!~!!!!!
+2019-07-25 15:27:05	Ash	right???
+2019-07-25 16:27:02	caurinus	i just had some ambien thoughts but without involving any actual ambien
+2019-07-25 16:41:49	atonal440	I think we all have ambien thoughts as our brains disconnect but mostly we forget them
+2019-07-25 16:44:38	Ash	sshhhhh ambien walrus not now
+2019-07-25 16:58:28	--	irc: disconnected from server
+2019-07-26 00:35:42	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-26 00:35:42	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-26 00:35:42	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-26 00:35:42	--	Channel #crimehole: 21 nicks (1 op, 0 voices, 20 normals)
+2019-07-26 00:35:47	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-26 02:36:03	--	irc: disconnected from server
+2019-07-26 09:25:31	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-26 09:25:31	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-26 09:25:31	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-26 09:25:31	--	Channel #crimehole: 22 nicks (1 op, 0 voices, 21 normals)
+2019-07-26 09:25:35	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-26 09:27:38	alexandria	riking: Extremely useful when a hurricane hits
+2019-07-26 09:27:42	alexandria	"oh the building is moving"
+2019-07-26 09:28:10	alexandria	velartrill: it's v good to see u
+2019-07-26 09:28:27	zws	hey velartrill! glad to see you
+2019-07-26 09:28:30	riking	+
+2019-07-26 10:31:24	caurinus	dutchie: not bad
+2019-07-26 10:32:12	caurinus	hey y'all i'd like to announce that my character, Nat the changeling rogue arcane trickster, was killed by a fireball, and no one shed a tear
+2019-07-26 10:32:20	caurinus	her body was tossed into the ocean
+2019-07-26 10:32:34	dutchie	rip
+2019-07-26 10:32:39	dutchie	i haven't played any rpg in ages
+2019-07-26 10:33:17	caurinus	5e is god damn fun
+2019-07-26 10:33:43	dutchie	there was some rumblings of organisation happening among my friends
+2019-07-26 10:33:48	caurinus	i tried 3.5e about 8 years back, it had too many numbers
+2019-07-26 10:34:01	dutchie	& there is a group that meets every wednesday evening just round the corner from where i live
+2019-07-26 10:35:40	caurinus	anyway new character is going to be Gwendolyn Crisptreacle, cleric who specializes in undeath
+2019-07-26 10:37:32	dutchie	sounds fun
+2019-07-26 10:37:32	caurinus	i'm going to see if i can revivify my old character because she had a lot of regret for her bullshit+shenanigans. and failing that, raise her as an undead servant
+2019-07-26 10:37:46	caurinus	just to fuck with everyone's brains
+2019-07-26 10:40:01	caurinus	so hopefully Miss Crisptreacle lands into the fray in time to give Nat a chance to spend a few months to years atoning for being, as an angry gnome called her, a "wildcard", making amends with everyone she's inconvenienced
+2019-07-26 10:41:02	caurinus	bearing in mind Nat is about 70 and will probably have a heart attack about 1 hour into her second chance
+2019-07-26 10:42:34	dutchie	nice
+2019-07-26 10:43:38	caurinus	in case no one has noticed, d&d has become kind of my "one thing that gets me out of the house consistently and without fail"
+2019-07-26 10:43:55	caurinus	(assuming i'm conscious)
+2019-07-26 10:44:01	dutchie	it's good to have something like that
+2019-07-26 10:44:09	dutchie	choir was that for a long time for me
+2019-07-26 10:46:27	caurinus	for me it was jazz, bearing in mind that was a high school class so it's not like i could choose to *not* go
+2019-07-26 10:50:18	caurinus	playing an instrument is a great one though, it's very of physical, not in an exercise/exertion sense but like, if you're in the groove you just play the song with your whole body
+2019-07-26 10:50:28	caurinus	so you can get emotional from it
+2019-07-26 10:50:28	dutchie	yeah same with singing
+2019-07-26 10:51:21	caurinus	and once you know how to play music, how it works, it takes on a new meaning, it's a different experience.
+2019-07-26 10:52:34	caurinus	brubeck quartet's "time out" was the turning point. it just blasted my brain
+2019-07-26 10:54:33	caurinus	i legit wasn't the same once i picked up jazz, even though i was a bad musician, didn't practice, when i did play it was something else in my life
+2019-07-26 10:54:46	caurinus	it centered me.
+2019-07-26 10:57:23	caurinus	i think i should get back into it soon.
+2019-07-26 11:01:34	 *	caurinus has changed the name of the channel to ♯musichole 
+2019-07-26 11:58:38	Ash	ole
+2019-07-26 11:59:20	Ash	welcome, velartrill
+2019-07-26 12:00:03	caurinus	salsa mole
+2019-07-26 12:02:37	Ash	https://twitter.com/3liza/status/1153252916225949697
+2019-07-26 13:53:21	velartrill	riking condolences
+2019-07-26 13:53:43	velartrill	reminds me of when brendan eich rtd me
+2019-07-26 13:53:56	velartrill	hi alexandria, hi zws
+2019-07-26 14:08:35	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-26 14:08:35	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-26 14:08:35	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-26 14:08:35	--	Channel #crimehole: 22 nicks (1 op, 0 voices, 21 normals)
+2019-07-26 14:08:35	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-26 14:11:18	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-26 14:11:18	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-26 14:11:18	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-26 14:11:18	--	Channel #crimehole: 22 nicks (1 op, 0 voices, 21 normals)
+2019-07-26 14:11:18	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-26 14:18:54	gewt	hm
+2019-07-26 14:24:30	-->	zws (~blindidio@134.209.53.112) has joined #crimehole
+2019-07-26 14:24:30	--	Topic for #crimehole is "1. get in the crime hole 2. do crimes in the crime hole 3. profit in the profit hole"
+2019-07-26 14:24:30	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 11 Apr 2019 02:19:18
+2019-07-26 14:24:30	--	Channel #crimehole: 22 nicks (1 op, 0 voices, 21 normals)
+2019-07-26 14:24:30	--	Channel created on Wed, 27 Jun 2018 20:20:09
+2019-07-26 14:33:53	zws	asd
+2019-07-26 14:34:00	zws	oh! oops.
+2019-07-26 14:41:47	\ae	ohai velartrill
+2019-07-26 14:41:49	\ae	long time no see
+2019-07-26 14:47:41	velartrill	hi

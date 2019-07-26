@@ -1,0 +1,639 @@
+2019-07-05 13:47:49		New key binding (context "default"): meta2-1;5P => /bar scroll buflist * -100%
+2019-07-05 13:47:49		New key binding (context "default"): meta2-1;5Q => /bar scroll buflist * +100%
+2019-07-05 13:47:49		New key binding (context "default"): meta-meta-OQ => /bar scroll buflist * e
+2019-07-05 13:47:49		New key binding (context "default"): meta2-1;3Q => /bar scroll buflist * e
+2019-07-05 13:47:49		New key binding (context "default"): meta2-1;3P => /bar scroll buflist * b
+2019-07-05 13:47:49		New key binding (context "default"): meta-meta-OP => /bar scroll buflist * b
+2019-07-05 13:47:49		New key binding (context "default"): meta-OQ => /bar scroll buflist * +100%
+2019-07-05 13:47:49		New key binding (context "default"): meta-OP => /bar scroll buflist * -100%
+2019-07-05 13:47:49		New key binding (context "default"): meta-meta2-12~ => /bar scroll buflist * e
+2019-07-05 13:47:49		New key binding (context "default"): meta-meta2-11~ => /bar scroll buflist * b
+2019-07-05 13:47:49		New key binding (context "default"): meta2-12^ => /bar scroll buflist * +100%
+2019-07-05 13:47:49		New key binding (context "default"): meta2-12~ => /bar scroll buflist * +100%
+2019-07-05 13:47:49		New key binding (context "default"): meta2-11^ => /bar scroll buflist * -100%
+2019-07-05 13:47:49		New key binding (context "default"): meta2-11~ => /bar scroll buflist * -100%
+2019-07-05 13:47:49		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-05 13:47:52	=!=	You can not write text in this buffer
+2019-07-05 13:47:55	=!=	You can not write text in this buffer
+2019-07-05 13:48:59		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-05 13:50:09		irc: server bouncer added
+2019-07-05 13:50:22	=!=	Error with command "/server edit bouncer" (help on command: /help server)
+2019-07-05 13:50:26	=!=	No help available, "serverr" is not a command or an option
+2019-07-05 13:50:28		[irc]  /server  list|listfull [<name>]
+2019-07-05 13:50:28		                add <name> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2019-07-05 13:50:28		                copy|rename <name> <new_name>
+2019-07-05 13:50:28		                reorder <name> [<name>...]
+2019-07-05 13:50:28		                open <name>|-all [<name>...]
+2019-07-05 13:50:28		                del|keep <name>
+2019-07-05 13:50:28		                deloutq|jump|raw
+2019-07-05 13:50:28		list, add or remove IRC servers
+2019-07-05 13:50:28		    list: list servers (without argument, this list is displayed)
+2019-07-05 13:50:28		listfull: list servers with detailed info for each server
+2019-07-05 13:50:28		     add: add a new server
+2019-07-05 13:50:28		    name: server name, for internal and display use; this name is used to connect to the server (/connect name) and to set server options: irc.server.name.xxx
+2019-07-05 13:50:28		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2019-07-05 13:50:28		   -temp: add a temporary server (not saved)
+2019-07-05 13:50:28		  option: set option for server (for boolean option, value can be omitted)
+2019-07-05 13:50:28		nooption: set boolean option to 'off' (for example: -nossl)
+2019-07-05 13:50:28		    copy: duplicate a server
+2019-07-05 13:50:28		  rename: rename a server
+2019-07-05 13:50:28		 reorder: reorder list of servers
+2019-07-05 13:50:28		    open: open the server buffer without connecting
+2019-07-05 13:50:28		    keep: keep server in config file (for temporary servers only)
+2019-07-05 13:50:28		     del: delete a server
+2019-07-05 13:50:28		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2019-07-05 13:50:28		    jump: jump to server buffer
+2019-07-05 13:50:28		     raw: open buffer with raw IRC data
+2019-07-05 13:50:28		Examples:
+2019-07-05 13:50:28		  /server listfull
+2019-07-05 13:50:28		  /server add freenode chat.freenode.net
+2019-07-05 13:50:28		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2019-07-05 13:50:28		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2019-07-05 13:50:28		  /server copy freenode freenode-test
+2019-07-05 13:50:28		  /server rename freenode-test freenode2
+2019-07-05 13:50:28		  /server reorder freenode2 freenode
+2019-07-05 13:50:28		  /server del freenode
+2019-07-05 13:50:28		  /server deloutq
+2019-07-05 13:50:42		irc: server bouncer has been copied to bouncer-2
+2019-07-05 13:50:44		Options saved to sec.conf
+2019-07-05 13:50:44		Options saved to weechat.conf
+2019-07-05 13:50:44		Options saved to plugins.conf
+2019-07-05 13:50:44		Options saved to charset.conf
+2019-07-05 13:50:44		Options saved to logger.conf
+2019-07-05 13:50:44		Options saved to exec.conf
+2019-07-05 13:50:44		Options saved to trigger.conf
+2019-07-05 13:50:44		Options saved to spell.conf
+2019-07-05 13:50:44		Options saved to alias.conf
+2019-07-05 13:50:44		Options saved to buflist.conf
+2019-07-05 13:50:44		Options saved to fifo.conf
+2019-07-05 13:50:44		Options saved to xfer.conf
+2019-07-05 13:50:44		Options saved to irc.conf
+2019-07-05 13:50:44		Options saved to relay.conf
+2019-07-05 13:50:44		Options saved to tcl.conf
+2019-07-05 13:50:44		Options saved to python.conf
+2019-07-05 13:50:44		Options saved to lua.conf
+2019-07-05 13:50:44		Options saved to perl.conf
+2019-07-05 13:50:44		Options saved to ruby.conf
+2019-07-05 13:50:44		Options saved to script.conf
+2019-07-05 13:50:44		Options saved to fset.conf
+2019-07-05 13:54:03		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-08 09:35:08		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-08 11:11:53		Mouse enabled
+2019-07-09 10:08:24		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-10 09:55:37		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-10 09:55:43		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-10 09:56:15		[core]
+2019-07-10 09:56:15		  away     color    debug    help     key      mute     proxy    repeat   set      uptime   window 
+2019-07-10 09:56:15		  bar      command  eval     history  layout   plugin   quit     save     unset    version
+2019-07-10 09:56:15		  buffer   cursor   filter   input    mouse    print    reload   secure   upgrade  wait   
+2019-07-10 09:56:15		[relay]
+2019-07-10 09:56:15		  relay
+2019-07-10 09:56:15		[tcl]
+2019-07-10 09:56:15		  tcl
+2019-07-10 09:56:15		[xfer]
+2019-07-10 09:56:15		  me  xfer
+2019-07-10 09:56:15		[python]
+2019-07-10 09:56:15		  python
+2019-07-10 09:56:15		[charset]
+2019-07-10 09:56:15		  charset
+2019-07-10 09:56:15		[script]
+2019-07-10 09:56:15		  script
+2019-07-10 09:56:15		[buflist]
+2019-07-10 09:56:15		  buflist
+2019-07-10 09:56:15		[trigger]
+2019-07-10 09:56:15		  trigger
+2019-07-10 09:56:15		[fset]
+2019-07-10 09:56:15		  fset
+2019-07-10 09:56:15		[spell]
+2019-07-10 09:56:15		  spell
+2019-07-10 09:56:15		[fifo]
+2019-07-10 09:56:15		  fifo
+2019-07-10 09:56:15		[lua]
+2019-07-10 09:56:15		  lua
+2019-07-10 09:56:15		[alias]
+2019-07-10 09:56:15		  AAWAY    AMSG     BYE      CL       IG       KB       MSGBUF   Q        SIGNOFF  UMODE    WC       WW     
+2019-07-10 09:56:15		  alias    ANICK    C        CLOSE    J        LEAVE    MUB      REDRAW   T        V        WI     
+2019-07-10 09:56:15		  AME      BEEP     CHAT     EXIT     K        M        N        SAY      UB       W        WII    
+2019-07-10 09:56:15		[irc]
+2019-07-10 09:56:15		  admin       dcc         invite      map         op          rehash      service     unban       whois     
+2019-07-10 09:56:15		  allchan     dehalfop    ison        me          oper        remove      servlist    unquiet     whowas    
+2019-07-10 09:56:15		  allpv       deop        join        mode        part        restart     squery      userhost  
+2019-07-10 09:56:15		  allserv     devoice     kick        motd        ping        sajoin      squit       users     
+2019-07-10 09:56:15		  ban         die         kickban     msg         pong        samode      stats       version   
+2019-07-10 09:56:15		  cap         disconnect  kill        names       query       sanick      summon      voice     
+2019-07-10 09:56:15		  connect     halfop      links       nick        quiet       sapart      time        wallchops 
+2019-07-10 09:56:15		  ctcp        ignore      list        notice      quote       saquit      topic       wallops   
+2019-07-10 09:56:15		  cycle       info        lusers      notify      reconnect   server      trace       who       
+2019-07-10 09:56:15		[perl]
+2019-07-10 09:56:15		  perl
+2019-07-10 09:56:15		[exec]
+2019-07-10 09:56:15		  exec
+2019-07-10 09:56:15		[logger]
+2019-07-10 09:56:15		  logger
+2019-07-10 09:56:15		[ruby]
+2019-07-10 09:56:15		  ruby
+2019-07-15 09:48:28		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-16 09:45:35		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-17 13:36:10		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-18 10:02:44		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-19 10:01:47		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-22 09:21:22		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-23 09:25:51		[core]
+2019-07-23 09:25:51		  away     cursor   history  mute     reload   unset    window 
+2019-07-23 09:25:51		  bar      debug    input    plugin   repeat   upgrade
+2019-07-23 09:25:51		  buffer   eval     key      print    save     uptime 
+2019-07-23 09:25:51		  color    filter   layout   proxy    secure   version
+2019-07-23 09:25:51		  command  help     mouse    quit     set      wait   
+2019-07-23 09:25:51		[relay]
+2019-07-23 09:25:51		  relay
+2019-07-23 09:25:51		[tcl]
+2019-07-23 09:25:51		  tcl
+2019-07-23 09:25:51		[xfer]
+2019-07-23 09:25:51		  me  xfer
+2019-07-23 09:25:51		[python]
+2019-07-23 09:25:51		  python
+2019-07-23 09:25:51		[charset]
+2019-07-23 09:25:51		  charset
+2019-07-23 09:25:51		[script]
+2019-07-23 09:25:51		  script
+2019-07-23 09:25:51		[buflist]
+2019-07-23 09:25:51		  buflist
+2019-07-23 09:25:51		[trigger]
+2019-07-23 09:25:51		  trigger
+2019-07-23 09:25:51		[fset]
+2019-07-23 09:25:51		  fset
+2019-07-23 09:25:51		[spell]
+2019-07-23 09:25:51		  spell
+2019-07-23 09:25:51		[fifo]
+2019-07-23 09:25:51		  fifo
+2019-07-23 09:25:51		[lua]
+2019-07-23 09:25:51		  lua
+2019-07-23 09:25:51		[alias]
+2019-07-23 09:25:51		  AAWAY    BEEP     CLOSE    KB       N        T        WC     
+2019-07-23 09:25:51		  alias    BYE      EXIT     LEAVE    Q        UB       WI     
+2019-07-23 09:25:51		  AME      C        IG       M        REDRAW   UMODE    WII    
+2019-07-23 09:25:51		  AMSG     CHAT     J        MSGBUF   SAY      V        WW     
+2019-07-23 09:25:51		  ANICK    CL       K        MUB      SIGNOFF  W      
+2019-07-23 09:25:51		[irc]
+2019-07-23 09:25:51		  admin       halfop      motd        rehash      time      
+2019-07-23 09:25:51		  allchan     ignore      msg         remove      topic     
+2019-07-23 09:25:51		  allpv       info        names       restart     trace     
+2019-07-23 09:25:51		  allserv     invite      nick        sajoin      unban     
+2019-07-23 09:25:51		  ban         ison        notice      samode      unquiet   
+2019-07-23 09:25:51		  cap         join        notify      sanick      userhost  
+2019-07-23 09:25:51		  connect     kick        op          sapart      users     
+2019-07-23 09:25:51		  ctcp        kickban     oper        saquit      version   
+2019-07-23 09:25:51		  cycle       kill        part        server      voice     
+2019-07-23 09:25:51		  dcc         links       ping        service     wallchops 
+2019-07-23 09:25:51		  dehalfop    list        pong        servlist    wallops   
+2019-07-23 09:25:51		  deop        lusers      query       squery      who       
+2019-07-23 09:25:51		  devoice     map         quiet       squit       whois     
+2019-07-23 09:25:51		  die         me          quote       stats       whowas    
+2019-07-23 09:25:51		  disconnect  mode        reconnect   summon    
+2019-07-23 09:25:51		[perl]
+2019-07-23 09:25:51		  perl
+2019-07-23 09:25:51		[exec]
+2019-07-23 09:25:51		  exec
+2019-07-23 09:25:51		[logger]
+2019-07-23 09:25:51		  logger
+2019-07-23 09:25:51		[ruby]
+2019-07-23 09:25:51		  ruby
+2019-07-26 14:05:16		Passphrase added
+2019-07-26 14:05:59		Passphrase changed
+2019-07-26 14:06:25		Secured data "bouncer-OFTC" set
+2019-07-26 14:06:25		Options saved to sec.conf
+2019-07-26 14:06:37		Secured data "bouncer-freenode" set
+2019-07-26 14:06:37		Options saved to sec.conf
+2019-07-26 14:07:38		Option changed: irc.server.bouncer-freenode.password = "${sec.data.freenode}"  (default if null: "")
+2019-07-26 14:08:34		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-26 14:09:28		Secured data "bouncer-OFTC" set
+2019-07-26 14:09:28		Options saved to sec.conf
+2019-07-26 14:10:39		Option changed: irc.server.bouncer-OFTC.password = "${sec.data.bouncer-OFTC}"  (default if null: "")
+2019-07-26 14:10:56		Option changed: irc.server.bouncer-freenode.password = "${sec.data.bouncer-freenode}"  (default if null: "")
+2019-07-26 14:11:03		Options saved to sec.conf
+2019-07-26 14:11:03		Options saved to weechat.conf
+2019-07-26 14:11:03		Options saved to plugins.conf
+2019-07-26 14:11:03		Options saved to charset.conf
+2019-07-26 14:11:03		Options saved to logger.conf
+2019-07-26 14:11:03		Options saved to exec.conf
+2019-07-26 14:11:03		Options saved to trigger.conf
+2019-07-26 14:11:03		Options saved to spell.conf
+2019-07-26 14:11:03		Options saved to alias.conf
+2019-07-26 14:11:03		Options saved to buflist.conf
+2019-07-26 14:11:03		Options saved to fifo.conf
+2019-07-26 14:11:03		Options saved to xfer.conf
+2019-07-26 14:11:03		Options saved to irc.conf
+2019-07-26 14:11:03		Options saved to relay.conf
+2019-07-26 14:11:03		Options saved to tcl.conf
+2019-07-26 14:11:03		Options saved to python.conf
+2019-07-26 14:11:03		Options saved to lua.conf
+2019-07-26 14:11:03		Options saved to perl.conf
+2019-07-26 14:11:03		Options saved to ruby.conf
+2019-07-26 14:11:03		Options saved to script.conf
+2019-07-26 14:11:03		Options saved to fset.conf
+2019-07-26 14:11:17		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
+2019-07-26 14:11:55	=!=	Error with command "/server disconnect bouncer-freenode" (help on command: /help server)
+2019-07-26 14:12:51	=!=	Error with command "/server bouncer-freenode" (help on command: /help server)
+2019-07-26 14:12:55	=!=	Error with command "/server help" (help on command: /help server)
+2019-07-26 14:12:58		[irc]  /server  list|listfull [<name>]
+2019-07-26 14:12:58		                add <name> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2019-07-26 14:12:58		                copy|rename <name> <new_name>
+2019-07-26 14:12:58		                reorder <name> [<name>...]
+2019-07-26 14:12:58		                open <name>|-all [<name>...]
+2019-07-26 14:12:58		                del|keep <name>
+2019-07-26 14:12:58		                deloutq|jump|raw
+2019-07-26 14:12:58		list, add or remove IRC servers
+2019-07-26 14:12:58		    list: list servers (without argument, this list is displayed)
+2019-07-26 14:12:58		listfull: list servers with detailed info for each server
+2019-07-26 14:12:58		     add: add a new server
+2019-07-26 14:12:58		    name: server name, for internal and display use; this name is used to connect to the server (/connect name) and to set server options: irc.server.name.xxx
+2019-07-26 14:12:58		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2019-07-26 14:12:58		   -temp: add a temporary server (not saved)
+2019-07-26 14:12:58		  option: set option for server (for boolean option, value can be omitted)
+2019-07-26 14:12:58		nooption: set boolean option to 'off' (for example: -nossl)
+2019-07-26 14:12:58		    copy: duplicate a server
+2019-07-26 14:12:58		  rename: rename a server
+2019-07-26 14:12:58		 reorder: reorder list of servers
+2019-07-26 14:12:58		    open: open the server buffer without connecting
+2019-07-26 14:12:58		    keep: keep server in config file (for temporary servers only)
+2019-07-26 14:12:58		     del: delete a server
+2019-07-26 14:12:58		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2019-07-26 14:12:58		    jump: jump to server buffer
+2019-07-26 14:12:58		     raw: open buffer with raw IRC data
+2019-07-26 14:12:58		Examples:
+2019-07-26 14:12:58		  /server listfull
+2019-07-26 14:12:58		  /server add freenode chat.freenode.net
+2019-07-26 14:12:58		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2019-07-26 14:12:58		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2019-07-26 14:12:58		  /server copy freenode freenode-test
+2019-07-26 14:12:58		  /server rename freenode-test freenode2
+2019-07-26 14:12:58		  /server reorder freenode2 freenode
+2019-07-26 14:12:58		  /server del freenode
+2019-07-26 14:12:58		  /server deloutq
+2019-07-26 14:13:02		All servers:
+2019-07-26 14:13:02		Server: bouncer-OFTC [connected], nick: zws
+2019-07-26 14:13:02		  addresses. . . . . . : 'bouncer.awful.club/5000'
+2019-07-26 14:13:02		  proxy. . . . . . . . :   ('')
+2019-07-26 14:13:02		  ipv6 . . . . . . . . :   (on)
+2019-07-26 14:13:02		  ssl. . . . . . . . . : on
+2019-07-26 14:13:02		  ssl_cert . . . . . . :   ('')
+2019-07-26 14:13:02		  ssl_priorities . . . :   ('NORMAL:-VERS-SSL3.0')
+2019-07-26 14:13:02		  ssl_dhkey_size . . . :   (2048)
+2019-07-26 14:13:02		  ssl_fingerprint. . . :   ('')
+2019-07-26 14:13:02		  ssl_verify . . . . . :   (on)
+2019-07-26 14:13:02		  password . . . . . . : (hidden)
+2019-07-26 14:13:02		  capabilities . . . . :   ('')
+2019-07-26 14:13:02		  sasl_mechanism . . . :   ('plain')
+2019-07-26 14:13:02		  sasl_username. . . . :   ('')
+2019-07-26 14:13:02		  sasl_password. . . . :   (hidden)
+2019-07-26 14:13:02		  sasl_key. .  . . . . :   ('')
+2019-07-26 14:13:02		  sasl_timeout . . . . :   (15 seconds)
+2019-07-26 14:13:02		  sasl_fail. . . . . . :   ('continue')
+2019-07-26 14:13:02		  autoconnect. . . . . : on
+2019-07-26 14:13:02		  autoreconnect. . . . :   (on)
+2019-07-26 14:13:02		  autoreconnect_delay. :   (10 seconds)
+2019-07-26 14:13:02		  nicks. . . . . . . . :   ('jledbetter,jledbetter1,jledbetter2,jledbetter3,jledbetter4')
+2019-07-26 14:13:02		  nicks_alternate. . . :   (on)
+2019-07-26 14:13:02		  username . . . . . . : 'blindidiotgod/OFTC'
+2019-07-26 14:13:02		  realname . . . . . . :   ('')
+2019-07-26 14:13:02		  local_hostname . . . :   ('')
+2019-07-26 14:13:02		  usermode . . . . . . :   ('')
+2019-07-26 14:13:02		  command. . . . . . . :   ('')
+2019-07-26 14:13:02		  command_delay. . . . :   (0 seconds)
+2019-07-26 14:13:02		  autojoin . . . . . . :   ('')
+2019-07-26 14:13:02		  autorejoin . . . . . :   (off)
+2019-07-26 14:13:02		  autorejoin_delay . . :   (30 seconds)
+2019-07-26 14:13:02		  connection_timeout . :   (60 seconds)
+2019-07-26 14:13:02		  anti_flood_prio_high :   (2 seconds)
+2019-07-26 14:13:02		  anti_flood_prio_low. :   (2 seconds)
+2019-07-26 14:13:02		  away_check . . . . . :   (0 minutes)
+2019-07-26 14:13:02		  away_check_max_nicks :   (25)
+2019-07-26 14:13:02		  msg_kick . . . . . . :   ('')
+2019-07-26 14:13:02		  msg_part . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:13:02		  msg_quit . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:13:02		  notify . . . . . . . :   ('')
+2019-07-26 14:13:02		  split_msg_max_length :   (512)
+2019-07-26 14:13:02		Server: bouncer-freenode [not connected]
+2019-07-26 14:13:02		  addresses. . . . . . : 'bouncer.awful.club/5000'
+2019-07-26 14:13:02		  proxy. . . . . . . . :   ('')
+2019-07-26 14:13:02		  ipv6 . . . . . . . . :   (on)
+2019-07-26 14:13:02		  ssl. . . . . . . . . : on
+2019-07-26 14:13:02		  ssl_cert . . . . . . :   ('')
+2019-07-26 14:13:02		  ssl_priorities . . . :   ('NORMAL:-VERS-SSL3.0')
+2019-07-26 14:13:02		  ssl_dhkey_size . . . :   (2048)
+2019-07-26 14:13:02		  ssl_fingerprint. . . :   ('')
+2019-07-26 14:13:02		  ssl_verify . . . . . :   (on)
+2019-07-26 14:13:02		  password . . . . . . : (hidden)
+2019-07-26 14:13:02		  capabilities . . . . :   ('')
+2019-07-26 14:13:02		  sasl_mechanism . . . :   ('plain')
+2019-07-26 14:13:02		  sasl_username. . . . :   ('')
+2019-07-26 14:13:02		  sasl_password. . . . :   (hidden)
+2019-07-26 14:13:02		  sasl_key. .  . . . . :   ('')
+2019-07-26 14:13:02		  sasl_timeout . . . . :   (15 seconds)
+2019-07-26 14:13:02		  sasl_fail. . . . . . :   ('continue')
+2019-07-26 14:13:02		  autoconnect. . . . . : on
+2019-07-26 14:13:02		  autoreconnect. . . . :   (on)
+2019-07-26 14:13:02		  autoreconnect_delay. :   (10 seconds)
+2019-07-26 14:13:02		  nicks. . . . . . . . :   ('jledbetter,jledbetter1,jledbetter2,jledbetter3,jledbetter4')
+2019-07-26 14:13:02		  nicks_alternate. . . :   (on)
+2019-07-26 14:13:02		  username . . . . . . : 'blindidiotgod/freenode'
+2019-07-26 14:13:02		  realname . . . . . . :   ('')
+2019-07-26 14:13:02		  local_hostname . . . :   ('')
+2019-07-26 14:13:02		  usermode . . . . . . :   ('')
+2019-07-26 14:13:02		  command. . . . . . . :   ('')
+2019-07-26 14:13:02		  command_delay. . . . :   (0 seconds)
+2019-07-26 14:13:02		  autojoin . . . . . . :   ('')
+2019-07-26 14:13:02		  autorejoin . . . . . :   (off)
+2019-07-26 14:13:02		  autorejoin_delay . . :   (30 seconds)
+2019-07-26 14:13:02		  connection_timeout . :   (60 seconds)
+2019-07-26 14:13:02		  anti_flood_prio_high :   (2 seconds)
+2019-07-26 14:13:02		  anti_flood_prio_low. :   (2 seconds)
+2019-07-26 14:13:02		  away_check . . . . . :   (0 minutes)
+2019-07-26 14:13:02		  away_check_max_nicks :   (25)
+2019-07-26 14:13:02		  msg_kick . . . . . . :   ('')
+2019-07-26 14:13:02		  msg_part . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:13:02		  msg_quit . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:13:02		  notify . . . . . . . :   ('')
+2019-07-26 14:13:02		  split_msg_max_length :   (512)
+2019-07-26 14:13:07		[irc]  /server  list|listfull [<name>]
+2019-07-26 14:13:07		                add <name> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2019-07-26 14:13:07		                copy|rename <name> <new_name>
+2019-07-26 14:13:07		                reorder <name> [<name>...]
+2019-07-26 14:13:07		                open <name>|-all [<name>...]
+2019-07-26 14:13:07		                del|keep <name>
+2019-07-26 14:13:07		                deloutq|jump|raw
+2019-07-26 14:13:07		list, add or remove IRC servers
+2019-07-26 14:13:07		    list: list servers (without argument, this list is displayed)
+2019-07-26 14:13:07		listfull: list servers with detailed info for each server
+2019-07-26 14:13:07		     add: add a new server
+2019-07-26 14:13:07		    name: server name, for internal and display use; this name is used to connect to the server (/connect name) and to set server options: irc.server.name.xxx
+2019-07-26 14:13:07		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2019-07-26 14:13:07		   -temp: add a temporary server (not saved)
+2019-07-26 14:13:07		  option: set option for server (for boolean option, value can be omitted)
+2019-07-26 14:13:07		nooption: set boolean option to 'off' (for example: -nossl)
+2019-07-26 14:13:07		    copy: duplicate a server
+2019-07-26 14:13:07		  rename: rename a server
+2019-07-26 14:13:07		 reorder: reorder list of servers
+2019-07-26 14:13:07		    open: open the server buffer without connecting
+2019-07-26 14:13:07		    keep: keep server in config file (for temporary servers only)
+2019-07-26 14:13:07		     del: delete a server
+2019-07-26 14:13:07		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2019-07-26 14:13:07		    jump: jump to server buffer
+2019-07-26 14:13:07		     raw: open buffer with raw IRC data
+2019-07-26 14:13:07		Examples:
+2019-07-26 14:13:07		  /server listfull
+2019-07-26 14:13:07		  /server add freenode chat.freenode.net
+2019-07-26 14:13:07		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2019-07-26 14:13:07		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2019-07-26 14:13:07		  /server copy freenode freenode-test
+2019-07-26 14:13:07		  /server rename freenode-test freenode2
+2019-07-26 14:13:07		  /server reorder freenode2 freenode
+2019-07-26 14:13:07		  /server del freenode
+2019-07-26 14:13:07		  /server deloutq
+2019-07-26 14:13:12	=!=	Error with command "/server name" (help on command: /help server)
+2019-07-26 14:13:23		All servers:
+2019-07-26 14:13:23		 * bouncer-OFTC [connected], nick: zws, 2 channels, 0 pv
+2019-07-26 14:13:23		   bouncer-freenode
+2019-07-26 14:19:14	=!=	Error with command "/server info" (help on command: /help server)
+2019-07-26 14:19:19	=!=	Error with command "/server info bouncer-freenode" (help on command: /help server)
+2019-07-26 14:19:24		[irc]  /server  list|listfull [<name>]
+2019-07-26 14:19:24		                add <name> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2019-07-26 14:19:24		                copy|rename <name> <new_name>
+2019-07-26 14:19:24		                reorder <name> [<name>...]
+2019-07-26 14:19:24		                open <name>|-all [<name>...]
+2019-07-26 14:19:24		                del|keep <name>
+2019-07-26 14:19:24		                deloutq|jump|raw
+2019-07-26 14:19:24		list, add or remove IRC servers
+2019-07-26 14:19:24		    list: list servers (without argument, this list is displayed)
+2019-07-26 14:19:24		listfull: list servers with detailed info for each server
+2019-07-26 14:19:24		     add: add a new server
+2019-07-26 14:19:24		    name: server name, for internal and display use; this name is used to connect to the server (/connect name) and to set server options: irc.server.name.xxx
+2019-07-26 14:19:24		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2019-07-26 14:19:24		   -temp: add a temporary server (not saved)
+2019-07-26 14:19:24		  option: set option for server (for boolean option, value can be omitted)
+2019-07-26 14:19:24		nooption: set boolean option to 'off' (for example: -nossl)
+2019-07-26 14:19:24		    copy: duplicate a server
+2019-07-26 14:19:24		  rename: rename a server
+2019-07-26 14:19:24		 reorder: reorder list of servers
+2019-07-26 14:19:24		    open: open the server buffer without connecting
+2019-07-26 14:19:24		    keep: keep server in config file (for temporary servers only)
+2019-07-26 14:19:24		     del: delete a server
+2019-07-26 14:19:24		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2019-07-26 14:19:24		    jump: jump to server buffer
+2019-07-26 14:19:24		     raw: open buffer with raw IRC data
+2019-07-26 14:19:24		Examples:
+2019-07-26 14:19:24		  /server listfull
+2019-07-26 14:19:24		  /server add freenode chat.freenode.net
+2019-07-26 14:19:24		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2019-07-26 14:19:24		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2019-07-26 14:19:24		  /server copy freenode freenode-test
+2019-07-26 14:19:24		  /server rename freenode-test freenode2
+2019-07-26 14:19:24		  /server reorder freenode2 freenode
+2019-07-26 14:19:24		  /server del freenode
+2019-07-26 14:19:24		  /server deloutq
+2019-07-26 14:19:36		All servers:
+2019-07-26 14:19:36		 * bouncer-OFTC [connected], nick: zws, 2 channels, 0 pv
+2019-07-26 14:19:36		   bouncer-freenode
+2019-07-26 14:19:42		All servers:
+2019-07-26 14:19:42		Server: bouncer-OFTC [connected], nick: zws
+2019-07-26 14:19:42		  addresses. . . . . . : 'bouncer.awful.club/5000'
+2019-07-26 14:19:42		  proxy. . . . . . . . :   ('')
+2019-07-26 14:19:42		  ipv6 . . . . . . . . :   (on)
+2019-07-26 14:19:42		  ssl. . . . . . . . . : on
+2019-07-26 14:19:42		  ssl_cert . . . . . . :   ('')
+2019-07-26 14:19:42		  ssl_priorities . . . :   ('NORMAL:-VERS-SSL3.0')
+2019-07-26 14:19:42		  ssl_dhkey_size . . . :   (2048)
+2019-07-26 14:19:42		  ssl_fingerprint. . . :   ('')
+2019-07-26 14:19:42		  ssl_verify . . . . . :   (on)
+2019-07-26 14:19:42		  password . . . . . . : (hidden)
+2019-07-26 14:19:42		  capabilities . . . . :   ('')
+2019-07-26 14:19:42		  sasl_mechanism . . . :   ('plain')
+2019-07-26 14:19:42		  sasl_username. . . . :   ('')
+2019-07-26 14:19:42		  sasl_password. . . . :   (hidden)
+2019-07-26 14:19:42		  sasl_key. .  . . . . :   ('')
+2019-07-26 14:19:42		  sasl_timeout . . . . :   (15 seconds)
+2019-07-26 14:19:42		  sasl_fail. . . . . . :   ('continue')
+2019-07-26 14:19:42		  autoconnect. . . . . : on
+2019-07-26 14:19:42		  autoreconnect. . . . :   (on)
+2019-07-26 14:19:42		  autoreconnect_delay. :   (10 seconds)
+2019-07-26 14:19:42		  nicks. . . . . . . . :   ('jledbetter,jledbetter1,jledbetter2,jledbetter3,jledbetter4')
+2019-07-26 14:19:42		  nicks_alternate. . . :   (on)
+2019-07-26 14:19:42		  username . . . . . . : 'blindidiotgod/OFTC'
+2019-07-26 14:19:42		  realname . . . . . . :   ('')
+2019-07-26 14:19:42		  local_hostname . . . :   ('')
+2019-07-26 14:19:42		  usermode . . . . . . :   ('')
+2019-07-26 14:19:42		  command. . . . . . . :   ('')
+2019-07-26 14:19:42		  command_delay. . . . :   (0 seconds)
+2019-07-26 14:19:42		  autojoin . . . . . . :   ('')
+2019-07-26 14:19:42		  autorejoin . . . . . :   (off)
+2019-07-26 14:19:42		  autorejoin_delay . . :   (30 seconds)
+2019-07-26 14:19:42		  connection_timeout . :   (60 seconds)
+2019-07-26 14:19:42		  anti_flood_prio_high :   (2 seconds)
+2019-07-26 14:19:42		  anti_flood_prio_low. :   (2 seconds)
+2019-07-26 14:19:42		  away_check . . . . . :   (0 minutes)
+2019-07-26 14:19:42		  away_check_max_nicks :   (25)
+2019-07-26 14:19:42		  msg_kick . . . . . . :   ('')
+2019-07-26 14:19:42		  msg_part . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:19:42		  msg_quit . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:19:42		  notify . . . . . . . :   ('')
+2019-07-26 14:19:42		  split_msg_max_length :   (512)
+2019-07-26 14:19:42		Server: bouncer-freenode [not connected], nick: jledbetter
+2019-07-26 14:19:42		  addresses. . . . . . : 'bouncer.awful.club/5000'
+2019-07-26 14:19:42		  proxy. . . . . . . . :   ('')
+2019-07-26 14:19:42		  ipv6 . . . . . . . . :   (on)
+2019-07-26 14:19:42		  ssl. . . . . . . . . : on
+2019-07-26 14:19:42		  ssl_cert . . . . . . :   ('')
+2019-07-26 14:19:42		  ssl_priorities . . . :   ('NORMAL:-VERS-SSL3.0')
+2019-07-26 14:19:42		  ssl_dhkey_size . . . :   (2048)
+2019-07-26 14:19:42		  ssl_fingerprint. . . :   ('')
+2019-07-26 14:19:42		  ssl_verify . . . . . :   (on)
+2019-07-26 14:19:42		  password . . . . . . : (hidden)
+2019-07-26 14:19:42		  capabilities . . . . :   ('')
+2019-07-26 14:19:42		  sasl_mechanism . . . :   ('plain')
+2019-07-26 14:19:42		  sasl_username. . . . :   ('')
+2019-07-26 14:19:42		  sasl_password. . . . :   (hidden)
+2019-07-26 14:19:42		  sasl_key. .  . . . . :   ('')
+2019-07-26 14:19:42		  sasl_timeout . . . . :   (15 seconds)
+2019-07-26 14:19:42		  sasl_fail. . . . . . :   ('continue')
+2019-07-26 14:19:42		  autoconnect. . . . . : on
+2019-07-26 14:19:42		  autoreconnect. . . . :   (on)
+2019-07-26 14:19:42		  autoreconnect_delay. :   (10 seconds)
+2019-07-26 14:19:42		  nicks. . . . . . . . :   ('jledbetter,jledbetter1,jledbetter2,jledbetter3,jledbetter4')
+2019-07-26 14:19:42		  nicks_alternate. . . :   (on)
+2019-07-26 14:19:42		  username . . . . . . : 'blindidiotgod/freenode'
+2019-07-26 14:19:42		  realname . . . . . . :   ('')
+2019-07-26 14:19:42		  local_hostname . . . :   ('')
+2019-07-26 14:19:42		  usermode . . . . . . :   ('')
+2019-07-26 14:19:42		  command. . . . . . . :   ('')
+2019-07-26 14:19:42		  command_delay. . . . :   (0 seconds)
+2019-07-26 14:19:42		  autojoin . . . . . . :   ('')
+2019-07-26 14:19:42		  autorejoin . . . . . :   (off)
+2019-07-26 14:19:42		  autorejoin_delay . . :   (30 seconds)
+2019-07-26 14:19:42		  connection_timeout . :   (60 seconds)
+2019-07-26 14:19:42		  anti_flood_prio_high :   (2 seconds)
+2019-07-26 14:19:42		  anti_flood_prio_low. :   (2 seconds)
+2019-07-26 14:19:42		  away_check . . . . . :   (0 minutes)
+2019-07-26 14:19:42		  away_check_max_nicks :   (25)
+2019-07-26 14:19:42		  msg_kick . . . . . . :   ('')
+2019-07-26 14:19:42		  msg_part . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:19:42		  msg_quit . . . . . . :   ('WeeChat ${info:version}')
+2019-07-26 14:19:42		  notify . . . . . . . :   ('')
+2019-07-26 14:19:42		  split_msg_max_length :   (512)
+2019-07-26 14:21:04		[core]
+2019-07-26 14:21:04		  away     command  filter   key      plugin   reload   set      version
+2019-07-26 14:21:04		  bar      cursor   help     layout   print    repeat   unset    wait   
+2019-07-26 14:21:04		  buffer   debug    history  mouse    proxy    save     upgrade  window 
+2019-07-26 14:21:04		  color    eval     input    mute     quit     secure   uptime 
+2019-07-26 14:21:04		[relay]
+2019-07-26 14:21:04		  relay
+2019-07-26 14:21:04		[tcl]
+2019-07-26 14:21:04		  tcl
+2019-07-26 14:21:04		[xfer]
+2019-07-26 14:21:04		  me  xfer
+2019-07-26 14:21:04		[python]
+2019-07-26 14:21:04		  python
+2019-07-26 14:21:04		[charset]
+2019-07-26 14:21:04		  charset
+2019-07-26 14:21:04		[script]
+2019-07-26 14:21:04		  script
+2019-07-26 14:21:04		[buflist]
+2019-07-26 14:21:04		  buflist
+2019-07-26 14:21:04		[trigger]
+2019-07-26 14:21:04		  trigger
+2019-07-26 14:21:04		[fset]
+2019-07-26 14:21:04		  fset
+2019-07-26 14:21:04		[spell]
+2019-07-26 14:21:04		  spell
+2019-07-26 14:21:04		[fifo]
+2019-07-26 14:21:04		  fifo
+2019-07-26 14:21:04		[lua]
+2019-07-26 14:21:04		  lua
+2019-07-26 14:21:04		[alias]
+2019-07-26 14:21:04		  AAWAY    ANICK    CHAT     IG       LEAVE    N        SIGNOFF  V        WII    
+2019-07-26 14:21:04		  alias    BEEP     CL       J        M        Q        T        W        WW     
+2019-07-26 14:21:04		  AME      BYE      CLOSE    K        MSGBUF   REDRAW   UB       WC     
+2019-07-26 14:21:04		  AMSG     C        EXIT     KB       MUB      SAY      UMODE    WI     
+2019-07-26 14:21:04		[irc]
+2019-07-26 14:21:04		  admin       deop        kickban     nick        reconnect   servlist    users     
+2019-07-26 14:21:04		  allchan     devoice     kill        notice      rehash      squery      version   
+2019-07-26 14:21:04		  allpv       die         links       notify      remove      squit       voice     
+2019-07-26 14:21:04		  allserv     disconnect  list        op          restart     stats       wallchops 
+2019-07-26 14:21:04		  ban         halfop      lusers      oper        sajoin      summon      wallops   
+2019-07-26 14:21:04		  cap         ignore      map         part        samode      time        who       
+2019-07-26 14:21:04		  connect     info        me          ping        sanick      topic       whois     
+2019-07-26 14:21:04		  ctcp        invite      mode        pong        sapart      trace       whowas    
+2019-07-26 14:21:04		  cycle       ison        motd        query       saquit      unban     
+2019-07-26 14:21:04		  dcc         join        msg         quiet       server      unquiet   
+2019-07-26 14:21:04		  dehalfop    kick        names       quote       service     userhost  
+2019-07-26 14:21:04		[perl]
+2019-07-26 14:21:04		  perl
+2019-07-26 14:21:04		[exec]
+2019-07-26 14:21:04		  exec
+2019-07-26 14:21:04		[logger]
+2019-07-26 14:21:04		  logger
+2019-07-26 14:21:04		[ruby]
+2019-07-26 14:21:04		  ruby
+2019-07-26 14:21:22		[irc]  /server  list|listfull [<name>]
+2019-07-26 14:21:22		                add <name> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2019-07-26 14:21:22		                copy|rename <name> <new_name>
+2019-07-26 14:21:22		                reorder <name> [<name>...]
+2019-07-26 14:21:22		                open <name>|-all [<name>...]
+2019-07-26 14:21:22		                del|keep <name>
+2019-07-26 14:21:22		                deloutq|jump|raw
+2019-07-26 14:21:22		list, add or remove IRC servers
+2019-07-26 14:21:22		    list: list servers (without argument, this list is displayed)
+2019-07-26 14:21:22		listfull: list servers with detailed info for each server
+2019-07-26 14:21:22		     add: add a new server
+2019-07-26 14:21:22		    name: server name, for internal and display use; this name is used to connect to the server (/connect name) and to set server options: irc.server.name.xxx
+2019-07-26 14:21:22		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2019-07-26 14:21:22		   -temp: add a temporary server (not saved)
+2019-07-26 14:21:22		  option: set option for server (for boolean option, value can be omitted)
+2019-07-26 14:21:22		nooption: set boolean option to 'off' (for example: -nossl)
+2019-07-26 14:21:22		    copy: duplicate a server
+2019-07-26 14:21:22		  rename: rename a server
+2019-07-26 14:21:22		 reorder: reorder list of servers
+2019-07-26 14:21:22		    open: open the server buffer without connecting
+2019-07-26 14:21:22		    keep: keep server in config file (for temporary servers only)
+2019-07-26 14:21:22		     del: delete a server
+2019-07-26 14:21:22		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2019-07-26 14:21:22		    jump: jump to server buffer
+2019-07-26 14:21:22		     raw: open buffer with raw IRC data
+2019-07-26 14:21:22		Examples:
+2019-07-26 14:21:22		  /server listfull
+2019-07-26 14:21:22		  /server add freenode chat.freenode.net
+2019-07-26 14:21:22		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2019-07-26 14:21:22		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2019-07-26 14:21:22		  /server copy freenode freenode-test
+2019-07-26 14:21:22		  /server rename freenode-test freenode2
+2019-07-26 14:21:22		  /server reorder freenode2 freenode
+2019-07-26 14:21:22		  /server del freenode
+2019-07-26 14:21:22		  /server deloutq
+2019-07-26 14:21:29	=!=	Error: unknown command "/se4rver" (type /help for help)
+2019-07-26 14:21:36		irc: server bouncer-freenode has been deleted
+2019-07-26 14:21:42	=!=	Error: unknown command "/serveradd" (type /help for help)
+2019-07-26 14:23:02		irc: server bouncer-freenode added
+2019-07-26 14:23:44		Secured data "bouncer-freenode" set
+2019-07-26 14:23:44		Options saved to sec.conf
+2019-07-26 14:24:15		Option changed: irc.server.bouncer-freenode.password = "${sec.data.bouncer-freenode}"  (default if null: "")
+2019-07-26 14:24:18		Options saved to sec.conf
+2019-07-26 14:24:18		Options saved to weechat.conf
+2019-07-26 14:24:18		Options saved to plugins.conf
+2019-07-26 14:24:18		Options saved to charset.conf
+2019-07-26 14:24:18		Options saved to logger.conf
+2019-07-26 14:24:18		Options saved to exec.conf
+2019-07-26 14:24:18		Options saved to trigger.conf
+2019-07-26 14:24:18		Options saved to spell.conf
+2019-07-26 14:24:18		Options saved to alias.conf
+2019-07-26 14:24:18		Options saved to buflist.conf
+2019-07-26 14:24:18		Options saved to fifo.conf
+2019-07-26 14:24:18		Options saved to xfer.conf
+2019-07-26 14:24:18		Options saved to irc.conf
+2019-07-26 14:24:18		Options saved to relay.conf
+2019-07-26 14:24:18		Options saved to tcl.conf
+2019-07-26 14:24:18		Options saved to python.conf
+2019-07-26 14:24:18		Options saved to lua.conf
+2019-07-26 14:24:18		Options saved to perl.conf
+2019-07-26 14:24:18		Options saved to ruby.conf
+2019-07-26 14:24:18		Options saved to script.conf
+2019-07-26 14:24:18		Options saved to fset.conf
+2019-07-26 14:24:29		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, lua, perl, python, relay, ruby, script, spell, tcl, trigger, xfer
