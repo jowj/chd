@@ -1,0 +1,169 @@
+2019-07-28 01:01:14	&matthew	hm, looks like it got lost on a gist
+2019-07-28 01:01:19	&matthew	i don't know of a reason not to MSC it
+2019-07-28 01:01:44	@travis	It's in a draft state while we figure out the scope of it
+2019-07-28 01:03:00	@travis	the gist isn't meant for the public yet as it's mostly a scratchpad of ideas rather than a solution
+2019-07-28 01:03:50	yan	wasn't there a google docs document describing telegram-alike buttons/callbacks?
+2019-07-28 01:04:14	yan	I feel like the core concept is the same
+2019-07-28 01:04:52	@travis	There is https://github.com/matrix-org/matrix-doc/issues/1485 however I have Thoughts on it and why it's insufficient
+2019-07-28 01:09:03	@travis	I guess it should probably be a real MSC... the Riot branches are already out there, just not merged/PRd
+2019-07-28 01:09:34	<--	@freenode_jameshjacksonjr:matrix.org (None) has left #Matrix HQ
+2019-07-28 01:13:48	<--	akash (@freenode_akash:matrix.org) has left #Matrix HQ
+2019-07-28 01:14:21	-->	akash (@freenode_akash:matrix.org) has joined #Matrix HQ
+2019-07-28 01:18:25	<--	akash (@freenode_akash:matrix.org) has left #Matrix HQ
+2019-07-28 01:18:59	-->	akash (@freenode_akash:matrix.org) has joined #Matrix HQ
+2019-07-28 01:22:12	<--	@freenode_jameshjacksonjr:matrix.org (None) has left #Matrix HQ
+2019-07-28 02:13:11	-->	commagray (@commagray:092918.xyz) has joined #Matrix HQ
+2019-07-28 02:21:07	commagray	Stress-test for my 32 Gb board.
+2019-07-28 02:23:20	aaron	👋
+2019-07-28 02:59:12	<--	@freenode_gearshift:matrix.org (None) has left #Matrix HQ
+2019-07-28 03:02:33	<--	cerenous (@freenode_cerenous:matrix.org) has left #Matrix HQ
+2019-07-28 03:03:21	-->	cerenous (@freenode_cerenous:matrix.org) has joined #Matrix HQ
+2019-07-28 03:04:12	<--	cerenous (@freenode_cerenous:matrix.org) has left #Matrix HQ
+2019-07-28 03:06:10	-->	cerenous (@freenode_cerenous:matrix.org) has joined #Matrix HQ
+2019-07-28 03:35:16	<--	@freenode_gearshift:matrix.org (None) has left #Matrix HQ
+2019-07-28 03:43:13	<--	akash (@freenode_akash:matrix.org) has left #Matrix HQ
+2019-07-28 03:48:05	-->	akash (@freenode_akash:matrix.org) has joined #Matrix HQ
+2019-07-28 04:11:53	minji	Is websocket support high priority? I imagine using websockets for syncing rooms alone would noticeably improve the performance and perceived responsiveness of Riot. Plus it would be much more friendly for Android roms without GCM. The GitHub issue hasn't been touched in a while
+2019-07-28 04:13:55	<--	@freenode_gearshift4:matrix.org (None) has left #Matrix HQ
+2019-07-28 05:14:53	auscompgeek	I know https://github.com/matrix-org/matrix-doc/pull/2108 is in the pipeline. I don't think there's an MSC for websockets, and both websockets and SSE seems a bit redundant
+2019-07-28 05:16:43	auscompgeek	A proof-of-concept implementation would be good I guess.
+2019-07-28 05:21:13	ptman	I believe sse or websockets would replace long polling, not gcm
+2019-07-28 07:03:49	<--	akash (@freenode_akash:matrix.org) has left #Matrix HQ
+2019-07-28 08:55:45	tulir	> In reply to @minji:privacytools.io
+2019-07-28 08:55:45		> Is websocket support high priority? I imagine using
+2019-07-28 08:55:45		> websockets for syncing rooms alone would noticeably
+2019-07-28 08:55:45		> improve the performance and perceived responsiveness of
+2019-07-28 08:55:45		> Riot. Plus it would be much more friendly for Android roms
+2019-07-28 08:55:45		> without GCM. The GitHub issue hasn't been touched in a
+2019-07-28 08:55:45		> while
+2019-07-28 08:55:45		I kind of doubt it would noticeably improve performance, HTTP/2 already removes most of the overhead (TCP and TLS handshakes) of long polling
+2019-07-28 09:02:39	C0rn3j	I keep getting kicked from freenode groups and I don't understand how to fix it - Reason: IRC error on #archlinux: err_needreggednick
+2019-07-28 09:03:06	C0rn3j	it seems it's trying to use "C0rn3j[m]" but when I try to login to my account on freenode and do "/nick C0rn3j[m]" I get an error that the nick is already in use
+2019-07-28 09:03:11	Nickli	it says right there, you need to register a nick on freenode
+2019-07-28 09:04:19	C0rn3j	Yeah but I can't because it is in use already. And I don't get how to merge the IRC Riot acc(?) and my usual IRC acc in that case
+2019-07-28 09:04:24	Nickli	seems to me you'r already using C0rn3j
+2019-07-28 09:05:10	C0rn3j	So what should I do?
+2019-07-28 09:07:50	Nickli	i don't know
+2019-07-28 09:08:24	Nickli	sure you registered as C0rn3j exactly and without [m]
+2019-07-28 09:08:35	Nickli	and not*
+2019-07-28 09:09:33	C0rn3j	when I send "INFO C0rn3j" to nickserv- Nicks      : C0rn3j C0rn3j[m] C0rn3j_
+2019-07-28 09:10:21	C0rn3j	huh it works now
+2019-07-28 09:19:45	maralorn	Matthew: turt2live: That sounds amazing. Would be awesome for a lot of applications I have in mind.
+2019-07-28 09:22:19	tulir	> In reply to @travis:t2l.io
+2019-07-28 09:22:19		> I guess it should probably be a real MSC... the Riot
+2019-07-28 09:22:19		> branches are already out there, just not merged/PRd
+2019-07-28 09:22:19		I could probably make it into a real MSC at some point
+2019-07-28 09:26:52	ace	> In reply to @minji:privacytools.io
+2019-07-28 09:26:52		> Is websocket support high priority? I imagine using
+2019-07-28 09:26:52		> websockets for syncing rooms alone would noticeably
+2019-07-28 09:26:52		> improve the performance and perceived responsiveness of
+2019-07-28 09:26:52		> Riot. Plus it would be much more friendly for Android roms
+2019-07-28 09:26:52		> without GCM. The GitHub issue hasn't been touched in a
+2019-07-28 09:26:52		> while
+2019-07-28 09:26:52		There's an MSC up for doing SSE (Server-Sent Events) for the sync stream, which - in my own eyes at least - seems like a much better solution than websockets would be.
+2019-07-28 10:08:51	deepc0re	how does consensus work in matrix?
+2019-07-28 10:15:03	heftig	I'm trying to moderate a room; I have maximum permissions (100), settings look ok but I only get permission errors
+2019-07-28 10:15:03		why?
+2019-07-28 10:18:47	heftig	riot says i have user level 100, synapse says i have user level 0; wtf
+2019-07-28 10:19:09	swedneck:privacytools.io	sounds like a state reset
+2019-07-28 10:20:43	swedneck:privacytools.io	i presume it's an old room, and not one you just made?
+2019-07-28 10:25:26	heftig	yeah, old room
+2019-07-28 10:25:47	heftig	i just moved my permissions from an old user @matrix.org to a new(er) user @archlinux.org
+2019-07-28 10:26:02	heftig	but now matrix.org believes the move happened and archlinux.org believes it did not
+2019-07-28 10:26:11	heftig	so i'm stuck
+2019-07-28 10:40:07	thenamelesswonderer	does running your own synapse reveal your ip to everyone or is there a cloak feature sort of like in IRC?
+2019-07-28 10:42:20	Nickli	how would anyone be able to connect to the homeserver otherwise?
+2019-07-28 10:44:39	swedneck:permaweb.io	> In reply to @thenamelesswonderer:matrix.org
+2019-07-28 10:44:39		> does running your own synapse reveal your ip to everyone
+2019-07-28 10:44:39		> or is there a cloak feature sort of like in IRC?
+2019-07-28 10:44:39		it reveals the IP of your server, not any users
+2019-07-28 10:45:54	thenamelesswonderer	Right and anyone can see it by clicking on a user's name?
+2019-07-28 10:47:04	Nickli	most stuff is relayed via the server so not the individual user IP is revealed to other servers
+2019-07-28 10:47:47	heftig	so what do I do now? the homeservers disagree on the power levels
+2019-07-28 10:48:30	Nickli	heftig: your server is software up to date?
+2019-07-28 10:48:41	heftig	yes
+2019-07-28 10:57:44	maralorn	TheNamelessWonderer: Anyone can figure the homeserver IP out, by doing a DNS request (or looking into the .well-known) of the domain part of your users id. But I don‘t know of any client which would integrate that into the ui. I don‘t think anyone needs that feature.
+2019-07-28 10:59:10	swedneck:privacytools.io	> In reply to @heftig:archlinux.org
+2019-07-28 10:59:10		> so what do I do now? the homeservers disagree on the power
+2019-07-28 10:59:10		> levels
+2019-07-28 10:59:10		state resets suck, if you can get PL 100 again i think the best action is to upgrade the room
+2019-07-28 10:59:31	swedneck:privacytools.io	if you can't get PL 100 again you'll have to make a new room and move people there
+2019-07-28 11:00:12	heftig	I also tried removing the event which lowered the matrix.org user's power level
+2019-07-28 11:00:20	heftig	it was removed but the power level didn't change
+2019-07-28 11:52:23	&matthew	it should be impossible to entirely lose power due to state resets (unless users explicitly relinquished power)
+2019-07-28 11:52:55	&matthew	so find a user who has ops and upgrade the room to escape the mess
+2019-07-28 12:32:06	heftig	Matthew: there's nobody else left
+2019-07-28 12:32:17	heftig	the only other admin is a deactivated matrix.org account
+2019-07-28 12:34:41	heftig	Matthew: i'm not even sure a "state reset" is what happened, since I didn't get unexpectedly rejoined
+2019-07-28 12:35:18	heftig	but now the homeservers are in disagreement; archlinux.org says @heftig:matrix.org has 100 and @heftig:archlinux.org has 0
+2019-07-28 12:35:24	heftig	matrix.org says the opposite is the case
+2019-07-28 12:36:28	&matthew	state reset = state regressing to some earlier state on one or more servers
+2019-07-28 12:37:02	&matthew	on the server where you have ops, do /upgraderoom 4
+2019-07-28 12:37:13	heftig	I don't have ops anywhere
+2019-07-28 12:37:11	&matthew	(afk)
+2019-07-28 12:37:35	heftig	each server has the opinion that my local user has zero power
+2019-07-28 12:45:32	&matthew	oh, i see
+2019-07-28 12:45:52	&matthew	we can prolly puppet the matrix.org deactivated user to fix it if you mail support@ with the details
+2019-07-28 12:50:33	heftig	i'll try, thanks
+2019-07-28 13:15:16	minji	> In reply to @ace:kittenface.studio
+2019-07-28 13:15:16		> There's an MSC up for doing SSE (Server-Sent Events) for
+2019-07-28 13:15:16		> the sync stream, which - in my own eyes at least - seems
+2019-07-28 13:15:16		> like a much better solution than websockets would be.
+2019-07-28 13:15:16		Please can you link it?
+2019-07-28 13:15:45	ace	> In reply to @minji:privacytools.io
+2019-07-28 13:15:45		> Please can you link it?
+2019-07-28 13:15:45		https://github.com/matrix-org/matrix-doc/pull/2108
+2019-07-28 13:16:02	tulir	> In reply to @_discord_116688250243907590:half-shot.uk
+2019-07-28 13:16:02		> I know https://github.com/matrix-org/matrix-doc/pull/2108
+2019-07-28 13:16:02		> is in the pipeline. I don't think there's an MSC for
+2019-07-28 13:16:02		> websockets, and both websockets and SSE seems a bit
+2019-07-28 13:16:02		> redundant
+2019-07-28 13:16:02		minji: it was linked right after your message
+2019-07-28 13:21:33	minji	> In reply to @ace:kittenface.studio
+2019-07-28 13:21:33		> https://github.com/matrix-org/matrix-doc/pull/2108
+2019-07-28 13:21:33		Thanks
+2019-07-28 13:21:53	minji	> In reply to @tulir:maunium.net
+2019-07-28 13:21:53		> minji: it was linked right after your message
+2019-07-28 13:21:53		Oh, my bad
+2019-07-28 11:00:12	heftig	I also tried removing the event which lowered the matrix.org user's power level
+2019-07-28 11:00:20	heftig	it was removed but the power level didn't change
+2019-07-28 11:27:59	◀▬▬	@freenode_akash:matrix.org (None) has left #Matrix HQ
+2019-07-28 11:50:10	◀▬▬	@freenode_akash:matrix.org (None) has left #Matrix HQ
+2019-07-28 11:52:23	&matthew	it should be impossible to entirely lose power due to state resets (unless users explicitly relinquished power)
+2019-07-28 11:52:55	&matthew	so find a user who has ops and upgrade the room to escape the mess
+2019-07-28 12:32:06	heftig	Matthew: there's nobody else left
+2019-07-28 12:32:17	heftig	the only other admin is a deactivated matrix.org account
+2019-07-28 12:34:41	heftig	Matthew: i'm not even sure a "state reset" is what happened, since I didn't get unexpectedly rejoined
+2019-07-28 12:35:18	heftig	but now the homeservers are in disagreement; archlinux.org says @heftig:matrix.org has 100 and @heftig:archlinux.org has 0
+2019-07-28 12:35:24	heftig	matrix.org says the opposite is the case
+2019-07-28 12:36:28	&matthew	state reset = state regressing to some earlier state on one or more servers
+2019-07-28 12:37:02	&matthew	on the server where you have ops, do /upgraderoom 4
+2019-07-28 12:37:13	heftig	I don't have ops anywhere
+2019-07-28 12:37:11	&matthew	(afk)
+2019-07-28 12:37:35	heftig	each server has the opinion that my local user has zero power
+2019-07-28 12:45:32	&matthew	oh, i see
+2019-07-28 12:45:52	&matthew	we can prolly puppet the matrix.org deactivated user to fix it if you mail support@ with the details
+2019-07-28 12:50:33	heftig	i'll try, thanks
+2019-07-28 13:15:16	minji	> In reply to @ace:kittenface.studio
+2019-07-28 13:15:16		> There's an MSC up for doing SSE (Server-Sent Events) for
+2019-07-28 13:15:16		> the sync stream, which - in my own eyes at least - seems
+2019-07-28 13:15:16		> like a much better solution than websockets would be.
+2019-07-28 13:15:16		Please can you link it?
+2019-07-28 13:15:45	ace	> In reply to @minji:privacytools.io
+2019-07-28 13:15:45		> Please can you link it?
+2019-07-28 13:15:45		https://github.com/matrix-org/matrix-doc/pull/2108
+2019-07-28 13:16:02	tulir	> In reply to @_discord_116688250243907590:half-shot.uk
+2019-07-28 13:16:02		> I know https://github.com/matrix-org/matrix-doc/pull/2108
+2019-07-28 13:16:02		> is in the pipeline. I don't think there's an MSC for
+2019-07-28 13:16:02		> websockets, and both websockets and SSE seems a bit
+2019-07-28 13:16:02		> redundant
+2019-07-28 13:16:02		minji: it was linked right after your message
+2019-07-28 13:21:33	minji	> In reply to @ace:kittenface.studio
+2019-07-28 13:21:33		> https://github.com/matrix-org/matrix-doc/pull/2108
+2019-07-28 13:21:33		Thanks
+2019-07-28 13:21:53	minji	> In reply to @tulir:maunium.net
+2019-07-28 13:21:53		> minji: it was linked right after your message
+2019-07-28 13:21:53		Oh, my bad
+2019-07-28 13:29:05	◀▬▬	@freenode_akash:matrix.org (None) has left #Matrix HQ
+2019-07-28 13:37:50	◀▬▬	@freenode_kqr:matrix.org (None) has left #Matrix HQ
+2019-07-28 13:54:22	jorik	Have there been any attempts on device awareness? i.e. having devices track which one the 'active' one is so that they don't all bing at the same time.

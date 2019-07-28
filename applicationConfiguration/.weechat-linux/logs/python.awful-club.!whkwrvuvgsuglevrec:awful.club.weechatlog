@@ -1,0 +1,141 @@
+2019-07-28 02:32:38	&jowj	also the era of dinosaurs
+2019-07-28 02:32:48	mrled	you are very confused as to when dinosaurs were here
+2019-07-28 02:32:50	&jowj	lol like i'm gonna click on a url shortener
+2019-07-28 02:32:54	mrled	(it's now btw, all birds are dinosaurs)
+2019-07-28 02:33:07	mrled	(have u ever looked at a grackle i mean really LOOKED)
+2019-07-28 02:33:09	&jowj	micah its $currentyear, all years prior are dino years
+2019-07-28 02:33:12	&jowj	grackles are horrifying
+2019-07-28 02:33:23	&jowj	I have read amazing things about net-canons employed in like taylor texas
+2019-07-28 02:33:26	&jowj	to try and catch them
+2019-07-28 02:33:40	mrled	The I’m sorry what
+2019-07-28 02:34:06	&jowj	ok here's one of my fav stories
+2019-07-28 02:34:07	&jowj	https://www.kut.org/post/time-ut-austin-waged-war-grackles
+2019-07-28 02:34:36	&jowj	they played ping pong with grackles!
+2019-07-28 02:34:41	&jowj	because it wasn't legal to kill them!!!
+2019-07-28 02:36:34	mrled	It is ILLEGAL TO KILL THEM? That’s insane, they are everywhere
+2019-07-28 02:37:03	mrled	That’s awesome
+2019-07-28 02:37:34	&jowj	here's the city of denton using cannons lol
+2019-07-28 02:37:36	&jowj	https://texaschlforum.com/viewtopic.php?t=5609
+2019-07-28 02:37:45	&jowj	(there's a linked article that died but they c&p the text)
+2019-07-28 02:38:24	&jowj	here's another article about hot hair cannons v grackles
+2019-07-28 02:38:25	&jowj	https://www.statesman.com/news/20160828/cannon-lasers-await-migrating-grackles-that-stay-too-long
+2019-07-28 02:38:33	&jowj	its one of my favorite bits of texas lore
+2019-07-28 02:38:49	mrled	That’s crazy
+2019-07-28 02:38:52	mrled	Ive never heard of this
+2019-07-28 03:23:37	mrled	That CHL forum has for some reason permabanned my home IP address
+2019-07-28 03:23:40	mrled	So I cannot see it
+2019-07-28 03:23:48	&jowj	ahahaha
+2019-07-28 03:23:59	&jowj	well, the headline of the following aritcle "cannon, lasers awai grackles"
+2019-07-28 03:24:03	&jowj	gives u an idea
+2019-07-28 03:52:44	&jowj	HAH cooooool
+2019-07-28 03:52:56	&jowj	i finally got the matrix plugin to weechat working, so now i'm typing from this ridiculous thing
+2019-07-28 03:53:24	&jowj	https://matrix.awful.club:443/_matrix/media/r0/download/awful.club/LGfHCAsySNlIAmmOcVsIooXD/image.png
+2019-07-28 03:53:33	mrled	Haha nice
+2019-07-28 03:53:37	mrled	I thought you were using that this whole time
+2019-07-28 03:53:48	&jowj	no! encryption wasn't working for a very long time, i'm using riot mostly
+2019-07-28 03:54:13	&jowj	i'll probably use riot mainly for a while until/unless i fully commit to weechat and use its relay system
+2019-07-28 03:54:35	&jowj	but WOO this took me forever
+2019-07-28 03:55:44	mrled	Ahhh I see
+2019-07-28 03:55:49	mrled	Now we have no encryption problem in here
+2019-07-28 03:55:50	mrled	Perfect
+2019-07-28 03:55:55	&jowj	ya lol
+2019-07-28 03:56:00	&jowj	but it supports encyrption now!!
+2019-07-28 03:56:04	&jowj	through the use of libolm
+2019-07-28 03:56:14	&jowj	which is an implementation of the open whisper double rachet protocol
+2019-07-28 03:56:20	mrled	Oh, cool
+2019-07-28 03:56:22	&jowj	which is actually pretty rad
+2019-07-28 03:56:24	&jowj	its in go
+2019-07-28 03:56:26	&jowj	iirc
+2019-07-28 03:58:18	&jowj	oh weird there's even supposed to be typing notifications in here
+2019-07-28 04:02:23	&jowj	and test
+2019-07-28 04:02:30	&jowj	fascinating
+2019-07-28 04:02:32	&jowj	i am into this
+2019-07-28 04:02:40	mrled	How much work was it to set up
+2019-07-28 04:03:04	&jowj	tbh once i moved over to weechat compiled with python3 support, none
+2019-07-28 04:03:16	&jowj	but it was figuring out that the python 2.7 support promised by the plugin was fake that took so long
+2019-07-28 04:03:15	mrled	Lol I mean all of weechat
+2019-07-28 04:03:26	&jowj	oh
+2019-07-28 04:03:27	mrled	I remember old irc crap like bouncers and stuff being a huge pain
+2019-07-28 04:03:39	&jowj	weechat is pretty werid? but i'm still using a bouncer for my irc channels
+2019-07-28 04:03:57	mrled	Where do you even go in irc
+2019-07-28 04:04:01	&jowj	i'm eschewing the weechat server > n number of weechat relayclients model because of a gaping security hole
+2019-07-28 04:04:25	&jowj	(they treating the relay > server relationship as trusted, and weechat lets you run arbitrary commands, so if anyone owns your server they can own all of your clients, at once!!)
+2019-07-28 04:04:49	&jowj	i hang out in like 2 channels on OFTC, and then get support for a few projects i'm working on in fleanode.
+2019-07-28 04:05:23	&jowj	oftc has crimehole, made by twitter friends, and freenode has like pleroma + an opensource browser i want to like but so far can't lol
+2019-07-28 04:05:51	mrled	Fleanode lol
+2019-07-28 04:06:05	&jowj	weechat also connects to slack in a mediocre fashion; images are a pain (but still viewable) and text is first rate, so its nice to run it on my garbage laptops that can't actually run a ton of electron at once
+2019-07-28 04:06:26	mrled	Man, I don’t think I’d ever trust a non-big name browser
+2019-07-28 04:06:30	mrled	The security threats on the web are insane
+2019-07-28 04:06:35	&jowj	oh no yeah its horrible
+2019-07-28 04:06:35	mrled	Maybe if JavaScript were disabled
+2019-07-28 04:07:09	&jowj	its, are you ready to be disappointed in me, supposed to be "emacs for the browser" where its written in lisp, lisp is the config language, and its entirely keyboard driven
+2019-07-28 04:07:14	&jowj	its like embedded webkit iirc
+2019-07-28 04:07:25	&jowj	i just wanna use it for browsing the web, not for doing anything
+2019-07-28 04:07:40	&jowj	specifically like 3-5 sites that are JUST comments / basic image viewing
+2019-07-28 04:07:46	&jowj	like reddit, hackernews or whatever.
+2019-07-28 04:08:07	&jowj	i've found a cool idea but bad implementation of the same keyboard driven thing, on firefox
+2019-07-28 04:08:29	&jowj	called..bebop
+2019-07-28 04:09:03	&jowj	https://matrix.awful.club:443/_matrix/media/r0/download/awful.club/DQtQbsSnWeAPlXssVihBIpSx/image.png
+2019-07-28 04:09:25	&jowj	that looks like that; you activate that with a hotkey, type like ":l git" and it will fuzzy match the possible links that are on page
+2019-07-28 04:09:32	mrled	Yuckkkkkkk lol
+2019-07-28 04:09:34	&jowj	then, hit enter to be taken to the most 'likely' link
+2019-07-28 04:09:40	&jowj	or shift enter for the one below that
+2019-07-28 04:09:47	&jowj	yeah the ui is garbo, emacs people are stupid dorks about ui
+2019-07-28 04:09:56	&jowj	but i really like not having to mouse around when i'm trolling through links on google.
+2019-07-28 04:10:04	mrled	The ff thing I get, but why LISP of all things lol
+2019-07-28 04:10:09	&jowj	yeah WHO knows
+2019-07-28 04:10:12	&jowj	that's not a good idea
+2019-07-28 04:10:37	mrled	I used conkeror for a while. It had a link hinting thing. It seemed like a good idea, but ultimately I found it slower than just, clicking
+2019-07-28 04:10:56	mrled	It was based on mozilla xulrunner
+2019-07-28 04:11:01	&jowj	i never used conkeror but know of it
+2019-07-28 04:11:23	&jowj	this thing fuzzy matches based on the title text, the url, and i think the seo text
+2019-07-28 04:11:30	&jowj	so you don't really have to be all that exact
+2019-07-28 04:11:59	&jowj	also it doesn't work on github for i guess the same reason pinboard's bookmarklet doesn't
+2019-07-28 04:12:02	&jowj	which is AGGREVATING
+2019-07-28 04:12:15	mrled	I dunno why mozilla won’t fix that
+2019-07-28 04:12:57	&jowj	its so jarring!
+2019-07-28 04:18:07	&jowj	i have to go to bed
+2019-07-28 04:18:08	&jowj	its boring
+2019-07-28 04:19:23	&jowj	also @mrled write a rpely so i can test something lol
+2019-07-28 04:19:32	&jowj	ugh, ok, @ing doesn't work well on weechat
+2019-07-28 04:19:34	&jowj	mrled:
+2019-07-28 04:19:38	&jowj	yeah, like not at all
+2019-07-28 04:19:49	&jowj	@mrled:awful.club
+2019-07-28 04:19:58	&jowj	no change, mega rude
+2019-07-28 04:42:46	mrled	> In reply to @jowj:awful.club
+2019-07-28 04:42:46		> no change, mega rude
+2019-07-28 04:42:46		A reply u say
+2019-07-28 04:43:18	mrled	I also have to go to bed
+2019-07-28 13:32:03	&jowj	rip
+2019-07-28 04:09:03	&jowj	https://matrix.awful.club:443/_matrix/media/r0/download/awful.club/DQtQbsSnWeAPlXssVihBIpSx/image.png
+2019-07-28 04:09:25	&jowj	that looks like that; you activate that with a hotkey, type like ":l git" and it will fuzzy match the possible links that are on page
+2019-07-28 04:09:32	mrled	Yuckkkkkkk lol
+2019-07-28 04:09:34	&jowj	then, hit enter to be taken to the most 'likely' link
+2019-07-28 04:09:40	&jowj	or shift enter for the one below that
+2019-07-28 04:09:47	&jowj	yeah the ui is garbo, emacs people are stupid dorks about ui
+2019-07-28 04:09:56	&jowj	but i really like not having to mouse around when i'm trolling through links on google.
+2019-07-28 04:10:04	mrled	The ff thing I get, but why LISP of all things lol
+2019-07-28 04:10:09	&jowj	yeah WHO knows
+2019-07-28 04:10:12	&jowj	that's not a good idea
+2019-07-28 04:10:37	mrled	I used conkeror for a while. It had a link hinting thing. It seemed like a good idea, but ultimately I found it slower than just, clicking
+2019-07-28 04:10:56	mrled	It was based on mozilla xulrunner
+2019-07-28 04:11:01	&jowj	i never used conkeror but know of it
+2019-07-28 04:11:23	&jowj	this thing fuzzy matches based on the title text, the url, and i think the seo text
+2019-07-28 04:11:30	&jowj	so you don't really have to be all that exact
+2019-07-28 04:11:59	&jowj	also it doesn't work on github for i guess the same reason pinboard's bookmarklet doesn't 
+2019-07-28 04:12:02	&jowj	which is AGGREVATING
+2019-07-28 04:12:15	mrled	I dunno why mozilla won’t fix that
+2019-07-28 04:12:57	&jowj	its so jarring!
+2019-07-28 04:18:07	&jowj	i have to go to bed
+2019-07-28 04:18:09	&jowj	its boring
+2019-07-28 04:19:23	&jowj	also @mrled write a rpely so i can test something lol
+2019-07-28 04:19:32	&jowj	ugh, ok, @ing doesn't work well on weechat
+2019-07-28 04:19:34	&jowj	mrled: 
+2019-07-28 04:19:38	&jowj	yeah, like not at all
+2019-07-28 04:19:49	&jowj	@mrled:awful.club 
+2019-07-28 04:19:58	&jowj	no change, mega rude
+2019-07-28 04:42:46	mrled	> In reply to @jowj:awful.club
+2019-07-28 04:42:46		> no change, mega rude
+2019-07-28 04:42:46		A reply u say
+2019-07-28 04:43:18	mrled	I also have to go to bed
+2019-07-28 13:32:02	&jowj	rip 

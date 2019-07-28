@@ -1,0 +1,1452 @@
+2019-07-05 13:54:04	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-05 13:54:04	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-05 13:54:04	--	Topic set by kaniini on Mon, 01 Jul 2019 20:00:24
+2019-07-05 13:54:04	--	Channel #pleroma: 186 nicks (6 ops, 0 voices, 180 normals)
+2019-07-05 13:54:10	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-05 14:02:48	oenone	strange, plug itself only requires Elixir 1.4 - maybe try "mix deps.clean plug && mix deps.get plug && mix deps.compile plug"
+2019-07-05 14:03:56	BluRaf	still the same error
+2019-07-05 14:05:35	-->	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-05 14:08:05	<--	kindling (fk8wIYKz@unaffiliated/kindling) has quit (Quit: The cake is a lie!)
+2019-07-05 14:10:29	-->	AlexaPlayDespaci (ac64b0d5@cpe-172-100-176-213.stny.res.rr.com) has joined #pleroma
+2019-07-05 14:14:21	-->	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-05 14:16:37	-->	foggyboi (~foggy@2600-6c50-0180-008d-0000-b112-6b45-20d1.dhcp6.chtrptr.net) has joined #pleroma
+2019-07-05 14:18:00	<--	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 252 seconds)
+2019-07-05 14:24:12	<--	meireikei (~weechat@gateway/tor-sasl/meireikei) has quit (Remote host closed the connection)
+2019-07-05 14:24:36	-->	meireikei (~weechat@gateway/tor-sasl/meireikei) has joined #pleroma
+2019-07-05 14:40:28	-->	TheJoYo (62e9b80e@gateway/web/cgi-irc/kiwiirc.com/ip.98.233.184.14) has joined #pleroma
+2019-07-05 14:44:24	<--	foggyboi (~foggy@2600-6c50-0180-008d-0000-b112-6b45-20d1.dhcp6.chtrptr.net) has quit (Ping timeout: 252 seconds)
+2019-07-05 14:48:49	<--	lunamn (~lunamn@179.176.145.26.dynamic.adsl.gvt.net.br) has quit (Ping timeout: 248 seconds)
+2019-07-05 15:37:19	-->	rickkun (~rick@gateway/tor-sasl/rickkun) has joined #pleroma
+2019-07-08 09:35:11	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-08 09:35:11	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-08 09:35:11	--	Topic set by kaniini on Mon, 01 Jul 2019 20:00:24
+2019-07-08 09:35:11	--	Channel #pleroma: 186 nicks (6 ops, 0 voices, 180 normals)
+2019-07-08 09:35:17	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 09:43:36	<--	AbedB__ (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 09:44:02	-->	AbedB__ (~AbedBhuty@162.220.164.100) has joined #pleroma
+2019-07-08 09:44:17	<--	dtluna (~dtluna@46.216.128.210) has quit (Ping timeout: 248 seconds)
+2019-07-08 09:45:42	-->	AbedB_ (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has joined #pleroma
+2019-07-08 09:48:49	<--	AbedB__ (~AbedBhuty@162.220.164.100) has quit (Read error: Connection reset by peer)
+2019-07-08 10:01:08	-->	dtluna (~dtluna@46.216.128.210) has joined #pleroma
+2019-07-08 10:02:25	<--	dtluna (~dtluna@46.216.128.210) has quit (Client Quit)
+2019-07-08 10:22:20	Lord	is there a way to disable the chat ?
+2019-07-08 10:22:33	Lord	i can't find anything in the doc
+2019-07-08 10:36:22	-->	dtluna (~dtluna@37.214.84.217) has joined #pleroma
+2019-07-08 10:57:42	tastytea	Lord: You can disable it in `:frontend_configurations` https://git.pleroma.social/pleroma/pleroma/blob/develop/docs/config.md#frontend_configurations
+2019-07-08 11:00:03	Lord	and which option is it ?
+2019-07-08 11:00:29	--	irc: disconnected from server
+2019-07-08 11:05:44	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-08 11:05:44	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-08 11:05:44	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:24
+2019-07-08 11:05:44	--	Channel #pleroma: 186 nicks (6 ops, 0 voices, 180 normals)
+2019-07-08 11:05:55	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 11:12:32	--	irc: disconnected from server
+2019-07-08 11:13:11	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-08 11:13:11	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-08 11:13:11	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:24
+2019-07-08 11:13:11	--	Channel #pleroma: 186 nicks (6 ops, 0 voices, 180 normals)
+2019-07-08 11:13:23	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 11:13:25	--	Mode #pleroma [+cnt]
+2019-07-08 11:13:25	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 11:13:38	<--	AbedB_ (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 11:15:01	--	irc: disconnected from server
+2019-07-08 11:15:41	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-08 11:15:41	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-08 11:15:41	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:24
+2019-07-08 11:15:41	--	Channel #pleroma: 186 nicks (6 ops, 0 voices, 180 normals)
+2019-07-08 11:15:50	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 11:15:52	--	Mode #pleroma [+cnt]
+2019-07-08 11:15:52	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 11:16:14	Lord	hoo thanks a lot !
+2019-07-08 11:16:39	--	irc: disconnected from server
+2019-07-08 11:17:16	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-08 11:17:16	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-08 11:17:16	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:24
+2019-07-08 11:17:16	--	Channel #pleroma: 186 nicks (6 ops, 0 voices, 180 normals)
+2019-07-08 11:17:34	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 11:17:36	--	Mode #pleroma [+cnt]
+2019-07-08 11:17:36	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-08 11:28:49	<--	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 11:30:19	-->	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has joined #pleroma
+2019-07-08 11:39:15	<--	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 11:41:00	-->	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has joined #pleroma
+2019-07-08 11:44:27	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-08 11:47:03	@hj_	you also need to disable it in BE configuration Lord tastytea
+2019-07-08 11:47:13	@hj_	FE option will be deprecated at some point
+2019-07-08 11:47:32	@hj_	and it will be toggled on/off depending if BE supports it or not
+2019-07-08 11:51:17	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-08 11:53:56	<--	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 11:55:55	-->	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has joined #pleroma
+2019-07-08 12:05:17	-->	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has joined #pleroma
+2019-07-08 12:07:20	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-08 12:16:32	<--	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 12:18:04	-->	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has joined #pleroma
+2019-07-08 12:47:14	<--	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has quit (Read error: Connection reset by peer)
+2019-07-08 12:49:20	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-08 12:50:32	<--	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 12:52:05	-->	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has joined #pleroma
+2019-07-08 13:24:48	<--	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-08 13:25:59	<--	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has quit (Ping timeout: 244 seconds)
+2019-07-08 13:26:46	-->	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has joined #pleroma
+2019-07-08 13:28:48	<--	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has quit (Read error: Connection reset by peer)
+2019-07-08 13:31:37	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-08 13:31:50	<--	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has quit (Remote host closed the connection)
+2019-07-08 13:52:43	-->	gearshift (~gearshift@ool-18b946a5.dyn.optonline.net) has joined #pleroma
+2019-07-08 15:05:20	-->	ggoes (~user@fsf/member/ggoes) has joined #pleroma
+2019-07-08 15:05:46	<--	ggoes (~user@fsf/member/ggoes) has left #pleroma
+2019-07-08 15:06:19	<--	dtluna (~dtluna@37.214.84.217) has quit (Read error: Connection reset by peer)
+2019-07-08 15:06:55	-->	dtluna (~dtluna@37.214.84.217) has joined #pleroma
+2019-07-08 15:14:51	<--	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has quit (Ping timeout: 258 seconds)
+2019-07-08 15:19:54	-->	AbedB (~AbedBhuty@bzq-79-179-42-221.red.bezeqint.net) has joined #pleroma
+2019-07-08 15:27:46	-->	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has joined #pleroma
+2019-07-08 16:46:28	<--	lunamn (~lunamn@177.207.75.162.dynamic.adsl.gvt.net.br) has quit (Ping timeout: 246 seconds)
+2019-07-08 16:48:14	-->	lunamn (~lunamn@177.207.75.162.dynamic.adsl.gvt.net.br) has joined #pleroma
+2019-07-08 16:52:12	-->	LetterBox (~Letterbox@72.51.111.103) has joined #pleroma
+2019-07-08 17:02:21	<--	lunamn (~lunamn@177.207.75.162.dynamic.adsl.gvt.net.br) has quit (Quit: leaving)
+2019-07-08 17:15:14	-->	AceNovo (~chris@184.101.90.138) has joined #pleroma
+2019-07-08 17:17:39	<--	dtluna (~dtluna@37.214.84.217) has quit (Quit: Lost terminal)
+2019-07-09 10:08:24	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-09 10:08:24	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-09 10:08:24	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:24
+2019-07-09 10:08:24	--	Channel #pleroma: 188 nicks (5 ops, 0 voices, 183 normals)
+2019-07-09 10:08:29	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-09 10:16:47	<--	dtluna (~dtluna@37.214.84.217) has quit (Quit: Lost terminal)
+2019-07-09 10:21:42	<--	AbedB (~AbedBhuty@bzq-79-179-33-179.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-09 10:23:31	-->	AbedB (~AbedBhuty@bzq-79-179-33-179.red.bezeqint.net) has joined #pleroma
+2019-07-09 10:33:47	<--	AbedB (~AbedBhuty@bzq-79-179-33-179.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-09 10:33:56	-->	AbedB (~AbedBhuty@208.73.207.132) has joined #pleroma
+2019-07-09 10:46:05	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-09 10:46:14	<--	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has quit (Client Quit)
+2019-07-09 10:47:00	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-09 11:44:42	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-09 11:45:50	<--	Taoki (~MirceaKit@93.113.162.37) has quit (Remote host closed the connection)
+2019-07-09 11:46:45	<--	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 250 seconds)
+2019-07-09 11:47:07	-->	zaitcev_ (~zaitcev@70-251-191-93.lightspeed.austtx.sbcglobal.net) has joined #pleroma
+2019-07-09 11:47:31	<--	harding (~harding@c-73-196-98-36.hsd1.nj.comcast.net) has quit (Quit: leaving)
+2019-07-09 11:50:40	<--	MuffinPimp (mokou@box.mokou.io) has quit (Quit: Goodbye.)
+2019-07-09 11:56:26	-->	AbedB_ (~AbedBhuty@162.220.164.100) has joined #pleroma
+2019-07-09 11:59:08	<--	AbedB (~AbedBhuty@208.73.207.132) has quit (Ping timeout: 244 seconds)
+2019-07-09 12:04:18	<--	ssuprunenko2 (ssuprunenk@colo.feld.me) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-09 12:04:18	<--	feld (feld@freebsd/developer/feld) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-09 12:06:43	-->	ssuprunenko2 (ssuprunenk@colo.feld.me) has joined #pleroma
+2019-07-09 12:06:49	-->	feld (feld@freebsd/developer/feld) has joined #pleroma
+2019-07-09 12:08:35	fireglow	How do I bring changes to the template app.html.eex to the website?
+2019-07-09 12:09:06	rinpatch	recompile/restart pleroma
+2019-07-09 12:09:33	fireglow	hmm I already did that. Let me make sure
+2019-07-09 12:10:26	fireglow	yes, it's not in there
+2019-07-09 12:11:33	fireglow	what is the mix task to explicitly rebuild it?
+2019-07-09 12:14:20	rinpatch	mix compile --force I guess?
+2019-07-09 12:16:07	<--	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has quit (Quit: WeeChat 2.5)
+2019-07-09 12:16:22	-->	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has joined #pleroma
+2019-07-09 12:17:54	<--	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has quit (Client Quit)
+2019-07-09 12:18:15	-->	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has joined #pleroma
+2019-07-09 12:21:22	-->	rickkun (~rick@gateway/tor-sasl/rickkun) has joined #pleroma
+2019-07-09 12:22:54	<--	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has quit (Read error: Connection reset by peer)
+2019-07-09 12:27:45	<--	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has quit (Quit: WeeChat 2.5)
+2019-07-09 12:27:54	-->	mgdm (~mgdm@unaffiliated/mgdm) has joined #pleroma
+2019-07-09 12:28:05	-->	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has joined #pleroma
+2019-07-09 12:33:00	fireglow	hmm, strage: I needed to change priv/static/index.html -- which I guess is the compiled HTML? idk
+2019-07-09 12:33:40	feld	fireglow: what change do you need to make to it?
+2019-07-09 12:34:09	fireglow	some favicon stuff in the <head>
+2019-07-09 12:36:43	<--	AbedB_ (~AbedBhuty@162.220.164.100) has quit (Read error: Connection reset by peer)
+2019-07-09 12:38:38	feld	fireglow: is it something we should be doing by default? I know we really need to add the apple-touch-icon stuff because we get a lot of hits for it that end up traversing down the Pleroma API and wasting CPU cycles
+2019-07-09 12:39:02	fireglow	feld: I think you answered your own question ;)
+2019-07-09 12:39:43	feld	fireglow: correct solution is to fetch the PleromaFE source, make your changes to the index.html there, npm run build, take the contents of dist/* dir and put them into Pleroma's instance/static/ dir (missing by default) which will override the bundled FE
+2019-07-09 12:39:54	fireglow	oh my!
+2019-07-09 12:40:28	feld	it's heavy handed but you can't just edit index.html because it has references to the js and css files with hashes and they change with each update...
+2019-07-09 12:40:38	fireglow	feld: that helps, thank you. I'll set up a mechanism for it
+2019-07-09 12:41:12	feld	fireglow: if you could be so kind, build the solution and then open an MR to pleroma/pleroma-fe repo with the fix so everyone gets the apple-touch-icon nonsense solved
+2019-07-09 12:41:32	feld	it's on my TODO but I don't know if I'll get to it today :)
+2019-07-09 12:41:50	fireglow	feld: I'll give it a try! Let's see how far I get
+2019-07-09 12:41:53	feld	ooooh and this also requires backend support
+2019-07-09 12:41:58	fireglow	dang
+2019-07-09 12:42:03	feld	if it's a new static file
+2019-07-09 12:42:10	mgdm	can I remove the default mascots by overriding them somehow in prod.secret.exs, or do I need to hack config.exs first?
+2019-07-09 12:42:41	feld	mgdm: never touch config.exs; it's the default/base config which is built upon or overridden by the secret.exs
+2019-07-09 12:43:06	feld	fireglow: backend has a list of static files it knows to serve and everything else is assumed to be an API route
+2019-07-09 12:43:27	fireglow	feld: I see! wow, okay I'm taking notes now.
+2019-07-09 12:43:30	mgdm	feld: I'm attempting to avoid it, but as far as I can tell specifying that as an empty array/map/whatever in prod.secret.exs deep merges them, so I can't remove them
+2019-07-09 12:44:03	feld	fireglow: the changes required are in these two files, found by grepping lib/ dir:
+2019-07-09 12:44:04	feld	lib/pleroma/web/endpoint.ex:      ~w(index.html robots.txt static finmoji emoji packs sounds images instance sw.js sw-pleroma.js favicon.png schemas doc),
+2019-07-09 12:44:04	feld	lib/pleroma/plugs/instance_static.ex:  @only ~w(index.html robots.txt static emoji packs sounds images instance favicon.png sw.js
+2019-07-09 12:44:24	feld	mgdm: interesting! cc rinpatch perhaps he can help
+2019-07-09 12:44:25	fireglow	feld: roger that
+2019-07-09 12:44:48	mgdm	feld: thanks! I could add a new mascot which is just a 1px spacer .png, but that feels like a hack and I'd rather just eliminate it entirely
+2019-07-09 12:44:50	feld	fireglow: keep in touch with me on this, i'll help you get the required changes merged
+2019-07-09 12:45:59	fireglow	feld: thanks! I will
+2019-07-09 12:46:00	feld	first file i linked is the list of static files we allow, second file lists the same bundled files which users can override in instance/static/ dir
+2019-07-09 12:46:54	feld	e.g., if you wanted a different favicon but don't want merge conflicts if we ever update our favicon:   cd /path/to/pleroma && mkdir -p instance/static && touch instance/static/favicon.png  <--- this is whatever new favicon you want to serve
+2019-07-09 12:47:22	feld	obv touching is just for this example and produces an empty file... :)
+2019-07-09 12:50:36	fireglow	hm yes
+2019-07-09 13:02:20	fireglow	There is this question of how elaborate we want to be in regards to android/ios support. Taking the package https://realfavicongenerator.net/ spits out, it's quite a lot of files. 9 lines in HTML and 10 static files.
+2019-07-09 13:04:00	-->	dtluna (~dtluna@37.214.84.217) has joined #pleroma
+2019-07-09 13:04:45	fireglow	(bbl15m, some chores)
+2019-07-09 13:05:55	fireglow	oh, and it's entirely possible that we'd only need one additional file or something. I have neglected my webdev studies in recent years ;)
+2019-07-09 13:08:07	fireglow	I'll figure it out, don't worry about it
+2019-07-09 13:25:57	<--	rickkun (~rick@gateway/tor-sasl/rickkun) has quit (Quit: See ya)
+2019-07-09 13:29:08	-->	rickkun (~rick@gateway/tor-sasl/rickkun) has joined #pleroma
+2019-07-09 13:55:27	-->	Taoki (~MirceaKit@93.113.162.37) has joined #pleroma
+2019-07-09 13:59:19	<--	cow_2001 (~weechat@unaffiliated/wabisabi) has quit (Quit: cow_2001)
+2019-07-09 14:00:12	-->	cow_2001 (~weechat@unaffiliated/wabisabi) has joined #pleroma
+2019-07-09 14:24:22	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-09 14:41:27	<--	techmagus (chatrix@69.51.16.249) has quit (Quit: %vanishes into thin air%)
+2019-07-09 14:43:52	<--	drymer (~drymer@unaffiliated/drymer) has quit (Read error: Connection reset by peer)
+2019-07-09 14:45:40	-->	drymer (~drymer@unaffiliated/drymer) has joined #pleroma
+2019-07-09 14:47:21	-->	techmagus (chatrix@69.51.16.249) has joined #pleroma
+2019-07-09 14:54:37	<--	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has quit (Ping timeout: 245 seconds)
+2019-07-09 15:00:10	-->	kensanata (~user@fsf/member/kensanata) has joined #pleroma
+2019-07-09 15:03:49	-->	LetterBox (~Letterbox@72.51.111.103) has joined #pleroma
+2019-07-09 15:10:14	-->	AbedB (~AbedBhuty@162.220.164.100) has joined #pleroma
+2019-07-09 15:19:45	-->	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has joined #pleroma
+2019-07-09 15:27:12	-->	MuffinPimp (mokou@box.mokou.io) has joined #pleroma
+2019-07-09 15:34:58	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-09 16:12:04	<--	kensanata (~user@fsf/member/kensanata) has quit (Ping timeout: 264 seconds)
+2019-07-09 16:14:26	<--	apango (~weechat@mail.langfamilie.de) has quit (Quit: WeeChat 2.5)
+2019-07-09 16:51:09	<--	dtluna (~dtluna@37.214.84.217) has quit (Quit: Lost terminal)
+2019-07-09 16:56:17	<--	rickkun (~rick@gateway/tor-sasl/rickkun) has quit (Quit: See ya)
+2019-07-10 09:55:37	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-10 09:55:37	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-10 09:55:37	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-10 09:55:37	--	Channel #pleroma: 187 nicks (5 ops, 0 voices, 182 normals)
+2019-07-10 09:55:39	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-10 09:55:44	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-10 09:55:44	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-10 09:55:44	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-10 09:55:44	--	Channel #pleroma: 187 nicks (5 ops, 0 voices, 182 normals)
+2019-07-10 09:55:48	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-10 10:11:57	-->	zaitcev__ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-10 10:15:30	<--	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 252 seconds)
+2019-07-10 10:19:38	feld	lol rw
+2019-07-10 10:51:29	-->	AbedB (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has joined #pleroma
+2019-07-10 10:51:37	<--	AbedB (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-10 10:51:54	-->	AbedB (~AbedBhuty@208.73.207.132) has joined #pleroma
+2019-07-10 10:56:45	-->	AbedB_ (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has joined #pleroma
+2019-07-10 11:00:18	<--	AbedB (~AbedBhuty@208.73.207.132) has quit (Ping timeout: 258 seconds)
+2019-07-10 11:06:30	-->	Daisae (~Daisae@185.59.220.230) has joined #pleroma
+2019-07-10 11:12:54	-->	LetterBox (~Letterbox@72.51.111.103) has joined #pleroma
+2019-07-10 11:23:19	<--	__uguu__ (~jeff@sapphire/devdood/notjeff) has quit (Ping timeout: 258 seconds)
+2019-07-10 11:24:58	<--	Pyrus (~pyrus@unaffiliated/pyrus) has quit (Quit: ZNC - http://znc.in)
+2019-07-10 11:27:55	-->	__uguu__ (~jeff@sapphire/devdood/notjeff) has joined #pleroma
+2019-07-10 11:31:07	-->	Pyrus (~pyrus@unaffiliated/pyrus) has joined #pleroma
+2019-07-10 11:38:56	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Read error: Connection reset by peer)
+2019-07-10 11:39:07	-->	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has joined #pleroma
+2019-07-10 11:55:26	<--	buckket (~buckket@uncloaked.net) has quit (Remote host closed the connection)
+2019-07-10 12:00:47	<--	AbedB_ (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-10 12:04:13	-->	buckket (~buckket@uncloaked.net) has joined #pleroma
+2019-07-10 12:11:50	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-10 12:15:34	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Ping timeout: 272 seconds)
+2019-07-10 12:16:28	-->	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has joined #pleroma
+2019-07-10 12:39:32	<--	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has quit (Read error: Connection reset by peer)
+2019-07-10 12:40:05	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-10 13:17:21	<--	rafadc (~rafadc@188.127.180.199) has quit (Remote host closed the connection)
+2019-07-10 13:18:28	<--	zaitcev__ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 252 seconds)
+2019-07-10 13:24:33	<--	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has quit (Ping timeout: 248 seconds)
+2019-07-10 13:28:31	-->	rafadc (~rafadc@188.127.180.199) has joined #pleroma
+2019-07-10 13:30:32	-->	zaitcev__ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-10 13:42:19	-->	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has joined #pleroma
+2019-07-10 13:52:39	--	ichoquo0Aigh9ie is now known as jalcine
+2019-07-10 13:52:44	--	jalcine is now known as jacky
+2019-07-10 14:25:04	TheJoYo	how do I use the elixir debugger with phx.server?
+2019-07-10 14:25:19	TheJoYo	or is it better to just use logigng
+2019-07-10 14:25:22	TheJoYo	logging*
+2019-07-10 14:29:22	<--	zaitcev__ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 276 seconds)
+2019-07-10 14:34:37	<--	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has quit (Ping timeout: 245 seconds)
+2019-07-10 14:35:32	-->	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has joined #pleroma
+2019-07-10 14:41:18	-->	zaitcev__ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-10 14:41:20	<--	dewoo (~dewoo@user-5-173-168-154.play-internet.pl) has quit (Read error: Connection reset by peer)
+2019-07-10 14:42:59	foggyboi	TheJoYo: when I'm debugging running phoenix servers I'm almost always just jamming IO.inspect in a bunch of places
+2019-07-10 14:43:01	<--	englishm (sid6629@gateway/web/irccloud.com/x-qbseglnfthskyhse) has quit (Excess Flood)
+2019-07-10 14:43:06	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-10 14:43:31	-->	englishm (sid6629@gateway/web/irccloud.com/x-sujvmgmshyxaurck) has joined #pleroma
+2019-07-10 14:43:55	foggyboi	I think I've used break points on local stuff a few times but that can get confusing with servers
+2019-07-10 14:44:40	TheJoYo	i really just want a stacktrace from the error im getting
+2019-07-10 14:44:52	foggyboi	is this that config error from yesterday?
+2019-07-10 14:44:55	foggyboi	(just saw it)
+2019-07-10 14:44:56	TheJoYo	yah
+2019-07-10 14:44:59	foggyboi	hmm
+2019-07-10 14:45:10	foggyboi	oh oh oh
+2019-07-10 14:45:13	foggyboi	uh
+2019-07-10 14:45:18	foggyboi	which versino of elixir are you on
+2019-07-10 14:45:27	TheJoYo	good question
+2019-07-10 14:45:57	foggyboi	I haven't looked at this with pleroma recently but elixir just underwent some "soft deprecation" changes to how config gets read
+2019-07-10 14:46:18	TheJoYo	1.9.0
+2019-07-10 14:46:22	foggyboi	what's the top of your prod secret file look like? is it `use Mix.Config` or is it `import Config`
+2019-07-10 14:46:43	TheJoYo	use Mix.Config
+2019-07-10 14:46:51	foggyboi	hmmmmmmmmmmmmm
+2019-07-10 14:47:30	foggyboi	that should work because they didn't hard deprecate it as far as I know….
+2019-07-10 14:51:09	foggyboi	idk if a stack trace will help you it's just missing a module but I've not seen that particular error. If I was feeling particularly grumpy I'd probably swap the use Mix.Config's out for import Config but you really shouldn't have to do that
+2019-07-10 14:53:54	TheJoYo	im generating a new one to see if that fixes it
+2019-07-10 14:58:40	TheJoYo	yah,import Config fixed it
+2019-07-10 14:58:51	TheJoYo	> ** (Postgrex.Error) ERROR 42P07 (duplicate_table) relation "users_email_index" already exists
+2019-07-10 14:59:09	TheJoYo	which is weird because this is a fresh database
+2019-07-10 15:12:41	--	nonlinear is now known as wish
+2019-07-10 15:12:52	--	wish is now known as wishek
+2019-07-10 15:13:34	--	wishek is now known as nonlinear
+2019-07-10 15:20:02	TheJoYo	do we still need to run mix ecto.migrate on updates?
+2019-07-10 15:23:43	lunamn	most likely yes
+2019-07-10 15:23:54	lunamn	the users_email_index is a bug fixed on develop branch
+2019-07-10 15:24:11	lunamn	see: https://git.pleroma.social/pleroma/pleroma/merge_requests/1373
+2019-07-10 15:33:06	-->	AbedB (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has joined #pleroma
+2019-07-10 15:34:47	<--	AbedB (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has quit (Remote host closed the connection)
+2019-07-10 15:35:14	-->	AbedB (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has joined #pleroma
+2019-07-10 15:36:28	-->	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-10 15:39:13	<--	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has quit (Ping timeout: 245 seconds)
+2019-07-10 15:40:13	<--	zaitcev__ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 276 seconds)
+2019-07-10 15:41:24	-->	aliss (~ypm@126.red-88-22-56.staticip.rima-tde.net) has joined #pleroma
+2019-07-10 15:42:31	TheJoYo	** (CompileError) config/prod.secret.exs:3: undefined function config/3    (elixir) lib/code.ex:240: Code.eval_string/3    (mix) lib/mix/config.ex:158: anonymous fn/2 in Mix.Config.__import__!/2    (elixir) lib/enum.ex:1948: Enum."-reduce/3-lists^foldl/2-0-"/3
+2019-07-10 15:42:50	TheJoYo	that's with `import Config`
+2019-07-10 15:43:04	TheJoYo	i have to switch it back to `import Mix.Config` to build
+2019-07-10 15:43:57	foggyboi	ok cool it's not that… it's some dumb config stuff that I'm not sure about
+2019-07-10 15:44:40	foggyboi	make sure it's 'use Mix.Config' not important, otherwise the config method won't be available
+2019-07-10 15:44:43	foggyboi	not import*
+2019-07-10 15:46:54	TheJoYo	right, sorry, `use Mix.Config`
+2019-07-10 15:47:07	TheJoYo	the error string confused me
+2019-07-10 15:47:29	TheJoYo	these errors are happening at different times
+2019-07-10 15:47:54	TheJoYo	the first one was after deps get
+2019-07-10 15:48:00	TheJoYo	this one is during
+2019-07-10 15:56:54	-->	AbedB_ (~AbedBhuty@bzq-79-183-5-177.red.bezeqint.net) has joined #pleroma
+2019-07-10 16:02:51	--	zaitcev_ is now known as zaitcev
+2019-07-10 16:41:49	--	irc: disconnected from server
+2019-07-10 16:50:50	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-10 16:50:50	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-10 16:50:50	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-10 16:50:50	--	Channel #pleroma: 193 nicks (5 ops, 0 voices, 188 normals)
+2019-07-10 16:50:56	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-10 16:51:32	heldscalll[m]	lain_soykaf
+2019-07-10 17:33:15	--	irc: disconnected from server
+2019-07-10 20:43:38	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-10 20:43:38	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-10 20:43:38	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-10 20:43:39	--	Channel #pleroma: 192 nicks (5 ops, 0 voices, 187 normals)
+2019-07-10 20:43:44	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-10 22:43:57	--	irc: disconnected from server
+2019-07-10 22:44:08	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-10 22:44:08	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-10 22:44:08	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-10 22:44:08	--	Channel #pleroma: 191 nicks (5 ops, 0 voices, 186 normals)
+2019-07-10 22:44:14	--	irc: disconnected from server
+2019-07-11 00:44:18	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-11 00:44:18	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-11 00:44:18	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-11 00:44:18	--	Channel #pleroma: 185 nicks (5 ops, 0 voices, 180 normals)
+2019-07-11 00:44:24	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-11 02:44:36	--	irc: disconnected from server
+2019-07-11 02:44:51	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-11 02:44:51	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-11 02:44:51	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-11 02:44:51	--	Channel #pleroma: 188 nicks (5 ops, 0 voices, 183 normals)
+2019-07-11 09:12:09	--	irc: disconnected from server
+2019-07-11 09:12:20	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-11 09:12:20	--	Topic for #pleroma is "due to ongoing spam attacks, git.pleroma.social signups have been temporarily disabled.  ping an op if you want an account. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Funtalk in #pleroma-offtopic"
+2019-07-11 09:12:20	--	Topic set by kaniini (~kaniini@172.93.5.42) on Mon, 01 Jul 2019 20:00:23
+2019-07-11 09:12:20	--	Channel #pleroma: 190 nicks (5 ops, 0 voices, 185 normals)
+2019-07-11 09:12:26	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-11 09:20:45	-->	TheJoYo (62e9b80e@gateway/web/cgi-irc/kiwiirc.com/ip.98.233.184.14) has joined #pleroma
+2019-07-11 09:27:29	<--	SpaceToast (~toast@unaffiliated/shingetsu) has quit (Changing host)
+2019-07-11 09:27:29	-->	SpaceToast (~toast@abyss/toast) has joined #pleroma
+2019-07-11 09:54:34	<--	killsushi (~killsushi@2607:fea8:3ba0:623:1d44:71e0:92fa:e6ca) has quit (Quit: Leaving)
+2019-07-11 10:55:24	<--	drymer (~drymer@unaffiliated/drymer) has quit (Read error: Connection reset by peer)
+2019-07-11 10:56:46	-->	drymer (~drymer@unaffiliated/drymer) has joined #pleroma
+2019-07-11 11:05:56	-->	AbedB (~AbedBhuty@bzq-79-183-116-201.red.bezeqint.net) has joined #pleroma
+2019-07-11 11:15:42	<--	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Quit: Leaving)
+2019-07-11 11:25:44	-->	AbedB_ (~AbedBhuty@bzq-79-183-116-201.red.bezeqint.net) has joined #pleroma
+2019-07-11 11:51:24	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-11 11:52:07	<--	foggyboi (~Adium@12.197.206.193) has quit (Client Quit)
+2019-07-11 12:07:50	<--	TheJoYo (62e9b80e@gateway/web/cgi-irc/kiwiirc.com/ip.98.233.184.14) has quit (Remote host closed the connection)
+2019-07-11 12:08:06	-->	TheJoYo (62e9b80e@gateway/web/cgi-irc/kiwiirc.com/ip.98.233.184.14) has joined #pleroma
+2019-07-11 12:11:17	<--	AbedB (~AbedBhuty@bzq-79-183-116-201.red.bezeqint.net) has quit (Ping timeout: 245 seconds)
+2019-07-11 12:11:26	<--	AbedB_ (~AbedBhuty@bzq-79-183-116-201.red.bezeqint.net) has quit (Ping timeout: 244 seconds)
+2019-07-11 12:12:38	<--	TheJoYo (62e9b80e@gateway/web/cgi-irc/kiwiirc.com/ip.98.233.184.14) has quit (Remote host closed the connection)
+2019-07-11 12:12:57	-->	TheJoYo (62e9b80e@gateway/web/cgi-irc/kiwiirc.com/ip.98.233.184.14) has joined #pleroma
+2019-07-11 12:14:02	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-11 13:48:58	<--	dtluna (~dtluna@178.121.77.42) has quit (Quit: Lost terminal)
+2019-07-11 13:55:35	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-11 14:04:05	<--	ne (~a@unaffiliated/ne) has quit (Quit: ne)
+2019-07-11 14:05:27	-->	ne (~a@unaffiliated/ne) has joined #pleroma
+2019-07-11 14:10:51	@kaniini	TheJoYo: your error is a false positive
+2019-07-11 14:11:21	@kaniini	TheJoYo: i get that error too, but it still starts up.  the default log level is now warn, so if you are expecting log output, you'll need to add something like
+2019-07-11 14:11:26	@kaniini	config :logger, level: :info
+2019-07-11 14:11:39	TheJoYo	kaniini i do have set -e
+2019-07-11 14:12:17	TheJoYo	i feel like i tested it without that tho
+2019-07-11 14:12:17	TheJoYo	lemmy take a poke, but thank you for the logger line
+2019-07-11 14:20:00	@kaniini	mmmkay
+2019-07-15 09:48:28	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-15 09:48:28	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-15 09:48:28	--	Topic set by kaniini on Fri, 12 Jul 2019 15:02:45
+2019-07-15 09:48:28	--	Channel #pleroma: 197 nicks (6 ops, 0 voices, 191 normals)
+2019-07-15 09:48:28	***	Buffer Playback...
+2019-07-15 09:48:28	maybefbi	[08:49:55] as a user
+2019-07-15 09:48:28	sheep	[08:50:25] iirc users can't follow relays
+2019-07-15 09:48:28	maybefbi	[08:51:09] what do relays do? i am assuming they contact servers on behalf of other servers?
+2019-07-15 09:48:28	sheep	[08:51:30] they receive messages from other servers then send them out to servers that follow that relay
+2019-07-15 09:48:28	maybefbi	[08:52:42] do relays change the message source server domain names present in the messages?
+2019-07-15 09:48:28	sheep	[08:53:00] I don't think so
+2019-07-15 09:48:28	maybefbi	[08:53:17] what is the point of relays? why don't servers just connect to each other directly?
+2019-07-15 09:48:28	sheep	[08:53:31] because how would they know what the other servers are?
+2019-07-15 09:48:28	maybefbi	[08:53:44] oh so relays are like DNS?
+2019-07-15 09:48:28	sheep	[08:53:48] not exactly
+2019-07-15 09:48:28	sheep	[08:54:22] the point of a relay is so that you can receive messages from other instance without having to have users on your instance find and follow users on that instance or vice versa
+2019-07-15 09:48:28	maybefbi	[08:55:31] so where do these relayed messages from other server show up for me as a user? will it be on my server's public timeline?
+2019-07-15 09:48:28	sheep	[08:55:32] if an instance follows a well-known relay, then it gets a full federated timeline without having to have users following users on all the instances subscribed to the relay
+2019-07-15 09:48:28	sheep	[08:55:58] pleroma FE shows them in "The Whole Known Network"
+2019-07-15 09:48:28	maybefbi	[08:56:39] in mastadon it is in federated timeline i bet
+2019-07-15 09:48:28	sheep	[08:56:43] yes
+2019-07-15 09:48:28	maybefbi	[08:57:41] what is to stop people from making a type of server which modifies the domain names of inside the JSON-LD messages that goes through it so that all messages look like it is coming from itself
+2019-07-15 09:48:28	maybefbi	[08:58:09] lets say it maintains an internal map to translate domains back
+2019-07-15 09:48:28	maybefbi	[08:58:39] so likes and replies will be "relayed" back to the correct domain
+2019-07-15 09:48:28	maybefbi	[08:59:03] is that technically feasible?
+2019-07-15 09:48:28	sheep	[08:59:39] servers should check whether the inbox's domain matches the actor's domain, because the inbox is how the replies are received
+2019-07-15 09:48:28	maybefbi	[09:01:07] they will match because this malicious relay manipulates them
+2019-07-15 09:48:28	sheep	[09:01:34] but then server administrators could block the relay
+2019-07-15 09:48:28	maybefbi	[09:03:18] it wont be even a relay in the pleroma relay sense. it will just be a server which manipulates the domain names. so if the server is added to blocked list, the bad actors will just create another server that does this
+2019-07-15 09:48:28	sheep	[09:03:58] but if it is a relay, then instance admins would have to actively choose to follow it
+2019-07-15 09:48:28	maybefbi	[09:04:41] it wont be. it will be just a server that meddles with domain names in messages.
+2019-07-15 09:48:28	maybefbi	[09:04:51] this server will be registered with well known relays
+2019-07-15 09:48:28	maybefbi	[09:05:29] and thus blocked servers can be subscribed through this malicious servers
+2019-07-15 09:48:28	maybefbi	[09:06:01] the message from blocked servers will show up federated timelines
+2019-07-15 09:48:28	sheep	[09:06:47] the relay's admins could block it
+2019-07-15 09:48:28	sheep	[09:07:12] but they would have to find out about it somehow
+2019-07-15 09:48:28	maybefbi	[09:07:18] yeah true. but currently relay admins are not being targeted by the block activists.
+2019-07-15 09:48:28	maybefbi	[09:08:15] im sure there are too many relays to influence and it will be too much work for block activists
+2019-07-15 09:48:28	sheep	[09:08:22] I doubt it
+2019-07-15 09:48:28	sheep	[09:08:28] they'll just stop following open relays
+2019-07-15 09:48:28	sheep	[09:08:38] or stop following relays
+2019-07-15 09:48:28	maybefbi	[09:09:21] i hope so too
+2019-07-15 09:48:28	maybefbi	[09:09:30] what is the deal with ldsigning?
+2019-07-15 09:48:28	maybefbi	[09:09:37] does pleroma have it?
+2019-07-15 09:48:28	sheep	[09:13:59] why don';t you read the code and the specs and find out yourself? I'm not helping someone whose goal is to destroy the fediverse
+2019-07-15 09:48:28	maybefbi	[09:15:31] if there is a way the will to follow it will be found.
+2019-07-15 09:48:28	maybefbi	[09:15:42] \quit
+2019-07-15 09:48:28	maybefbi	[09:15:50] quit
+2019-07-15 09:48:28	@lanodan	[09:26:46] Honestly if the fediverse could be destroyed by someone having fun with the architecture, then the architecture would need to be redone.
+2019-07-15 09:48:28	@lanodan	[09:28:52] Also his idea doesn't work against pleroma because we do not do LD Signing, no idea about the others but I don't think it is _that_ broken of a model, could be interesting to poke it tho.
+2019-07-15 09:48:28	@lanodan	[09:30:37] sheep> iirc users can't follow relays // They can, a relay is basically just a bot boosting everything they get
+2019-07-15 09:48:28	opal	[11:05:31] i'll help whoever asks first
+2019-07-15 09:48:28	opal	[11:18:16] lanodan: like following @relay@instance.example ?
+2019-07-15 09:48:28	@lanodan	[11:19:01] or @actor not sure which… it's a bit messy
+2019-07-15 09:48:28	sixohsix[m]	[13:57:48] Hello. I'm trying to give the scheduled posts feature in Pleroma a spin, but can't figure it out. Is there a frontend for it?
+2019-07-15 09:48:28	***	Playback Complete.
+2019-07-15 09:48:30	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-15 09:56:43	<--	cytryna (~mik@refaba.eu) has quit (Ping timeout: 245 seconds)
+2019-07-15 09:57:02	-->	cytryna (~mik@refaba.eu) has joined #pleroma
+2019-07-15 10:18:42	-->	killsushi (~killsushi@2607:fea8:3ba0:623:edce:255d:8bf:45f2) has joined #pleroma
+2019-07-15 10:19:10	<--	dtluna (~dtluna@37.214.87.92) has quit (Read error: Connection reset by peer)
+2019-07-15 10:20:07	-->	dtluna (~dtluna@37.214.87.92) has joined #pleroma
+2019-07-15 10:21:54	<--	dtluna (~dtluna@37.214.87.92) has quit (Read error: Connection reset by peer)
+2019-07-15 10:25:10	-->	dtluna (~dtluna@37.214.87.92) has joined #pleroma
+2019-07-15 10:32:57	-->	dewoo (~dewoo@user-5-173-169-192.play-internet.pl) has joined #pleroma
+2019-07-15 10:32:57	<--	dtluna (~dtluna@37.214.87.92) has quit (Read error: Connection reset by peer)
+2019-07-15 10:33:55	-->	dtluna (~dtluna@37.214.87.92) has joined #pleroma
+2019-07-15 10:38:18	<--	dualerium (~dualerium@mail.bugbyte.tk) has left #pleroma ("Leaving")
+2019-07-15 10:54:05	-->	kindling (XJwJkkYh@unaffiliated/kindling) has joined #pleroma
+2019-07-15 10:54:05	<--	dtluna (~dtluna@37.214.87.92) has quit (Read error: Connection reset by peer)
+2019-07-15 10:54:50	-->	dtluna (~dtluna@37.214.87.92) has joined #pleroma
+2019-07-15 11:01:00	-->	kindling_ (HuptXzfp@unaffiliated/kindling) has joined #pleroma
+2019-07-15 11:01:06	<--	kindling (XJwJkkYh@unaffiliated/kindling) has quit (Ping timeout: 248 seconds)
+2019-07-15 11:10:18	opal	is it on mastofe
+2019-07-15 11:14:41	-->	bralyclow (~bralyclow@unaffiliated/bralyclow) has joined #pleroma
+2019-07-15 11:16:51	<--	bralyclow (~bralyclow@unaffiliated/bralyclow) has quit (Read error: Connection reset by peer)
+2019-07-15 11:34:03	<--	kindling_ (HuptXzfp@unaffiliated/kindling) has quit (Quit: The cake is a lie!)
+2019-07-15 11:34:56	-->	kindling (7Dv5Exro@unaffiliated/kindling) has joined #pleroma
+2019-07-15 11:49:36	<--	kindling (7Dv5Exro@unaffiliated/kindling) has quit (Quit: The cake is a lie!)
+2019-07-15 11:51:53	<--	dtluna (~dtluna@37.214.87.92) has quit (Quit: Lost terminal)
+2019-07-15 11:53:19	<--	feld (feld@freebsd/developer/feld) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-15 11:53:19	<--	ssuprunenko2 (ssuprunenk@colo.feld.me) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-15 11:54:00	-->	feld (feld@freebsd/developer/feld) has joined #pleroma
+2019-07-15 11:54:09	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-15 11:54:10	-->	ssuprunenko2 (ssuprunenk@colo.feld.me) has joined #pleroma
+2019-07-15 11:55:30	<--	thebaer_ (~Thunderbi@104-186-37-171.lightspeed.jcvlfl.sbcglobal.net) has quit (Ping timeout: 248 seconds)
+2019-07-15 12:00:48	<--	killsushi (~killsushi@2607:fea8:3ba0:623:edce:255d:8bf:45f2) has quit (Read error: Connection reset by peer)
+2019-07-15 12:02:32	-->	kindling (pOOZ0cjv@unaffiliated/kindling) has joined #pleroma
+2019-07-15 12:03:01	--	ssuprunenko2 is now known as sergey
+2019-07-15 12:03:12	--	sergey is now known as ssuprunenko
+2019-07-15 12:03:34	--	ssuprunenko is now known as sergey
+2019-07-15 12:14:44	-->	thebaer_ (~Thunderbi@2603:3010:1ff5:4000:c95d:f9b8:6886:fb) has joined #pleroma
+2019-07-15 12:34:15	<--	retpoline (~retpoline@169.114.85.34.bc.googleusercontent.com) has quit (Quit: bye)
+2019-07-15 12:59:39	rin[m]	sixohsix: there is no frontend for it
+2019-07-15 13:08:10	<--	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-9409-20ac-011b-6164.dhcp6.chtrptr.net) has quit (Ping timeout: 276 seconds)
+2019-07-15 13:31:42	<--	irdr (irdr@137.204.76.34.bc.googleusercontent.com) has quit (Ping timeout: 245 seconds)
+2019-07-15 13:34:29	-->	LetterBox (~Letterbox@72.51.111.146) has joined #pleroma
+2019-07-15 13:34:59	-->	ptotter[m] (ptmanmatri@gateway/shell/matrix.org/x-unvcortknrhojozx) has joined #pleroma
+2019-07-15 13:36:52	-->	irdr (irdr@137.204.76.34.bc.googleusercontent.com) has joined #pleroma
+2019-07-15 14:00:11	<--	iulius (~arch@p4FD2E462.dip0.t-ipconnect.de) has quit (Quit: Lost terminal)
+2019-07-15 14:04:39	--	irc: disconnected from server
+2019-07-15 14:07:17	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-15 14:07:17	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-15 14:07:17	--	Topic set by kaniini on Fri, 12 Jul 2019 15:02:45
+2019-07-15 14:07:17	--	Channel #pleroma: 197 nicks (6 ops, 0 voices, 191 normals)
+2019-07-15 14:07:23	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-15 14:07:33	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-15 14:19:22	-->	killsushi (~killsushi@2607:fea8:3ba0:623:2c60:6214:a6aa:4898) has joined #pleroma
+2019-07-15 14:21:41	<--	AbedB_ (~AbedBhuty@bzq-109-66-42-207.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-15 14:21:41	<--	AbedB (~AbedBhuty@bzq-109-66-42-207.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-15 14:28:46	<--	thebaer_ (~Thunderbi@2603:3010:1ff5:4000:c95d:f9b8:6886:fb) has quit (Ping timeout: 276 seconds)
+2019-07-15 14:41:39	-->	cybercafe (~marx@73.96.104.126) has joined #pleroma
+2019-07-15 14:45:38	<--	cybercafe (~marx@73.96.104.126) has quit (Disconnected by services)
+2019-07-15 14:45:40	-->	cyber_cafe (~marx@73.96.104.126) has joined #pleroma
+2019-07-15 15:01:43	-->	cybercafe (~marx@73.96.104.126) has joined #pleroma
+2019-07-15 15:03:46	<--	cyber_cafe (~marx@73.96.104.126) has quit (Ping timeout: 272 seconds)
+2019-07-15 15:08:03	-->	AbedB (~AbedBhuty@bzq-109-66-42-207.red.bezeqint.net) has joined #pleroma
+2019-07-15 15:32:15	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-15 16:17:14	<--	__uguu__ (~jeff@sapphire/devdood/notjeff) has quit (Ping timeout: 272 seconds)
+2019-07-15 16:29:41	<--	dewoo (~dewoo@user-5-173-169-192.play-internet.pl) has quit (Read error: Connection reset by peer)
+2019-07-15 16:29:59	-->	__uguu__ (~jeff@sapphire/devdood/notjeff) has joined #pleroma
+2019-07-15 16:32:54	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-15 16:50:03	<--	cybercafe (~marx@73.96.104.126) has quit (Ping timeout: 258 seconds)
+2019-07-15 16:50:44	-->	cybercafe (~marx@73.96.104.126) has joined #pleroma
+2019-07-15 16:51:43	<--	kindling (pOOZ0cjv@unaffiliated/kindling) has quit (Quit: The cake is a lie!)
+2019-07-15 16:52:49	-->	kindling (hFAj5zj5@unaffiliated/kindling) has joined #pleroma
+2019-07-15 16:58:09	<--	cybercafe (~marx@73.96.104.126) has quit (Disconnected by services)
+2019-07-15 16:58:11	-->	cyber_cafe (~marx@73.96.104.126) has joined #pleroma
+2019-07-15 17:05:19	<--	kindling (hFAj5zj5@unaffiliated/kindling) has quit (Quit: The cake is a lie!)
+2019-07-15 17:16:25	-->	Nepfag (~MotS@77-58-113-112.dclient.hispeed.ch) has joined #pleroma
+2019-07-15 17:17:02	Nepfag	reposting from fedi
+2019-07-15 17:17:04	Nepfag	So, lets say Friday, 19.07.2019, 20:00 GMT. That should be good for both Americans and Yuopeans. Lets have a talk about what kind of block disclosure is acceptable and what the default should be.
+2019-07-15 17:17:05	Nepfag	What channel? If anyone has a problem with the date then say so up to 12 hours before the meeting and we'll postp
+2019-07-15 17:17:18	Nepfag	one it
+2019-07-15 17:24:09	Nepfag	>I don't care if they are or not. my block policy is one of bullshit avoidance. dogpiling on me for implementing things requested several transparency participants is precisely how you get on my blocklist. tread carefully.
+2019-07-15 17:24:27	Nepfag	reminder that none of them are admins of large pleroma instances
+2019-07-15 17:24:41	Nepfag	They're jsut your online firnds, kaniini
+2019-07-15 17:28:06	-->	skydiver (~skydiver@99-54-46-250.lightspeed.snjsca.sbcglobal.net) has joined #pleroma
+2019-07-15 17:30:11	-->	Ricotta (~Ricotta_E@c-73-77-164-186.hsd1.tx.comcast.net) has joined #pleroma
+2019-07-15 17:30:43	skydiver	ping
+2019-07-15 17:31:27	Nepfag	pong
+2019-07-15 17:42:31	<--	skydiver (~skydiver@99-54-46-250.lightspeed.snjsca.sbcglobal.net) has left #pleroma
+2019-07-16 09:45:36	-->	blindidi- (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-16 09:45:36	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-16 09:45:36	--	Topic set by kaniini on Fri, 12 Jul 2019 15:02:45
+2019-07-16 09:45:36	--	Channel #pleroma: 202 nicks (6 ops, 0 voices, 196 normals)
+2019-07-16 09:45:36	***	Buffer Playback...
+2019-07-16 09:45:36	Nepfag	[22:43:06] Good night. Inb4 the rabbit just suddenly starts talking
+2019-07-16 09:45:36	@kaniini	[23:06:51] yeah?  and what they choose to do does not affect you in any way so shut the fuck up
+2019-07-16 09:45:36	cyber_cafe	[00:30:55] are there any plans to add thread muting to pleroma?
+2019-07-16 09:45:36	cyber_cafe	[00:31:21] or user-managed domain filtering? user-managed MRF?
+2019-07-16 09:45:36	cybercafe	[01:14:25] kaniini: i saw now that admins can manage MRF from web panel, will users ever be able to manage their own MRF from web?
+2019-07-16 09:45:36	lunamn	[01:45:30] user-specific mrf doesnt look like its going to exist for a while
+2019-07-16 09:45:36	lunamn	[01:45:34] at least thats how i view it
+2019-07-16 09:45:36	@kaniini	[02:00:53] MRF is not appropriate for user-level filtering
+2019-07-16 09:45:36	@kaniini	[02:01:11] MRF2 will try to solve this in some ways
+2019-07-16 09:45:36	@kaniini	[02:01:31] by allowing the filters to be reusable
+2019-07-16 09:45:36	cyber_cafe	[02:10:36] i see
+2019-07-16 09:45:36	Lord	[09:10:10] hey people, in the doc i see that we can follow a relay, we can unfollow a relay. Is there a way to see the list of followed relay ?
+2019-07-16 09:45:36	sixohsix[m]	[09:11:05] I'm trying to hack on Pleroma but I'm having trouble with basic stuff like getting Ecto to accept a new schema I'm writing. Can someone spare like 30 minutes to chat with a total newbie?
+2019-07-16 09:45:36	rin[m]	[09:15:32] sixohsix: sure, ask just questions in #pleroma-dev
+2019-07-16 09:45:36	sixohsix[m]	[09:22:52] Ah, I'm in the wrong channel. Thanks!
+2019-07-16 09:45:36	ivesen	[12:50:03] anyone around to answer questions?
+2019-07-16 09:45:36	ivesen	[12:50:49] I'm currently moving my instance to a new server, so I'm just wondering if I should nuke the db that you make following the tutorial and restore from backup or just restore
+2019-07-16 09:45:36	JK_na	[13:19:22] I've moved my pleroma instance over to the OTP release version and after a bit of tweaking all is well.. but now when I run pleroma_ctl update I get a response 'Releases are built only for master and develop brances' .. it worked earlier before I imported the bulk of my prod.secret.exs - can anyone suggest where to look to resolve this (or is it just a message that comes up when there isn't a more recent release available?)
+2019-07-16 09:45:36	Ilja[m]	[13:27:11] @ivesen: Last time I did this I restored after the part where you run the setup_db.psql
+2019-07-16 09:45:36	Ilja[m]	[13:29:06] So just restore, but BEFORE running ecto.migrate
+2019-07-16 09:45:36	ivesen	[13:29:34] I c
+2019-07-16 09:45:36	ivesen	[13:29:37] time to nuke
+2019-07-16 09:45:36	***	Playback Complete.
+2019-07-16 09:45:39	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-16 09:47:18	<--	sergey (ssuprunenk@colo.feld.me) has quit (Client Quit)
+2019-07-16 09:47:19	<--	feld (feld@freebsd/developer/feld) has quit (Client Quit)
+2019-07-16 09:47:43	-->	sergey (ssuprunenk@colo.feld.me) has joined #pleroma
+2019-07-16 09:47:51	-->	feld (feld@freebsd/developer/feld) has joined #pleroma
+2019-07-16 09:50:11	-->	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-79a5-dd11-8169-5b3e.dhcp6.chtrptr.net) has joined #pleroma
+2019-07-16 10:12:53	<--	vi21 (~vee@ppp-171-96-74-53.revip8.asianet.co.th) has quit (Remote host closed the connection)
+2019-07-16 10:13:17	-->	zippoh[m] (zippohelli@gateway/shell/matrix.org/x-fapnabnaivddpecu) has joined #pleroma
+2019-07-16 10:13:21	<--	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 250 seconds)
+2019-07-16 10:25:42	-->	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-16 11:33:37	-->	AbedB_ (~AbedBhuty@bzq-109-67-53-120.red.bezeqint.net) has joined #pleroma
+2019-07-16 11:37:04	<--	AbedB (~AbedBhuty@bzq-109-65-70-30.red.bezeqint.net) has quit (Ping timeout: 258 seconds)
+2019-07-16 11:38:15	<--	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has quit (Quit: hcs0)
+2019-07-16 11:38:51	-->	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has joined #pleroma
+2019-07-16 11:43:39	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-16 11:44:17	<--	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has quit (Quit: hcs0)
+2019-07-16 11:54:30	-->	is0bel[m] (is0belmatr@gateway/shell/matrix.org/x-nxxlgubgtcaoeoce) has joined #pleroma
+2019-07-16 11:54:55	is0bel[m]	hi there! is this the place to ask questions about pleroma instance setup?
+2019-07-16 11:55:55	rin[m]	yes, please ask right away
+2019-07-16 11:56:15	-->	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has joined #pleroma
+2019-07-16 11:58:41	is0bel[m]	terrific. so, i'm following the installation instructions on the wiki and just generated the configuration, and the next step is "check the configuration and if it looks right, rename it. the command for that step is mv config/{generated_config.exs,prod.secret.ex}, but that command gets  me a "missing destination file operand". i'm reasonably sure there's something missing from the command that a knowledgeable terminal
+2019-07-16 11:58:41	is0bel[m]	user should be able to like intuit, but i am not a knowledgeable terminal user
+2019-07-16 11:58:56	is0bel[m]	what should i do?
+2019-07-16 11:59:52	rin[m]	is0bel: try `mv config/generated_config.exs config/prod.config.exs`
+2019-07-16 12:00:03	rin[m]	*prod.secret.exs
+2019-07-16 12:00:45	is0bel[m]	that's done it :) thank you very much!
+2019-07-16 12:13:57	-->	Xiti (~Xiti-@unaffiliated/xiti) has joined #pleroma
+2019-07-16 12:25:50	<--	asterismo_l (~asterismo@2800:a4:1076:2700:223:14ff:fea6:dfbc) has quit (Ping timeout: 252 seconds)
+2019-07-16 12:36:50	is0bel[m]	new problem, a few steps down: pleroma MIX_ENV=prod mix phx.server just gives me a blinky cursor like something is happening, but i'm reasonably sure that nothing is happening since it has been quite a while.
+2019-07-16 12:43:08	ivesen	is nginx running?
+2019-07-16 12:43:20	ivesen	try connecting to your instance :v
+2019-07-16 12:44:20	-->	asterismo_l (~asterismo@r179-25-183-216.dialup.adsl.anteldata.net.uy) has joined #pleroma
+2019-07-16 12:44:40	is0bel[m]	...... that's a really great plan.
+2019-07-16 12:44:41	is0bel[m]	i appreciate the lightly sarcastic handholding :)
+2019-07-16 12:46:51	ivesen	I don't think pleroma actually prints anything unless it sees something weird :P
+2019-07-16 12:50:09	lunamn	yeah, the default logging level is set to warning instead of info
+2019-07-16 12:50:14	lunamn	most things happen on info, so
+2019-07-16 12:57:37	-->	rickkun (~rick@gateway/tor-sasl/rickkun) has joined #pleroma
+2019-07-16 13:01:24	<--	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 252 seconds)
+2019-07-16 13:13:22	-->	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-16 13:14:44	<--	rafadc (~rafadc@188.127.180.199) has quit (Read error: Connection reset by peer)
+2019-07-16 13:15:24	-->	rafadc (~rafadc@188.127.180.199) has joined #pleroma
+2019-07-16 13:19:57	<--	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has quit (Quit: hcs0)
+2019-07-16 13:22:04	-->	heldscal2[m] (heldscal2m@gateway/shell/matrix.org/x-trruvvkidzjjttdi) has joined #pleroma
+2019-07-16 13:23:28	heldscal2[m]	I don't remember what's the tie between pleroma and gnosticism?
+2019-07-16 13:26:00	<--	Taoki (~MirceaKit@93.113.162.37) has quit (Quit: http://www.furaffinity.net/user/mircea/)
+2019-07-16 13:28:05	lunamn	heldscal2[m]: https://git.pleroma.social/pleroma/fqa/blob/master/fqa.md#why-did-you-call-it-pleroma ?
+2019-07-16 13:31:37	-->	Taoki (~MirceaKit@93.113.162.37) has joined #pleroma
+2019-07-16 13:40:37	heldscal2[m]	good
+2019-07-16 13:56:00	bigdumbcat	Hi, If I install from OTP release on debian 10 (or master branch the non-OTP release way) I keep getting "ERROR 42P07 (duplicate_table) relation "users_email_index" already exists" followed by some other things. I just tried to install by OTP release on debian 9 yesterday and that worked fine, I think? Can I fix something from this stage? It's after running pleroma_ctl migrate.
+2019-07-16 14:04:44	<--	electronstudio (~electrons@252.67.2.81.in-addr.arpa) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-16 14:05:27	-->	electronstudio (~electrons@81.2.67.252) has joined #pleroma
+2019-07-16 14:05:56	rin[m]	bigdumbcat: we didn't backport the fix for that in the master branch yet, you can use the workaround I described here https://git.pleroma.social/pleroma/pleroma/issues/1049#note_33080
+2019-07-16 14:06:10	bigdumbcat	oh cool. thank you!
+2019-07-16 14:06:22	<--	electronstudio (~electrons@81.2.67.252) has quit (Client Quit)
+2019-07-16 14:07:17	-->	electronstudio (~electrons@252.67.2.81.in-addr.arpa) has joined #pleroma
+2019-07-16 14:07:38	<--	electronstudio (~electrons@252.67.2.81.in-addr.arpa) has quit (Client Quit)
+2019-07-16 14:08:27	-->	electronstudio (~electrons@252.67.2.81.in-addr.arpa) has joined #pleroma
+2019-07-16 14:10:49	<--	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 250 seconds)
+2019-07-16 14:23:20	-->	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-16 14:52:19	-->	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has joined #pleroma
+2019-07-16 14:55:10	<--	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has quit (Client Quit)
+2019-07-16 15:20:50	<--	AbedB_ (~AbedBhuty@bzq-109-67-53-120.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-16 15:23:04	<--	thebaer_ (~Thunderbi@104-186-37-171.lightspeed.jcvlfl.sbcglobal.net) has quit (Ping timeout: 246 seconds)
+2019-07-16 15:26:22	<--	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 276 seconds)
+2019-07-16 15:34:06	-->	AbedB (~AbedBhuty@bzq-109-67-53-120.red.bezeqint.net) has joined #pleroma
+2019-07-16 15:38:29	-->	zaitcev_ (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-16 15:43:12	ivesen	where do I put backgrounds / logos with otp releases?
+2019-07-16 15:43:22	ivesen	is it still static/static ? :v
+2019-07-16 15:44:34	<--	rickkun (~rick@gateway/tor-sasl/rickkun) has quit (Quit: See ya)
+2019-07-16 15:48:33	<--	crushv (~crushv@gateway/tor-sasl/crushv) has quit (Remote host closed the connection)
+2019-07-16 15:49:38	-->	crushv (~crushv@gateway/tor-sasl/crushv) has joined #pleroma
+2019-07-16 15:53:22	<--	detran (~detran@172-220-088-140.dhcp.chtrptr.net) has quit (Ping timeout: 248 seconds)
+2019-07-16 16:13:37	-->	tallship (~tallship@2600:1010:b141:d25f:88c1:7c46:29ef:29c8) has joined #pleroma
+2019-07-16 16:33:58	-->	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has joined #pleroma
+2019-07-16 16:37:51	<--	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has quit (Client Quit)
+2019-07-16 16:38:05	-->	thebaer_ (~Thunderbi@c-69-180-94-133.hsd1.fl.comcast.net) has joined #pleroma
+2019-07-16 16:38:58	Nepfag	ivesen, /var/lib/pleroma/static/static by default
+2019-07-16 16:40:02	-->	pabloweb32 (c2636966@194.99.105.102) has joined #pleroma
+2019-07-16 16:40:07	ivesen	I just wasn't sure if I had to make an extra static folder or not :v
+2019-07-16 16:40:20	pabloweb32	Hi guys. Where do I find urls for instance follow (aka relays) ?
+2019-07-16 16:40:27	tallship	I installed pleroma following this guide to the letter: https://docs.pleroma.social/otp_en.html - but had to look elsewhere on how to add the first steps of adding an initial (admin) user. 'which mix' returns nothing on Debian 9.9 arch=amd64 and I've tried the following command to no avail:
+2019-07-16 16:40:34	Nepfag	Yeah it's a weird folder structure
+2019-07-16 16:41:05	Nepfag	tallship, you don't need an admin user, just register normally
+2019-07-16 16:41:28	tallship	 su pleroma -s $SHELL -lc "
+2019-07-16 16:41:28	tallship	MIX_ENV=prod mix pleroma.user new myusername myemail@sld.tld --admin
+2019-07-16 16:41:28	tallship	"
+2019-07-16 16:41:28	tallship	 - to which I get the response: -su: line 1: mix: command not found
+2019-07-16 16:41:41	Nepfag	On the web interface
+2019-07-16 16:41:53	Nepfag	Like just register like a normal user
+2019-07-16 16:42:10	ivesen	you missed this bit:
+2019-07-16 16:42:10	ivesen	https://docs.pleroma.social/otp_en.html#running-mix-tasks
+2019-07-16 16:44:55	pabloweb32	So, anybody knows where to find relay urls for instance follow ?
+2019-07-16 16:45:10	tallship	Also, I'm not sure, since it appears that the only config file used now is config.exs istead of prod.secret.exs. Is that correct? And how do I make sure it's running  in prod mode?
+2019-07-16 16:46:37	ivesen	tallship: that should be fine with otp releases
+2019-07-16 16:47:41	tallship	ivesen: Ah.. oic :) I did see that when skimming the docs early on and completely missed it, thinking it was something to get  back to later.  Thank you for that. It's not federating yet but I'll look into that in a bit, and I still have to setup email handler first for a relay.
+2019-07-16 16:49:48	--	pabloweb32 is now known as pabloweb
+2019-07-16 17:03:37	<--	thebaer_ (~Thunderbi@c-69-180-94-133.hsd1.fl.comcast.net) has quit (Ping timeout: 244 seconds)
+2019-07-16 17:25:46	-->	hcs0 (~Thunderbi@dslb-188-103-019-158.188.103.pools.vodafone-ip.de) has joined #pleroma
+2019-07-16 17:36:01	JK_na	> I've moved my pleroma instance over to the OTP release version and after a bit of tweaking all is well.. but now when I run pleroma_ctl update I get a response 'Releases are built only for master and develop brances' .. it worked earlier before I imported the bulk of my prod.secret.exs - can anyone suggest where to look to resolve this (or is it just a message that comes up when there isn't a more recent release available?)
+2019-07-16 17:36:01	JK_na	I did a bit of digging and found the commit to add the pleroma_ctl update code.. the detect_branch() function reads the version and branch from "$RELEASE_ROOT"/releases/start_erl.data)".. what should the content of the start_erl.data file look like for master 1.0.1 (or indeed dev)?  Mine is '10.3.5.2 1.0.1' and apparently the function isn't able to deduce whether this is master or dev..
+2019-07-18 10:02:44	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-18 10:02:44	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-18 10:02:44	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-18 10:02:45	--	Channel #pleroma: 211 nicks (6 ops, 0 voices, 205 normals)
+2019-07-18 10:02:46	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-18 10:07:57	<--	dtluna (~dtluna@37.214.87.92) has quit (Ping timeout: 245 seconds)
+2019-07-18 10:08:49	-->	dtluna (~dtluna@37.214.87.92) has joined #pleroma
+2019-07-18 10:41:08	--	zaitcev__ is now known as zaitcev
+2019-07-18 11:08:38	is0bel[m]	hello! i have a new problem today, and it looks like this:
+2019-07-18 11:08:39	is0bel[m]	the command `sudo systemctl enable --now pleroma.service` returns
+2019-07-18 11:08:40	is0bel[m]	Failed to enable unit: Unit file pleroma.service does not exist.
+2019-07-18 11:10:31	is0bel[m]	wait nvm i didn't even need to do that thing. i think i figured it out
+2019-07-18 11:10:43	is0bel[m]	sometimes writing out your problem solves it
+2019-07-18 11:36:55	<--	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 250 seconds)
+2019-07-18 11:45:54	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-18 11:53:45	-->	zaitcev (~zaitcev@70-251-191-93.lightspeed.austtx.sbcglobal.net) has joined #pleroma
+2019-07-18 12:00:19	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Read error: Connection reset by peer)
+2019-07-18 12:02:24	-->	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has joined #pleroma
+2019-07-18 12:07:02	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Ping timeout: 272 seconds)
+2019-07-18 12:07:52	-->	dewoo (~dewoo@user-5-173-249-240.play-internet.pl) has joined #pleroma
+2019-07-18 12:26:35	<--	lunamn (~lunamn@177.105.73.194) has quit (Remote host closed the connection)
+2019-07-18 12:36:34	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-18 12:38:15	-->	foggyboi1 (~Adium@98.159.85.30) has joined #pleroma
+2019-07-18 12:39:02	-->	lunamn (~lunamn@177.105.73.194) has joined #pleroma
+2019-07-18 12:41:01	fireglow	What is the difference when a remote instance fetches /inbox or /relay/inbox? What does the relay do?
+2019-07-18 12:41:24	fireglow	or POSTs, I don't remember
+2019-07-18 12:44:34	<--	jonah (sid196983@opennic/jonaharagon) has quit (Ping timeout: 258 seconds)
+2019-07-18 12:45:08	<--	D_ (~D_@underscore.world) has quit (Remote host closed the connection)
+2019-07-18 12:45:43	<--	omnigoat (sid95434@gateway/web/irccloud.com/x-ylyrlgwoajxkhvai) has quit (Ping timeout: 258 seconds)
+2019-07-18 12:46:04	-->	D_ (~D_@underscore.world) has joined #pleroma
+2019-07-18 12:46:57	-->	jonah (sid196983@opennic/jonaharagon) has joined #pleroma
+2019-07-18 12:48:15	-->	omnigoat (sid95434@gateway/web/irccloud.com/x-xkdltnowgpandfdi) has joined #pleroma
+2019-07-18 12:53:07	<--	D_ (~D_@underscore.world) has quit (Ping timeout: 276 seconds)
+2019-07-18 12:55:44	-->	D_ (~D_@underscore.world) has joined #pleroma
+2019-07-18 13:01:49	<--	foggyboi1 (~Adium@98.159.85.30) has quit (Read error: Connection reset by peer)
+2019-07-18 13:02:02	-->	foggyboi (~Adium@98.159.85.30) has joined #pleroma
+2019-07-18 13:04:22	-->	foggyboi1 (~Adium@12.197.206.193) has joined #pleroma
+2019-07-18 13:04:47	<--	cyber_cafe (~marx@73.96.106.211) has quit (Ping timeout: 268 seconds)
+2019-07-18 13:06:38	<--	foggyboi (~Adium@98.159.85.30) has quit (Ping timeout: 268 seconds)
+2019-07-18 13:11:47	<--	BluRaf (rafal@kolucki.pl) has quit (Remote host closed the connection)
+2019-07-18 13:12:10	-->	BluRaf (rafal@kolucki.pl) has joined #pleroma
+2019-07-18 13:20:49	<--	foggyboi1 (~Adium@12.197.206.193) has quit (Ping timeout: 268 seconds)
+2019-07-18 13:21:08	<--	detran (~detran@172-220-088-140.dhcp.chtrptr.net) has quit (Ping timeout: 272 seconds)
+2019-07-18 13:29:28	--	irc: disconnected from server
+2019-07-18 13:30:48	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-18 13:30:48	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-18 13:30:48	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-18 13:30:48	--	Channel #pleroma: 209 nicks (6 ops, 0 voices, 203 normals)
+2019-07-18 13:30:54	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-18 13:35:33	-->	AbedB (~AbedBhuty@bzq-109-67-95-109.red.bezeqint.net) has joined #pleroma
+2019-07-18 13:36:58	fireglow	And how can I stop nginx+pleroma from 403ing all the websocket requests?
+2019-07-18 13:37:58	lunamn	isn't that a bug related with FE?
+2019-07-18 13:42:14	--	sunny is now known as tomacco
+2019-07-18 13:47:08	fireglow	oh, hmm
+2019-07-18 13:48:06	fireglow	https://git.pleroma.social/pleroma/pleroma-fe/issues/394 yeah
+2019-07-18 14:00:29	<--	dtluna (~dtluna@37.214.87.92) has quit (Quit: Lost terminal)
+2019-07-18 14:08:20	<--	TadeusTaD (tadeustad@psifactor.pl) has quit (Max SendQ exceeded)
+2019-07-18 14:09:42	fireglow	rn I can't follow other pleroma users, but mastodon instances work. probably missed a commit msg on develop :D
+2019-07-18 14:12:38	lunamn	well, there is some recent commits that are failing tests on develop right now
+2019-07-18 14:12:38	-->	detran (~detran@172-220-088-140.dhcp.chtrptr.net) has joined #pleroma
+2019-07-18 14:45:26	tomacco	I'm having a hard time finding documentation on how to work with relays, which to my understanding is why I'm having trouble adding people from other instances
+2019-07-18 14:49:42	-->	tadeus_brick (tadeustad@psifactor.pl) has joined #pleroma
+2019-07-18 14:53:18	--	tadeus_brick is now known as TadeusTaD
+2019-07-18 14:54:18	-->	tallship (~tallship@157.sub-174-222-140.myvzw.com) has joined #pleroma
+2019-07-18 14:58:43	tomacco	i also installed from the OTP guide and i'm not finding files like prod.secret.exs and dev.secret.exs to configure pleroma
+2019-07-18 15:00:15	-->	killsushi (~killsushi@2607:fea8:3ba0:623:a40d:667c:b305:3bfd) has joined #pleroma
+2019-07-18 15:02:08	-->	bigdumbcat_ (~quassel@2600-6c47-a07f-ecc9-30a6-fd50-7822-af03.dhcp6.chtrptr.net) has joined #pleroma
+2019-07-18 15:05:43	<--	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-3c36-d15b-c03d-233f.dhcp6.chtrptr.net) has quit (Ping timeout: 276 seconds)
+2019-07-18 15:07:59	tomacco	# su pleroma -s $SHELL -lc "./bin/pleroma_ctl pleroma.relay follow https://relay.pleroma.site/actor"
+2019-07-18 15:07:59	tomacco	The task pleroma.relay does not exist
+2019-07-18 15:19:56	<--	tallship (~tallship@157.sub-174-222-140.myvzw.com) has quit (Read error: Connection reset by peer)
+2019-07-18 15:20:46	-->	tallship (~tallship@2600:1010:b163:bb97:acee:d55d:8832:d130) has joined #pleroma
+2019-07-18 15:29:16	@kaniini	it's pleroma_ctl relay if you use OTP releases
+2019-07-18 15:31:03	tomacco	thank you
+2019-07-18 15:52:47	-->	dtluna (~dtluna@37.214.87.92) has joined #pleroma
+2019-07-19 10:01:48	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-19 10:01:48	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-19 10:01:48	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-19 10:01:48	--	Channel #pleroma: 212 nicks (6 ops, 0 voices, 206 normals)
+2019-07-19 10:01:51	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-19 10:25:19	<--	thebaer (~Thunderbi@2600:1006:b155:579f:4c77:90f0:51bb:d91b) has quit (Ping timeout: 276 seconds)
+2019-07-19 10:36:38	Rhonda	When I call the pleroma.user new, should that hang endlessly?
+2019-07-19 10:39:52	<--	englishm (sid6629@gateway/web/irccloud.com/x-qmusjqcynqctfoxa) has quit (Excess Flood)
+2019-07-19 10:40:08	-->	englishm (sid6629@gateway/web/irccloud.com/x-zehsgopytaouarbr) has joined #pleroma
+2019-07-19 10:40:33	<--	englishm (sid6629@gateway/web/irccloud.com/x-zehsgopytaouarbr) has quit (Excess Flood)
+2019-07-19 10:40:57	-->	englishm (sid6629@gateway/web/irccloud.com/x-jjmlcwqnutvgmnqm) has joined #pleroma
+2019-07-19 10:41:32	<--	englishm (sid6629@gateway/web/irccloud.com/x-jjmlcwqnutvgmnqm) has quit (Excess Flood)
+2019-07-19 10:41:55	-->	englishm (sid6629@gateway/web/irccloud.com/x-sxrgsuqqkwpvfepz) has joined #pleroma
+2019-07-19 10:42:32	<--	englishm (sid6629@gateway/web/irccloud.com/x-sxrgsuqqkwpvfepz) has quit (Excess Flood)
+2019-07-19 10:42:47	-->	englishm (sid6629@gateway/web/irccloud.com/x-eswynoozkgwrklqs) has joined #pleroma
+2019-07-19 10:44:38	opal	when would i want rum indices then
+2019-07-19 10:44:58	opal	anime.website searches and pulling up profiles is so slow and inconsistent
+2019-07-19 10:45:01	opal	lot of requests time out
+2019-07-19 11:23:00	@kaniini	rum indices only help with search
+2019-07-19 11:23:26	@kaniini	but i think something is more fundamentally broken
+2019-07-19 11:23:29	@kaniini	with search
+2019-07-19 11:25:12	rin[m]	dunno about status search, but user search is really weird. it likes to time out when there is a domain part of the username and the results are inaccurate
+2019-07-19 11:25:48	@kaniini	i'll look into it after finishing the lockdown stuff
+2019-07-19 11:27:27	opal	ah
+2019-07-19 11:27:46	opal	my personal instance seems to navigate everything just fine
+2019-07-19 11:28:08	opal	i can search users (havent tried statuses cus mastofe is weird on private instances, but i'd like to see full search in pleromafe anyway)
+2019-07-19 11:28:48	@kaniini	(current status of lockdown stuff: develop can interop with mastodon's "secure mode", now i am working on capability mapping + enforcement)
+2019-07-19 11:30:17	opal	what's mastodon's secure mode, is the ostatus removal
+2019-07-19 11:30:27	opal	i accidentally a word there
+2019-07-19 11:30:31	rin[m]	opal: there is status search in pleroma-fe develop btw
+2019-07-19 11:30:53	opal	cool
+2019-07-19 11:31:17	opal	i forget, is node required to build fe
+2019-07-19 11:31:25	rin[m]	yeah
+2019-07-19 11:31:41	rin[m]	when mastodon's secure mode is enabled public posts require to sign fetches with http signatures as well
+2019-07-19 11:34:08	rin[m]	kaniini: can it actually be done with httpsigs or are you just preparing the IR for easier OCAP integration in the future?
+2019-07-19 11:35:37	@kaniini	rin[m]: as i've said, this httpsigs stuff is to... stabilize the patient (the fediverse) so he isn't bleeding out on the operating table (users running away because of our new additions)
+2019-07-19 11:36:20	@kaniini	it's like... TARP
+2019-07-19 11:36:34	@kaniini	we're swallowing this with a shit-eating grin on our face
+2019-07-19 11:36:50	@kaniini	because, it is what needs to be done
+2019-07-19 11:37:13	@kaniini	OCAP is the real fix, but the httpsigs lockdown is "good enough for now"
+2019-07-19 11:38:41	@kaniini	i hope that makes my position clear, from both an architectural point of view as well as overall goal
+2019-07-19 11:38:52	@kaniini	everything i am doing is "OCAP ready"
+2019-07-19 11:40:32	opal	>public posts require to sign fetches
+2019-07-19 11:40:37	opal	what if i just... go to someone's instance
+2019-07-19 11:40:42	opal	with a web browser
+2019-07-19 11:40:49	opal	what does this "security" do against that
+2019-07-19 11:41:34	@kaniini	yes opal we are all aware of that loophole
+2019-07-19 11:41:45	opal	i wasnt being a smartass, i was legitimately asking
+2019-07-19 11:41:54	opal	sorry if i came across otherwise
+2019-07-19 11:42:01	@kaniini	well in mastodon, it lets you view the posts
+2019-07-19 11:42:06	@kaniini	in pleroma, you can already lock that down.
+2019-07-19 11:42:14	opal	i mean on my personal instance i have it marked private so im not worried
+2019-07-19 11:42:28	opal	just wondering masto's rationale for introducing such a feature that doesnt even work lol
+2019-07-19 11:42:29	opal	thats all
+2019-07-19 11:42:41	@kaniini	because it's like TARP.
+2019-07-19 11:42:49	@kaniini	and Mastodon is... Bear Stearns
+2019-07-19 11:42:51	opal	if i were to write something it would have no / very limited web access
+2019-07-19 11:43:13	@kaniini	i would say Lehman but they failed before we got to TARP AFAIK
+2019-07-19 11:43:32	opal	"very limited" as in generating pages for conversations themselves, no interlinking, no discovery
+2019-07-19 11:43:46	opal	all that functionality would be accessible only with api
+2019-07-19 11:43:56	opal	and there you can have proper auth
+2019-07-19 11:44:00	@kaniini	yeah
+2019-07-19 11:44:08	@kaniini	and pleroma can be configured to work this way already
+2019-07-19 11:44:18	opal	i still wanna write an impl but who knows when thatll be
+2019-07-19 11:44:22	opal	i hate to be all talk but
+2019-07-19 11:44:23	opal	yeah
+2019-07-19 11:44:39	opal	other things i need to be doing before starting on something new
+2019-07-19 11:44:44	@kaniini	the problem is, pleroma lets you lock down the web access all day long, but it does not let you lock down federation
+2019-07-19 11:44:51	@kaniini	with secure mode, mastodon has the opposite problem ;)
+2019-07-19 11:45:06	opal	so pleroma implementing secure mode would let interested people address both sides
+2019-07-19 11:45:13	@kaniini	yes
+2019-07-19 11:45:22	opal	i'll def use it on my personal instance
+2019-07-19 11:45:29	opal	ive been thinking to myself ostatus is dead for a while
+2019-07-19 11:45:35	opal	duplicate code for all the rest of us
+2019-07-19 11:45:37	@kaniini	the final destination (done incrementally) is secure mode enabled by default in enforcing mode with a very limited set of granted capabilities to anonymous web users
+2019-07-19 11:45:55	opal	i hate to tell ostatus / gnusocial people "hey yeah your software isnt good enough, too bad" but well
+2019-07-19 11:45:58	opal	their software isnt good enough
+2019-07-19 11:46:04	@kaniini	we can't do that quite yet though
+2019-07-19 11:46:05	opal	people like moonman know this fucking firsthand
+2019-07-19 11:46:14	opal	its just... bad
+2019-07-19 11:46:14	opal	lol
+2019-07-19 11:46:30	@kaniini	so the plan is basically
+2019-07-19 11:46:31	opal	i feel like gnusocial users at this point are a cult
+2019-07-19 11:46:48	@kaniini	Pleroma 2.0 has the fundamentals for secure mode, but only the 'safe' defaults are flipped on
+2019-07-19 11:46:55	@kaniini	Pleroma 3.0 finishes the transition
+2019-07-19 11:47:06	@kaniini	Pleroma 4.0 drops http signatures entirely.
+2019-07-19 11:47:10	@kaniini	that's the dream anyway.
+2019-07-19 11:47:44	opal	personally im tired of seeing so much junk indexed on google from fedi
+2019-07-19 11:47:48	opal	thats what it is, junk
+2019-07-19 11:47:59	opal	lot of repeat search results cus search engines dont know how to specially treat fedi
+2019-07-19 11:48:32	opal	what worked on twitter wont work here
+2019-07-19 11:48:42	@kaniini	my plan is to have a framework similar to MRF that looks at a request
+2019-07-19 11:48:45	opal	twitter could handle the search engine indexing because one page = one convo
+2019-07-19 11:48:58	@kaniini	and decides what capabilities should be bound to that request
+2019-07-19 11:49:21	opal	im going more and more off on a tangent here but this is a reason i want to try domain-specific searching, i really need to configure searx some more
+2019-07-19 11:49:25	@kaniini	and then if a bearcap is invoked, it bypasses all of this and uses the capabilities sealed into the bearcap
+2019-07-19 11:49:58	opal	general-purpose search was useful back when websites were static and decoupled
+2019-07-19 11:50:05	opal	doesnt fit the model of the modern web though
+2019-07-19 11:51:15	-->	ng0 (~ng0@gateway/tor-sasl/ng0) has joined #pleroma
+2019-07-19 11:53:30	-->	rickkun (~rick@gateway/tor-sasl/rickkun) has joined #pleroma
+2019-07-19 11:57:23	<--	dtluna (~dtluna@37.214.87.92) has quit (Quit: Lost terminal)
+2019-07-19 11:58:11	rin[m]	kaniini: what 'safe' defaults exactly? iirc no one but pleroma and mastodon even sign fetches yet
+2019-07-19 11:58:44	@kaniini	rin[m]: for 1.1/2.0 that means fetches are signed, but enforcement is not enabled by default
+2019-07-19 11:59:20	rin[m]	ah, alright
+2019-07-19 11:59:27	@kaniini	rin[m]: in other words, security features gradually get flipped on as they become less disruptive
+2019-07-19 11:59:44	@kaniini	(and those who want them today can flip them on early)
+2019-07-19 12:01:12	opal	this entire thing is politically-loaded, again primarily by the gnusocial crowd
+2019-07-19 12:01:19	opal	shame it's like that
+2019-07-19 12:01:59	-->	feld (feld@freebsd/developer/feld) has joined #pleroma
+2019-07-19 12:02:04	-->	sergey (ssuprunenk@colo.feld.me) has joined #pleroma
+2019-07-19 12:02:24	opal	we have a lot of people who are against dragnet surveillance and shit like that, these additional features make it more difficult for adversarial presences like that
+2019-07-19 12:03:03	opal	its hard telling people "i know my stuff is public and out there, but i want to slow its spread"
+2019-07-19 12:03:55	opal	having the internet become one single dumping ground isnt really something anyone should aspire to
+2019-07-19 12:05:59	rin[m]	signed fetches have other uses though, e.g tracking who exactly got the activity so we can send out deletes without either having undeleted copies left or creating a shitton of federation traffic
+2019-07-19 12:06:12	opal	yes
+2019-07-19 12:08:20	@kaniini	rin[m]: yes, and ultimately OCAP will reduce the overhead of that by 99%
+2019-07-19 12:08:21	@kaniini	;)
+2019-07-19 12:15:29	rin[m]	having more robust deletes without a noticeable performance drop is like number one reason I am interested in authenticated fetch adoption
+2019-07-19 12:16:11	-->	LetterBox (~Letterbox@72.51.111.146) has joined #pleroma
+2019-07-19 12:23:16	-->	thebaer (~Thunderbi@70.42.157.30) has joined #pleroma
+2019-07-19 12:37:48	fr33domlover	kaniini, I'm waiting for the OCAP stuff to use it in ForgeFed ^_^ for now using some very simple token thing
+2019-07-19 12:39:01	fr33domlover	I don't want to spec stuff that's going to be outdated, preferring to use something compatible with the new OCAPs
+2019-07-19 12:43:27	-->	rafadc_ (~rafadc@188.127.188.122) has joined #pleroma
+2019-07-19 12:44:08	<--	AbedB (~AbedBhuty@bzq-109-67-95-109.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-19 12:44:55	<--	rafadc (~rafadc@188.127.180.199) has quit (Ping timeout: 246 seconds)
+2019-07-19 12:53:28	<--	__uguu__ (~jeff@sapphire/devdood/notjeff) has quit (Ping timeout: 272 seconds)
+2019-07-19 13:00:35	-->	__uguu__ (~jeff@sapphire/devdood/notjeff) has joined #pleroma
+2019-07-19 13:09:03	<--	feld (feld@freebsd/developer/feld) has quit (Quit: Ping timeout (120 seconds))
+2019-07-19 13:13:04	-->	feld (feld@freebsd/developer/feld) has joined #pleroma
+2019-07-19 13:17:50	<--	sergey (ssuprunenk@colo.feld.me) has quit (Quit: Ping timeout (120 seconds))
+2019-07-19 13:20:22	<--	feld (feld@freebsd/developer/feld) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-19 13:29:06	@kaniini	opal: well, Pleroma is not GNU Social, and we've made this quite clear numerous times
+2019-07-19 13:34:33	-->	sergey (~ssuprunen@feld.your.org) has joined #pleroma
+2019-07-19 13:34:39	-->	feld (~feld@freebsd/developer/feld) has joined #pleroma
+2019-07-19 13:35:55	<--	feld (~feld@freebsd/developer/feld) has quit (Client Quit)
+2019-07-19 13:35:55	<--	sergey (~ssuprunen@feld.your.org) has quit (Client Quit)
+2019-07-19 13:37:03	-->	sergey (~ssuprunen@feld.your.org) has joined #pleroma
+2019-07-19 13:37:09	-->	feld (~feld@freebsd/developer/feld) has joined #pleroma
+2019-07-19 13:50:31	-->	sergey4 (ssuprunenk@feld.your.org) has joined #pleroma
+2019-07-19 13:50:38	<--	sergey4 (ssuprunenk@feld.your.org) has quit (Client Quit)
+2019-07-19 13:51:00	-->	sergey2 (ssuprunenk@feld.your.org) has joined #pleroma
+2019-07-19 13:51:08	-->	feld0 (feld@freebsd/developer/feld) has joined #pleroma
+2019-07-19 13:54:39	<--	feld (~feld@freebsd/developer/feld) has quit (Ping timeout: 268 seconds)
+2019-07-19 13:54:40	<--	sergey (~ssuprunen@feld.your.org) has quit (Ping timeout: 268 seconds)
+2019-07-19 14:07:36	--	feld0 is now known as feld
+2019-07-19 14:28:51	@kaniini	if weedis.life spam pissed you off
+2019-07-19 14:29:00	@kaniini	develop will have a script to automate cleaning up that mess
+2019-07-19 14:29:06	@kaniini	of course, it nukes weedis.life from orbit
+2019-07-19 14:29:26	@kaniini	so if you don't want that, you may want to use the script (well mix task really) i made as a skeleton for one that does what you want
+2019-07-19 14:30:33	@href	stats correction and exclusion is coming to fediverse.network too, it's enough no
+2019-07-19 14:30:36	@href	now
+2019-07-19 14:31:15	@href	and i've surpassed my tolerance months ago so any kind of stats manipulation will meet the hammer and its not gonna be a nice one
+2019-07-19 14:58:26	-->	cybercafe (~marx@73.96.104.231) has joined #pleroma
+2019-07-19 15:12:27	-->	AbedB (~AbedBhuty@bzq-109-67-95-109.red.bezeqint.net) has joined #pleroma
+2019-07-19 15:14:33	Rhonda	I have an issue with the "mix pleroma.user new" call.  It hangs for ages for me, is there some place I can look for debug information on why it's stuck?
+2019-07-19 15:27:42	opal	adminfe's sluggishness pissed me off more than the spam lol
+2019-07-19 15:28:10	opal	whatever framework it uses runs slow in browsers
+2019-07-19 15:35:01	<--	bokchoy (~quassel@n0r.co) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-19 15:35:19	-->	bokchoy (~quassel@n0r.co) has joined #pleroma
+2019-07-19 15:41:06	<--	kerozene (~kerokero@unaffiliated/kerozene) has quit (Ping timeout: 248 seconds)
+2019-07-19 15:46:32	<--	cybercafe (~marx@73.96.104.231) has quit (Disconnected by services)
+2019-07-19 15:46:33	-->	cyber_cafe (~marx@73.96.104.231) has joined #pleroma
+2019-07-19 15:47:48	Rhonda	How to create a user when the "mix pleroma.user new" call hangs indefinitely?
+2019-07-19 15:52:18	__uguu__	what about an ssh admin interface? (with ssh key based auth)
+2019-07-19 15:52:40	__uguu__	that'd be (IMO) super rad
+2019-07-19 15:54:31	__uguu__	maybe that could be a fun toy project for me
+2019-07-19 15:54:51	__uguu__	i.e. give a simple TUI for running mix tasks
+2019-07-19 15:55:04	__uguu__	or a gopher admin ui
+2019-07-19 15:55:05	__uguu__	lel
+2019-07-19 15:55:08	@href	the otp's ssh app is wonderful, if you like the idea, just play with it!
+2019-07-19 15:55:24	__uguu__	is it? every ssh api i ever used is ass
+2019-07-19 15:55:42	@href	eh i never said the api was pleasant, i just said it was wonderful
+2019-07-19 15:55:42	__uguu__	if OTP's ssh api isn't horrid i may actually do this
+2019-07-19 15:56:00	@href	it is a pain by classic api standards. but for what it does? priceless
+2019-07-19 15:56:22	__uguu__	let's think of the UX for a second to flesh this out
+2019-07-19 15:56:26	@href	i've built a ssh mutiplexer and websocket connection just for fun in a weekend, this thing is magic
+2019-07-19 15:56:34	eggard	rin[m]: I did migrate.
+2019-07-19 15:56:45	__uguu__	add ssh pubkey for admin, log in with ssh key, ????, profit!
+2019-07-19 15:57:01	eggard	Ilja[m]: I will try to debug and see what the issue is. Maybe send a bug report and how to fix
+2019-07-19 15:58:01	@kaniini	Rhonda: hmm, it shouldnt hang indefinitely ;/
+2019-07-19 15:58:47	<--	thebaer (~Thunderbi@70.42.157.30) has quit (Ping timeout: 245 seconds)
+2019-07-19 16:05:46	Rhonda	kaniini: I assume so. xD  Any way what I can do to investigate?
+2019-07-19 16:05:59	Rhonda	I stopped it, did start the service new, same situation.
+2019-07-19 16:06:16	@kaniini	are you using MIX_ENV=prod?
+2019-07-19 16:07:49	Rhonda	I started off with MIX_ENV=dev
+2019-07-19 16:08:58	@kaniini	hmm
+2019-07-19 16:09:08	@kaniini	if you're on dev mode, you should get lots of debug output
+2019-07-19 16:10:37	Rhonda	hmm, [info] REFUSED CONNECTION TO Pleroma.Web.UserSocket in 300µs
+2019-07-19 16:16:59	@kaniini	that doesn't mean anything
+2019-07-19 16:17:11	@kaniini	that just means your client couldn't log into the chatbox (which it can't since it has no user)
+2019-07-19 16:20:28	Rhonda	When I call it in journalctl --follow I only see the sudo command for running the pleroma.user new, but nothing else.  How can I get to more debug output, because it somehow looks like that information never reaches the service?
+2019-07-19 16:30:05	@kaniini	how are you running the mix command exactly
+2019-07-22 09:21:22	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-22 09:21:22	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-22 09:21:22	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-22 09:21:22	--	Channel #pleroma: 211 nicks (6 ops, 0 voices, 205 normals)
+2019-07-22 09:21:24	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-22 09:45:28	<--	thebaer (~Thunderbi@c-73-134-1-6.hsd1.dc.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-07-22 09:48:17	<--	korzq7 (~korzq@alpha.korzq.xyz) has quit (Changing host)
+2019-07-22 09:48:17	-->	korzq7 (~korzq@unaffiliated/korzq) has joined #pleroma
+2019-07-22 09:51:30	<--	korzq7 (~korzq@unaffiliated/korzq) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-22 09:51:45	-->	korzq7 (~korzq@alpha.korzq.xyz) has joined #pleroma
+2019-07-22 09:52:53	-->	gearshift4 (~gearshift@ool-18b946a5.dyn.optonline.net) has joined #pleroma
+2019-07-22 09:54:06	<--	gearshift (~gearshift@ool-18b946a5.dyn.optonline.net) has quit (Read error: Connection reset by peer)
+2019-07-22 09:59:35	<--	korzq7 (~korzq@alpha.korzq.xyz) has quit (Changing host)
+2019-07-22 09:59:35	-->	korzq7 (~korzq@unaffiliated/korzq) has joined #pleroma
+2019-07-22 10:07:29	<--	korzq7 (~korzq@unaffiliated/korzq) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-22 10:07:46	-->	korzq7 (~korzq@unaffiliated/korzq) has joined #pleroma
+2019-07-22 10:21:13	-->	thebaer (~Thunderbi@96-95-27-165-static.hfc.comcastbusiness.net) has joined #pleroma
+2019-07-22 10:27:08	<--	korzq7 (~korzq@unaffiliated/korzq) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-22 10:34:33	-->	korzq7 (~korzq@unaffiliated/korzq) has joined #pleroma
+2019-07-22 10:36:11	-->	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-22 10:39:25	<--	korzq7 (~korzq@unaffiliated/korzq) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-22 10:47:04	-->	korzq7 (~korzq@unaffiliated/korzq) has joined #pleroma
+2019-07-22 11:21:26	<--	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 252 seconds)
+2019-07-22 11:28:48	<--	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-b1dd-4dd7-563f-70cc.dhcp6.chtrptr.net) has quit (Read error: Connection reset by peer)
+2019-07-22 11:35:30	-->	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-22 11:51:46	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Ping timeout: 246 seconds)
+2019-07-22 11:52:59	-->	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has joined #pleroma
+2019-07-22 12:05:30	<--	Punished_Rico (~Ricotta_E@c-73-77-164-186.hsd1.tx.comcast.net) has quit
+2019-07-22 12:11:00	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Ping timeout: 272 seconds)
+2019-07-22 12:11:28	<--	korzq7 (~korzq@unaffiliated/korzq) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-22 12:11:52	-->	dewoo (~dewoo@user-94-254-136-41.play-internet.pl) has joined #pleroma
+2019-07-22 12:11:55	-->	korzq7 (~korzq@unaffiliated/korzq) has joined #pleroma
+2019-07-22 12:14:18	--	korzq7 is now known as korzq
+2019-07-22 12:55:13	<--	dewoo (~dewoo@user-94-254-136-41.play-internet.pl) has quit (Read error: Connection reset by peer)
+2019-07-22 12:57:19	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-22 13:03:31	<--	korzq (~korzq@unaffiliated/korzq) has quit (Quit: The Lounge - https://thelounge.chat)
+2019-07-22 13:04:39	-->	korzq (~korzq@unaffiliated/korzq) has joined #pleroma
+2019-07-22 13:10:54	<--	AbedB_ (~AbedBhuty@bzq-109-67-25-246.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-22 13:18:59	<--	Taoki (~MirceaKit@93.113.162.37) has quit (Remote host closed the connection)
+2019-07-22 13:28:32	-->	killsushi (~killsushi@2607:fea8:3ba0:623:f8f7:e6b1:8412:507b) has joined #pleroma
+2019-07-22 13:30:20	-->	Taoki (~MirceaKit@93.113.162.37) has joined #pleroma
+2019-07-22 13:49:34	<--	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has quit (Ping timeout: 252 seconds)
+2019-07-22 13:50:00	-->	zaitcev (~zaitcev@70-251-191-93.lightspeed.austtx.sbcglobal.net) has joined #pleroma
+2019-07-22 13:50:05	<--	cybercafe (~marx@73.96.107.107) has quit (Ping timeout: 268 seconds)
+2019-07-22 14:05:31	-->	brett-soric (~brett@ppp203-122-220-93.static.internode.on.net) has joined #pleroma
+2019-07-22 14:10:23	<--	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has quit (Read error: Connection reset by peer)
+2019-07-22 14:15:15	-->	dewoo (~dewoo@178235108149.elblag.vectranet.pl) has joined #pleroma
+2019-07-22 14:36:23	-->	cybercafe (~marx@73.96.107.143) has joined #pleroma
+2019-07-22 14:45:28	<--	drymer (~drymer@unaffiliated/drymer) has quit (Read error: Connection reset by peer)
+2019-07-22 14:47:03	-->	drymer (~drymer@unaffiliated/drymer) has joined #pleroma
+2019-07-22 14:54:12	<--	brett-soric (~brett@ppp203-122-220-93.static.internode.on.net) has left #pleroma
+2019-07-22 15:04:43	-->	AbedB (~AbedBhuty@bzq-109-67-25-246.red.bezeqint.net) has joined #pleroma
+2019-07-22 15:25:25	<--	ng0 (~ng0@gateway/tor-sasl/ng0) has quit (Quit: Alexa, when is the end of world?)
+2019-07-22 15:32:24	<--	thebaer (~Thunderbi@96-95-27-165-static.hfc.comcastbusiness.net) has quit (Ping timeout: 272 seconds)
+2019-07-22 15:42:38	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-22 15:50:52	<--	__uguu__ (~jeff@sapphire/devdood/notjeff) has quit (Ping timeout: 245 seconds)
+2019-07-22 15:52:34	-->	__uguu__ (~jeff@sapphire/devdood/notjeff) has joined #pleroma
+2019-07-22 16:03:46	<--	__uguu__ (~jeff@sapphire/devdood/notjeff) has quit (Ping timeout: 246 seconds)
+2019-07-22 16:04:13	-->	__uguu__ (~jeff@sapphire/devdood/notjeff) has joined #pleroma
+2019-07-22 16:13:23	<--	__uguu__ (~jeff@sapphire/devdood/notjeff) has quit (Ping timeout: 245 seconds)
+2019-07-22 16:14:41	--	irc: disconnected from server
+2019-07-22 16:37:09	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-22 16:37:09	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-22 16:37:09	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-22 16:37:09	--	Channel #pleroma: 209 nicks (6 ops, 0 voices, 203 normals)
+2019-07-22 16:37:13	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-22 18:14:13	--	irc: disconnected from server
+2019-07-23 09:08:33	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-23 09:08:33	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-23 09:08:33	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-23 09:08:33	--	Channel #pleroma: 207 nicks (6 ops, 0 voices, 201 normals)
+2019-07-23 09:08:38	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-23 09:12:43	-->	cybercafe (~marx@73.96.105.83) has joined #pleroma
+2019-07-23 09:17:06	lunamn	BjarniRunar: only manually
+2019-07-23 09:25:55	BjarniRunar	lunamn: Thanks. Are there scripts or docs somewhere I could look at to understand how folks do that?
+2019-07-23 09:32:41	-->	vi21 (~vee@ppp-171-96-73-114.revip8.asianet.co.th) has joined #pleroma
+2019-07-23 09:32:59	lunamn	BjarniRunar: look at mix pleroma.database and remote_post_retention_days on the config docs
+2019-07-23 09:46:57	BjarniRunar	lunamn: thanks again, I'll do that.
+2019-07-23 09:47:19	lunamn	yw
+2019-07-23 09:52:48	-->	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-8db1-1080-3619-92d4.dhcp6.chtrptr.net) has joined #pleroma
+2019-07-23 09:55:23	is0bel[m]	hi, i've got a problem with the mix database? the phx.server fails, ecto.migrate fails bc some part of the database already exists, and generating a new user fails with the error message "** (Postgrex.Error) ERROR 42703 (undefined_column) column "follower_address" of relation "users" does not exist"
+2019-07-23 09:55:24	is0bel[m]	i figured i ought to rebuild the database, but ecto.drop fails with the message "** (Mix) The database for Pleroma.Repo couldn't be dropped: ERROR 55006 (object_in_use) database "pleroma" is being accessed by other users"
+2019-07-23 10:03:08	-->	thebaer (~Thunderbi@pool-173-79-157-113.washdc.fios.verizon.net) has joined #pleroma
+2019-07-23 10:15:06	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Ping timeout: 244 seconds)
+2019-07-23 10:16:01	-->	dewoo (~dewoo@user-94-254-136-41.play-internet.pl) has joined #pleroma
+2019-07-23 10:18:54	<--	fireglow (fireglow@fireglow.su) has quit (Read error: Connection reset by peer)
+2019-07-23 10:20:37	-->	fireglow (fireglow@fireglow.su) has joined #pleroma
+2019-07-23 10:24:07	-->	englishm (sid6629@gateway/web/irccloud.com/x-ancapkcolyaambkj) has joined #pleroma
+2019-07-23 10:24:20	<--	englishm (sid6629@gateway/web/irccloud.com/x-ancapkcolyaambkj) has quit (Excess Flood)
+2019-07-23 10:32:32	<--	dewoo (~dewoo@user-94-254-136-41.play-internet.pl) has quit (Read error: Connection reset by peer)
+2019-07-23 10:32:49	-->	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has joined #pleroma
+2019-07-23 10:37:08	<--	dewoo (~dewoo@oqh202.internetdsl.tpnet.pl) has quit (Ping timeout: 245 seconds)
+2019-07-23 10:56:42	<--	vi21 (~vee@ppp-171-96-73-114.revip8.asianet.co.th) has quit (Read error: Connection reset by peer)
+2019-07-23 11:18:56	<--	ng0 (~ng0@gateway/tor-sasl/ng0) has quit (Quit: Alexa, when is the end of world?)
+2019-07-23 11:19:10	<--	lunamn (~lunamn@177.105.73.194) has quit (Ping timeout: 258 seconds)
+2019-07-23 11:19:14	-->	ng0 (~ng0@gateway/tor-sasl/ng0) has joined #pleroma
+2019-07-23 11:19:50	-->	tarteka (~tarteka@229.red-81-39-240.dynamicip.rima-tde.net) has joined #pleroma
+2019-07-23 11:21:39	-->	LetterBox (~Letterbox@72.51.112.85) has joined #pleroma
+2019-07-23 11:25:51	-->	lunamn (~lunamn@177.105.73.194) has joined #pleroma
+2019-07-23 11:37:51	<--	drymer (~drymer@unaffiliated/drymer) has quit (Read error: Connection reset by peer)
+2019-07-23 11:39:29	-->	drymer (~drymer@unaffiliated/drymer) has joined #pleroma
+2019-07-23 12:01:28	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-23 13:04:39	-->	AbedB (~AbedBhuty@bzq-109-67-25-246.red.bezeqint.net) has joined #pleroma
+2019-07-23 13:54:58	<--	cybercafe (~marx@73.96.105.83) has quit (Ping timeout: 248 seconds)
+2019-07-23 13:56:10	--	sergey2 is now known as sergey
+2019-07-23 14:14:07	<--	thebaer (~Thunderbi@pool-173-79-157-113.washdc.fios.verizon.net) has quit (Ping timeout: 246 seconds)
+2019-07-23 14:14:51	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-23 14:15:37	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-23 14:20:35	-->	cybercafe (~marx@73.96.106.215) has joined #pleroma
+2019-07-23 14:20:56	--	ichoquo0Aigh9ie is now known as jacky
+2019-07-23 14:23:57	-->	clarjon1 (~clarjon1@unaffiliated/clarjon1) has joined #pleroma
+2019-07-23 14:28:00	-->	AbedB_ (~AbedBhuty@bzq-109-64-53-207.red.bezeqint.net) has joined #pleroma
+2019-07-23 14:28:32	-->	AbedB__ (~AbedBhuty@bzq-109-64-53-207.red.bezeqint.net) has joined #pleroma
+2019-07-23 14:29:20	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-23 14:30:35	<--	AbedB__ (~AbedBhuty@bzq-109-64-53-207.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-23 14:31:22	<--	AbedB (~AbedBhuty@bzq-109-67-25-246.red.bezeqint.net) has quit (Ping timeout: 244 seconds)
+2019-07-23 14:32:03	-->	AbedB__ (~AbedBhuty@bzq-79-178-44-47.red.bezeqint.net) has joined #pleroma
+2019-07-23 14:32:33	<--	AbedB_ (~AbedBhuty@bzq-109-64-53-207.red.bezeqint.net) has quit (Ping timeout: 268 seconds)
+2019-07-23 14:36:34	<--	AbedB__ (~AbedBhuty@bzq-79-178-44-47.red.bezeqint.net) has quit (Ping timeout: 248 seconds)
+2019-07-23 14:42:00	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-23 15:32:04	-->	AbedB__ (~AbedBhuty@bzq-79-182-2-146.red.bezeqint.net) has joined #pleroma
+2019-07-23 15:41:49	tastytea	I can't follow relay.barkshark.tk and I can't unfollow relay.mastodon.host. I've tried via mix pleroma.relay and /api/pleroma/admin/relay. The commands produce no messages in the logs (loglevel :info). Any idea what might be wrong?
+2019-07-23 16:03:48	<--	__uguu__ (~jeff@sapphire/devdood/notjeff) has quit (Ping timeout: 245 seconds)
+2019-07-23 16:07:22	Nepfag	tastytea, omea wa mo blockdeiru
+2019-07-23 16:23:23	<--	Scarecrow (~Scarecrow@210-1-218-92-cpe.spintel.net.au) has quit (Ping timeout: 245 seconds)
+2019-07-23 16:45:34	--	irc: disconnected from server
+2019-07-23 20:49:43	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-23 20:49:43	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-23 20:49:43	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-23 20:49:43	--	Channel #pleroma: 210 nicks (6 ops, 0 voices, 204 normals)
+2019-07-23 20:49:50	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-23 22:50:07	--	irc: disconnected from server
+2019-07-24 00:50:20	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-24 00:50:20	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-24 00:50:20	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-24 00:50:20	--	Channel #pleroma: 207 nicks (6 ops, 0 voices, 201 normals)
+2019-07-24 00:50:24	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-24 02:50:40	--	irc: disconnected from server
+2019-07-24 02:50:53	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-24 02:50:53	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-24 02:50:53	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-24 02:50:55	--	Channel #pleroma: 206 nicks (6 ops, 0 voices, 200 normals)
+2019-07-24 02:50:58	--	irc: disconnected from server
+2019-07-24 04:46:28	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-24 04:46:28	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-24 04:46:28	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-24 04:46:28	--	Channel #pleroma: 205 nicks (6 ops, 0 voices, 199 normals)
+2019-07-24 04:46:32	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-24 09:23:13	--	irc: disconnected from server
+2019-07-24 09:23:23	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-24 09:23:23	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-24 09:23:23	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-24 09:23:23	--	Channel #pleroma: 208 nicks (6 ops, 0 voices, 202 normals)
+2019-07-24 09:23:29	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-24 10:11:42	<--	sknebel (~quassel@v22016013254630973.happysrv.de) has quit (Ping timeout: 245 seconds)
+2019-07-24 10:24:35	-->	englishm (sid6629@gateway/web/irccloud.com/x-bsrqkobnoqqxslhv) has joined #pleroma
+2019-07-24 10:25:59	is0bel[m]	i was having the same problem as cybercafe, but when i did DROP INDEX users_email_index; from inside the psql user i got the error that command DROP doesn't exist
+2019-07-24 10:27:58	<--	thebaer (~Thunderbi@c-69-255-105-73.hsd1.va.comcast.net) has quit (Ping timeout: 244 seconds)
+2019-07-24 10:30:46	<--	AbedB_ (~AbedBhuty@bzq-79-177-98-245.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-24 10:32:51	-->	none__ (~none@amontpellier-657-1-44-2.w90-28.abo.wanadoo.fr) has joined #pleroma
+2019-07-24 10:35:08	<--	href (~none@gw.apero.club) has quit (Ping timeout: 272 seconds)
+2019-07-24 11:02:25	<--	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-3913-2353-b3d4-52d3.dhcp6.chtrptr.net) has quit (Ping timeout: 276 seconds)
+2019-07-24 11:36:33	 *	is0bel[m] sent a long message:  < https://matrix.org/_matrix/media/v1/download/matrix.org/fMSYgrqczCOBtlLeZnasBzHR >
+2019-07-24 11:40:17	shibayashi[m]	is0bel: You have to be in psql for that. So it’s `sudo -u postgres psql -d your-database-name`. In there you can use SQL statements like DROP.
+2019-07-24 11:41:53	is0bel[m]	dope that worked, it let me drop the database. how do i get back to my main ssh session?
+2019-07-24 11:43:43	shibayashi[m]	\q
+2019-07-24 11:44:38	is0bel[m]	thank you :)
+2019-07-24 11:46:13	is0bel[m]	alright, that let me rebuild the database with mix ecto.migrate. i'm on the next step of the instructions, the command that ends with "mix phx.server", and i'm getting the following error message:
+2019-07-24 11:46:13	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-24 11:46:20	 *	is0bel[m] sent a long message:  < https://matrix.org/_matrix/media/v1/download/matrix.org/ZFTtdjaBJAiCculsQulMKOoX >
+2019-07-24 11:46:34	is0bel[m]	what is happening?
+2019-07-24 11:48:28	none__	you have something that is already listening on port 4000
+2019-07-24 11:48:38	--	none__ is now known as href
+2019-07-24 11:48:59	--	Mode #pleroma [+o href] by ChanServ
+2019-07-24 11:50:17	is0bel[m]	tcp        0      0 127.0.0.1:4000          0.0.0.0:*               LISTEN      16109/beam.smp
+2019-07-24 11:50:18	is0bel[m]	what is beam.smp related to and how do i pause it so i can do the thing?
+2019-07-24 11:50:19	is0bel[m]	is it an nginx thing?
+2019-07-24 11:51:03	@href	looks like you alreayd got a pleroma running- or something based on elixir/phoenix running
+2019-07-24 11:51:08	@href	.A
+2019-07-24 11:51:51	-->	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-3913-2353-b3d4-52d3.dhcp6.chtrptr.net) has joined #pleroma
+2019-07-24 11:53:28	is0bel[m]	hah! i ran the mix phx.server before actually finalizing the database, which is why i was getting so many weird errors. thank you!! it's running now!!!!
+2019-07-24 11:53:35	is0bel[m]	i've been working on getting pleroma running for litcherally 2 weeks, this is a miracle
+2019-07-24 11:54:27	is0bel[m]	and i have an admin account and everything~~
+2019-07-24 11:54:31	is0bel[m]	i have a last question: https<://>sweetjams.club gets to my instance, but sweetjams.club doesn't. i figure it's something wrong in my dns table but i'm not totally sure what. any ideas?
+2019-07-24 11:54:45	-->	thebaer (~Thunderbi@pool-108-18-118-85.washdc.fios.verizon.net) has joined #pleroma
+2019-07-24 11:55:38	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-24 12:00:02	shibayashi[m]	It’s not a DNS thing. Your nginx is not redirecting automatically from HTTP to HTTPS. That’s weird because it’s included  in the default example config.
+2019-07-24 12:02:17	is0bel[m]	hm
+2019-07-24 12:03:18	-->	ng0 (~ng0@gateway/tor-sasl/ng0) has joined #pleroma
+2019-07-24 12:09:26	-->	sknebel_ (~quassel@v22016013254630973.happysrv.de) has joined #pleroma
+2019-07-24 12:13:36	<--	englishm (sid6629@gateway/web/irccloud.com/x-bsrqkobnoqqxslhv) has quit (Excess Flood)
+2019-07-24 12:14:00	-->	englishm (sid6629@gateway/web/irccloud.com/x-byotpgcorxsgqcog) has joined #pleroma
+2019-07-24 12:14:31	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-24 12:14:39	--	sknebel_ is now known as sknebel
+2019-07-24 12:20:25	<--	englishm (sid6629@gateway/web/irccloud.com/x-byotpgcorxsgqcog) has quit (Excess Flood)
+2019-07-24 12:20:48	-->	englishm (sid6629@gateway/web/irccloud.com/x-zuazedsepucuvwgz) has joined #pleroma
+2019-07-24 12:47:50	is0bel[m]	it looks like my new pleroma instance isn't connected to the whole fediverse? like, in the frontend i only see the local timeline. why is this?
+2019-07-24 12:54:29	cybercafe	is0bel[m]: your instance isn't federating
+2019-07-24 12:54:47	cybercafe	I recently set up a new OTP release and it is also not federating :-(
+2019-07-24 12:55:01	cybercafe	it's able to receive notifications from remote servers but not receive timelines
+2019-07-24 12:56:17	is0bel[m]	how do we fix that?
+2019-07-24 13:01:01	shibayashi[m]	is0bel: You need to follow other accounts on other servers for the federated timeline to fill up. Looks like you’re currently only following one account on your own instance.
+2019-07-24 13:03:11	is0bel[m]	ok, cool
+2019-07-24 13:07:28	is0bel[m]	shouldn't stuff from other instances show up in the whole known network, though?
+2019-07-24 13:07:30	cybercafe	i've tried that with mine
+2019-07-24 13:07:41	cybercafe	i followed a number of remote users on multiple remote servers
+2019-07-24 13:07:46	cybercafe	no dice :~ (
+2019-07-24 13:08:24	ng0	can take a while
+2019-07-24 13:15:51	shibayashi[m]	The way federation work is, that remote servers push new content to followers of their accounts. So if there is no user on your server, that follows a particular user on a remote user, your server will not get any content from that user. The exception is, that if someone you follow reacts to something from that user, by replying, favouriting, etc. then you will get the original post too.
+2019-07-24 13:15:52	shibayashi[m]	So over time the federated timeline will fill up, based on how you and your users are interacting with the Fediverse and how many remote accounts they are following. It’s a representation of your social graph.
+2019-07-24 13:15:53	shibayashi[m]	If you want to quickly fill it up with random content, you can follow relays. Following a Pleroma relay is basically like subscribing to their local timeline. Following a Mastodon relay is a bit different I think. It’s more like “Everything from my server is sent to the relay and to its subscribers and my server is getting every public posts from all those subscribers”.
+2019-07-24 13:16:20	is0bel[m]	oh! that's a very good explanation, thank you
+2019-07-24 13:17:28	shibayashi[m]	cybercafe: Do you get new posts from the remote users you followed in your personal timeline?
+2019-07-24 13:23:36	shibayashi[m]	is0bel: Let’s fix your HTTP -> HTTPS redirect problem. Have you changed anything besides the `server_name` in the first server block compared to the example config? https://git.pleroma.social/pleroma/pleroma/blob/develop/installation/pleroma.nginx
+2019-07-24 13:29:31	cybercafe	shibayashi[m]: no
+2019-07-24 13:29:50	cybercafe	shibayashi[m]: when a remote user follows, favorites, replies, direct messages, those come through, but not posts
+2019-07-24 13:30:08	cybercafe	it's been up for nearly 12 hours :~(
+2019-07-24 13:30:20	shibayashi[m]	is0bel: Looks like federation is working. You followed a remote user and your federated timeline also already shows a different users because they replied to a post from that person
+2019-07-24 13:31:20	shibayashi[m]	cybercafe: That’s really weird
+2019-07-24 13:31:51	cybercafe	i'll try following 10 users on 10 instances and go for a smoke :P
+2019-07-24 13:31:56	shibayashi[m]	Do you mind posting your instance name?
+2019-07-24 13:32:04	cybercafe	shibayashi[m]: if it helps i'm using the OTP release amd64
+2019-07-24 13:32:18	cybercafe	modified NGINX and related, have HTTPS working with a valid cert
+2019-07-24 13:32:21	Lord	hi, i'm trying to update my tiny instance with pleroma_ctl update but i only get : "Releases are built only for master and develop branches"
+2019-07-24 13:33:05	Lord	is there a way to see which is the current branch ?
+2019-07-24 13:33:11	shibayashi[m]	cybercafe: I’m also running the OTP release but I migrated from a source-based one and didn’t start a new one.
+2019-07-24 13:33:20	Lord	i'm not using git but the OTP release
+2019-07-24 13:33:27	cybercafe	ahh
+2019-07-24 13:36:22	-->	yanmarcos (~DONATIEN@152.206.163.56) has joined #pleroma
+2019-07-24 13:37:33	yanmarcos	hello
+2019-07-24 13:37:33	yanmarcos	busco sexo
+2019-07-24 13:38:15	<--	yanmarcos (~DONATIEN@152.206.163.56) has left #pleroma
+2019-07-24 13:41:34	cybercafe	Ohhh hey shibayashi[m] !
+2019-07-24 13:41:44	cybercafe	following lain_soykaf activated some magic that brought my instance online
+2019-07-24 13:41:52	@lain_soykaf	Haha
+2019-07-24 13:43:04	shibayashi[m]	Ah yes, I also follow Lain so I guess that’s the magic to enable federation
+2019-07-24 13:43:59	Lord	this should be in the official documentation on "how to enable federation"
+2019-07-24 13:45:04	shibayashi[m]	Lord: I just ran `sudo -Hu pleroma ./bin/pleroma_ctl update` in `/opt/pleroma`, like it’s described in the docs and it worked :/
+2019-07-24 13:45:34	Lord	it doesn't work for me :-(
+2019-07-24 13:46:47	-->	Uniaika (~uniaika@163.172.211.189) has joined #pleroma
+2019-07-24 13:46:55	Uniaika	o/
+2019-07-24 13:47:14	Uniaika	pleroma distribution at the VM level when?
+2019-07-24 13:47:28	Lord	do you have an error message if you did one more time shibayashi[m] ?
+2019-07-24 13:50:03	shibayashi[m]	Lord: Ah, now I get the same message. Guess this is the default text for: “You have the newest release”
+2019-07-24 13:51:28	Lord	ho ok. so i can stop worrying :-)
+2019-07-24 14:00:50	<--	cybercafe (~marx@73.96.105.255) has quit (Ping timeout: 248 seconds)
+2019-07-24 14:02:27	-->	cybercafe (~marx@73.96.104.227) has joined #pleroma
+2019-07-24 14:11:30	<--	thebaer (~Thunderbi@pool-108-18-118-85.washdc.fios.verizon.net) has quit (Ping timeout: 248 seconds)
+2019-07-24 14:16:24	-->	thebaer (~Thunderbi@pool-108-18-118-85.washdc.fios.verizon.net) has joined #pleroma
+2019-07-24 14:18:54	-->	AbedB (~AbedBhuty@bzq-79-180-44-143.red.bezeqint.net) has joined #pleroma
+2019-07-24 14:20:34	<--	thebaer (~Thunderbi@pool-108-18-118-85.washdc.fios.verizon.net) has quit (Ping timeout: 248 seconds)
+2019-07-24 14:26:32	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-24 14:35:34	<--	meireikei (~weechat@gateway/tor-sasl/meireikei) has quit (Remote host closed the connection)
+2019-07-24 14:35:38	-->	meireike1 (~weechat@gateway/tor-sasl/meireikei) has joined #pleroma
+2019-07-24 14:51:53	<--	cybercafe (~marx@73.96.104.227) has quit (Quit: Leaving)
+2019-07-24 14:55:47	gearshift	Uniaika: a pleroma lxc container would be cool
+2019-07-24 14:56:37	-->	thebaer (~Thunderbi@pool-108-18-118-85.washdc.fios.verizon.net) has joined #pleroma
+2019-07-24 15:00:52	<--	thebaer (~Thunderbi@pool-108-18-118-85.washdc.fios.verizon.net) has quit (Ping timeout: 245 seconds)
+2019-07-24 15:01:43	rin[m]	Uniaika: when somebody writes it. currently we depend on the caches being correct in too many places and our job queue is not really designed for >1 nodes. I would love to start fixing this, but there are more important things to do rn.
+2019-07-24 15:28:03	<--	BjarniRunar (~bre@gateway/tor-sasl/bjarnirunar) has quit (Remote host closed the connection)
+2019-07-24 15:28:11	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-24 15:29:14	-->	BjarniRunar (~bre@gateway/tor-sasl/bjarnirunar) has joined #pleroma
+2019-07-24 15:36:11	@href	>lxc container
+2019-07-24 15:36:14	@href	>cool
+2019-07-24 15:36:19	@href	erm
+2019-07-24 15:37:16	gearshift	you'd rather have a full vm?
+2019-07-24 15:38:57	@href	yes or something manageable like a freebsd jail
+2019-07-24 15:39:05	@href	lxc containers are hell
+2019-07-24 16:21:59	--	irc: disconnected from server
+2019-07-25 09:36:45	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-25 09:36:45	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-25 09:36:45	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-25 09:36:45	--	Channel #pleroma: 208 nicks (5 ops, 0 voices, 203 normals)
+2019-07-25 09:36:51	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-25 09:46:59	-->	killsushi (~killsushi@2607:fea8:3ba0:623:9dd4:15a2:9af2:d385) has joined #pleroma
+2019-07-25 10:36:52	-->	Daisae (~Daisae@89.238.186.244) has joined #pleroma
+2019-07-25 10:40:41	Daisae	PLA1: Java is a good as a practical choice.
+2019-07-25 10:46:27	Daisae	PLA1: It compiles, but the JAr is not executable (no manifest with main-class defined) and I see no instructions for running it.
+2019-07-25 10:46:56	Daisae	and no maven exec target defined.
+2019-07-25 10:47:23	Daisae	I advise:  Make the JAr executable with java -jar ; define a mvn exec target .
+2019-07-25 10:47:52	Daisae	and document it for the users who are not Java power users.
+2019-07-25 10:48:03	Daisae	or admins.
+2019-07-25 11:13:57	-->	AbedB (~AbedBhuty@bzq-79-180-44-143.red.bezeqint.net) has joined #pleroma
+2019-07-25 11:24:23	<--	Damek (~adam@pool-100-33-3-125.nycmny.fios.verizon.net) has quit (Quit: ZNC 1.7.4 - https://znc.in)
+2019-07-25 11:38:14	-->	crushv_ (~crushv@gateway/tor-sasl/crushv) has joined #pleroma
+2019-07-25 11:38:20	<--	crushv (~crushv@gateway/tor-sasl/crushv) has quit (Ping timeout: 260 seconds)
+2019-07-25 11:38:21	--	crushv_ is now known as crushv
+2019-07-25 11:54:23	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-25 12:02:02	-->	Damek (~adam@pool-100-33-3-125.nycmny.fios.verizon.net) has joined #pleroma
+2019-07-25 13:09:38	<--	cybercafe (~marx@73.96.107.71) has quit (Ping timeout: 245 seconds)
+2019-07-25 13:16:41	-->	rickkun (~rick@gateway/tor-sasl/rickkun) has joined #pleroma
+2019-07-25 13:23:06	<--	englishm (sid6629@gateway/web/irccloud.com/x-zuazedsepucuvwgz) has quit (Excess Flood)
+2019-07-25 13:23:47	-->	englishm (sid6629@gateway/web/irccloud.com/x-gqxcffjebljmtvly) has joined #pleroma
+2019-07-25 13:30:53	--	irc: disconnected from server
+2019-07-25 13:31:04	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-25 13:31:04	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-25 13:31:04	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-25 13:31:04	--	Channel #pleroma: 212 nicks (5 ops, 0 voices, 207 normals)
+2019-07-25 13:31:10	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-25 13:34:05	<--	AbedB (~AbedBhuty@bzq-79-180-44-143.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-25 14:19:35	-->	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-1d06-67a0-f14a-9031.dhcp6.chtrptr.net) has joined #pleroma
+2019-07-25 14:25:33	<--	fireglow (fireglow@fireglow.su) has quit (Remote host closed the connection)
+2019-07-25 14:30:48	-->	fireglow (fireglow@fireglow.su) has joined #pleroma
+2019-07-25 14:33:07	-->	AbedB (~AbedBhuty@bzq-79-180-44-143.red.bezeqint.net) has joined #pleroma
+2019-07-25 15:06:30	-->	cybercafe (~marx@73.96.104.187) has joined #pleroma
+2019-07-25 15:22:10	<--	D_ (~D_@underscore.world) has quit (Ping timeout: 276 seconds)
+2019-07-25 15:57:56	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-25 16:01:34	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-25 16:17:17	<--	cybercafe (~marx@73.96.104.187) has quit (Quit: Leaving)
+2019-07-25 16:18:05	<--	buckket (~buckket@uncloaked.net) has quit (Quit: buckket)
+2019-07-25 16:22:33	-->	buckket (~buckket@uncloaked.net) has joined #pleroma
+2019-07-25 16:26:02	<--	ng0 (~ng0@gateway/tor-sasl/ng0) has quit (Quit: Alexa, when is the end of world?)
+2019-07-25 16:47:13	<--	rickkun (~rick@gateway/tor-sasl/rickkun) has quit (Quit: See ya)
+2019-07-25 16:53:29	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-25 16:58:29	--	irc: disconnected from server
+2019-07-26 00:35:42	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-26 00:35:42	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-26 00:35:42	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-26 00:35:42	--	Channel #pleroma: 206 nicks (5 ops, 0 voices, 201 normals)
+2019-07-26 00:35:49	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-26 02:36:03	--	irc: disconnected from server
+2019-07-26 09:25:31	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-26 09:25:31	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-26 09:25:31	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-26 09:25:31	--	Channel #pleroma: 206 nicks (5 ops, 0 voices, 201 normals)
+2019-07-26 09:25:37	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-26 09:41:07	<--	ehmry (~emery@37.205.14.171) has left #pleroma
+2019-07-26 10:12:12	<--	drymer (~drymer@unaffiliated/drymer) has quit (Read error: Connection reset by peer)
+2019-07-26 10:13:33	-->	drymer (~drymer@unaffiliated/drymer) has joined #pleroma
+2019-07-26 10:28:32	-->	kinji[m] (kinjimatri@gateway/shell/matrix.org/x-qvmxkigbyotfnvvu) has joined #pleroma
+2019-07-26 10:29:53	kinji[m]	Hi
+2019-07-26 10:45:25	-->	AbedB (~AbedBhuty@bzq-79-180-44-143.red.bezeqint.net) has joined #pleroma
+2019-07-26 11:11:17	<--	whereisthebeer (~y86@70-231-16-186.lightspeed.rlghnc.sbcglobal.net) has quit
+2019-07-26 11:37:02	-->	LetterBox (~Letterbox@72.51.112.85) has joined #pleroma
+2019-07-26 11:59:19	<--	lunamn (~lunamn@177.105.73.194) has quit (Ping timeout: 244 seconds)
+2019-07-26 12:01:19	-->	foggyboi (~Adium@12.197.206.193) has joined #pleroma
+2019-07-26 12:11:09	<--	AbedB (~AbedBhuty@bzq-79-180-44-143.red.bezeqint.net) has quit (Read error: Connection reset by peer)
+2019-07-26 12:15:10	-->	whereisthebeer (~whereisth@70-231-16-186.lightspeed.rlghnc.sbcglobal.net) has joined #pleroma
+2019-07-26 12:15:18	-->	lunamn (~lunamn@177.105.73.194) has joined #pleroma
+2019-07-26 12:16:05	whereisthebeer	Error: Upload failed. Try again later -- my pleroma is giving me this error, I have 12% disk usage, I just updated fully, deleted deps, rebuilt, same error :-/
+2019-07-26 12:18:16	rin[m]	check the server logs
+2019-07-26 12:18:57	whereisthebeer	Instrumenter Pleroma.Web.Endpoint.Instrumenter.phoenix_channel_join/3 failed.
+2019-07-26 12:18:57	whereisthebeer	** (KeyError) key :transport_name not found in: %Phoenix.Socket{assigns:
+2019-07-26 12:19:01	whereisthebeer	I had this error pre-upgrade:
+2019-07-26 12:19:18	whereisthebeer	I upgraded, and it's gone, no message on failure to upload now
+2019-07-26 12:19:30	whereisthebeer	I can set a background image under my profile
+2019-07-26 12:31:59	whereisthebeer	rin[m]: it's not cloudflare, I just remove it and connected straight, same error :-/
+2019-07-26 12:32:06	whereisthebeer	on the same subnet
+2019-07-26 12:33:38	whereisthebeer	WebSocket network error: The operation couldn’t be completed. Connection refused
+2019-07-26 12:33:46	whereisthebeer	hhhmm
+2019-07-26 12:37:45	whereisthebeer	phoenix.js:1 WebSocket connection to 'wss://SITEREMOVED.com/socket/websocket?token=undefined&vsn=2.0.0' failed: Error during WebSocket handshake: Unexpected response code: 403
+2019-07-26 12:51:30	<--	lunamn (~lunamn@177.105.73.194) has quit (Ping timeout: 248 seconds)
+2019-07-26 12:51:39	-->	lunamn (~lunamn@177.105.73.194) has joined #pleroma
+2019-07-26 13:13:21	-->	LivingPharaoh (~howard@89.127.51.61) has joined #pleroma
+2019-07-26 13:14:42	LivingPharaoh	Hello. Any Irish communities I can join? Alternatively, what server specs would be required to host one?
+2019-07-26 13:15:58	whereisthebeer	okay, I solved this by adding a variable to NGINX, I'm still getting websocket errors on the brower, but files upload.  So good enough - client_max_body_size 100M;
+2019-07-26 13:16:34	whereisthebeer	LivingPharaoh: https://fediverse.network/pleroma
+2019-07-26 13:16:40	leetspete1	LivingPharaoh: You can do it on a pretty small server.
+2019-07-26 13:17:04	LivingPharaoh	Is a shared server wise? lol
+2019-07-26 13:17:11	LivingPharaoh	Thanks for the link, btw
+2019-07-26 13:17:14	leetspete1	The absolute bottom tier, even, as long as it's a small enough instance, under 30-50 people.
+2019-07-26 13:18:00	leetspete1	A lot of people host single-user instances on Raspberry Pis.
+2019-07-26 13:18:56	LivingPharaoh	I dunno anything about Raspberry. I'm all surface-level code. PHP and HTML. I'm guessing this is above my paygrade?
+2019-07-26 13:19:08	whereisthebeer	LivingPharaoh: I built one in 10 minutes
+2019-07-26 13:20:28	leetspete1	LivingPharaoh: Yeah, you can get an ec2 micro or whatever tiny VPS and do it.
+2019-07-26 13:22:36	LivingPharaoh	Yeah, but not a regular shared host. Cool. I'm just looking for the "local" angle on the fediverse
+2019-07-26 13:23:07	LivingPharaoh	I saw the queer alphabet used on the pleroma website, so I came here
+2019-07-26 13:24:51	leetspete1	I'm not sure what you mean about local angles or queer alphabets, but I think it's awesome for people to take an interest in hosting.
+2019-07-26 13:26:45	LivingPharaoh	I mean social networks for geographical communities, and by queer alphabets I'm pretty sure Pleroma is Slavic/Russian. Did I get that wrong?
+2019-07-26 13:27:59	LivingPharaoh	If Russia ever invaded Europe, I'd be a partisan on their side. Lesser of two evils kinda thing lol
+2019-07-26 13:29:59	LivingPharaoh	Better the direct descendants of Ghengis Khan than the distant descendants, amirite? lol
+2019-07-26 13:30:25	-->	AbedB (~AbedBhuty@bzq-79-180-44-143.red.bezeqint.net) has joined #pleroma
+2019-07-26 13:37:16	LivingPharaoh	Okay. Not a lot of Ghengis Khan supporters in this IRC. Cool. A guy knows where he's not accepted. Thanks for your help. See you around <3
+2019-07-26 13:38:41	whereisthebeer	This is a chat for pleroma
+2019-07-26 13:39:03	whereisthebeer	Not sure about Ghengis Khan, might want to checkout #ghengis
+2019-07-26 13:39:18	whereisthebeer	Kirk has opinions on Khan
+2019-07-26 13:40:38	whereisthebeer	https://youtu.be/e7X01_j_oDA?t=130
+2019-07-26 13:45:05	LivingPharaoh	LOL
+2019-07-26 13:48:12	ng0	oO
+2019-07-26 13:50:53	ng0	that clichee is so old, cold war era red line phoned in says they will repair the time machine soon.
+2019-07-26 13:51:27	-->	cybercafe (~marx@73.96.107.108) has joined #pleroma
+2019-07-26 13:52:24	whereisthebeer	I'm running pleroma on a T7600 with 128GB of RAM and 2x Xeon 16 thread CPUs on 4 raid 0 SSDs, for 1 user.
+2019-07-26 13:52:38	cybercafe	hmm, you sure you have enough RAM?
+2019-07-26 13:52:54	whereisthebeer	cybercafe: no, I'm not sure of anything
+2019-07-26 13:53:05	cybercafe	whereisthebeer: how much of "TWKN" do you really want your instance to hoover up?
+2019-07-26 13:53:22	whereisthebeer	TWKN? cybercafe
+2019-07-26 13:54:02	whereisthebeer	https://www.urbandictionary.com/define.php?term=twkn
+2019-07-26 13:55:56	cybercafe	The Whole Known Network
+2019-07-26 13:56:14	LivingPharaoh	We're ALL the children of Ghengis Khan. Greatest man of history EVER
+2019-07-26 13:56:33	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-26 13:56:47	whereisthebeer	cybercafe: thanks, yes -- I'm mostly just messing around.  I have more hardware than a normal person needs.
+2019-07-26 13:56:52	LivingPharaoh	His contribution to history far out-stripped that of the Mediterranean's ENTIRE history ever
+2019-07-26 13:57:20	whereisthebeer	LivingPharaoh: cool, if you believe he existed.
+2019-07-26 13:57:21	LivingPharaoh	If it weren't for him we wouldn't be talking right now
+2019-07-26 13:57:52	LivingPharaoh	He's the noble lie. You better believe he existed, or else
+2019-07-26 13:57:55	whereisthebeer	LivingPharaoh: since you're living in a simulation, your entire history was fabricated.
+2019-07-26 13:58:06	LivingPharaoh	TOP KEK
+2019-07-26 13:58:16	whereisthebeer	🐸
+2019-07-26 13:58:57	whereisthebeer	💊 take the pill
+2019-07-26 13:59:13	LivingPharaoh	Gobble gobble gobble
+2019-07-26 13:59:30	LivingPharaoh	I'll take any pill that's going
+2019-07-26 14:02:18	-->	celestialkhagan (4981006d@c-73-129-0-109.hsd1.md.comcast.net) has joined #pleroma
+2019-07-26 14:03:16	<--	zaitcev (~zaitcev@70-251-191-93.lightspeed.austtx.sbcglobal.net) has quit (Ping timeout: 272 seconds)
+2019-07-26 14:03:18	LivingPharaoh	I'm sorry, guise. I'm just incredibly lonely and capitalise on any occasion to be the centre of attention. Thanks for the direction though. This fediverse stuff sounds like something I could contribute to
+2019-07-26 14:04:29	meireikei	when I see the phrae "queer alphabet", I think that it is a special alphabet that queer activists have created
+2019-07-26 14:04:34	meireikei	for some political purpose
+2019-07-26 14:05:10	meireikei	genghis khan was certainly a great conqueror for his people, and begetter of children
+2019-07-26 14:05:27	meireikei	I don't know if that is the same thing as a great man of history
+2019-07-26 14:05:49	cybercafe	Okay, #pleroma-offtopic is now the official Pleroma support chat, and #pleroma is the community general discussion
+2019-07-26 14:05:59	meireikei	lol
+2019-07-26 14:06:01	rin[m]	take this conversation to #pleroma-offtopic plz
+2019-07-26 14:06:08	meireikei	you're right this is offtopic
+2019-07-26 14:23:11	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-26 14:23:11	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-26 14:23:11	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-26 14:23:11	--	Channel #pleroma: 210 nicks (5 ops, 0 voices, 205 normals)
+2019-07-26 14:23:13	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-26 14:24:30	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-26 14:24:30	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-26 14:24:30	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 15:02:44
+2019-07-26 14:24:30	--	Channel #pleroma: 210 nicks (5 ops, 0 voices, 205 normals)
+2019-07-26 14:24:32	--	Channel created on Wed, 22 Nov 2017 05:45:03
+2019-07-26 14:29:27	-->	zaitcev (~zaitcev@2600:1700:1d1:f0c0::48) has joined #pleroma
+2019-07-26 14:33:51	-->	foggyboi1 (~Adium@12.197.206.193) has joined #pleroma
+2019-07-26 14:36:27	-->	foggyboi (~Adium@12.69.228.74) has joined #pleroma
+2019-07-26 14:38:24	<--	foggyboi1 (~Adium@12.197.206.193) has quit (Ping timeout: 245 seconds)
+2019-07-27 22:54:16	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-27 22:54:16	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-27 22:54:16	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-27 22:54:16	--	Channel #pleroma: 214 nicks (5 ops, 0 voices, 209 normals)
+2019-07-27 22:54:18	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-27 23:25:07	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-27 23:25:07	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-27 23:25:07	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-27 23:25:07	--	Channel #pleroma: 214 nicks (5 ops, 0 voices, 209 normals)
+2019-07-27 23:25:10	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-27 23:27:09	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-27 23:27:09	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-27 23:27:09	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-27 23:27:09	--	Channel #pleroma: 214 nicks (5 ops, 0 voices, 209 normals)
+2019-07-27 23:27:12	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-27 23:28:48	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-27 23:28:48	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-27 23:28:48	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-27 23:28:48	--	Channel #pleroma: 214 nicks (5 ops, 0 voices, 209 normals)
+2019-07-27 23:28:50	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-27 23:31:15	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-27 23:31:15	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-27 23:31:15	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-27 23:31:15	--	Channel #pleroma: 214 nicks (5 ops, 0 voices, 209 normals)
+2019-07-27 23:31:17	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-27 23:38:22	<--	MuffinPimp (mokou@box.mokou.io) has quit (Quit: Goodbye.)
+2019-07-27 23:44:20	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-27 23:44:20	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-27 23:44:20	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-27 23:44:20	--	Channel #pleroma: 213 nicks (5 ops, 0 voices, 208 normals)
+2019-07-27 23:44:22	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 00:04:38	<--	eugenijm (sid352794@gateway/web/irccloud.com/x-xgapmaetjcvhgwic) has quit (Ping timeout: 276 seconds)
+2019-07-28 00:04:51	<--	Allie` (sid292248@gateway/web/irccloud.com/x-brogorrzbqbupgft) has quit (Ping timeout: 248 seconds)
+2019-07-28 00:05:21	<--	Peuc (~Peuc@199.192.236.28) has quit (Quit: Leave now!)
+2019-07-28 00:08:07	-->	Allie` (sid292248@gateway/web/irccloud.com/x-peawwwjuppaqrzjk) has joined #pleroma
+2019-07-28 00:08:25	-->	eugenijm (sid352794@gateway/web/irccloud.com/x-irgojvhkgeatzkgi) has joined #pleroma
+2019-07-28 00:08:38	-->	Peuc (~Peuc@199.192.236.28) has joined #pleroma
+2019-07-28 00:29:30	<--	kensanata (~user@fsf/member/kensanata) has quit (Remote host closed the connection)
+2019-07-28 01:01:49	<--	bigdumbcat (~quassel@2600-6c47-a07f-ecc9-c812-c8d9-ccd5-1eaa.dhcp6.chtrptr.net) has quit (Ping timeout: 276 seconds)
+2019-07-28 01:01:57	<--	gearshift (~gearshift@ool-18b946a5.dyn.optonline.net) has quit (Remote host closed the connection)
+2019-07-28 01:16:44	-->	gearshift (~gearshift@ool-18b946a5.dyn.optonline.net) has joined #pleroma
+2019-07-28 01:22:10	<--	rickkun (~rick@gateway/tor-sasl/rickkun) has quit (Quit: See ya)
+2019-07-28 01:29:35	sheep	Nem[m]: the [object Object] error is a known issue in pleroma-fe: https://git.pleroma.social/pleroma/pleroma-fe/issues/617
+2019-07-28 01:30:47	sheep	Nem[m]: make sure that you have valid values in all of the fields, you aren't using a name or email address that is already taken, and you have the right captcha response (if there is a captcha). If the error is because of the captcha, then you might need to reload the page.
+2019-07-28 02:10:38	<--	witchyanna (witchyanna@gateway/vpn/privateinternetaccess/witchyanna) has quit (Quit: Leaving)
+2019-07-28 02:36:29	<--	killsushi (~killsushi@2607:fea8:3ba0:623:b449:e8b8:5a89:79b2) has quit (Quit: Leaving)
+2019-07-28 03:34:48	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 03:34:48	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 03:34:48	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 03:34:48	--	Channel #pleroma: 209 nicks (5 ops, 0 voices, 204 normals)
+2019-07-28 03:34:50	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 03:35:09	-->	gearshift4 (~gearshift@ool-18b946a5.dyn.optonline.net) has joined #pleroma
+2019-07-28 03:35:16	<--	gearshift (~gearshift@ool-18b946a5.dyn.optonline.net) has quit (Ping timeout: 246 seconds)
+2019-07-28 03:38:44	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 03:38:44	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 03:38:44	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 03:38:44	--	Channel #pleroma: 209 nicks (5 ops, 0 voices, 204 normals)
+2019-07-28 03:38:47	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 03:47:22	<--	englishm (sid6629@gateway/web/irccloud.com/x-gqxcffjebljmtvly) has quit (Excess Flood)
+2019-07-28 03:47:34	-->	englishm (sid6629@gateway/web/irccloud.com/x-olrxclzdtwtfvbmu) has joined #pleroma
+2019-07-28 03:48:38	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 03:48:38	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 03:48:38	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 03:48:38	--	Channel #pleroma: 209 nicks (5 ops, 0 voices, 204 normals)
+2019-07-28 03:48:40	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 03:49:17	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 03:49:17	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 03:49:17	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 03:49:17	--	Channel #pleroma: 209 nicks (5 ops, 0 voices, 204 normals)
+2019-07-28 03:49:20	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 03:50:01	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 03:50:01	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 03:50:01	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 03:50:01	--	Channel #pleroma: 209 nicks (5 ops, 0 voices, 204 normals)
+2019-07-28 03:50:03	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 03:50:42	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 03:50:42	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 03:50:42	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 03:50:42	--	Channel #pleroma: 209 nicks (5 ops, 0 voices, 204 normals)
+2019-07-28 03:50:44	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 04:12:08	-->	gearshift (~gearshift@ool-18b946a5.dyn.optonline.net) has joined #pleroma
+2019-07-28 04:13:55	<--	gearshift4 (~gearshift@ool-18b946a5.dyn.optonline.net) has quit (Ping timeout: 268 seconds)
+2019-07-28 13:31:34	--	irc: disconnected from server
+2019-07-28 13:31:45	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 13:31:45	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 13:31:45	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 13:31:45	--	Channel #pleroma: 211 nicks (5 ops, 0 voices, 206 normals)
+2019-07-28 13:31:51	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 13:37:09	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 13:37:09	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 13:37:09	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 13:37:09	--	Channel #pleroma: 211 nicks (5 ops, 0 voices, 206 normals)
+2019-07-28 13:37:11	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 13:40:50	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 13:40:50	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 13:40:50	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 13:40:50	--	Channel #pleroma: 211 nicks (5 ops, 0 voices, 206 normals)
+2019-07-28 13:40:52	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 13:44:17	-->	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 13:44:17	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 13:44:17	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 13:44:17	--	Channel #pleroma: 211 nicks (5 ops, 0 voices, 206 normals)
+2019-07-28 13:44:19	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 14:08:11	▬▬▶	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 14:08:11	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 14:08:11	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 14:08:11	--	Channel #pleroma: 211 nicks (5 ops, 0 voices, 206 normals)
+2019-07-28 14:08:13	--	Channel created on Wed, 22 Nov 2017 11:45:03
+2019-07-28 14:24:09	◀▬▬	meireikei (~weechat@gateway/tor-sasl/meireikei) has quit (Remote host closed the connection)
+2019-07-28 14:24:56	▬▬▶	meireikei (~weechat@gateway/tor-sasl/meireikei) has joined #pleroma
+2019-07-28 14:43:58	--	irc: disconnected from server
+2019-07-28 14:44:09	▬▬▶	zws (~blindidio@134.209.53.112) has joined #pleroma
+2019-07-28 14:44:09	--	Topic for #pleroma is "Discussion related to using and managing Pleroma instances only. | Ask for a gitlab account and you shall receive. | Frontend: https://git.pleroma.social/pleroma/pleroma-fe | Backend: https://git.pleroma.social/pleroma/pleroma | Instances List: https://distsn.org/pleroma-instances.html | Offtopic discussion (including fediverse griping) in #pleroma-offtopic"
+2019-07-28 14:44:09	--	Topic set by kaniini (~kaniini@172.93.5.42) on Fri, 12 Jul 2019 20:02:44
+2019-07-28 14:44:09	--	Channel #pleroma: 210 nicks (5 ops, 0 voices, 205 normals)
+2019-07-28 14:44:15	--	Channel created on Wed, 22 Nov 2017 11:45:03

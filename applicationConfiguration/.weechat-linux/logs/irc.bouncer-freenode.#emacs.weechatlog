@@ -1,0 +1,1475 @@
+2019-07-05 13:54:04	-->	zws (~blindidio@134.209.53.112) has joined #emacs
+2019-07-05 13:54:04	--	Topic for #emacs is "Path to good init.el: to err, and err, and err again (but less, and less, and less) | Emacs questions take priority over off-topic chatter, so ask! | No public logging! What happens in #emacs stays in #emacs | No racism, sexism, xenophobia, botwanking, or other asshattery, please"
+2019-07-05 13:54:04	--	Topic set by JordiGH on Fri, 21 Jun 2019 09:26:41
+2019-07-05 13:54:04	--	Channel #emacs: 675 nicks (1 op, 0 voices, 674 normals)
+2019-07-05 13:54:04	--	Channel created on Sun, 26 Nov 2006 00:42:33
+2019-07-05 13:54:15	parsnip	johnjay: this is annoying to type manually: http://ix.io/1NNu/elisp
+2019-07-05 13:54:16	caoliver	TreyHarris, sounds like a crappy implementation.  Embedded Lua apps are only as good as the attached (wretched) C.
+2019-07-05 13:54:39	parsnip	johnjay: and note the multiple expansions of $1
+2019-07-05 13:54:42	-->	f0xtr0t (~f0xtr0t@unaffiliated/jayb) has joined #emacs
+2019-07-05 13:55:38	f0xtr0t	Hi! How do I run (process-lines "foobar") and get it to run foobar on the server that I'm connected to via tramp? process-lines seems to only do things on the local machine.
+2019-07-05 13:57:53	johnjay	parsnip: i guess that makes sense
+2019-07-05 13:58:11	johnjay	maybe i'm confused because i th ink it should be part of a larger framework or something
+2019-07-05 13:58:15	npostavs	f0xtr0t: you'll need to use process-file instead (it's the file-handler enabled version of call-process)
+2019-07-05 13:58:19	johnjay	like a code-generation library for java
+2019-07-05 13:58:44	parsnip	not all languages have a magic ecosystem
+2019-07-05 13:59:04	parsnip	and this is a lightweight solution
+2019-07-05 13:59:16	parsnip	sometimes magic ecosystems crash cheap computers
+2019-07-05 13:59:18	johnjay	well ok but what if you needed to change $1 by adding a letter to it at some point?
+2019-07-05 13:59:22	johnjay	would you just use regexp?
+2019-07-05 13:59:44	parsnip	the usual emacs way
+2019-07-05 13:59:48	parsnip	whatever works for you
+2019-07-05 13:59:55	parsnip	you mean code refactoring, i guess
+2019-07-05 14:00:04	parsnip	that's a different question
+2019-07-05 14:00:22	parsnip	but i guess you file it under, "i'm used magic ecosystems"
+2019-07-05 14:00:22	johnjay	sure
+2019-07-05 14:00:25	parsnip	*used to
+2019-07-05 14:00:53	parsnip	some languages work better in an IDE
+2019-07-05 14:01:01	johnjay	also does yas have more features than that?
+2019-07-05 14:01:14	parsnip	more features than what?
+2019-07-05 14:01:17	parsnip	like what?
+2019-07-05 14:01:25	johnjay	i mean it's basically regex substituting into a string right?
+2019-07-05 14:01:29	johnjay	why not do that by hand?
+2019-07-05 14:01:52	f0xtr0t	npostavs: Thanks! That helps a lot! :)
+2019-07-05 14:02:10	f0xtr0t	Finally I've got this script working as I wanted :)
+2019-07-05 14:02:23	parsnip	johnjay: so by hand, you want to insert that block and do a regex substitute?
+2019-07-05 14:02:44	parsnip	johnjay: i think you mean, "pfft, that package is small and is not complicated, what a bunch of amateurs"
+2019-07-05 14:03:02	parsnip	you don't have to use it
+2019-07-05 14:03:21	johnjay	i'm trying to figure out why i would want to use it
+2019-07-05 14:03:31	johnjay	i guess i can try using it and see
+2019-07-05 14:04:03	parsnip	i didn't use it until those particularly large annoying blocks i showed you
+2019-07-05 14:04:21	parsnip	i've been writing them manually for a while, because why bother setting up yasnippet
+2019-07-05 14:04:38	parsnip	and maintaining snippets, etc
+2019-07-05 14:04:56	parsnip	(i don't want to maintain the snippets, i'll be submitting a PR soon)
+2019-07-05 14:05:39	-->	twrk (~user@unaffiliated/twrk) has joined #emacs
+2019-07-05 14:05:40	johnjay	maybe i'm weird but i stop and restart my emacs all the time
+2019-07-05 14:05:53	johnjay	so i dont' care about polluting the namespace with whatever variables i need at the moment
+2019-07-05 14:06:14	johnjay	so i can see memory management being something good there
+2019-07-05 14:06:37	-->	spikemaster (~user@dyn-24-49-39-236.myactv.net) has joined #emacs
+2019-07-05 14:06:38	-->	random-nick (~random-ni@unaffiliated/random-nick) has joined #emacs
+2019-07-05 14:11:50	-->	Ariakenom (~Ariakenom@h-158-174-187-253.NA.cust.bahnhof.se) has joined #emacs
+2019-07-05 14:12:27	<--	twrk (~user@unaffiliated/twrk) has quit (Remote host closed the connection)
+2019-07-05 14:16:31	<--	asheshambasta_m (~asheshamb@d8D87D1B0.access.telenet.be) has quit (Quit: Leaving.)
+2019-07-05 14:17:04	-->	twrk (~user@unaffiliated/twrk) has joined #emacs
+2019-07-05 14:17:33	<--	f0xtr0t (~f0xtr0t@unaffiliated/jayb) has left #emacs ("Part")
+2019-07-05 14:27:11	<--	nullcone (uid11626@gateway/web/irccloud.com/x-bbrjtvminzpusgdw) has quit (Quit: Connection closed for inactivity)
+2019-07-05 14:30:06	<--	bliv (~bliv@unaffiliated/blivande) has quit (Ping timeout: 272 seconds)
+2019-07-05 14:37:18	<--	isokee (~isokee@unaffiliated/isokee) has quit (Quit: WeeChat 2.3)
+2019-07-05 14:37:35	-->	grettke (~grettke@2001:5b0:41c2:fa88:e0dc:5ff1:5af9:b75a) has joined #emacs
+2019-07-05 14:40:18	-->	CosmicWitch (~darkprinc@unaffiliated/darkprincess) has joined #emacs
+2019-07-05 14:48:48	<--	lacrymology (~lacrymolo@37.223.225.237) has quit (Ping timeout: 244 seconds)
+2019-07-05 14:49:54	-->	lacrymology (~lacrymolo@37.223.225.237) has joined #emacs
+2019-07-05 14:53:18	-->	butterth_ (~butterthe@35.1.183.74) has joined #emacs
+2019-07-05 14:54:12	<--	dys (~dys@tmo-109-13.customers.d1-online.com) has quit (Ping timeout: 245 seconds)
+2019-07-05 14:56:21	-->	bdw (bdw@ubuntu/member/bdw) has joined #emacs
+2019-07-05 14:58:13	<--	ksft (~ksft@wikipedia/KSFT) has quit (Ping timeout: 258 seconds)
+2019-07-05 14:58:47	<--	michaelrose (~michaelro@c-24-16-161-245.hsd1.wa.comcast.net) has quit (Remote host closed the connection)
+2019-07-05 14:58:57	<--	notzmv (~zmv@unaffiliated/zmv) has quit (Ping timeout: 248 seconds)
+2019-07-05 14:59:12	-->	dale (~dale@unaffiliated/dale) has joined #emacs
+2019-07-05 15:00:44	-->	empee0 (~user@p200300D8072F1A000CB0608D92E0A612.dip0.t-ipconnect.de) has joined #emacs
+2019-07-05 15:05:24	-->	ksft (~ksft@wikipedia/KSFT) has joined #emacs
+2019-07-05 15:06:51	-->	Alkymizt (~user@141-126-097-063.dhcp.chtrptr.net) has joined #emacs
+2019-07-05 15:07:01	TreyHarris	johnjay: here's an example of some fanciness of yasnippets in action. You may need to manually change the resolution to 1080p to read the text; it seems to want to default to 480p, where you certainly can't. https://youtu.be/WMOVgEeAtfE
+2019-07-05 15:07:05	<--	mpereira (~mpereira@gw-wan1.mesosphere.hamburg) has quit (Ping timeout: 250 seconds)
+2019-07-05 15:07:47	<--	Xal (~Xal@S010664777dabacc3.vw.shawcable.net) has quit (Ping timeout: 258 seconds)
+2019-07-05 15:07:49	TreyHarris	I've been using it a long time, so those two particular snippets are a bit of a mess of old and new features and not designed for readability; they could be improved without any loss of functionality
+2019-07-05 15:08:33	TreyHarris	When I'm not obviously typing, the only keys I use are TAB and C-d.
+2019-07-05 15:10:08	-->	Xal (~Xal@S010664777dabacc3.vw.shawcable.net) has joined #emacs
+2019-07-05 15:10:14	TreyHarris	Any time a region is highlighted, I can descend into it to edit (sometimes freeform, often sub-snippets) with TAB or get rid of it entirely and move on with C-d
+2019-07-05 15:12:41	TreyHarris	johnjay: hopefully that clarifies why it's easier than hand-typing or inserting abbrevs
+2019-07-05 15:14:27	<--	felipevolpone (~felipevol@unaffiliated/felipevolpone) has quit (Quit: Leaving)
+2019-07-05 15:14:39	-->	sameerynho (~lxsameer@unaffiliated/lxsameer) has joined #emacs
+2019-07-05 15:15:03	<--	armyriad (armyriad@gateway/vpn/privateinternetaccess/armyriad) has quit (Ping timeout: 245 seconds)
+2019-07-05 15:15:36	<--	fledermaus (~vivek@2a00:5f00:102:0:a579:25f1:4860:fdf7) has quit (Ping timeout: 252 seconds)
+2019-07-05 15:15:40	<--	lacrymology (~lacrymolo@37.223.225.237) has quit (Ping timeout: 244 seconds)
+2019-07-05 15:15:54	-->	armyriad (~armyriad@24-205-30-60.dhcp.nrwl.ca.charter.com) has joined #emacs
+2019-07-05 15:16:13	-->	twanny796 (~user@antazzo.com) has joined #emacs
+2019-07-05 15:16:28	-->	lacrymology (~lacrymolo@37.223.225.237) has joined #emacs
+2019-07-05 15:17:17	<--	JordiGH (jordi@octave/developer/JordiGH) has quit (Quit: Jacking out)
+2019-07-05 15:18:10	<--	grettke (~grettke@2001:5b0:41c2:fa88:e0dc:5ff1:5af9:b75a) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-05 15:18:12	<--	wafflehunter (~wafflehun@149.172.254.66) has quit (Quit: Leaving)
+2019-07-05 15:18:14	<--	twrk (~user@unaffiliated/twrk) has quit (Ping timeout: 272 seconds)
+2019-07-05 15:18:47	-->	p8m (~ident1@173-22-129-160.client.mchsi.com) has joined #emacs
+2019-07-05 15:19:46	@offby1	is there a way to automatically generate a "ChangeLog" message, sort of like C-x 4 a, but without adding the user and date?  If so, I could use that for git
+2019-07-05 15:19:59	@offby1	I mean I can do C-x 4 a and just kill the stuff I want, but ... eww
+2019-07-05 15:20:17	<--	jathan (~jathan@200.57.243.84) has quit (Ping timeout: 248 seconds)
+2019-07-05 15:24:29	-->	bliv (~bliv@unaffiliated/blivande) has joined #emacs
+2019-07-05 15:24:40	<--	butterth_ (~butterthe@35.1.183.74) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-05 15:24:53	TreyHarris	offby1: Not sure what functionality you're looking for, then... that sounds like just adding an empty line? I've always found it easier to generate my ChangeLog from my git history rather than the other way around
+2019-07-05 15:25:18	TreyHarris	(and Magit has facilities for doing that from commits in log buffers)
+2019-07-05 15:25:32	npostavs	offby1: I think log-edit-insert-changelog (C-c C-a) will copy in the stuff you want from the ChangeLog file automatically
+2019-07-05 15:26:07	@offby1	TreyHarris: C-x 4 a (at least sometimes) figures out the names of the file function that you've hacked on, and prepares a little template including that info
+2019-07-05 15:26:10	@offby1	yes, I'm that lazy
+2019-07-05 15:26:25	npostavs	As it happens, I'm working on a version that will generate it directly: https://debbugs.gnu.org/16301#11
+2019-07-05 15:28:06	-->	xtifr (~user@157-131-143-222.fiber.dynamic.sonic.net) has joined #emacs
+2019-07-05 15:28:59	<--	efm (~efm@vpn.tummy.com) has quit (Read error: Connection reset by peer)
+2019-07-05 15:32:12	-->	henninb (~henninb@63-226-185-83.mpls.qwest.net) has joined #emacs
+2019-07-05 15:33:20	-->	efm (~efm@vpn.tummy.com) has joined #emacs
+2019-07-05 15:35:52	<--	iovec (uid171740@gateway/web/irccloud.com/x-cyswfkwwdfxpswhx) has quit (Quit: Connection closed for inactivity)
+2019-07-05 15:37:32	<--	kliph (~user@unaffiliated/kliph) has quit (Ping timeout: 245 seconds)
+2019-07-05 15:38:24	<--	efm (~efm@vpn.tummy.com) has quit (Ping timeout: 244 seconds)
+2019-07-05 15:41:22	-->	butterth_ (~butterthe@2601:400:c100:c70:144d:b818:f47a:b1f3) has joined #emacs
+2019-07-08 09:35:10	-->	zws (~blindidio@134.209.53.112) has joined #emacs
+2019-07-08 09:35:10	--	Topic for #emacs is "Path to good init.el: to err, and err, and err again (but less, and less, and less) | Emacs questions take priority over off-topic chatter, so ask! | No public logging! What happens in #emacs stays in #emacs | No racism, sexism, xenophobia, botwanking, or other asshattery, please"
+2019-07-08 09:35:10	--	Topic set by JordiGH on Fri, 21 Jun 2019 09:26:41
+2019-07-08 09:35:10	--	Channel #emacs: 680 nicks (1 op, 0 voices, 679 normals)
+2019-07-08 09:35:11	--	Channel created on Sun, 26 Nov 2006 00:42:33
+2019-07-08 09:35:13	-->	Necktwi (~necktwi@202.153.45.33) has joined #emacs
+2019-07-08 09:36:14	grummund	mns: thanks, that works.
+2019-07-08 09:36:16	-->	Howitzer105mm (~user@134.134.139.74) has joined #emacs
+2019-07-08 09:36:33	-->	isomari (~isomari@197.210.243.178) has joined #emacs
+2019-07-08 09:37:00	johnjay	the elisp programming manual has long digressions on the nature of atoms
+2019-07-08 09:37:02	johnjay	interesting
+2019-07-08 09:37:19	bremner	fsvo interesting
+2019-07-08 09:38:17	cvandusen	rudybot: atoms or car chases, which is interesting?
+2019-07-08 09:38:24	rudybot	cvandusen: well, if I recall correctly there weren't any car chases
+2019-07-08 09:39:00	johnjay	fsbot: can emacs split the atom?
+2019-07-08 09:39:01	fsbot	Try:  can-emacs CanaldoEmacs CanalEmacs CanalEmacsEs CanalEmacsEsNovedades CanalEmacsEsRecord CancelingInEmacs MantedoresdoCanalEmacs PessoasdoCanaldoEmacs
+2019-07-08 09:39:28	<--	lacrymology (~lacrymolo@112.red-193-153-13.dynamicip.rima-tde.net) has quit (Ping timeout: 246 seconds)
+2019-07-08 09:40:10	grummund	it's curious that with (setq global-auto-revert-mode t), then M-x global-auto-revert-mode will report "Global-Auto-Revert mode disabled".
+2019-07-08 09:41:41	grummund	like it's enabled but not really.
+2019-07-08 09:42:42	<--	mpereira (~mpereira@gw-wan1.mesosphere.hamburg) has quit (Ping timeout: 252 seconds)
+2019-07-08 09:46:04	-->	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #emacs
+2019-07-08 09:46:58	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-08 09:47:07	cvandusen	If you set it, and then execute it, in effect, isn't that just toggling it?
+2019-07-08 09:47:29	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 258 seconds)
+2019-07-08 09:48:41	-->	butterthebuddha (~butterthe@2601:400:c100:c70:d1b9:ca54:948f:46e6) has joined #emacs
+2019-07-08 09:49:02	grummund	well that implies it *was* enabled, except the buffer doesn't behave that way.
+2019-07-08 09:49:26	cvandusen	ah, interesting.
+2019-07-08 09:49:31	fledermaus	grummund: did you read the documentation?
+2019-07-08 09:49:47	-->	knoebber (~knoebber@icsexchange.ics-llc.net) has joined #emacs
+2019-07-08 09:49:49	fledermaus	“Setting this variable directly does not take effect;
+2019-07-08 09:49:53	fledermaus	either customize it (see the info node ‘Easy Customization’)
+2019-07-08 09:49:56	fledermaus	or call the function ‘global-auto-revert-mode’.”
+2019-07-08 09:50:23	fledermaus	you're going behind global-auto-revert-mode's back and setting its state variable (which naturally does nothing other than confuse the issue)
+2019-07-08 09:50:32	<--	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 244 seconds)
+2019-07-08 09:50:48	grummund	fledermaus: ah, i see....
+2019-07-08 09:50:53	 *	grummund was reading the doc for global-auto-revert-mode *function*
+2019-07-08 09:51:03	<--	Posterdati (~Posterdat@host50-229-dynamic.56-79-r.retail.telecomitalia.it) has quit (Ping timeout: 244 seconds)
+2019-07-08 09:51:08	-->	kliph (~user@unaffiliated/kliph) has joined #emacs
+2019-07-08 09:51:39	grummund	now the biting makes sense
+2019-07-08 09:51:51	johnjay	fledermaus: i've noticed in other modes setting that to 't' automatically changes the buffer mode
+2019-07-08 09:51:53	johnjay	kinda weird
+2019-07-08 09:52:05	johnjay	like if you do (setq abbrev-mode t)
+2019-07-08 09:52:50	<--	sandeepk (~sandeepk@2405:204:38a:3f29:6cbc:1a24:561d:c44e) has quit (Remote host closed the connection)
+2019-07-08 09:54:32	-->	polyrob (~rob@unaffiliated/mickn) has joined #emacs
+2019-07-08 09:54:35	fledermaus	abbrev-mode is globally loaded by default. So it is able to "notice" when the variable is set.
+2019-07-08 09:54:55	fledermaus	as in it's never really off
+2019-07-08 09:55:04	johnjay	so that wouldn't apply to a mode that's not auto loaded?
+2019-07-08 09:55:49	-->	CosmicWitch (~darkprinc@unaffiliated/darkprincess) has joined #emacs
+2019-07-08 09:57:15	<--	elb (~elb@cpe-74-77-94-120.buffalo.res.rr.com) has quit (Ping timeout: 244 seconds)
+2019-07-08 09:57:21	-->	ggnoredo (~ggnoredo@78.186.15.89) has joined #emacs
+2019-07-08 09:58:27	ggnoredo	Is it ok that if any typescript project with tide and typescript mode is running on 40% cpu all the time?
+2019-07-08 09:59:01	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 09:59:11	-->	mpereira (~mpereira@gw-wan1.mesosphere.hamburg) has joined #emacs
+2019-07-08 09:59:55	fledermaus	johnjay: no, because they would not be resident and there would be no infrastructure for them to hook into.
+2019-07-08 10:00:03	johnjay	at the command line shouldn't 'emacs --batch "(this 2 2")' print an error?
+2019-07-08 10:00:12	johnjay	ah ok
+2019-07-08 10:00:39	johnjay	er sorry 2)"
+2019-07-08 10:00:55	<--	polyrob (~rob@unaffiliated/mickn) has quit (Quit: ZNC - http://znc.in)
+2019-07-08 10:01:00	-->	unknownmosquito (~unknownmo@64.157.240.76) has joined #emacs
+2019-07-08 10:01:08	-->	Posterdati (~Posterdat@host37-124-dynamic.21-87-r.retail.telecomitalia.it) has joined #emacs
+2019-07-08 10:01:37	<--	Jadesnail (b0a98704@176-169-135-4.abo.bbox.fr) has quit (Remote host closed the connection)
+2019-07-08 10:01:39	fledermaus	why would it?
+2019-07-08 10:02:46	fledermaus	your running emacs in batch mode and passinga command like arg of "(this 2 2)", which is an idisyncratically (but legally) named file which (presumably) does not exist.
+2019-07-08 10:02:57	<--	yunhao94 (~yunhao94@183.198.197.55) has quit (Ping timeout: 248 seconds)
+2019-07-08 10:03:09	fledermaus	calling emacs with a nonexistent file name is allowed, that's how you can create new files.
+2019-07-08 10:03:14	johnjay	it says error goes to stderr
+2019-07-08 10:03:21	johnjay	maybe i didn't redir it right
+2019-07-08 10:03:36	fledermaus	it's in batch mode, so it then executes any commands it has been told to (which is no commands since you didn't passany)
+2019-07-08 10:03:40	fledermaus	so then it exits.
+2019-07-08 10:03:56	johnjay	oh lol
+2019-07-08 10:04:01	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 248 seconds)
+2019-07-08 10:04:11	fledermaus	you're*
+2019-07-08 10:04:14	-->	polyrob (~rob@unaffiliated/mickn) has joined #emacs
+2019-07-08 10:04:20	johnjay	right using -f it prints an error message
+2019-07-08 10:04:33	johnjay	i guess on linux (this 2 2) is probably a legal file name
+2019-07-08 10:04:41	<--	ggnoredo (~ggnoredo@78.186.15.89) has quit (Quit: Mutter: www.mutterirc.com)
+2019-07-08 10:04:45	fledermaus	it is.
+2019-07-08 10:05:00	fledermaus	although I reserve the right to hit users that actually create names like that.
+2019-07-08 10:05:05	<--	iyzsong (~iyzsong@fsf/member/iyzsong) has quit (Quit: ZNC 1.7.1 - https://znc.in)
+2019-07-08 10:06:09	johnjay	there should be a bastard user from hell series
+2019-07-08 10:06:20	johnjay	someone that names files things like 1234 or 'rm -rf /'
+2019-07-08 10:06:39	-->	theoceaniscool (~theoceani@139.47.103.173) has joined #emacs
+2019-07-08 10:09:24	-->	sandeepk (~sandeepk@2402:3a80:136a:ce97:6cbc:1a24:561d:c44e) has joined #emacs
+2019-07-08 10:10:06	<--	Howitzer105mm (~user@134.134.139.74) has quit (Remote host closed the connection)
+2019-07-08 10:10:28	-->	wafflehunter (~wafflehun@149.172.254.66) has joined #emacs
+2019-07-08 10:11:19	-->	sab110 (~sbaig14@143.104.238.37) has joined #emacs
+2019-07-08 10:11:23	-->	elb (~elb@2604:6000:130d:c15b:bb01:313c:317f:3f04) has joined #emacs
+2019-07-08 10:12:00	-->	Howitzer105mm (~user@134.134.139.74) has joined #emacs
+2019-07-08 10:12:04	-->	bokwoon (~bokwoon@bb116-15-209-180.singnet.com.sg) has joined #emacs
+2019-07-08 10:12:43	-->	_Posterdati_ (~Posterdat@host20-218-dynamic.10-87-r.retail.telecomitalia.it) has joined #emacs
+2019-07-08 10:13:25	<--	Howitzer105mm (~user@134.134.139.74) has quit (Remote host closed the connection)
+2019-07-08 10:14:49	<--	Posterdati (~Posterdat@host37-124-dynamic.21-87-r.retail.telecomitalia.it) has quit (Ping timeout: 244 seconds)
+2019-07-08 10:15:22	-->	navidr (uid112413@gateway/web/irccloud.com/x-cwyuudfserteatww) has joined #emacs
+2019-07-08 10:16:00	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 10:16:48	-->	iovec (uid171740@gateway/web/irccloud.com/x-xafmadfstclfxbto) has joined #emacs
+2019-07-08 10:17:44	<--	sandeepk (~sandeepk@2402:3a80:136a:ce97:6cbc:1a24:561d:c44e) has quit (Remote host closed the connection)
+2019-07-08 10:21:35	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 268 seconds)
+2019-07-08 10:23:09	<--	trui (~user@2001:982:feff:1:31ce:9b1a:6da1:26b2) has quit (Ping timeout: 250 seconds)
+2019-07-08 10:27:23	-->	Howitzer105mm (user@nat/intel/x-hwwbupftppasgbch) has joined #emacs
+2019-07-08 10:28:08	<--	quazimodo (~quazimodo@185.198.242.98) has quit (Ping timeout: 272 seconds)
+2019-07-08 10:28:37	<--	lxsameer (~lxsameer@unaffiliated/lxsameer) has quit (Quit: out)
+2019-07-08 10:28:49	YoungFrog	/ is not valid in a filename (well, except as dir separator)
+2019-07-08 10:32:30	-->	sameerynho (~lxsameer@unaffiliated/lxsameer) has joined #emacs
+2019-07-08 10:32:41	fledermaus	I have encountered macos-authored CDs that had files with / in the name.
+2019-07-08 10:32:51	fledermaus	they were "fun" to get the data off of.
+2019-07-08 10:33:21	fledermaus	(yes, rock ridge et al expressly forbid this)
+2019-07-08 10:35:32	<--	dminuoso (~dminuoso@unaffiliated/dminuoso) has left #emacs ("WeeChat 2.4")
+2019-07-08 10:36:10	JordiGH	Is this macOS IX-made?
+2019-07-08 10:38:45	-->	wildtrees (~wildtrees@unaffiliated/wildtrees) has joined #emacs
+2019-07-08 10:38:55	mns	JordiGH: yes, that owuld have ot be the case, it would be the old MacOS 9 or earlier, where the file system used ":" as the path separator.  Same as on VMS.
+2019-07-08 10:39:37	<--	wildtrees (~wildtrees@unaffiliated/wildtrees) has quit (Remote host closed the connection)
+2019-07-08 10:40:07	-->	wildtrees (~wildtrees@unaffiliated/wildtrees) has joined #emacs
+2019-07-08 10:41:11	<--	webshinra (~webshinra@2a01:e35:8baf:4740:900d:f337:7635:eb9f) has quit (Remote host closed the connection)
+2019-07-08 10:41:30	-->	jathan (~jathan@200.57.243.84) has joined #emacs
+2019-07-08 10:42:06	-->	pjb (~t@lfbn-idf2-1-304-105.w82-123.abo.wanadoo.fr) has joined #emacs
+2019-07-08 10:42:55	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 10:44:23	pjb	Hi. I'm trying to tell flycheck where to find the include files, but after setting flycheck-clang-include-path and flycheck-gcc-include-path to a list of include directories, I still get (indirectly) 'newlib.h' file not found with <angled> include; use "quotes" instead
+2019-07-08 10:44:31	pjb	This newlib.h file is found in one of the listed directories.
+2019-07-08 10:44:43	pjb	How can I make flycheck understand it?
+2019-07-08 10:45:09	-->	kts (~kts@103.73.237.92) has joined #emacs
+2019-07-08 10:45:51	-->	webshinra (~webshinra@2a01:e35:8baf:4740:900d:f337:7635:eb9f) has joined #emacs
+2019-07-08 10:46:57	-->	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #emacs
+2019-07-08 10:48:24	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 272 seconds)
+2019-07-08 10:48:49	<--	chandan (~sjihs@171.48.16.202) has quit (Ping timeout: 248 seconds)
+2019-07-08 10:50:41	-->	rippa (~rippa@ppp-vpdn-37.1.85.157.yarnet.ru) has joined #emacs
+2019-07-08 10:50:44	pjb	The c/c++-clang command seems to be correct, with -iquote and -I, -I specifying both quoted and angled includes…
+2019-07-08 10:51:31	<--	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 258 seconds)
+2019-07-08 10:52:05	-->	seschwar (~seschwar@unaffiliated/seschwar) has joined #emacs
+2019-07-08 10:53:22	<--	Xal (~Xal@S010664777dabacc3.vw.shawcable.net) has quit (Ping timeout: 245 seconds)
+2019-07-08 10:53:24	<--	oni-on-ion (~hm@147-194-247-246.tpia.comwave.net) has quit (Remote host closed the connection)
+2019-07-08 10:53:54	-->	oni-on-ion (~hm@147-194-247-246.tpia.comwave.net) has joined #emacs
+2019-07-08 10:54:44	<--	Necktwi (~necktwi@202.153.45.33) has quit (Ping timeout: 272 seconds)
+2019-07-08 10:56:00	-->	Xal (~Xal@S010664777dabacc3.vw.shawcable.net) has joined #emacs
+2019-07-08 10:56:07	<--	sab110 (~sbaig14@143.104.238.37) has quit (Ping timeout: 268 seconds)
+2019-07-08 10:56:35	<--	butterthebuddha (~butterthe@2601:400:c100:c70:d1b9:ca54:948f:46e6) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-08 10:56:44	<--	csed (~CSED]@cbg-off-client.mpi-cbg.de) has quit (Ping timeout: 268 seconds)
+2019-07-08 10:57:36	-->	mmarconm (~mmarconm@unaffiliated/mmarconm) has joined #emacs
+2019-07-08 10:58:33	<--	xkapastel (uid17782@gateway/web/irccloud.com/x-nwoctkcajqkzympe) has quit (Quit: Connection closed for inactivity)
+2019-07-08 10:58:51	<--	mmarconm (~mmarconm@unaffiliated/mmarconm) has quit (Remote host closed the connection)
+2019-07-08 10:59:16	-->	mmarconm (~mmarconm@unaffiliated/mmarconm) has joined #emacs
+2019-07-08 11:00:29	--	irc: disconnected from server
+2019-07-08 11:05:44	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:06:07	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:06:37	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:07:07	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:07:37	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:08:07	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:12:32	--	irc: disconnected from server
+2019-07-08 11:13:11	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:13:13	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:13:37	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:14:07	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:14:37	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:15:01	--	irc: disconnected from server
+2019-07-08 11:15:41	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:15:41	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:16:08	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:16:38	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:16:39	--	irc: disconnected from server
+2019-07-08 11:17:16	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:17:19	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:17:46	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:18:14	--	#emacs: Cannot join channel (+r) - you need to be identified with services - see https://freenode.net/kb/answer/registration
+2019-07-08 11:18:44	-->	zws (~blindidio@134.209.53.112) has joined #emacs
+2019-07-08 11:18:44	--	Topic for #emacs is "Path to good init.el: to err, and err, and err again (but less, and less, and less) | Emacs questions take priority over off-topic chatter, so ask! | No public logging! What happens in #emacs stays in #emacs | No racism, sexism, xenophobia, botwanking, or other asshattery, please"
+2019-07-08 11:18:44	--	Topic set by JordiGH (jordi@octave/developer/JordiGH) on Fri, 21 Jun 2019 09:26:41
+2019-07-08 11:18:44	--	Channel #emacs: 694 nicks (1 op, 0 voices, 693 normals)
+2019-07-08 11:18:44	--	URL for #emacs: https://www.emacswiki.org/emacs/EmacsChannel
+2019-07-08 11:18:45	--	Channel created on Sun, 26 Nov 2006 00:42:33
+2019-07-08 11:18:45	--	Mode #emacs [+Cnprsj 2:3]
+2019-07-08 11:18:45	--	Channel created on Sun, 26 Nov 2006 00:42:33
+2019-07-08 11:19:06	<--	sangoma (~zeus@160.119.149.218) has quit (Client Quit)
+2019-07-08 11:21:32	-->	nerosnm (~alrakis@138-38-186-247.eduroam.bath.ac.uk) has joined #emacs
+2019-07-08 11:21:50	-->	e1f (~user@141.117.1.178) has joined #emacs
+2019-07-08 11:23:06	<--	kliph (~user@unaffiliated/kliph) has quit (Read error: Connection reset by peer)
+2019-07-08 11:23:26	-->	kliph (~user@unaffiliated/kliph) has joined #emacs
+2019-07-08 11:23:59	<--	bokwoon (~bokwoon@bb116-15-209-180.singnet.com.sg) has quit (Quit: WeeChat 2.5)
+2019-07-08 11:24:47	-->	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has joined #emacs
+2019-07-08 11:26:11	-->	jaafar_ (~jet@2601:645:8000:4e20:28c8:e47:4250:dcf3) has joined #emacs
+2019-07-08 11:27:24	-->	fiachetti (~fiachetti@152.171.241.220) has joined #emacs
+2019-07-08 11:28:11	<--	plugd (~plugd@fsf/member/plugd) has quit (Quit: rcirc on GNU Emacs 26.2)
+2019-07-08 11:28:56	<--	Natch (~Natch@h-112-130.A444.priv.bahnhof.se) has quit (Remote host closed the connection)
+2019-07-08 11:29:40	-->	ksft (~ksft@wikipedia/KSFT) has joined #emacs
+2019-07-08 11:30:08	<--	jaafar (~jet@2601:645:8000:4e20:82fa:5bff:fe3f:133) has quit (Ping timeout: 252 seconds)
+2019-07-08 11:32:17	<--	mbuf (~Shakthi@106.51.227.97) has quit (Quit: Leaving)
+2019-07-08 11:35:56	e1f	let's unionize #emacs
+2019-07-08 11:37:38	gnomon	o god does this mean more meetings
+2019-07-08 11:38:08	fledermaus	e1f: I hear it's more woke to intersectionise it.
+2019-07-08 11:38:10	e1f	yes, and union dues
+2019-07-08 11:39:04	-->	tiwula (~lane@75.104.90.71) has joined #emacs
+2019-07-08 11:39:06	<--	random-nick (~random-ni@unaffiliated/random-nick) has quit (Read error: Connection reset by peer)
+2019-07-08 11:41:43	tune	cut out the bosses and make it a co-op
+2019-07-08 11:42:16	ldlework	impeccable insight comrade tune
+2019-07-08 11:43:44	cvandusen	rudybot: up against the wall bourgeois!
+2019-07-08 11:43:52	rudybot	cvandusen: Even today, there's a split between good, honest folk who use "use" and the bourgeois oppressors who use "utilize", who will be first against the wall
+2019-07-08 11:44:14	fledermaus	✊
+2019-07-08 11:44:26	-->	foggyboi (~Adium@12.197.206.193) has joined #emacs
+2019-07-08 11:46:45	bremner	itym first to hug Tom Snout
+2019-07-08 11:48:40	-->	random-nick (~random-ni@unaffiliated/random-nick) has joined #emacs
+2019-07-08 11:48:49	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 11:50:03	<--	yabo (yabo@nat/suse/x-itrbfkdiumixhnyh) has quit (Ping timeout: 245 seconds)
+2019-07-08 11:51:17	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-08 11:53:38	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 272 seconds)
+2019-07-08 11:54:19	-->	subopt (~subopt@199.255.45.4) has joined #emacs
+2019-07-08 11:54:57	-->	sab110 (~sbaig14@143.104.238.37) has joined #emacs
+2019-07-08 11:55:01	<--	pyfgcr (~pyfgcr@nat-wlan-uzh-89-206-64-002.uzh.ch) has quit (Remote host closed the connection)
+2019-07-08 11:55:05	-->	gopar (~gopar@c-73-170-87-34.hsd1.ca.comcast.net) has joined #emacs
+2019-07-08 11:55:31	<--	psachin (~psachin@1.186.182.159) has quit (Ping timeout: 258 seconds)
+2019-07-08 12:02:59	hodapp	let's ionize #emacs so it can be unionized
+2019-07-08 12:03:03	unknownmosquito	lol that quote is silly -- everyone knows that people who possess skills worth economic value (like everyone in this channel) are "kulaks," tools of the bourgeois to be put up against the wall along with them..
+2019-07-08 12:06:20	hodapp	wut
+2019-07-08 12:07:20	-->	foggyboi (~Adium@12.197.206.193) has joined #emacs
+2019-07-08 12:07:47	cvandusen	,everyone
+2019-07-08 12:07:47	fsbot	no one but the speaker
+2019-07-08 12:08:07	<--	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has quit (Quit: WeeChat 2.4)
+2019-07-08 12:08:29	<--	anotheryou (uid257186@gateway/web/irccloud.com/x-ujkxqjkrzajsowwn) has quit (Quit: Connection closed for inactivity)
+2019-07-08 12:08:46	 *	edgar-rft has no skills
+2019-07-08 12:09:14	cvandusen	I once had a skill saw. it ran away
+2019-07-08 12:10:28	<--	raeburn (~user@c-73-253-167-23.hsd1.ma.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-07-08 12:10:36	-->	Natch (~Natch@h-112-130.A444.priv.bahnhof.se) has joined #emacs
+2019-07-08 12:11:17	<--	nerosnm (~alrakis@138-38-186-247.eduroam.bath.ac.uk) has quit (Ping timeout: 245 seconds)
+2019-07-08 12:12:47	tromey	I put my skill saw up against the wall
+2019-07-08 12:15:22	Sketch	mns: macosx still uses hfs+, i'm pretty sure it still uses : as a path separator behind the scenes
+2019-07-08 12:15:35	<--	mmarconm (~mmarconm@unaffiliated/mmarconm) has quit (Read error: Connection reset by peer)
+2019-07-08 12:17:15	<--	b413 (~weechat@2001:1c00:b06:d9f1:fc21:707c:54d7:5105) has quit (Quit: WeeChat 2.4)
+2019-07-08 12:18:28	<--	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-08 12:20:02	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 245 seconds)
+2019-07-08 12:21:02	-->	Posterdati (~Posterdat@host20-218-dynamic.10-87-r.retail.telecomitalia.it) has joined #emacs
+2019-07-08 12:21:16	<--	_Posterdati_ (~Posterdat@host20-218-dynamic.10-87-r.retail.telecomitalia.it) has quit (Quit: KVIrc 5.0.0 Aria http://www.kvirc.net/)
+2019-07-08 12:21:19	-->	dharog (~widp@131.234.175.151) has joined #emacs
+2019-07-08 12:21:31	<--	popeye92 (uid25832@gateway/web/irccloud.com/x-gpsanzbzztyxglyc) has quit (Quit: Connection closed for inactivity)
+2019-07-08 12:22:26	<--	dancn (~dancn@outusers13.fbk.eu) has quit (Ping timeout: 244 seconds)
+2019-07-08 12:22:55	-->	dellavg_ (~dellavg@host35-101-dynamic.14-87-r.retail.telecomitalia.it) has joined #emacs
+2019-07-08 12:23:07	<--	phoracek (~user@ip-89-102-3-190.net.upcbroadband.cz) has quit (Ping timeout: 258 seconds)
+2019-07-08 12:26:10	<--	random-nick (~random-ni@unaffiliated/random-nick) has quit (Remote host closed the connection)
+2019-07-08 12:26:14	<--	mpereira (~mpereira@gw-wan1.mesosphere.hamburg) has quit (Ping timeout: 252 seconds)
+2019-07-08 12:27:49	-->	t58 (~t58@88-106-246-198.dynamic.dsl.as9105.com) has joined #emacs
+2019-07-08 12:29:32	<--	sandeepk (~sandeepk@2402:3a80:136a:ce97:18d9:a94b:f9ff:7273) has quit (Ping timeout: 252 seconds)
+2019-07-08 12:32:04	-->	random-nick (~random-ni@unaffiliated/random-nick) has joined #emacs
+2019-07-08 12:32:14	kenrestivo	huskqvarna's are better saws
+2019-07-08 12:32:29	kenrestivo	*husqvarna
+2019-07-08 12:32:48	<--	isomari (~isomari@197.210.243.178) has quit (Quit: WeeChat 2.6-dev)
+2019-07-08 12:34:19	-->	didi (~user@unaffiliated/didi/x-1022147) has joined #emacs
+2019-07-08 12:34:45	hodapp	I have a Husqvarna lawnmower...
+2019-07-08 12:34:48	hodapp	also a push reel that I use more
+2019-07-08 12:34:54	didi	Does you Buster's Emacs move mail using gnus? Mine apparently is broken.
+2019-07-08 12:34:59	bremner	unknownmosquito: I'm an academic. So I'll be against the wall for other reasons than economic value
+2019-07-08 12:35:07	unknownmosquito	hahaha
+2019-07-08 12:35:15	bremner	didi: doesn't it recommend using mailutils or something like that?
+2019-07-08 12:35:18	unknownmosquito	for having opinions... xD
+2019-07-08 12:35:21	<--	hamiltonne (~user@217-120-125-115.cable.dynamic.v4.ziggo.nl) has quit (Ping timeout: 244 seconds)
+2019-07-08 12:35:41	didi	bremner: I dunno. I'm used to just install it and it works.
+2019-07-08 12:35:49	didi	bremner: But good point.
+2019-07-08 12:36:06	didi	Also, `apt install emacs25' installs Emacs 26.
+2019-07-08 12:36:21	bremner	yes. that's a feature
+2019-07-08 12:36:29	didi	bremner: Debian...
+2019-07-08 12:36:45	 *	didi hates change
+2019-07-08 12:38:29	<--	sab110 (~sbaig14@143.104.238.37) has quit (Ping timeout: 268 seconds)
+2019-07-08 12:38:39	unknownmosquito	wow (@ didi)
+2019-07-08 12:38:42	unknownmosquito	that's a feature??
+2019-07-08 12:38:42	fsbot	Inconceivable!
+2019-07-08 12:38:49	unknownmosquito	oof.mp3
+2019-07-08 12:38:50	<--	jathan (~jathan@200.57.243.84) has quit (Quit: WeeChat 1.6)
+2019-07-08 12:38:50	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 12:38:58	bremner	didi: what I remember is that upstream decided to recommend using the movemail from mailutils, so Debian followed
+2019-07-08 12:39:08	-->	asheshambasta_m (~asheshamb@d8D87D1B0.access.telenet.be) has joined #emacs
+2019-07-08 12:39:09	bremner	it _should_ still work without mailutils installed though
+2019-07-08 12:39:23	didi	unknownmosquito: Me hating change? I think it's more like a bug, but whathever.
+2019-07-08 12:39:45	didi	bremner: Something is off.
+2019-07-08 12:40:07	bremner	the emacs2x packages are gone, replaced with compatibility shims
+2019-07-08 12:40:18	didi	no u
+2019-07-08 12:40:31	dharog	hi didi
+2019-07-08 12:40:37	didi	dharog: o/
+2019-07-08 12:40:44	dharog	How are you?
+2019-07-08 12:40:47	dharog	I am dexter
+2019-07-08 12:41:00	didi	dharog: Nice lab.
+2019-07-08 12:41:28	-->	jathan (~jathan@200.57.243.84) has joined #emacs
+2019-07-08 12:42:08	-->	sandeepk (~sandeepk@2402:3a80:136b:2c94:18d9:a94b:f9ff:7273) has joined #emacs
+2019-07-08 12:42:09	didi	I've never saw this message: Mail source (file) failed: (error Cannot get new mail)
+2019-07-08 12:42:38	unknownmosquito	oh I was WTF-ing at emacs25 installing emacs 26 lol
+2019-07-08 12:43:03	didi	rudybot: Where is mah mail?
+2019-07-08 12:43:04	rudybot	didi: Ah, here is a hint: http://mah.everybody.org/docs/mail/
+2019-07-08 12:43:13	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 246 seconds)
+2019-07-08 12:43:34	didi	I don't like when you try to be usefull.
+2019-07-08 12:43:35	kenrestivo	apt-get install foo.... it installs bar! it's a feature
+2019-07-08 12:43:37	bremner	didi: can you run movemail manually? I don't use it, but it seems like natural debugging step
+2019-07-08 12:43:55	didi	bremner: I'm afraid of losing important spam.
+2019-07-08 12:44:28	-->	cyrus-and (~user@2.236.128.35) has joined #emacs
+2019-07-08 12:44:33	<--	lacrymology (~lacrymolo@62.151.28.195) has quit (Ping timeout: 248 seconds)
+2019-07-08 12:45:04	didi	bremner: Maybe something changed in gnus from 25 to 26.
+2019-07-08 12:45:12	bremner	almost certainly
+2019-07-08 12:45:23	didi	fsbot: slap bremner
+2019-07-08 12:45:24	 *	fsbot slaps bremner with a large halibut
+2019-07-08 12:46:03	Misha_B	ubuntu sucks, but I'm too lazy to use anything else
+2019-07-08 12:46:21	cyrus-and	hello, is there something similar to Xresources on macOS that emacs parses at startup to obtain font, toolbar visibility, etc.? i was hoping "defaults" but I cannot find anything documented
+2019-07-08 12:46:29	-->	gagbo (~gagbo@unaffiliated/gagbo) has joined #emacs
+2019-07-08 12:46:54	didi	cyrus-and: Debian hates .Xresources now.
+2019-07-08 12:47:22	bremner	we do?
+2019-07-08 12:47:25	cyrus-and	didi: lol how's that?
+2019-07-08 12:47:25	bremner	I still use them
+2019-07-08 12:47:35	didi	bremner: They will come to you.
+2019-07-08 12:47:36	-->	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #emacs
+2019-07-08 12:47:49	-->	nanoz (~nanoz@unaffiliated/nanoz) has joined #emacs
+2019-07-08 12:47:51	bremner	prolly. Force me to use wayland and a mouse
+2019-07-08 12:47:59	didi	I had some fun hours debugging until I learned I'm using Wayland and Wayland hates it too.
+2019-07-08 12:48:09	bremner	well. yes, wayland.
+2019-07-08 12:48:31	 *	didi hates chage
+2019-07-08 12:48:36	didi	Also change.
+2019-07-08 12:48:38	Misha_B	what is the argument for using wayland again?
+2019-07-08 12:49:00	didi	Debian installs it. I obey.
+2019-07-08 12:49:20	bremner	I think thats Gnome installing wayland
+2019-07-08 12:49:31	<--	efm (~efm@vpn.tummy.com) has quit (Read error: Connection reset by peer)
+2019-07-08 12:50:10	fledermaus	gnome switched over to wayland as the default, so if you're using gnome you get what the default is for that, basically.
+2019-07-08 12:51:29	fledermaus	there wasn't realy a good decision to be made: the feeling was that maybe X11 should be the default for this release, _but_ gnome switched over a while back, so whichever decision was made users were going to be exposed to a less tested path, depending on what they were using/doing
+2019-07-08 12:51:35	fledermaus	¯\_(ツ)_/¯
+2019-07-08 12:51:53	<--	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 244 seconds)
+2019-07-08 12:52:00	cyrus-and	so where can I find a list of "defaults write org.gnu.Emacs ..." used by emacs??
+2019-07-08 12:52:00	fsbot	It is decidedly so!
+2019-07-08 12:52:30	unknownmosquito	strangely the Ubuntu 19.04 Gnome uses X11
+2019-07-08 12:52:39	fledermaus	as to the argumets, there are definitely some infelicities in the X protocol to do with things like synchronising rendering events (basically guaranteeing that certain things happen at once, or at least not before certain other events)
+2019-07-08 12:52:45	didi	I also lost Amarok. Debian should release less!
+2019-07-08 12:53:05	unknownmosquito	Amarok died for me the day 2.0 was released
+2019-07-08 12:53:21	fledermaus	tl;dr it's complicated, and it's probably more complicated than you think. computering is hard.
+2019-07-08 12:53:47	didi	unknownmosquito: Nah, it was nice. Now I'm again on the market for a music player, like a hipster.
+2019-07-08 12:54:11	fledermaus	(and I say this as someone who doesn't intend to switch just yet, but I'm not throwing my toys aout of the pram about the decision either)
+2019-07-08 12:54:46	-->	Inline (~Inline@p200300CD4712233DB9A2276B5C71D18A.dip0.t-ipconnect.de) has joined #emacs
+2019-07-08 12:54:52	unknownmosquito	just don't do what I did, which is to store your music on a software RAID array you had a friend help you set up, but then said friend died in a freak accident a few days later and you never remembered how you had set up the array together so when a drive went bad you just put the drives in a closet and bought a Spotify subscription like a total pleb
+2019-07-08 12:55:07	fledermaus	unknownmosquito: Ididn't say they _couldn't_ - the decision was that they would go with the default for gnome when gnome was in use, and it is the default desktop env, so. Ubuntu's decisions belong to ubuntu, not to debian.
+2019-07-08 12:55:44	unknownmosquito	oh yeah fledermaus I just thought it was interesting that Ubuntu had shipped Gnome in a non-default setting. AFAIK the other Gnome-default distributions are shipping Wayland now.
+2019-07-08 12:55:48	JordiGH	Woo, I got swag: https://jordi.platinum.edu.pl/piccies/jordi-btoads.jpg
+2019-07-08 12:56:26	didi	JordiGH: I was going to yell at you because of octave, but now I forgot. Rude.
+2019-07-08 12:56:47	-->	efm (~efm@vpn.tummy.com) has joined #emacs
+2019-07-08 12:56:52	JordiGH	wat wat
+2019-07-08 12:56:54	JordiGH	wat i do
+2019-07-08 12:57:18	didi	You were my vessel to release my frustration with old matlab code.
+2019-07-08 12:58:00	didi	Now I'm yelling at bremner for breaking my mail.
+2019-07-08 12:58:02	 *	fledermaus attaches the plunger of blame to JordiGH 
+2019-07-08 12:58:17	-->	trui (~user@2001:982:feff:1:31ce:9b1a:6da1:26b2) has joined #emacs
+2019-07-08 12:59:01	-->	knoebber (~knoebber@icsexchange.ics-llc.net) has joined #emacs
+2019-07-08 12:59:15	bremner	didi: you should switch to notmuch. Then you can really yell at me for breaking your mail, and I'll maybe even care
+2019-07-08 12:59:27	didi	Haha.
+2019-07-08 12:59:33	didi	,bremner++
+2019-07-08 12:59:34	fsbot	Noted, didi.  One vi-point for bremner!
+2019-07-08 12:59:53	JordiGH	bremner: I just used you as an example, btw: https://news.ycombinator.com/item?id=20382566
+2019-07-08 13:00:54	bremner	JordiGH: that's more or less accurate. The university would sign off on individual contributions, but who the hell has time for that
+2019-07-08 13:02:59	JordiGH	esr was such as "copyright assignments don't work because nobody is checking that the employer assigned copyright" and I'm like git please, we know this isn't true.
+2019-07-08 13:03:44	bremner	yeah, my situation might be weird because my "IP rights" change every 5 years or so
+2019-07-08 13:03:46	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 268 seconds)
+2019-07-08 13:04:00	bremner	or they could change, although they never have
+2019-07-08 13:04:55	-->	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has joined #emacs
+2019-07-08 13:06:13	<--	fiachetti (~fiachetti@152.171.241.220) has quit (Remote host closed the connection)
+2019-07-08 13:07:06	<--	AimHere (~David@cpc132308-sgyl43-2-0-cust150.know.cable.virginm.net) has quit (Ping timeout: 272 seconds)
+2019-07-08 13:07:08	<--	dharog (~widp@131.234.175.151) has quit (Ping timeout: 245 seconds)
+2019-07-08 13:07:32	technomancy	"software licensing won't work because people could just lie about having written things"
+2019-07-08 13:08:22	<--	nanoz (~nanoz@unaffiliated/nanoz) has quit (Ping timeout: 272 seconds)
+2019-07-08 13:08:28	-->	AimHere (~David@cpc132308-sgyl43-2-0-cust150.know.cable.virginm.net) has joined #emacs
+2019-07-08 13:08:34	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 13:11:42	<--	random-nick (~random-ni@unaffiliated/random-nick) has quit (Read error: error:1408F10B:SSL routines:ssl3_get_record:wrong version number)
+2019-07-08 13:12:06	didi	We need hard proof, like letters written with blood and swearing over sacrated books.
+2019-07-08 13:12:07	-->	random-nick (~random-ni@unaffiliated/random-nick) has joined #emacs
+2019-07-08 13:12:24	-->	_0bitcount (~Big_Byte@90.162.105.206) has joined #emacs
+2019-07-08 13:12:28	didi	sacred*
+2019-07-08 13:12:58	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 246 seconds)
+2019-07-08 13:13:52	<--	didi (~user@unaffiliated/didi/x-1022147) has quit (Remote host closed the connection)
+2019-07-08 13:15:06	kenrestivo	it's so amusing when people who are clearly a bit farther along the autism spectrum than me have to deal with ambiguity and uncertainty
+2019-07-08 13:16:02	<--	iovec (uid171740@gateway/web/irccloud.com/x-xafmadfstclfxbto) has quit (Quit: Connection closed for inactivity)
+2019-07-08 13:17:38	-->	raeburn (user@nat/redhat/x-zxgrzwcxcplszqpw) has joined #emacs
+2019-07-08 13:19:25	-->	firejail (~firejail@166.62.227.36) has joined #emacs
+2019-07-08 13:20:09	-->	hamiltonne (~user@217-120-125-115.cable.dynamic.v4.ziggo.nl) has joined #emacs
+2019-07-08 13:20:38	<--	asimpson (~adam@unaffiliated/asimpson) has left #emacs ("ERC (IRC client for Emacs 26.2)")
+2019-07-08 13:21:38	<--	kts (~kts@103.73.237.92) has quit (Quit: Konversation terminated!)
+2019-07-08 13:21:51	<--	bigMouthCommie (~user@unaffiliated/bigmouthcommie) has quit (Ping timeout: 244 seconds)
+2019-07-08 13:24:58	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 13:26:12	<--	jil (~user@2001:41d0:52:cff::f2a) has quit (Remote host closed the connection)
+2019-07-08 13:26:13	-->	mpereira (~mpereira@gw-wan1.mesosphere.hamburg) has joined #emacs
+2019-07-08 13:26:36	styledash	lol
+2019-07-08 13:27:10	-->	jil (~user@2001:41d0:52:cff::f2a) has joined #emacs
+2019-07-08 13:28:37	<--	sauvin (sauvin@about/linux/staff/sauvin) has quit (Read error: Connection reset by peer)
+2019-07-08 13:29:21	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 248 seconds)
+2019-07-08 13:30:15	<--	armyriad (~armyriad@24-205-30-60.dhcp.nrwl.ca.charter.com) has quit (Read error: Connection reset by peer)
+2019-07-08 13:30:51	<--	m4ho (~m4ho@unaffiliated/m4ho) has quit (Quit: WeeChat 2.4)
+2019-07-08 13:31:12	-->	m4ho (~m4ho@unaffiliated/m4ho) has joined #emacs
+2019-07-08 13:33:53	<--	efm (~efm@vpn.tummy.com) has quit (Quit: Konversation terminated!)
+2019-07-08 13:34:09	<--	random-nick (~random-ni@unaffiliated/random-nick) has quit (Ping timeout: 248 seconds)
+2019-07-08 13:35:32	-->	knoebber (~knoebber@icsexchange.ics-llc.net) has joined #emacs
+2019-07-08 13:38:28	<--	mpereira (~mpereira@gw-wan1.mesosphere.hamburg) has quit (Ping timeout: 252 seconds)
+2019-07-08 13:38:56	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-08 13:40:26	e1f	unknownmosquito: how did the friend die?
+2019-07-08 13:40:33	<--	theoceaniscool (~theoceani@139.47.103.173) has quit (Ping timeout: 248 seconds)
+2019-07-08 13:40:42	unknownmosquito	he was found drowned in a lake near his house
+2019-07-08 13:40:42	<--	lnostdal (~lnostdal@77.70.119.51) has quit (Remote host closed the connection)
+2019-07-08 13:40:53	bremner	JordiGH: arguing with esr sounds like mud-wrestling with a pig
+2019-07-08 13:40:55	unknownmosquito	I never got more of an explanation than that
+2019-07-08 13:40:57	e1f	wow
+2019-07-08 13:41:05	unknownmosquito	yeah it was really insane
+2019-07-08 13:41:27	unknownmosquito	young guy, too, in his early thirties
+2019-07-08 13:41:43	-->	dharog (~widp@131.234.175.151) has joined #emacs
+2019-07-08 13:42:26	-->	lnostdal (~lnostdal@77.70.119.51) has joined #emacs
+2019-07-08 13:42:43	<--	asheshambasta_m (~asheshamb@d8D87D1B0.access.telenet.be) has quit (Quit: Leaving.)
+2019-07-08 13:43:23	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 245 seconds)
+2019-07-08 13:45:26	<--	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has quit (Ping timeout: 252 seconds)
+2019-07-08 13:46:31	-->	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has joined #emacs
+2019-07-08 13:46:59	-->	twrk (~user@unaffiliated/twrk) has joined #emacs
+2019-07-08 13:48:12	<--	cyrus-and (~user@2.236.128.35) has quit (Remote host closed the connection)
+2019-07-08 13:49:00	fledermaus	https://mastodon.social/@ersatzmaus/102407299600761015
+2019-07-08 13:50:10	<--	t58 (~t58@88-106-246-198.dynamic.dsl.as9105.com) has quit (Ping timeout: 272 seconds)
+2019-07-08 13:51:06	-->	empee0 (~user@p200300D807121A0004C64A3E78D0370D.dip0.t-ipconnect.de) has joined #emacs
+2019-07-08 13:55:31	-->	t58 (~t58@88-106-246-198.dynamic.dsl.as9105.com) has joined #emacs
+2019-07-08 13:55:31	<--	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has quit (Quit: WeeChat 2.4)
+2019-07-08 13:58:46	<--	starch (~starch@45.red-79-144-6.dynamicip.rima-tde.net) has quit (Quit: rcirc on GNU Emacs 26.2)
+2019-07-08 14:00:48	-->	random-nick (~random-ni@unaffiliated/random-nick) has joined #emacs
+2019-07-08 14:05:24	<--	kliph (~user@unaffiliated/kliph) has quit (Read error: Connection reset by peer)
+2019-07-08 14:05:53	-->	roadie (~user@2a02:8108:ec0:1583:5c02:fc82:7b08:f7ae) has joined #emacs
+2019-07-08 14:07:11	-->	kliph (~user@unaffiliated/kliph) has joined #emacs
+2019-07-08 14:08:38	-->	miskatonic (~user@2a02:810d:9c80:2823:200:ff:fe00:1f) has joined #emacs
+2019-07-08 14:09:41	-->	jao (jao@pdpc/supporter/professional/jao) has joined #emacs
+2019-07-08 14:13:56	<--	hamiltonne (~user@217-120-125-115.cable.dynamic.v4.ziggo.nl) has quit (Read error: Connection reset by peer)
+2019-07-08 14:20:14	<--	specing (~specing@unaffiliated/specing) has quit (Remote host closed the connection)
+2019-07-08 14:22:45	<--	dharog (~widp@131.234.175.151) has quit (Quit: WeeChat 2.2)
+2019-07-08 14:23:06	<--	josteink (~jostein@cm-84.211.32.128.getinternet.no) has quit (Quit: WeeChat 1.9.1)
+2019-07-08 14:23:28	<--	fledermaus (~vivek@2a00:5f00:102:0:a579:25f1:4860:fdf7) has quit (Ping timeout: 264 seconds)
+2019-07-08 14:23:28	-->	specing (~specing@unaffiliated/specing) has joined #emacs
+2019-07-08 14:25:27	<--	jao (jao@pdpc/supporter/professional/jao) has quit (Ping timeout: 245 seconds)
+2019-07-08 14:25:40	<--	vlatkoB (~IRC_clien@unaffiliated/vlatkob) has quit (Remote host closed the connection)
+2019-07-08 14:28:35	-->	josteink (~jostein@cm-84.211.32.128.getinternet.no) has joined #emacs
+2019-07-08 14:31:09	<--	igemnace (~igemnace@120.28.165.200) has quit (Quit: WeeChat 2.5)
+2019-07-08 14:36:45	-->	fivo (~fv@p200300E7470C6BF1212B32405B46C4D0.dip0.t-ipconnect.de) has joined #emacs
+2019-07-08 14:38:30	-->	ngz (~user@00004301b1b73e5d75dd1254.ipv6.commingeshautdebit.fr) has joined #emacs
+2019-07-08 14:40:01	fivo	What is a fast way to resizing a window to let's say 20 lines?
+2019-07-08 14:41:20	e1f	c-u 20 c-x ^
+2019-07-08 14:41:22	e1f	i think
+2019-07-08 14:42:35	<--	empee0 (~user@p200300D807121A0004C64A3E78D0370D.dip0.t-ipconnect.de) has quit (Remote host closed the connection)
+2019-07-08 14:42:37	e1f	in a gui you can drag the modeline
+2019-07-08 14:42:47	e1f	the window dimensions should be displayed
+2019-07-08 14:43:36	unknownmosquito	fivo: use hyperbole to control windows and frames
+2019-07-08 14:44:04	unknownmosquito	you could install hyperbole and use nothing other than the window/frame control shortcuts and it'd be worth it
+2019-07-08 14:44:46	unknownmosquito	it's overkill for the question at hand, certainly, but assuming this is an XY problem situation, I cannot more strongly recommend hyperbole
+2019-07-08 14:45:22	<--	jmarciano (~user@31.223.149.40) has quit (Ping timeout: 246 seconds)
+2019-07-08 14:45:42	<--	trui (~user@2001:982:feff:1:31ce:9b1a:6da1:26b2) has quit (Remote host closed the connection)
+2019-07-08 14:45:45	<--	magog (~wee@unaffiliated/magog) has quit (Quit: WeeChat 2.2)
+2019-07-08 14:46:40	-->	cosimone (~cosimone@2001:b07:ae5:db26:1026:9baf:75fb:a0c3) has joined #emacs
+2019-07-08 14:47:10	cvandusen	Given its name, overkill seems to be its rai·son d'ê·tre.
+2019-07-08 14:47:20	-->	bahtiyar (~bahtiyar@pD9E43361.dip0.t-ipconnect.de) has joined #emacs
+2019-07-08 14:47:52	<--	iderik (~weechat@h-162-65.A147.priv.bahnhof.se) has quit (Quit: iderik)
+2019-07-08 14:47:52	unknownmosquito	fair
+2019-07-08 14:48:10	unknownmosquito	emacs isn't emacs without org-mode and hyperbole imho
+2019-07-08 14:48:25	-->	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #emacs
+2019-07-08 14:48:54	unknownmosquito	tbh the killer feature with hyperbole is the ability to shift-click on a buffer and drag it to another window and have it swap positions with whatever window is there
+2019-07-08 14:49:02	unknownmosquito	at least for me, that's the killer feature I can no longer live without
+2019-07-08 14:49:32	unknownmosquito	or drag it out of the frame and it makes a new frame..
+2019-07-08 14:50:40	<--	nulquen (~n@unaffiliated/nulquen) has quit (Ping timeout: 276 seconds)
+2019-07-08 14:50:44	hodapp	I have yet to bother trying to learn hyperbole
+2019-07-08 14:50:56	<--	neosloth (~neosloth@192.157.106.221) has quit (Quit: Ping timeout (120 seconds))
+2019-07-08 14:50:58	hodapp	partly because I don't understand wtf it's for
+2019-07-08 14:51:20	e1f	i have yet to swap two windows in emacs
+2019-07-08 14:51:22	-->	neosloth (~neosloth@192.157.106.221) has joined #emacs
+2019-07-08 14:52:10	e1f	kids these days need to shuffle their windows before performing their magic tricks
+2019-07-08 14:52:47	<--	rumbler31 (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 244 seconds)
+2019-07-08 14:58:22	<--	johnjay (~pi@38.120.10.99) has quit (Ping timeout: 245 seconds)
+2019-07-08 15:01:33	-->	johnjay (~pi@38.120.10.99) has joined #emacs
+2019-07-08 15:04:45	-->	matsl (~matsl@gentoo/developer/matsl) has joined #emacs
+2019-07-08 15:05:20	-->	ggoes (~user@fsf/member/ggoes) has joined #emacs
+2019-07-08 15:05:43	<--	ggoes (~user@fsf/member/ggoes) has left #emacs
+2019-07-08 15:08:41	<--	tiwula (~lane@75.104.90.71) has quit (Quit: Leaving)
+2019-07-08 15:10:05	-->	butterthebuddha (~butterthe@2601:400:c100:c70:d1b9:ca54:948f:46e6) has joined #emacs
+2019-07-08 15:12:53	<--	subsonik (~subsonik@matrix.netspectrum.de) has quit (Quit: ZNC - https://znc.in)
+2019-07-08 15:15:57	-->	drznpy (~drznpy@93-43-229-173.ip94.fastwebnet.it) has joined #emacs
+2019-07-08 15:16:02	<--	markus1189 (~markus118@82.206.31.253) has quit (Ping timeout: 244 seconds)
+2019-07-08 15:17:08	<--	wildtrees (~wildtrees@unaffiliated/wildtrees) has quit (Quit: Leaving)
+2019-07-08 15:17:11	-->	markus1189 (~markus118@82.206.31.253) has joined #emacs
+2019-07-08 15:17:37	<--	bliv (~bliv@unaffiliated/blivande) has quit (Ping timeout: 248 seconds)
+2019-07-08 15:18:34	fivo	ok thanks
+2019-07-08 15:19:23	-->	bliv (~bliv@unaffiliated/blivande) has joined #emacs
+2019-07-08 15:19:42	-->	subsonik (~subsonik@matrix.netspectrum.de) has joined #emacs
+2019-07-08 15:19:59	-->	trui (~user@2001:982:feff:1:31ce:9b1a:6da1:26b2) has joined #emacs
+2019-07-08 15:20:04	<--	im0nde| (~im0nde@2a0a-a546-71a4-0-ba27-ebff-fe20-c671.ipv6dyn.netcologne.de) has quit (Ping timeout: 252 seconds)
+2019-07-08 15:20:19	-->	im0nde_ (~im0nde@2a0a-a546-a090-0-2ad2-44ff-fe00-9395.ipv6dyn.netcologne.de) has joined #emacs
+2019-07-08 15:20:32	-->	im0nde- (~im0nde@2a0a-a546-a090-0-ba27-ebff-fe20-c671.ipv6dyn.netcologne.de) has joined #emacs
+2019-07-08 15:21:40	<--	im0nde (~im0nde@2a0a-a546-71a4-0-2ad2-44ff-fe00-9395.ipv6dyn.netcologne.de) has quit (Ping timeout: 264 seconds)
+2019-07-08 15:22:53	<--	cosimone (~cosimone@2001:b07:ae5:db26:1026:9baf:75fb:a0c3) has quit (Quit: WeeChat 2.4)
+2019-07-08 15:24:00	<--	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has quit (Quit: quit)
+2019-07-08 15:25:41	miskatonic	I hate the mouse unconditionally, so using it for switching windows is no option for me
+2019-07-08 15:26:42	bremner	smash the looms
+2019-07-08 15:26:47	JordiGH	,ratpoison
+2019-07-08 15:26:47	fsbot	hmm, ratpoison is [0] a minimalistic, GNU Screen-oriented window manager at http://www.nongnu.org/ratpoison/
+2019-07-08 15:26:47	fsbot	[1] packaged together with a ratpoison.el for .ratpoisonrc font-locking and ratpoison remote commanding
+2019-07-08 15:26:47	fsbot	[2] at http://www.emacswiki.org/emacs/ratpoison
+2019-07-08 15:26:47	fsbot	[3] at http://www.emacswiki.org/emacs/RatPoison
+2019-07-08 15:26:57	<--	_0bitcount (~Big_Byte@90.162.105.206) has quit (Quit: Leaving)
+2019-07-08 15:28:31	<--	subopt (~subopt@199.255.45.4) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-08 15:31:12	-->	lacrymology (~lacrymolo@37.223.97.84) has joined #emacs
+2019-07-08 15:31:16	<--	gopar (~gopar@c-73-170-87-34.hsd1.ca.comcast.net) has quit (Remote host closed the connection)
+2019-07-08 15:32:08	<--	dellavg_ (~dellavg@host35-101-dynamic.14-87-r.retail.telecomitalia.it) has quit (Ping timeout: 245 seconds)
+2019-07-08 15:36:36	-->	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has joined #emacs
+2019-07-08 15:36:39	<--	unknownmosquito (~unknownmo@64.157.240.76) has quit
+2019-07-08 15:38:32	-->	unknownmosquito (~unknownmo@64.157.240.76) has joined #emacs
+2019-07-08 15:38:42	<--	fivo (~fv@p200300E7470C6BF1212B32405B46C4D0.dip0.t-ipconnect.de) has quit (Quit: WeeChat 1.9.1)
+2019-07-08 15:39:32	turbofail	,stumpwm
+2019-07-08 15:39:33	fsbot	stumpwm is [0] a ratpoison-like WM written in Common Lisp
+2019-07-08 15:39:33	fsbot	[1] at https://github.com/sabetts/stumpwm
+2019-07-08 15:39:33	fsbot	[2] the emacs of window managers
+2019-07-08 15:40:21	<--	sandeepk (~sandeepk@2402:3a80:136b:2c94:18d9:a94b:f9ff:7273) has quit (Remote host closed the connection)
+2019-07-08 15:40:53	turbofail	stumpwm is supposed to be the "successor" to ratpoison, though both appear to be worked on to some extent
+2019-07-08 15:41:50	-->	metametapod (uid17704@gateway/web/irccloud.com/x-wvtafhunupllgpyp) has joined #emacs
+2019-07-08 15:42:25	metametapod	Hi, is it possible to use auto-load-alist for a mode dependent on another mode?
+2019-07-08 15:43:28	metametapod	e.g., something like  `(add-to-list 'auto-mode-alist '("my-extension" mode-a mode-b)))`
+2019-07-08 15:44:02	npostavs	metametapod: you can only have one major mode at a time
+2019-07-08 15:44:13	npostavs	what does "dependent" mean exactly?
+2019-07-08 15:44:21	MoziM	is there a term to describe a program that modifies it's own source code then recompiles/interprets itself at runtime?
+2019-07-08 15:44:37	JordiGH	MoziM: Viruses that did used to be called polymorphic.
+2019-07-08 15:44:46	metametapod	this is for a globalized minor mode
+2019-07-08 15:45:00	MoziM	JordiGH: but how many viruses ship with their source code? -_-
+2019-07-08 15:45:10	MoziM	JordiGH: afaik that's still a real term for malware
+2019-07-08 15:45:17	metametapod	that needs to run after another mode
+2019-07-08 15:45:18	MoziM	but that's modifying the binary itself
+2019-07-08 15:45:24	-->	pakcjo (be0ed9e2@190.14.217.226) has joined #emacs
+2019-07-08 15:45:33	JordiGH	metametapod: Seems like you should just add a hook to the major mode to enable the minor mode.
+2019-07-08 15:45:33	wasamasa	self-modifying code it is these days
+2019-07-08 15:45:41	wasamasa	it happens in malware and JIT
+2019-07-08 15:46:14	-->	isBEKaml (~aaaa@unaffiliated/isbekaml) has joined #emacs
+2019-07-08 15:46:49	MoziM	nvm it's called reflection
+2019-07-08 15:46:59	wasamasa	nope
+2019-07-08 15:47:02	MoziM	no?
+2019-07-08 15:47:04	turbofail	hmmmm that term usually means something else
+2019-07-08 15:47:05	 *	MoziM pondering
+2019-07-08 15:47:19	MoziM	'reflection is the ability of a process to examine, introspect, and modify its own structure and behavior.[1]'
+2019-07-08 15:47:20	metametapod	JordiGH: i am, but there's logic detecting the file name that i'd prefer to have handled by `auto-mode-alist`
+2019-07-08 15:47:25	MoziM	according to wikipedia
+2019-07-08 15:47:34	wasamasa	reflection is how statically typed languages gain the behavior of dynamically typed languages
+2019-07-08 15:47:48	JordiGH	auto-mode-alist isn't very smart. Just an alist of regexes to modes.
+2019-07-08 15:48:01	wasamasa	most of the time it's just a runtime dispatch
+2019-07-08 15:48:05	JordiGH	If you need greater wisdom, you'll have to inject it elsewhere.
+2019-07-08 15:48:06	turbofail	MoziM: that usually implies having run-time data about the source code, not modifying source and recompiling
+2019-07-08 15:48:33	<--	CosmicWitch (~darkprinc@unaffiliated/darkprincess) has quit (Ping timeout: 248 seconds)
+2019-07-08 15:48:35	JordiGH	metametapod: So to answer your original question, "no".
+2019-07-08 15:49:21	turbofail	anyway the distinction between modifying "source" and modifying the "binary" is kind of arbitrary, self-modifying code probably covers both cases regardless
+2019-07-08 15:49:46	JordiGH	wasamasa: D's reflection is very compile-time too.
+2019-07-08 15:49:46	-->	joshuaBPMan (~user@72.12.220.132) has joined #emacs
+2019-07-08 15:49:57	metametapod	https://www.irccloud.com/pastebin/mgDNePQE/
+2019-07-08 15:50:05	Sketch	i would think self modifying code would modify the running binary
+2019-07-08 15:50:08	metametapod	JordiGH: so this is about as good as it gets?
+2019-07-08 15:50:11	JordiGH	You can write compile-time code to list all members of a module, see if they match a regex, and for those that do, write an arbitrary function.
+2019-07-08 15:50:16	Sketch	not the source and then recompile itself
+2019-07-08 15:50:20	MoziM	turbofail: hmm...
+2019-07-08 15:50:29	wasamasa	Sketch: you're forgetting about how a binary is loaded into writable memory
+2019-07-08 15:50:31	Sketch	(of course, if it's in a language there is no distinction between source in binary...)
+2019-07-08 15:50:44	pakcjo	anyone using evil-mode? I'm trying to learn it, but can't find a good documentation of the keybindings per mode :(
+2019-07-08 15:51:03	turbofail	JordiGH: i think you would usually call that metaprogramming if it's happening at compile time
+2019-07-08 15:51:18	wasamasa	Sketch: that memory is writable and if your debugger is smart enough, it will yell at you when the representation of the binary it loaded up initially is different from the one in memory
+2019-07-08 15:51:19	JordiGH	metametapod: I don't understand what's going on. Why mess with alist at all? Why not make your hook check the buffer's name and if it matches, activate the minor mode?
+2019-07-08 15:51:29	wasamasa	Sketch: because that is, sorry about the pun, sketchy behavior
+2019-07-08 15:51:40	wasamasa	pakcjo: the vim manual, lol
+2019-07-08 15:51:42	JordiGH	lol
+2019-07-08 15:52:06	JordiGH	pakcjo: Yes people use evil mode.
+2019-07-08 15:52:39	metametapod	b/c it's relying on a function from the other package
+2019-07-08 15:52:39	MoziM	gahh... life was so simple when you can have the elisp interpreter do everything
+2019-07-08 15:52:39	miskatonic	wasamasa is the inventor of evil mode
+2019-07-08 15:52:44	wasamasa	nope
+2019-07-08 15:52:50	MoziM	screw evil mode
+2019-07-08 15:52:50	wasamasa	stop giving people funny ideas
+2019-07-08 15:52:52	MoziM	hail hydra
+2019-07-08 15:52:54	JordiGH	metametapod: Okay, I guess you understand what you're doing.
+2019-07-08 15:52:58	MoziM	\0/
+2019-07-08 15:53:08	JordiGH	Stop that, you look like a goddamn cheerleader.
+2019-07-08 15:53:16	MoziM	T_T
+2019-07-08 15:53:24	MoziM	i mean have you used hydra?
+2019-07-08 15:53:35	JordiGH	Yeah, the GNU build service.
+2019-07-08 15:53:56	pakcjo	it's the same as in vim? :/  hmm I don't know how to use vim either, well just the basic, I was under the impression that they keymap/functionalities were different
+2019-07-08 15:54:17	wasamasa	it's an implementation of vim's editing commands
+2019-07-08 15:54:20	JordiGH	pakcjo: If you don't have a vim preconception, why not just use Emacs?
+2019-07-08 15:54:25	wasamasa	if you're not familiar with them, use something else
+2019-07-08 15:54:37	MoziM	JordiGH: o.o
+2019-07-08 15:54:41	wasamasa	like god-mode, lispy, whatever
+2019-07-08 15:54:41	turbofail	rudybot: extra confusion is fun
+2019-07-08 15:54:42	rudybot	turbofail: but I'm not sure the extra flexibility is worth the extra confusion.
+2019-07-08 15:54:50	JordiGH	Or... Emacs.
+2019-07-08 15:54:53	JordiGH	Just use Emacs.
+2019-07-08 15:54:59	JordiGH	Typing with two hands isn't so bad.
+2019-07-08 15:55:03	<--	drznpy (~drznpy@93-43-229-173.ip94.fastwebnet.it) has quit (Ping timeout: 245 seconds)
+2019-07-08 15:55:28	JordiGH	But ,,capslock
+2019-07-08 15:55:28	fsbot	CapsLock is [0] at http://www.emacswiki.org/emacs/CapsLock
+2019-07-08 15:55:28	fsbot	[1] see also http://www.emacswiki.org/emacs/MovingTheCtrlKey
+2019-07-08 15:55:28	fsbot	[2] to remap under windows, see http://code.google.com/p/keymapper/
+2019-07-08 15:55:29	fsbot	[3] http://www.thestar.com/business/personal_finance/spending_saving/2012/07/02/how_to_stop_hitting_that_caps_lock_key.html
+2019-07-08 15:55:29	miskatonic	or with your tongue
+2019-07-08 15:55:44	MoziM	i prefer capslock being hyper :)
+2019-07-08 15:55:52	wasamasa	the [2] one is outdated
+2019-07-08 15:55:52	turbofail	every floor vibration is putting me on edge right now
+2019-07-08 15:56:10	JordiGH	Haha, Windows Vista and XP instructions.
+2019-07-08 15:56:11	miskatonic	best with a mechanical keyboard
+2019-07-08 15:56:13	pakcjo	I use qmk, capslock is control when pressed, esc when tap
+2019-07-08 15:56:15	<--	TonCherAmi (~TonCherAm@109.230.155.187) has quit (Quit: Quit)
+2019-07-08 15:56:28	wasamasa	unfortunately I don't remember the command to replace a line in a factoid
+2019-07-08 15:56:30	JordiGH	pakcjo: Great, you're already 30% Emacs.
+2019-07-08 15:56:45	JordiGH	wasamasa: `no, capslock 2 is`
+2019-07-08 15:57:03	wasamasa	,no, capslock 2 is to remap under windows, see https://github.com/randyrants/sharpkeys
+2019-07-08 15:57:03	fsbot	Try: away badcode LangPollResults lebowski-data naggum-lines possible quotemstr really shitkiwissay technical-argument-list thingp yoda-phrases
+2019-07-08 15:57:09	wasamasa	JordiGH: no, it's not
+2019-07-08 15:57:18	pakcjo	I know emacs more than vim, but was thinking about the possibility to unify it, vim is useful to edit configuration files on remote servers
+2019-07-08 15:57:20	JordiGH	,capslock 2 is to remap under windows, see https://github.com/randyrants/sharpkeys
+2019-07-08 15:57:21	fsbot	toI heard CapsLock is [2] to remap under windows, see http://code.google.com/p/keymapper/
+2019-07-08 15:57:21	fsbot	[3] http://www.thestar.com/business/personal_finance/spending_saving/2012/07/02/how_to_stop_hitting_that_caps_lock_key.html
+2019-07-08 15:57:21	fsbot	 .. + other notes
+2019-07-08 15:57:31	isBEKaml	shitkiwissay?
+2019-07-08 15:57:32	fsbot	I think shitkiwissay is And before you ask, no, we can't power it by putting goats in a hamster wheel.
+2019-07-08 15:57:41	isBEKaml	lol
+2019-07-08 15:57:43	JordiGH	,forget capslock 2
+2019-07-08 15:57:44	fsbot	Forgot note 2 for term CapsLock: ["to remap under[...]m/p/keymapper/"]
+2019-07-08 15:57:52	<--	lavaflow (~john@185.212.170.227) has quit (Quit: WeeChat 2.4)
+2019-07-08 15:57:55	JordiGH	,capslock is also to remap under windows, see https://github.com/randyrants/sharpkeys
+2019-07-08 15:57:55	fsbot	Added note [3] for term "CapsLock"
+2019-07-08 15:58:00	wasamasa	oh well
+2019-07-08 15:58:11	wasamasa	anyway, you all can guess how I found that one out
+2019-07-08 15:58:14	JordiGH	wasamasa: add-to-alist
+2019-07-08 15:58:34	JordiGH	I can't. You know Randy?
+2019-07-08 15:58:47	wasamasa	I'm using a windows laptop at work, lol
+2019-07-08 15:58:53	<--	tromey (~tromey@174-29-36-25.hlrn.qwest.net) has quit (Quit: ERC (IRC client for Emacs 26.1))
+2019-07-08 15:59:01	isBEKaml	wasamasa: does it work at all?
+2019-07-08 15:59:11	wasamasa	surprisingly enough, yes
+2019-07-08 15:59:26	<--	budonyc (~budonyc@c-24-62-204-147.hsd1.ma.comcast.net) has quit (Ping timeout: 244 seconds)
+2019-07-08 15:59:26	wasamasa	I haven't dared putting emacs on it though
+2019-07-08 15:59:56	cvandusen	Time for a game of Truth or Dare.
+2019-07-08 16:00:08	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-08 16:00:28	<--	mqp (~mqp@pol.rs) has quit (Quit: WeeChat 2.4)
+2019-07-08 16:01:25	isBEKaml	wasamasa: come on, you're just IRC'ing here from that emacs on your windows laptop
+2019-07-08 16:01:47	mns	wasamasa: you may be able to live under the Linux subsystem for the most part.
+2019-07-08 16:02:00	turbofail	i ran emacs on a Big Company™ windows laptop back in the day
+2019-07-08 16:02:02	wasamasa	I'd do that if I were still developing software
+2019-07-08 16:02:24	mns	I've not had a chance to try it out myself though.
+2019-07-08 16:02:37	turbofail	this was like 11 years ago though, perhaps they've gotten more restrictive since then
+2019-07-08 16:02:44	turbofail	though it was pretty restrictive back then too
+2019-07-08 16:02:46	Sketch	i mostly lived in a linux vm when i had a job with a windows laptop
+2019-07-08 16:02:55	wasamasa	the current setup is notepad++ and cherrytree for taking notes
+2019-07-08 16:02:55	Sketch	outside of windows-specific tools i had to use
+2019-07-08 16:02:58	isBEKaml	mns: you forget there are *lots* of companies that still give out windows 7 laptops at work
+2019-07-08 16:03:08	-->	wildtrees (~wildtrees@unaffiliated/wildtrees) has joined #emacs
+2019-07-08 16:03:14	isBEKaml	Mine does. I haven't bothered booting it up for 8 months or so
+2019-07-08 16:03:15	Sketch	isBEKaml: hopefully not for much longer...
+2019-07-08 16:03:41	Sketch	  Support for Windows 7 is ending. After January 14, 2020, Microsoft will no longer provide security updates or support for PCs running Windows 7.
+2019-07-08 16:03:51	wasamasa	the git for windows thing ships with part of coreutils and a terminal emulator
+2019-07-08 16:04:07	turbofail	not having to bullshit around with big corporate IT setups is definitely one of my favorite parts of not working at a big company
+2019-07-08 16:04:42	-->	nicolasbock (~user@gentoo/developer/nicolasbock) has joined #emacs
+2019-07-08 16:04:48	<--	ngz (~user@00004301b1b73e5d75dd1254.ipv6.commingeshautdebit.fr) has quit (Ping timeout: 252 seconds)
+2019-07-08 16:05:03	wasamasa	a more integrated setup would be cool, but not worth the effort I'm afraid
+2019-07-08 16:05:04	<--	kliph (~user@unaffiliated/kliph) has quit (Quit: ERC (IRC client for Emacs 26.2))
+2019-07-08 16:07:23	<--	npostavs (~user@CPE001143542e1f-CMf81d0f809fa0.cpe.net.cable.rogers.com) has quit (Quit: quit)
+2019-07-08 16:07:30	-->	nerosnm (~alrakis@138-38-186-247.eduroam.bath.ac.uk) has joined #emacs
+2019-07-08 16:07:42	<--	BeefEats (~BeefEats@unaffiliated/beefeats) has quit (Read error: Connection reset by peer)
+2019-07-08 16:09:19	-->	BeefEats (~BeefEats@unaffiliated/beefeats) has joined #emacs
+2019-07-08 16:09:44	<--	Inline (~Inline@p200300CD4712233DB9A2276B5C71D18A.dip0.t-ipconnect.de) has quit (Quit: Leaving)
+2019-07-08 16:10:25	<--	isokee (~isokee@unaffiliated/isokee) has quit (Ping timeout: 246 seconds)
+2019-07-08 16:10:37	shackra	any elisp function for checking if a string is a URL
+2019-07-08 16:10:40	shackra	?
+2019-07-08 16:11:20	 *	Sketch runs for cover before the inevitable flamewar over what constitutes a URL
+2019-07-08 16:11:21	<--	JordiGH (jordi@octave/developer/JordiGH) has quit (Quit: Jacking out)
+2019-07-08 16:12:28	<--	nerosnm (~alrakis@138-38-186-247.eduroam.bath.ac.uk) has quit (Ping timeout: 268 seconds)
+2019-07-08 16:12:40	<--	Formbi (~user@user-46-112-71-65.play-internet.pl) has quit (Ping timeout: 272 seconds)
+2019-07-08 16:12:46	-->	jlf (~jlf@pdpc/supporter/active/jlf) has joined #emacs
+2019-07-08 16:14:49	<--	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-08 16:15:11	<--	andrei-n (~andrei-n@173.155-67-87.adsl-dyn.isp.belgacom.be) has quit (Remote host closed the connection)
+2019-07-08 16:15:25	 *	edgar-rft thinks that a string is a string and not an URL
+2019-07-08 16:15:33	twrk	http://urlregex.com/ ; https://www.gnu.org/software/emacs/manual/html_node/elisp/Regular-Expressions.html ... hope it helps?
+2019-07-08 16:15:56	twrk	https://www.ietf.org/rfc/rfc3986.txt "Appendix B.  Parsing a URI Reference with a Regular Expression"
+2019-07-08 16:16:49	mns	shackra: there is a whole set of url-* functions maybe something in there will help you ? C-h a url RET
+2019-07-08 16:19:02	-->	csantosb (~user@2a0c:5a80:3201:7700:eeb1:d7ff:fe2d:4f6b) has joined #emacs
+2019-07-08 16:19:14	-->	nerosnm (~alrakis@138-38-186-247.eduroam.bath.ac.uk) has joined #emacs
+2019-07-08 16:19:53	shackra	mns: there is an `url-p` but is undocumented and it seems that does something unexpected
+2019-07-08 16:20:07	<--	csantosb (~user@2a0c:5a80:3201:7700:eeb1:d7ff:fe2d:4f6b) has quit (Remote host closed the connection)
+2019-07-08 16:20:25	shackra	so I went for a simplier approach because my use case is nothing that complicated
+2019-07-08 16:20:39	turbofail	url-p is most likely used for determining if it's a parsed URL object
+2019-07-08 16:20:50	-->	mqp (~mqp@pol.rs) has joined #emacs
+2019-07-08 16:20:50	shackra	uh
+2019-07-08 16:20:56	shackra	let's see
+2019-07-08 16:20:57	-->	jao (jao@pdpc/supporter/professional/jao) has joined #emacs
+2019-07-08 16:21:45	turbofail	it's a function auto-created by cl-defstruct
+2019-07-08 16:21:52	-->	csantosb (~user@2a0c:5a80:3201:7700:eeb1:d7ff:fe2d:4f6b) has joined #emacs
+2019-07-08 16:21:54	turbofail	so you're not going to find its actual definition in there
+2019-07-08 16:22:52	shackra	ah, but it actually does what I need
+2019-07-08 16:23:00	turbofail	no, i doubt it
+2019-07-08 16:23:05	<--	jlf (~jlf@pdpc/supporter/active/jlf) has quit (Ping timeout: 258 seconds)
+2019-07-08 16:23:28	shackra	if I parse the string with `url-generic-parse-url` yes it does
+2019-07-08 16:23:28	<--	IanMalcolm (~IanMalcol@unaffiliated/ianmalcolm) has quit (Ping timeout: 258 seconds)
+2019-07-08 16:23:29	<--	wagle (~wagle@quassel.wagle.io) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2019-07-08 16:23:49	turbofail	yeah ok that would probably work
+2019-07-08 16:24:03	turbofail	just using (url-p "http://www.totally-valid-url.org/") wouldn't
+2019-07-08 16:24:04	shackra	:D
+2019-07-08 16:24:13	-->	wagle (~wagle@quassel.wagle.io) has joined #emacs
+2019-07-08 16:24:35	-->	ur5us (~ur5us@219.88.232.186) has joined #emacs
+2019-07-08 16:25:06	edgar-rft	(url-p x) tests if x is a cl-structure of type 'url
+2019-07-08 16:25:21	turbofail	yeah even that only sort-of works
+2019-07-08 16:25:32	<--	mqp (~mqp@pol.rs) has quit (Read error: Connection reset by peer)
+2019-07-08 16:25:37	turbofail	(url-p (url-generic-parse-url "not a url fuck you")) => t
+2019-07-08 16:25:53	-->	mqp (~mqp@pol.rs) has joined #emacs
+2019-07-08 16:26:03	shackra	lol, damn
+2019-07-08 16:26:06	edgar-rft	great :-(
+2019-07-08 16:26:08	shackra	welp, back to square one
+2019-07-08 16:26:26	shackra	I just revert to a regexp check for any https?://
+2019-07-08 16:26:40	turbofail	part of the problem is that everything can sort of be a URL
+2019-07-08 16:26:57	turbofail	you probably want a more restrictive version of what a URL is
+2019-07-08 16:27:04	ieure	turbofail, Wait until you try validating emails.
+2019-07-08 16:27:08	<--	rippa (~rippa@ppp-vpdn-37.1.85.157.yarnet.ru) has quit (Quit: {#`%${%&`+'${`%&NO CARRIER)
+2019-07-08 16:27:10	<--	mqp (~mqp@pol.rs) has quit (Read error: Connection reset by peer)
+2019-07-08 16:27:55	-->	mqp (~mqp@pol.rs) has joined #emacs
+2019-07-08 16:28:13	<--	mqp (~mqp@pol.rs) has quit (Remote host closed the connection)
+2019-07-08 16:28:36	-->	mqp (~mqp@pol.rs) has joined #emacs
+2019-07-08 16:29:41	<--	mqp (~mqp@pol.rs) has quit (Read error: Connection reset by peer)
+2019-07-08 16:30:13	-->	mqp (~mqp@pol.rs) has joined #emacs
+2019-07-08 16:36:26	cvandusen	in soviet russia, emails validate you
+2019-07-08 16:39:21	-->	drznpy (~drznpy@93-43-229-173.ip94.fastwebnet.it) has joined #emacs
+2019-07-08 16:42:41	<--	seschwar (~seschwar@unaffiliated/seschwar) has quit (Quit: :wq)
+2019-07-08 16:45:35	clairedesu	text rectangles changed my life
+2019-07-08 16:45:46	clairedesu	although visual-line-mode makes it kinda weird
+2019-07-08 16:46:04	<--	aconole (user@nat/redhat/x-isfwwlotsmvevmdk) has quit (Remote host closed the connection)
+2019-07-08 16:46:09	<--	_thelion_ (~matthias@192-164-8-92.hdsl.highway.telekom.at) has quit (Quit: WeeChat 2.5)
+2019-07-08 16:46:11	clairedesu	but the rectangles are so nice for formatting poorly formatted text
+2019-07-08 16:47:38	<--	mwsb (~mwsb@unaffiliated/chu) has quit (Ping timeout: 258 seconds)
+2019-07-08 16:48:13	-->	mwsb1 (~mwsb@unaffiliated/chu) has joined #emacs
+2019-07-08 16:49:10	-->	rumbler3_ (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has joined #emacs
+2019-07-08 16:52:07	<--	bliv (~bliv@unaffiliated/blivande) has quit (Read error: Connection reset by peer)
+2019-07-08 16:52:07	<--	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has quit (Read error: Connection reset by peer)
+2019-07-08 16:52:16	-->	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has joined #emacs
+2019-07-08 16:53:23	<--	rumbler3_ (~rumbler31@c-69-255-2-251.hsd1.md.comcast.net) has quit (Ping timeout: 245 seconds)
+2019-07-08 16:54:00	-->	plugd (~plugd@fsf/member/plugd) has joined #emacs
+2019-07-08 16:56:21	<--	bahtiyar (~bahtiyar@pD9E43361.dip0.t-ipconnect.de) has quit (Remote host closed the connection)
+2019-07-08 16:57:54	<--	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has quit (Quit: quit)
+2019-07-08 16:58:09	-->	seds (~seds@2804:14d:baa0:949b:7cbc:1040:2c1a:127e) has joined #emacs
+2019-07-08 17:00:06	-->	npostavs (~user@cbl-45-2-119-34.yyz.frontiernetworks.ca) has joined #emacs
+2019-07-08 17:00:10	-->	Formbi (~user@user-46-112-71-65.play-internet.pl) has joined #emacs
+2019-07-08 17:00:16	-->	xrash (~xrash@177.45.178.150) has joined #emacs
+2019-07-08 17:00:33	<--	Ariakenom (~Ariakenom@h-158-174-187-253.NA.cust.bahnhof.se) has quit (Quit: Leaving)
+2019-07-08 17:00:39	-->	techquila (~techquila@2407:7000:9125:e400:a453:6053:e9c0:bace) has joined #emacs
+2019-07-08 17:00:49	-->	theoceaniscool (~theoceani@139.47.103.173) has joined #emacs
+2019-07-08 17:01:47	-->	FennecCode (~user@2605:e000:141f:832f:0:ec31:7dd2:2254) has joined #emacs
+2019-07-08 17:05:50	-->	TonCherAmi (~TonCherAm@109.230.155.187) has joined #emacs
+2019-07-08 17:08:14	<--	krux02 (~krux02@p200300E817008B0042B428501E84CD09.dip0.t-ipconnect.de) has quit (Remote host closed the connection)
+2019-07-08 17:10:18	<--	plugd (~plugd@fsf/member/plugd) has quit (Quit: rcirc on GNU Emacs 26.2)
+2019-07-08 17:11:50	-->	bliv (~bliv@unaffiliated/blivande) has joined #emacs
+2019-07-08 17:14:08	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 268 seconds)
+2019-07-08 17:14:27	turbofail	yeah rectangles are pretty sweet.  i haven't had to use them in a while but when i do it's nice to have available
+2019-07-08 17:16:42	<--	seds (~seds@2804:14d:baa0:949b:7cbc:1040:2c1a:127e) has quit (Quit: seds)
+2019-07-08 17:17:27	<--	sameerynho (~lxsameer@unaffiliated/lxsameer) has quit (Ping timeout: 244 seconds)
+2019-07-08 17:18:20	-->	seds (~seds@2804:14d:baa0:949b:7cbc:1040:2c1a:127e) has joined #emacs
+2019-07-08 17:18:47	<--	seds (~seds@2804:14d:baa0:949b:7cbc:1040:2c1a:127e) has quit (Client Quit)
+2019-07-08 17:20:52	<--	nerosnm (~alrakis@138-38-186-247.eduroam.bath.ac.uk) has quit (Ping timeout: 245 seconds)
+2019-07-08 17:20:55	<--	foggyboi (~Adium@12.197.206.193) has left #emacs
+2019-07-09 10:08:24	-->	zws (~blindidio@134.209.53.112) has joined #emacs
+2019-07-09 10:08:24	--	Topic for #emacs is "Path to good init.el: to err, and err, and err again (but less, and less, and less) | Emacs questions take priority over off-topic chatter, so ask! | No public logging! What happens in #emacs stays in #emacs | No racism, sexism, xenophobia, botwanking, or other asshattery, please"
+2019-07-09 10:08:24	--	Topic set by JordiGH (jordi@octave/developer/JordiGH) on Fri, 21 Jun 2019 09:26:41
+2019-07-09 10:08:24	--	Channel #emacs: 683 nicks (1 op, 0 voices, 682 normals)
+2019-07-09 10:08:24	--	Channel created on Sun, 26 Nov 2006 00:42:33
+2019-07-09 10:08:33	<--	dancn (~dancn@outusers14.fbk.eu) has quit (Ping timeout: 268 seconds)
+2019-07-09 10:09:05	<--	jrbalderrama (~jrbalderr@gateway/tor-sasl/jrbalderrama) has quit (Quit: Leaving)
+2019-07-09 10:10:30	<--	sangoma (~zeus@160.119.149.218) has quit (Quit: WeeChat 2.5)
+2019-07-09 10:11:53	<--	subopt (~subopt@199.255.45.4) has quit (Read error: Connection reset by peer)
+2019-07-09 10:11:58	<--	joshuaBPMan (~user@72.12.220.132) has quit (Read error: Connection reset by peer)
+2019-07-09 10:12:15	<--	cosimone (~cosimone@5.171.16.159) has quit (Ping timeout: 268 seconds)
+2019-07-09 10:12:25	<--	mbuf (~Shakthi@106.51.227.97) has quit (Read error: Connection reset by peer)
+2019-07-09 10:13:11	-->	yabo (yabo@nat/suse/x-hnmqxexziewrbyll) has joined #emacs
+2019-07-09 10:13:25	-->	xkapastel (uid17782@gateway/web/irccloud.com/x-qvcqbzpjdlagmnrt) has joined #emacs
+2019-07-09 10:15:20	-->	bliv (~bliv@unaffiliated/blivande) has joined #emacs
+2019-07-09 10:15:41	-->	andrei-n (~andrei-n@173.155-67-87.adsl-dyn.isp.belgacom.be) has joined #emacs
+2019-07-09 10:22:58	-->	davemq (~user@gateway/shell/openbmc/x-fsenznnxghukwwlm) has joined #emacs
+2019-07-09 10:24:17	-->	tinloaf (~tinloaf@2a03:94e0:163c:57e:bc51:5c66:86e7:1) has joined #emacs
+2019-07-09 10:25:22	tinloaf	Is there a way to 'track' a point in elisp? I want to write a function that is given two points. It should first modify contents around the first point, then around the second point. However, the second point of course might be 'out of date' after the first modification, so I would need a way of getting the updated second point.
+2019-07-09 10:26:06	tromey	set a marker
+2019-07-09 10:26:28	tinloaf	Ah, markers track the content they point to, not the point?
+2019-07-09 10:26:29	tromey	(info "(elisp) Markers")
+2019-07-09 10:26:48	tromey	markers are a kind of fixed point, you can determine how they move with edits to some degree
+2019-07-09 10:27:09	<--	igemnace (~igemnace@120.28.165.200) has quit (Read error: Connection reset by peer)
+2019-07-09 10:27:31	tinloaf	Ah, great. Somehow I believed they were just a fancy way to store points.
+2019-07-09 10:27:42	<--	lacrymology (~lacrymolo@25.red-80-28-245.staticip.rima-tde.net) has quit (Ping timeout: 272 seconds)
+2019-07-09 10:28:18	<--	edgar-rft (~God@HSI-KBW-078-042-245-066.hsi3.kabel-badenwuerttemberg.de) has quit (Quit: Leaving)
+2019-07-09 10:28:29	tinloaf	(Though that might be because I confused them with the mark, which is not a marker, right?)
+2019-07-09 10:29:48	-->	igemnace (~igemnace@120.28.165.200) has joined #emacs
+2019-07-09 10:29:52	tromey	mark is marker, but it's just one that happens to be exposed to the user through various commands
+2019-07-09 10:30:28	<--	ifrenzyc (~Thunderbi@119.130.104.69) has quit (Ping timeout: 246 seconds)
+2019-07-09 10:31:57	<--	anotheryou (uid257186@gateway/web/irccloud.com/x-wvmipmylwufihzdu) has quit (Quit: Connection closed for inactivity)
+2019-07-09 10:32:52	<--	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has quit (Quit: quit)
+2019-07-09 10:42:06	-->	lacrymology (~lacrymolo@25.red-80-28-245.staticip.rima-tde.net) has joined #emacs
+2019-07-09 10:46:45	<--	zovt (~user@pool-108-36-109-205.phlapa.fios.verizon.net) has quit (Remote host closed the connection)
+2019-07-09 10:47:24	<--	ferdy (~ferdy@funtoo/contrib/ferdy-) has quit (Quit: Leaving.)
+2019-07-09 10:49:52	<--	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has quit (Ping timeout: 268 seconds)
+2019-07-09 10:49:59	-->	chandan (~sjihs@122.167.158.188) has joined #emacs
+2019-07-09 10:50:04	<--	yrk (~user@pdpc/supporter/student/yrk) has quit (Ping timeout: 252 seconds)
+2019-07-09 10:50:59	-->	yrk (~user@pdpc/supporter/student/yrk) has joined #emacs
+2019-07-09 10:51:54	-->	t58 (~t58@88-106-246-198.dynamic.dsl.as9105.com) has joined #emacs
+2019-07-09 10:53:14	<--	phillord (~phillord@janus-nat-128-240-225-62.ncl.ac.uk) has left #emacs
+2019-07-09 10:53:47	<--	butterthebuddha (~butterthe@2601:400:c100:c70:ddb4:2366:89a9:b02a) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-09 10:55:08	<--	sauyon (~sauyon@2001:41d0:a:1f82::) has left #emacs ("WeeChat 2.5")
+2019-07-09 10:57:52	-->	CosmicWitch (~darkprinc@unaffiliated/darkprincess) has joined #emacs
+2019-07-09 11:01:18	<--	sandeepk (~sandeepk@103.69.88.194) has quit (Remote host closed the connection)
+2019-07-09 11:02:20	<--	masteroman (~user@unaffiliated/masteroman) has quit (Quit: ERC (IRC client for Emacs 25.2.2))
+2019-07-09 11:02:20	-->	BeefEats (~BeefEats@unaffiliated/beefeats) has joined #emacs
+2019-07-09 11:02:50	-->	butterthebuddha (~butterthe@2601:400:c100:c70:ddb4:2366:89a9:b02a) has joined #emacs
+2019-07-09 11:02:51	<--	duckonomy (~duckonomy@102.ip-192-99-212.net) has quit (Quit: ZNC 1.6.6+deb1ubuntu0.1 - http://znc.in)
+2019-07-09 11:06:29	-->	sab110 (~sbaig14@pool-108-35-56-42.nwrknj.fios.verizon.net) has joined #emacs
+2019-07-09 11:11:02	<--	unknownm_ (~unknownmo@64.157.240.77) has quit (Remote host closed the connection)
+2019-07-09 11:13:48	<--	matsl (~matsl@gentoo/developer/matsl) has quit (Ping timeout: 245 seconds)
+2019-07-09 11:14:55	-->	unknownmosquito (~unknownmo@64.157.240.76) has joined #emacs
+2019-07-09 11:15:03	-->	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has joined #emacs
+2019-07-09 11:19:54	knobo1	I'm making company compleation for sass files, and I wonder if I can format the annotations with text-properties.
+2019-07-09 11:20:35	knobo1	So that when one of the candidates is a color, I can show the annotation with that color.
+2019-07-09 11:20:48	knobo1	Like rainbow-mode does.
+2019-07-09 11:21:02	knobo1	Maybe I have to make a frontend?
+2019-07-09 11:23:10	<--	efm (~efm@vpn.tummy.com) has quit (Ping timeout: 268 seconds)
+2019-07-09 11:23:28	--	beaky_ is now known as beaky
+2019-07-09 11:24:21	-->	zovt (~user@pool-108-36-109-205.phlapa.fios.verizon.net) has joined #emacs
+2019-07-09 11:27:20	-->	n0x90 (~n0x90@gateway/tor-sasl/n0x90) has joined #emacs
+2019-07-09 11:27:23	-->	wildtrees (~wildtrees@unaffiliated/wildtrees) has joined #emacs
+2019-07-09 11:28:33	<--	wildtrees (~wildtrees@unaffiliated/wildtrees) has quit (Max SendQ exceeded)
+2019-07-09 11:31:07	<--	iamdecim (~user@99-38-191-33.lightspeed.clmasc.sbcglobal.net) has quit (Read error: Connection reset by peer)
+2019-07-09 11:32:01	<--	diogenese (~diogenese@12.172.164.68) has quit (Quit: Has anybody seen the bridge?)
+2019-07-09 11:32:34	-->	diogenese (~diogenese@12.172.164.68) has joined #emacs
+2019-07-09 11:33:57	-->	nanoz (~nanoz@unaffiliated/nanoz) has joined #emacs
+2019-07-09 11:36:34	<--	nanoz (~nanoz@unaffiliated/nanoz) has quit (Read error: Connection reset by peer)
+2019-07-09 11:44:42	-->	foggyboi (~Adium@12.197.206.193) has joined #emacs
+2019-07-09 11:46:26	-->	efm (~efm@vpn.tummy.com) has joined #emacs
+2019-07-09 11:50:40	<--	MuffinPimp (mokou@box.mokou.io) has quit (Quit: Goodbye.)
+2019-07-09 11:51:18	<--	ksft (~ksft@wikipedia/KSFT) has quit (Ping timeout: 272 seconds)
+2019-07-09 11:52:20	<--	butterthebuddha (~butterthe@2601:400:c100:c70:ddb4:2366:89a9:b02a) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-09 11:53:19	<--	pyfgcr (~pyfgcr@nat-wlan-uzh-89-206-64-003.uzh.ch) has quit (Remote host closed the connection)
+2019-07-09 11:54:46	-->	butterthebuddha (~butterthe@2601:400:c100:c70:ddb4:2366:89a9:b02a) has joined #emacs
+2019-07-09 11:57:35	-->	rumbler31 (a8ebb572@168.235.181.114) has joined #emacs
+2019-07-09 11:57:36	-->	ksft (~ksft@wikipedia/KSFT) has joined #emacs
+2019-07-09 11:58:09	<--	myrkraverk (~chatzilla@unaffiliated/myrkraverk) has quit (Ping timeout: 248 seconds)
+2019-07-09 11:58:17	rumbler31	greetings.  I am trying to build emacs from source such that I can distribute it to colleagues.  after I configure an out of tree build, users who attempt to use the binaries built there encounter errors
+2019-07-09 11:59:14	rumbler31	there are warnings about paths specific to my machine, but there is an error about an install path that is being searched for files that isn't even populated on my own machine
+2019-07-09 11:59:38	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-09 12:00:38	<--	butterthebuddha (~butterthe@2601:400:c100:c70:ddb4:2366:89a9:b02a) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-09 12:01:15	-->	myrkraverk (~chatzilla@unaffiliated/myrkraverk) has joined #emacs
+2019-07-09 12:03:36	tromey	did you "make install"
+2019-07-09 12:05:00	-->	nanoz (~nanoz@unaffiliated/nanoz) has joined #emacs
+2019-07-09 12:05:01	Howitzer105mm	rumbler31: What is the motive for building from source?
+2019-07-09 12:05:51	<--	chongliang (~chonglian@59.42.21.235) has quit (Ping timeout: 244 seconds)
+2019-07-09 12:10:01	-->	bsd4me (~mike@216-67-48-47-radius.dynamic.acsalaska.net) has joined #emacs
+2019-07-09 12:13:52	wasamasa	rumbler31: what OS are you using?
+2019-07-09 12:14:12	<--	efm (~efm@vpn.tummy.com) has quit (Quit: Konversation terminated!)
+2019-07-09 12:17:08	<--	efriend (~keese@unaffiliated/efriend) has quit (Ping timeout: 245 seconds)
+2019-07-09 12:17:57	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 245 seconds)
+2019-07-09 12:20:59	-->	dys (~dys@tmo-115-182.customers.d1-online.com) has joined #emacs
+2019-07-09 12:22:24	-->	asheshambasta_m (~asheshamb@d8d87d1b0.access.telenet.be) has joined #emacs
+2019-07-09 12:22:56	-->	matsl (~matsl@gentoo/developer/matsl) has joined #emacs
+2019-07-09 12:23:11	<--	xkapastel (uid17782@gateway/web/irccloud.com/x-qvcqbzpjdlagmnrt) has quit (Quit: Connection closed for inactivity)
+2019-07-09 12:23:31	-->	bzp (~usuario@181.188.179.185) has joined #emacs
+2019-07-09 12:24:02	-->	thamoo (~thamoo@modemcable107.108-131-66.mc.videotron.ca) has joined #emacs
+2019-07-09 12:25:39	pjb	rumbler31: emacs is installed not only with its executable, but also with shared libraries (that must be compiled for each system), and "resource" files, such as emacs lisp sources and compiled files, and other data files.
+2019-07-09 12:26:07	pjb	rumbler31: so you need to make a tarball, and install it on the target system, but you need also to deal with the shared libraries dependencies.
+2019-07-09 12:26:35	rumbler31	er...
+2019-07-09 12:26:49	rumbler31	how to the maintainers then build emacs for distribution?
+2019-07-09 12:27:17	pjb	They build it for a specific system.
+2019-07-09 12:27:23	pjb	Distributions.
+2019-07-09 12:27:45	pjb	It's better to take the source, and compile and install from the sources.
+2019-07-09 12:28:07	pjb	I use something like:    VERSION=26.1 ; wget ftp://ftp.gnu.org/gnu/emacs/emacs-${VERSION}.tar.gz ; tar zxf emacs-${VERSION}.tar.gz ; cd emacs-${VERSION} ; ./configure && make && make install
+2019-07-09 12:28:25	<--	yabo (yabo@nat/suse/x-hnmqxexziewrbyll) has quit (Ping timeout: 246 seconds)
+2019-07-09 12:28:52	wasamasa	it depends on the OS, lol
+2019-07-09 12:29:28	rumbler31	and have everyone do that, instead of upload my own build?  I am expecting that my coworkers have a homogenous development environment and while this is really just a curiosity I am interested in understanding it correctly
+2019-07-09 12:29:32	<--	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-09 12:29:41	pjb	There is a single macOS, and there is a single Windows.  But there are hundreds of diferent linux distributions, with different libraries and library versions.
+2019-07-09 12:29:58	wasamasa	look, we can do this the hard way or the easy way
+2019-07-09 12:30:41	pjb	Furthermore, Apple and Microsoft take great care to ensure that there's compatibility between different versions of applications and systems (even if they restrict greatly the possiblilities here. You often get unexecutable applications, after system upgrades).
+2019-07-09 12:30:42	rumbler31	in this case its ubuntu 16.04 lts all around
+2019-07-09 12:30:51	wasamasa	ok, so a debian derivative
+2019-07-09 12:31:10	wasamasa	you'd then create a .deb package based on the official one and adjust whatever you're doing differently
+2019-07-09 12:31:20	rumbler31	I get that the variety of linux distributions are different and I have my expectations greatly curbed
+2019-07-09 12:31:25	pjb	(incf wasamasa)
+2019-07-09 12:31:47	wasamasa	then your colleagues would either install the .deb directly or use a package repository containing it
+2019-07-09 12:32:17	wasamasa	do this to gain some respect for maintainers packaging all the software you're using
+2019-07-09 12:32:26	<--	thamoo (~thamoo@modemcable107.108-131-66.mc.videotron.ca) has quit (Quit: WeeChat 2.4)
+2019-07-09 12:32:28	<--	lacrymology (~lacrymolo@25.red-80-28-245.staticip.rima-tde.net) has quit (Ping timeout: 272 seconds)
+2019-07-09 12:32:34	average	emacs is not that bad
+2019-07-09 12:32:40	-->	Ariakenom (~Ariakenom@h-158-174-187-253.NA.cust.bahnhof.se) has joined #emacs
+2019-07-09 12:32:46	-->	thamoo (~thamoo@modemcable107.108-131-66.mc.videotron.ca) has joined #emacs
+2019-07-09 12:32:57	average	elisp might soon be a skill that employers will be looking for in candidates
+2019-07-09 12:33:04	technomancy	lol
+2019-07-09 12:33:13	average	technomancy: no joke, I'm serious
+2019-07-09 12:33:22	wasamasa	talking shit is not a skill employers are looking for in candidates
+2019-07-09 12:33:47	average	uhm
+2019-07-09 12:34:04	average	elisp could be used to automate an entire infrastructure
+2019-07-09 12:34:25	-->	EternalZenith (~user@user-24-214-54-93.knology.net) has joined #emacs
+2019-07-09 12:34:33	average	just run emacs in batch mode or.. just have it run an .el file or whatever
+2019-07-09 12:34:36	pjb	Is a text editing library essential to automate an entire infrastructures?
+2019-07-09 12:34:37	average	it's like.. that simple
+2019-07-09 12:34:49	pjb	I would use Common Lisp for that. Or you could consider scheme.
+2019-07-09 12:34:53	<--	wingsorc (~wingsorc@unaffiliated/wingsorc) has quit (Quit: Leaving)
+2019-07-09 12:34:59	average	pjb: but why bother with those
+2019-07-09 12:35:08	average	when we have elisp..
+2019-07-09 12:35:20	pjb	Because CL implementations are more natural to write normal programs and scripts such as infrastructure automating.
+2019-07-09 12:35:31	average	pjb: yes but.. do we really want that..
+2019-07-09 12:35:34	<--	chandan (~sjihs@122.167.158.188) has quit (Ping timeout: 258 seconds)
+2019-07-09 12:35:52	average	+ writing important stuff in elisp gives us more leverage
+2019-07-09 12:36:13	average	and ownership
+2019-07-09 12:36:21	-->	FennecCode (~user@2605:e000:141f:832f:0:ec31:7dd2:2254) has joined #emacs
+2019-07-09 12:36:24	average	and we know that in a corporate setting, everything is about leverage and ownership
+2019-07-09 12:36:50	pjb	average: for example, siscog uses CL to automatize transport infrastructure manpower management: https://www.siscog.pt/en/
+2019-07-09 12:37:00	rwp	Frankly that is the niche that Perl carved out years ago.  And is now mostly occupied by Python.  Not Elisp.
+2019-07-09 12:37:11	wasamasa	pjb: well, that's nice
+2019-07-09 12:37:15	average	rwp: exactly, and that's an oportunity
+2019-07-09 12:37:22	average	rwp: because not that many people know elisp
+2019-07-09 12:37:41	average	rwp: so it's obscure enough that it can be used to create ownership
+2019-07-09 12:37:58	rwp	And also a hindrance.
+2019-07-09 12:38:23	average	rwp: well, yes but.. the goal is more important than the means
+2019-07-09 12:38:28	rwp	Frankly that type of strategy is what is keeping COBOL programmers employed right now.
+2019-07-09 12:38:31	average	rwp: everything has a cost..
+2019-07-09 12:38:35	pjb	average: but I've done that, in elisp.  And really, using CL would have been better, despite that in my case, there was a part where emails were composed, so emacs came handy.
+2019-07-09 12:39:03	average	rwp: yes, and it's working great
+2019-07-09 12:39:15	<--	EternalZenith (~user@user-24-214-54-93.knology.net) has quit (Remote host closed the connection)
+2019-07-09 12:39:21	average	rwp: even in 2019, COBOL programmers are in demand
+2019-07-09 12:39:33	-->	EternalZenith (~user@user-24-214-54-93.knology.net) has joined #emacs
+2019-07-09 12:39:37	pjb	Niches are good.
+2019-07-09 12:40:23	average	and the majority of the mainstream hipsters will be like "wtf is elisp, forget it, I'll pass"
+2019-07-09 12:40:33	average	and that's actually a good thing
+2019-07-09 12:40:40	e1f	nachos are better than niches
+2019-07-09 12:41:41	average	pjb: niches are not only good, but they pay well too
+2019-07-09 12:41:44	-->	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 12:41:57	parsnip	mainstream hipsters
+2019-07-09 12:42:11	fledermaus	mainstr… yeah.
+2019-07-09 12:42:14	average	in fact, currently, there's an exaggeration and an abuse happening: people are trying to generate a ton of niches
+2019-07-09 12:42:23	parsnip	i consider myself an avant garde hipster
+2019-07-09 12:42:43	average	if you look at the tech landscape, there's tons of tools for every purpose, and that trend is continuing
+2019-07-09 12:43:03	parsnip	my apartment has many niches
+2019-07-09 12:43:06	average	supposedly, this wide variety will eventually make everything so fragmented, that every single niche will be worth quite a lot
+2019-07-09 12:43:12	bremner	I was mainstream before it was mainstream.
+2019-07-09 12:47:05	<--	leah2 (~leah@vuxu.org) has quit (Ping timeout: 258 seconds)
+2019-07-09 12:48:11	parsnip	Liked, ❝10:33 <wasamasa> talking shit is not a skill employers are looking for in candidates❞
+2019-07-09 12:49:31	-->	edgar-rft (~God@HSI-KBW-078-042-245-066.hsi3.kabel-badenwuerttemberg.de) has joined #emacs
+2019-07-09 12:49:34	<--	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has quit (Ping timeout: 272 seconds)
+2019-07-09 12:51:33	unknownmosquito	PSH
+2019-07-09 12:51:42	unknownmosquito	if that's true, how did I get a job as Professional Shit Talker
+2019-07-09 12:52:08	parsnip	congratulations! 🎉
+2019-07-09 12:52:37	-->	knoebber (~knoebber@icsexchange.ics-llc.net) has joined #emacs
+2019-07-09 12:53:35	-->	dancn (~dancn@151.38.243.64) has joined #emacs
+2019-07-09 12:54:28	bremner	I assume a shit talker follows a horse whisperer around
+2019-07-09 12:55:00	<--	zovt (~user@pool-108-36-109-205.phlapa.fios.verizon.net) has quit (Remote host closed the connection)
+2019-07-09 12:55:00	e1f	speaking of farm animals, til a pizzle is a bull's penis which is used as a whip (not to be confused with a bullwhip)
+2019-07-09 12:56:25	<--	lxsameer (~lxsameer@unaffiliated/lxsameer) has quit (Ping timeout: 246 seconds)
+2019-07-09 12:56:49	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 248 seconds)
+2019-07-09 12:56:52	hodapp	you didn't know that?
+2019-07-09 12:59:13	<--	bzp (~usuario@181.188.179.185) has quit (Quit: Lost terminal)
+2019-07-09 13:00:52	ski	rudybot: seen Fare
+2019-07-09 13:00:52	rudybot	ski: Fare was seen joining in #racket three weeks ago, and then Fare was seen quitting three weeks ago, saying "Quit: Leaving"
+2019-07-09 13:02:10	-->	leah2 (~leah@vuxu.org) has joined #emacs
+2019-07-09 13:03:34	-->	knoebber (~knoebber@icsexchange.ics-llc.net) has joined #emacs
+2019-07-09 13:04:36	-->	zovt (~user@pool-108-36-109-205.phlapa.fios.verizon.net) has joined #emacs
+2019-07-09 13:05:07	<--	bigfondue (~bigfondue@2601:44:8700:8ce2::5618) has quit (Ping timeout: 276 seconds)
+2019-07-09 13:06:41	-->	miskatonic (~user@2a02:810d:9c80:2823:200:ff:fe00:1f) has joined #emacs
+2019-07-09 13:07:45	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-09 13:07:54	-->	subopt (~subopt@199.255.45.4) has joined #emacs
+2019-07-09 13:08:23	parsnip	do people here use taskwarrior?
+2019-07-09 13:08:29	parsnip	especially for phone?
+2019-07-09 13:08:39	parsnip	considering porting it to flutter
+2019-07-09 13:09:08	-->	theophilusx (~user@ppp118-211-215-23.bras1.syd2.internode.on.net) has joined #emacs
+2019-07-09 13:10:12	-->	Dynamicmetaflow (~Dynamicme@c-98-217-182-48.hsd1.ma.comcast.net) has joined #emacs
+2019-07-09 13:10:36	-->	twrk (~user@unaffiliated/twrk) has joined #emacs
+2019-07-09 13:10:41	<--	garjola (~user@148.110.141.77.rev.sfr.net) has quit (Ping timeout: 248 seconds)
+2019-07-09 13:11:06	-->	ynamicmetaflowD (~Dynamicme@c-98-217-182-48.hsd1.ma.comcast.net) has joined #emacs
+2019-07-09 13:11:23	-->	chongliang (~chonglian@59.42.21.235) has joined #emacs
+2019-07-09 13:14:10	<--	Ariakenom (~Ariakenom@h-158-174-187-253.NA.cust.bahnhof.se) has quit (Quit: Leaving)
+2019-07-09 13:14:13	<--	neuromorphic (~user@2a00:23c7:6e00:d800:95c3:69db:9d08:8c6f) has quit (Ping timeout: 276 seconds)
+2019-07-09 13:14:14	parsnip	man, i really need to automatically detect if an email is more long lines or filled lines
+2019-07-09 13:14:37	parsnip	even though i have bindings for toggles for visual-line-mode and auto-fill-mode.
+2019-07-09 13:16:52	-->	cosimone (~cosimone@2001:b07:ae5:db26:73a:8101:bd0:2ff9) has joined #emacs
+2019-07-09 13:18:28	-->	bigfondue (~bigfondue@2601:44:8700:8ce2::8603) has joined #emacs
+2019-07-09 13:23:29	<--	dancn (~dancn@151.38.243.64) has quit (Ping timeout: 248 seconds)
+2019-07-09 13:23:56	--	jackhill_ is now known as jackhill
+2019-07-09 13:24:23	<--	sab110 (~sbaig14@pool-108-35-56-42.nwrknj.fios.verizon.net) has quit (Ping timeout: 244 seconds)
+2019-07-09 13:26:43	-->	gopar (~gopar@c-73-170-87-34.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 13:27:09	<--	subopt (~subopt@199.255.45.4) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-09 13:27:44	<--	femi (~femi@c-24-23-163-48.hsd1.ca.comcast.net) has quit (Ping timeout: 268 seconds)
+2019-07-09 13:28:36	<--	Dynamicmetaflow (~Dynamicme@c-98-217-182-48.hsd1.ma.comcast.net) has quit (Remote host closed the connection)
+2019-07-09 13:28:36	<--	ynamicmetaflowD (~Dynamicme@c-98-217-182-48.hsd1.ma.comcast.net) has quit (Remote host closed the connection)
+2019-07-09 13:32:26	dxtr	Hi! Is anyone here good with org mode spreadsheeting? I'd like to vsum all values in the current row and put the result in column $1. Is there a short formula for that?
+2019-07-09 13:32:39	<--	rumbler31 (a8ebb572@168.235.181.114) has quit (Quit: Ping timeout (120 seconds))
+2019-07-09 13:32:41	-->	subopt (~subopt@199.255.45.4) has joined #emacs
+2019-07-09 13:32:50	<--	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-09 13:33:30	parsnip	i find org table formulas a pain in the ass to "lookup"
+2019-07-09 13:34:00	dxtr	I guess I could do vsum(@<row>$2..@<row>$X) but that seems like a maintenance burden (I.e. if I add more columns I have to remember to modify the formula)
+2019-07-09 13:34:28	-->	michaelrose (~michaelro@2601:600:c700:54d8:3602:86ff:fe4d:5738) has joined #emacs
+2019-07-09 13:34:34	parsnip	there are things like ">>" or "I..II", i forget the syntax
+2019-07-09 13:35:04	bremner	dxtr: you can leave out <row> fwiw
+2019-07-09 13:35:04	dxtr	Yeah I'm already doing @>$2..@>$13=vsum(@I..@II) to get the values in the columns
+2019-07-09 13:35:07	<--	nullcone (uid11626@gateway/web/irccloud.com/x-ctqqdtqcgdoesdmo) has quit (Quit: Connection closed for inactivity)
+2019-07-09 13:35:18	-->	gagbo (~gagbo@unaffiliated/gagbo) has joined #emacs
+2019-07-09 13:35:59	dxtr	bremner: Oh that's right
+2019-07-09 13:36:08	parsnip	i wonder if something like @>$2..@> would work
+2019-07-09 13:36:14	parsnip	er, @>$2..
+2019-07-09 13:36:30	parsnip	surely there's a way to skip the first row
+2019-07-09 13:36:38	parsnip	oh, that's column
+2019-07-09 13:36:51	parsnip	w/e, im horrible at org table formulas
+2019-07-09 13:36:51	dxtr	Yes
+2019-07-09 13:36:55	dxtr	@> = last row
+2019-07-09 13:37:00	-->	Dynamicmetaflow (~Dynamicme@c-98-217-182-48.hsd1.ma.comcast.net) has joined #emacs
+2019-07-09 13:37:25	parsnip	yes, almost everywhere first index means row. even in linear algebra
+2019-07-09 13:38:01	dxtr	Honestly in this particular instance manually specifying the column numbers won't hurt me unless we add more months to the year
+2019-07-09 13:38:15	dxtr	But I figured it wouldn't hurt to ask - I might learn something
+2019-07-09 13:38:33	<--	erickgnavar (erick@2600:3c01::f03c:91ff:fe35:e170) has quit (Quit: ZNC 1.6.3+deb1ubuntu0.1 - http://znc.in)
+2019-07-09 13:39:30	theophilusx	Using erc and returning to IRC after some years. How can I tell if my registered nick has been expired or not?
+2019-07-09 13:39:31	-->	erickgnavar (~erick@li281-203.members.linode.com) has joined #emacs
+2019-07-09 13:40:14	pjb	parsnip: until there is a standard function to print out 2D or higher D arrays, rows and columns are purely conventionnal.
+2019-07-09 13:40:24	-->	femi (~femi@c-24-23-163-48.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 13:40:36	pjb	parsnip: what you want to know is what index increments the addresses faster.
+2019-07-09 13:41:33	parsnip	ah right, and for arrays of arrays, i guess they print that way, and the rows are the outer iterator
+2019-07-09 13:42:40	<--	t58 (~t58@88-106-246-198.dynamic.dsl.as9105.com) has quit (Ping timeout: 258 seconds)
+2019-07-09 13:42:42	pjb	In case of CL, it's the last one.  (let* ((a (make-array '(3 3) :initial-contents '((a b c) (d e f) (g h i)))) (v (make-array 9 :displaced-to a))) (print v) (setf (aref a 0 1) nil) (print v) (setf (aref a 0 2) nil) (print v)) #| prints:
+2019-07-09 13:42:42	pjb	#(a b c d e f g h i)
+2019-07-09 13:42:42	pjb	#(a nil c d e f g h i)
+2019-07-09 13:42:42	pjb	#(a nil nil d e f g h i)  |#
+2019-07-09 13:43:04	pjb	In case of emacs lisp, there are no multidimensional arrays, so it's up to you.
+2019-07-09 13:44:06	pjb	Note that CL has a printer and reader for multidimensional arrays, so we know that it is what is called row-major (there's even a array-row-major-index function).
+2019-07-09 13:44:30	pjb	And the order is specified, so the mapping with displaced arrays is conforming.
+2019-07-09 13:45:26	pjb	But clearly, in maths, we usually index the columns first. So we can easily extract them as ("vertical") vectors.
+2019-07-09 13:45:36	-->	t58 (~t58@88-106-246-198.dynamic.dsl.as9105.com) has joined #emacs
+2019-07-09 13:46:12	-->	natrys (~natrys@116.206.252.68) has joined #emacs
+2019-07-09 13:46:33	pjb	So in a way, CL stores the transpose of maths matrices :-)
+2019-07-09 13:47:00	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-09 13:48:12	kenrestivo	pizzle sounds like something snoop dogg would say
+2019-07-09 13:48:56	-->	Ariakenom (~Ariakenom@h-158-174-187-253.NA.cust.bahnhof.se) has joined #emacs
+2019-07-09 13:51:19	<--	asheshambasta_m (~asheshamb@d8d87d1b0.access.telenet.be) has quit (Quit: Leaving.)
+2019-07-09 13:52:04	<--	xrash (~xrash@177.45.178.150) has quit (Ping timeout: 246 seconds)
+2019-07-09 13:52:53	theophilusx	When using erc-autojoin-channels-alist, I get errors stating you need to be registered to join the channels. However, I can join the channels using /join. Could this be a timing issue i.e. my nick login not finished before erc attempts to autojoin?
+2019-07-09 13:54:19	parsnip	are hints like "yyyy-mm-dd" considered localized?
+2019-07-09 13:54:43	parsnip	i meant the characters, not the layout
+2019-07-09 13:54:58	pjb	theophilusx: indeed. It takes time to register.
+2019-07-09 13:55:18	pjb	parsnip: definitely not.
+2019-07-09 13:55:28	pjb	parsnip: in French, it would be AAAA-MM-JJ
+2019-07-09 13:56:01	kenrestivo	pretty sure the ISO standard date uses the english letters
+2019-07-09 13:56:41	theophilusx	pjb: OK, thanks.
+2019-07-09 13:56:48	parsnip	yeah, in my case i'm referring to iso.
+2019-07-09 13:56:57	pjb	kenrestivo: ISO standard are not presented to users.  They don't need localisation. (But notice that most ISO standard are translated in several languages, including French, Chinese and Arabic).
+2019-07-09 13:57:37	pjb	parsnip: does the protocol involves sending "hints" and "localized" "hints" what's more?
+2019-07-09 13:57:42	<--	cosimone (~cosimone@2001:b07:ae5:db26:73a:8101:bd0:2ff9) has quit (Quit: WeeChat 2.4)
+2019-07-09 13:58:04	parsnip	my app has hints and locale, yes
+2019-07-09 13:58:19	parsnip	so far just spanish and portuguese
+2019-07-09 13:58:49	parsnip	oh nice, google translate actually handles that
+2019-07-09 13:58:50	pjb	parsnip: ISO standard are not presented to users.  They don't need localisation. (But notice that most ISO standard are translated in several languages, including French, Chinese and Arabic).
+2019-07-09 13:58:52	-->	rumbler31 (a8ebb572@168.235.181.114) has joined #emacs
+2019-07-09 13:58:57	parsnip	es ==> aaaa-mm-dd
+2019-07-09 13:59:07	parsnip	rudybot: t8 en pt yyyy-mm-dd
+2019-07-09 13:59:08	rudybot	parsnip: aaaa-mm-dd
+2019-07-09 13:59:17	parsnip	😁
+2019-07-09 13:59:28	<--	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has quit (Quit: quit)
+2019-07-09 13:59:44	pjb	parsnip: the key word here is "USERS".  When you talk about "hints" and "localization", you're talking about USERS!
+2019-07-09 13:59:46	<--	random-nick (~random-ni@unaffiliated/random-nick) has quit (Ping timeout: 246 seconds)
+2019-07-09 13:59:55	parsnip	yes?
+2019-07-09 14:00:10	pjb	Then ISO standards are irrelevant.
+2019-07-09 14:00:25	parsnip	huh? the user has to enter the date as ISO currently
+2019-07-09 14:00:31	pjb	Unless there is an ISO standard to define hints and format description in the various languages.
+2019-07-09 14:00:40	pjb	parsnip: it is irrelevant.
+2019-07-09 14:00:49	parsnip	something subtle is happening
+2019-07-09 14:00:56	pjb	If you give the user a hint of AA-M-D-M-D-AA he shall enter the date under this format!
+2019-07-09 14:01:03	pjb	It's up to your program to convert this format into ISO format.
+2019-07-09 14:01:15	-->	_thelion_ (~matthias@192-164-8-92.hdsl.highway.telekom.at) has joined #emacs
+2019-07-09 14:01:51	parsnip	i think i'm missing the point somehow
+2019-07-09 14:02:05	parsnip	did i say something wrong?
+2019-07-09 14:02:12	pjb	and telling the user to enter it as AAAA-MM-JJ doesn't exempt your program to check and validate this format, before forwarding to your ISO-expecting module.
+2019-07-09 14:02:21	parsnip	sure
+2019-07-09 14:02:44	-->	sameerynho (~lxsameer@unaffiliated/lxsameer) has joined #emacs
+2019-07-09 14:03:47	<--	dys (~dys@tmo-115-182.customers.d1-online.com) has quit (Ping timeout: 245 seconds)
+2019-07-09 14:03:47	<--	ksft (~ksft@wikipedia/KSFT) has quit (Ping timeout: 245 seconds)
+2019-07-09 14:04:00	<--	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-09 14:04:05	pjb	Now, as a programmer, I would prefer to enter the date using the ISO format, but most users won't like that. They will want their usual format.  fr: JJ/MM/AAAA  es: DD.MM.AAAA  en: AAAA/DD/MM  etc.  So be prepared to deal with that… (I mean, ISO is irrelevant to user input, users are crazy).
+2019-07-09 14:04:40	parsnip	there's a calendar picker anyways, they should rarely want to type it
+2019-07-09 14:04:59	<--	gumol (~gumol@ip47-32-173-82.adsl2.static.versatel.nl) has quit (Remote host closed the connection)
+2019-07-09 14:05:09	parsnip	maybe if they're using the desktop version, or have a keyboard attached, they may want to edit the date manuall
+2019-07-09 14:05:10	pjb	Yes, for example, they prefer to use calendar pickers instead of typing dates…
+2019-07-09 14:05:15	pjb	See how crazy they are?
+2019-07-09 14:05:18	parsnip	today's date is autofilled
+2019-07-09 14:05:33	parsnip	crazy users
+2019-07-09 14:05:38	parsnip	i should ban them all
+2019-07-09 14:05:45	parsnip	no soup for you!
+2019-07-09 14:05:57	parsnip	excellent error message, imo
+2019-07-09 14:06:10	parsnip	haptic feedback
+2019-07-09 14:06:17	parsnip	spastic feedback
+2019-07-09 14:06:56	-->	gumol (~gumol@ip47-32-173-82.adsl2.static.versatel.nl) has joined #emacs
+2019-07-09 14:07:57	MoziM	I don't suppose there's a quick and easy way of finding and invalid face reference is there?
+2019-07-09 14:07:57	<--	femi (~femi@c-24-23-163-48.hsd1.ca.comcast.net) has quit (Ping timeout: 258 seconds)
+2019-07-09 14:07:58	-->	dys (~dys@tmo-106-212.customers.d1-online.com) has joined #emacs
+2019-07-09 14:10:18	<--	iderik (~weechat@h-162-65.A147.priv.bahnhof.se) has quit (Quit: iderik)
+2019-07-09 14:12:18	-->	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 14:13:50	-->	neeasade (~neeasade@68.205.11.152) has joined #emacs
+2019-07-09 14:13:52	-->	cvandusen (~user@rrcs-71-78-141-162.sw.biz.rr.com) has joined #emacs
+2019-07-09 14:14:48	-->	femi (~femi@c-24-23-163-48.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 14:16:10	cvandusen	For counsel-M-x, when starting to type, is there a way to keep the sorting by most recent commands?
+2019-07-09 14:18:14	<--	matsl (~matsl@gentoo/developer/matsl) has quit (Ping timeout: 272 seconds)
+2019-07-09 14:19:13	<--	fledermaus (~vivek@2a00:5f00:102:0:a579:25f1:4860:fdf7) has quit (Ping timeout: 276 seconds)
+2019-07-09 14:24:22	<--	foggyboi (~Adium@12.197.206.193) has quit (Quit: Leaving.)
+2019-07-09 14:24:38	miskatonic	CL isn't suited for numerical linear algebra, anyways (elisp isn't either)
+2019-07-09 14:25:43	-->	ksft (~ksft@wikipedia/KSFT) has joined #emacs
+2019-07-09 14:26:26	-->	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has joined #emacs
+2019-07-09 14:29:26	-->	bodiccea_ (~bodiccea@home.raoult.com) has joined #emacs
+2019-07-09 14:29:39	<--	nanoz (~nanoz@unaffiliated/nanoz) has quit (Quit: Leaving)
+2019-07-09 14:30:16	<--	bodiccea (~bodiccea@home.raoult.com) has quit (Ping timeout: 272 seconds)
+2019-07-09 14:30:30	MoziM	care to explain why?
+2019-07-09 14:30:34	<--	stevoooo (~user@cpc128044-papw8-2-0-cust220.know.cable.virginm.net) has quit (Ping timeout: 246 seconds)
+2019-07-09 14:31:14	<--	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has quit (Quit: elzi)
+2019-07-09 14:31:18	<--	n0x90 (~n0x90@gateway/tor-sasl/n0x90) has quit (Quit: leaving)
+2019-07-09 14:31:31	-->	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 14:31:52	<--	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has quit (Client Quit)
+2019-07-09 14:32:10	-->	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 14:33:34	<--	twrk (~user@unaffiliated/twrk) has quit (Remote host closed the connection)
+2019-07-09 14:36:33	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-09 14:36:55	kenrestivo	performance, IIUC
+2019-07-09 14:37:13	kenrestivo	craptic feedback
+2019-07-09 14:39:30	kenrestivo	yeah, if the problem you're trying to solve is how to enter dates in a localized way, i've seen a lot of people punt on that and put a calendar picker
+2019-07-09 14:40:25	kenrestivo	and then that poots out a epoch timestamp and you use whatever library you've got to hopefully save it in your db as utc
+2019-07-09 14:40:44	kenrestivo	because once you get into timezones your life is hell and may god have mercy on your soul
+2019-07-09 14:41:01	gopar	What's that package that lets you run 2 or more major modes at the same time?
+2019-07-09 14:41:13	e1f	,mmm
+2019-07-09 14:41:13	fsbot	e1f: [->] MultipleModes are [0] a way to edit a buffer in Multiple Major Modes at once, e.g. js and css embedded in HTML <http://emacswiki.org/wiki/MultipleModes>; cf. new alternative <mumamo>
+2019-07-09 14:41:13	fsbot	[1] we strongly recommend simply using separate files
+2019-07-09 14:41:13	fsbot	[2] see web-mode http://web-mode.org/
+2019-07-09 14:41:13	fsbot	[3] see polymode
+2019-07-09 14:41:31	 *	gopar bows down to elf
+2019-07-09 14:42:37	<--	andrei-n (~andrei-n@173.155-67-87.adsl-dyn.isp.belgacom.be) has quit (Read error: Connection reset by peer)
+2019-07-09 14:42:49	MoziM	gopar: using more than 1 major mode sounds like a bombshell of side effects waiting to go off
+2019-07-09 14:43:19	kenrestivo	i used to use it when i had to deal with php
+2019-07-09 14:43:20	gopar	MoziM: yeah agree, just want to see how they're doing it in the source code
+2019-07-09 14:43:33	kenrestivo	which is like, php + js + html in one file
+2019-07-09 14:43:52	<--	drymer (~drymer@unaffiliated/drymer) has quit (Read error: Connection reset by peer)
+2019-07-09 14:43:56	kenrestivo	the solution was to stop using php :)
+2019-07-09 14:44:22	-->	andrei-n (~andrei-n@173.155-67-87.adsl-dyn.isp.belgacom.be) has joined #emacs
+2019-07-09 14:45:16	-->	drymer (~drymer@unaffiliated/drymer) has joined #emacs
+2019-07-09 14:45:21	-->	bachibuzuk (~user@176.187.70.135) has joined #emacs
+2019-07-09 14:46:22	tromey	it wasn't too hard to do this for mhtml-mode
+2019-07-09 14:46:42	tromey	the main problem is the "sub-modes" aren't always prepared for it
+2019-07-09 14:46:48	tromey	so the multi-mode needs some hackery
+2019-07-09 14:46:59	tromey	this could be fixed by someone willing to pursue it
+2019-07-09 14:47:17	<--	subopt (~subopt@199.255.45.4) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-09 14:49:07	MoziM	instead of loading mhtml-mode first, load it after the other major-mode/s you're trying to use
+2019-07-09 14:49:28	<--	CheapSeth (~CheapSeth@ns384893.ip-46-105-125.eu) has quit (*.net *.split)
+2019-07-09 14:50:01	-->	CheapSeth (~CheapSeth@ns384893.ip-46-105-125.eu) has joined #emacs
+2019-07-09 14:50:01	-->	subopt (~subopt@199.255.45.4) has joined #emacs
+2019-07-09 14:50:10	-->	theoceaniscool (~theoceani@139.47.103.173) has joined #emacs
+2019-07-09 14:51:43	tromey	that's not the issue
+2019-07-09 14:52:01	<--	lugh (~lugh@chame.co) has quit (Ping timeout: 248 seconds)
+2019-07-09 14:54:55	-->	lugh (~lugh@chame.co) has joined #emacs
+2019-07-09 14:55:58	MoziM	you're going to have to give more details about these "sub-modes" then
+2019-07-09 14:56:24	MoziM	changing the load order is the quickest way of getting multiple major-modes to behave
+2019-07-09 14:56:47	<--	unknownmosquito (~unknownmo@64.157.240.76) has quit
+2019-07-09 14:57:05	parsnip	there's some newer pretty good package i guess that switches modes depending on where point is
+2019-07-09 14:58:39	-->	unknownmosquito (~unknownmo@64.157.240.76) has joined #emacs
+2019-07-09 14:58:52	kenrestivo	seems like scary magick to me
+2019-07-09 15:00:04	-->	kensanata (~user@fsf/member/kensanata) has joined #emacs
+2019-07-09 15:00:15	johnjay	imagine if you had to open every emacs buffer multiple times to get it to work
+2019-07-09 15:00:21	johnjay	that's how it is with firefox right now
+2019-07-09 15:00:29	-->	dqx (~dqx@unaffiliated/dqx) has joined #emacs
+2019-07-09 15:00:59	<--	vlatkoB_ (~IRC_clien@unaffiliated/vlatkob) has quit (Remote host closed the connection)
+2019-07-09 15:02:11	-->	csantosb (~user@2a0c:5a80:330c:6000:eeb1:d7ff:fe2d:4f6b) has joined #emacs
+2019-07-09 15:03:55	<--	michaelrose (~michaelro@2601:600:c700:54d8:3602:86ff:fe4d:5738) has quit (Remote host closed the connection)
+2019-07-09 15:04:41	-->	trui (~trui@2001:982:feff:1:cdb2:765e:1f03:4cb1) has joined #emacs
+2019-07-09 15:05:35	wasamasa	parsnip: http://x32.be/approaching-js.png
+2019-07-09 15:05:45	wasamasa	parsnip: if it weren't for you, dart wouldn't be included
+2019-07-09 15:06:03	parsnip	lol
+2019-07-09 15:06:11	parsnip	🙇‍♂️
+2019-07-09 15:06:40	wasamasa	I wonder whether anyone can name all the languages
+2019-07-09 15:07:18	<--	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-09 15:07:23	MoziM	johnjay: imagine having your most essential core functions as interned symbols....
+2019-07-09 15:07:31	bremner	The nine billion names of Yawehscript
+2019-07-09 15:07:35	--	clesio is now known as clesio|gone
+2019-07-09 15:07:37	wasamasa	lol
+2019-07-09 15:07:40	<--	Inline (~Inline@p200300CD471223E285FF791D745E945C.dip0.t-ipconnect.de) has quit (Quit: Leaving)
+2019-07-09 15:07:43	MoziM	seriously, how the actual h e double hocky sticks are you supposed to debug?
+2019-07-09 15:07:58	parsnip	lol
+2019-07-09 15:08:34	e1f	you could never naming them all because as soon as you finished, there would be a new one created
+2019-07-09 15:08:38	wasamasa	honestly, I'm concerned I managed to find nine reasonably popular languages compiling to JS with logos
+2019-07-09 15:09:10	MoziM	wasamasa: parsnip https://termbin.com/3fjo
+2019-07-09 15:09:20	bremner	let's make a logo that compiles to JS
+2019-07-09 15:09:28	wasamasa	cl abuse detected
+2019-07-09 15:09:49	trui	oh, thanks for reminding me that i need to work on my new language /s
+2019-07-09 15:10:13	e1f	only one?
+2019-07-09 15:10:48	trui	until i abandon it and start another of course
+2019-07-09 15:10:53	e1f	ah
+2019-07-09 15:11:30	-->	random-nick (~random-ni@unaffiliated/random-nick) has joined #emacs
+2019-07-09 15:11:36	<--	subopt (~subopt@199.255.45.4) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2019-07-09 15:11:38	trui	it'll be like lua/js/python/... but better. clearly
+2019-07-09 15:12:21	e1f	pyjamas?
+2019-07-09 15:12:38	parsnip	:facepalm:
+2019-07-09 15:12:40	trui	oh, and i've decided to make my own minimalistic editor with vi keybindings
+2019-07-09 15:13:46	Sketch	for when vi is overkill?
+2019-07-09 15:14:04	trui	because if it doesnt have vi keybindings, then vim users wont use it. but if it does, then they still wont use it because vim is better
+2019-07-09 15:14:54	e1f	will it be called 'v' or 'i'?
+2019-07-09 15:15:28	trui	i, because it starts in insert mode. to help the newbies
+2019-07-09 15:15:34	-->	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has joined #emacs
+2019-07-09 15:15:46	e1f	excellent
+2019-07-09 15:16:06	trui	(i hope everyone can tell the sarcasm)
+2019-07-09 15:16:14	<--	gumol (~gumol@ip47-32-173-82.adsl2.static.versatel.nl) has quit (Remote host closed the connection)
+2019-07-09 15:16:37	-->	gumol (~gumol@ip47-32-173-82.adsl2.static.versatel.nl) has joined #emacs
+2019-07-09 15:16:46	 *	e1f wagers someone has started working on it as we speak
+2019-07-09 15:17:05	trui	though i do plan on making a basic editor for an intellectual exercise, but im not going to actually propose people use it
+2019-07-09 15:17:35	e1f	as long as it's called 'i'
+2019-07-09 15:17:38	kenrestivo	i think technomancy put an editor in a game engine
+2019-07-09 15:17:42	kenrestivo	wrote it in fennel or llua
+2019-07-09 15:19:03	-->	jathan (~jathan@200.57.243.84) has joined #emacs
+2019-07-09 15:19:09	trui	it'll be called vipl. vi+lisp. you know, like viper :P
+2019-07-09 15:19:20	e1f	booooooo!
+2019-07-09 15:19:24	davemq	calc
+2019-07-09 15:19:47	 *	davemq sighs
+2019-07-09 15:20:15	e1f	vili
+2019-07-09 15:20:30	e1f	livi livid
+2019-07-09 15:21:07	trui	i could make a Philip K Dick reference and call it Valis
+2019-07-09 15:21:16	trui	Vi and lisp
+2019-07-09 15:21:56	e1f	valis sounds like a erectile dysfunction pill
+2019-07-09 15:22:03	trui	lol
+2019-07-09 15:22:18	erkin	That would be Ubik
+2019-07-09 15:22:27	kenrestivo	ubik sounds like a startup
+2019-07-09 15:22:32	kenrestivo	that does bike rentals
+2019-07-09 15:22:43	erkin	oh lord
+2019-07-09 15:23:22	kenrestivo	valisp would be a cool name for a lisp tho
+2019-07-09 15:24:10	gnomon	valith?
+2019-07-09 15:24:15	gnomon	sorry, valithp
+2019-07-09 15:24:44	trui	sounds existiental
+2019-07-09 15:25:10	<--	bsd4me (~mike@216-67-48-47-radius.dynamic.acsalaska.net) has quit (Quit: Konversation terminated!)
+2019-07-09 15:25:26	kenrestivo	BRITNEY SLHSSSHPEERS!
+2019-07-09 15:25:36	hodapp	who?
+2019-07-09 15:25:42	kenrestivo	olde south park reference
+2019-07-09 15:26:06	 *	dys must have missed that episode
+2019-07-09 15:26:09	<--	leah2 (~leah@vuxu.org) has quit (Ping timeout: 248 seconds)
+2019-07-09 15:27:12	-->	MuffinPimp (mokou@box.mokou.io) has joined #emacs
+2019-07-09 15:28:10	<--	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has quit (Quit: elzi)
+2019-07-09 15:28:26	-->	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 15:28:32	<--	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has quit (Client Quit)
+2019-07-09 15:28:51	-->	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 15:28:55	kenrestivo	shelly, stan's older sister. had braces and was obsessed with britney shpeears in the early 2000's
+2019-07-09 15:29:00	<--	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has quit (Client Quit)
+2019-07-09 15:29:15	-->	bsd4me (~mike@216-67-48-47-radius.dynamic.acsalaska.net) has joined #emacs
+2019-07-09 15:30:43	MoziM	kenrestivo: what about MATTF DEAEMON?
+2019-07-09 15:31:16	-->	elzi (~elzi@c-73-202-161-22.hsd1.ca.comcast.net) has joined #emacs
+2019-07-09 15:31:59	-->	xrash (~xrash@177.45.178.150) has joined #emacs
+2019-07-09 15:32:13	gnomon	I believe I have committed an error and I would like to offer my apologies
+2019-07-09 15:32:26	kenrestivo	him too
+2019-07-09 15:34:58	-->	foggyboi (~Adium@12.197.206.193) has joined #emacs
+2019-07-09 15:36:54	-->	Moostropfen (~user@cable-86-56-31-247.cust.telecolumbus.net) has joined #emacs
+2019-07-09 15:37:32	-->	Krystof (~user@81.174.155.115) has joined #emacs
+2019-07-09 15:38:28	unknownmosquito	if anybody in here does Scala and has successfully combined aspects of ENSIME with lsp-metals please tag me and let me know because I want to pick your brain
+2019-07-09 15:38:45	-->	isBEKaml (~aaaa@unaffiliated/isbekaml) has joined #emacs
+2019-07-09 15:39:48	cvandusen	ow
+2019-07-09 15:39:53	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-09 15:40:17	unknownmosquito	is that ow directed towards me? :P
+2019-07-09 15:42:01	-->	leah2 (~leah@vuxu.org) has joined #emacs
+2019-07-09 15:42:28	<--	shackra (~shackra@ip119-148-64-186.ct.co.cr) has quit (Ping timeout: 272 seconds)
+2019-07-09 15:42:29	-->	jlf (~jlf@pdpc/supporter/active/jlf) has joined #emacs
+2019-07-09 15:45:00	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 272 seconds)
+2019-07-09 15:45:29	<--	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has quit (Quit: WeeChat 2.4)
+2019-07-09 15:46:28	<--	Moostropfen (~user@cable-86-56-31-247.cust.telecolumbus.net) has quit (Remote host closed the connection)
+2019-07-09 15:47:19	<--	bachibuzuk (~user@176.187.70.135) has quit (Remote host closed the connection)
+2019-07-09 15:47:34	-->	bachibuzuk (~user@176.187.70.135) has joined #emacs
+2019-07-09 15:47:58	<--	isokee (~isokee@unaffiliated/isokee) has quit (Ping timeout: 245 seconds)
+2019-07-09 15:52:43	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-09 15:57:01	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 246 seconds)
+2019-07-09 16:00:07	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-09 16:00:12	parsnip	hmm, so my changes will make minimal ancroid version 19, so i guess i need to go from v0.1.5 to v0.2.0
+2019-07-09 16:00:17	parsnip	*android
+2019-07-09 16:00:25	<--	miskatonic (~user@2a02:810d:9c80:2823:200:ff:fe00:1f) has quit (Remote host closed the connection)
+2019-07-09 16:00:37	<--	andrei-n (~andrei-n@173.155-67-87.adsl-dyn.isp.belgacom.be) has quit (Remote host closed the connection)
+2019-07-09 16:02:25	-->	isokee (~isokee@unaffiliated/isokee) has joined #emacs
+2019-07-09 16:02:35	--	im0nde_ is now known as im0nde
+2019-07-09 16:06:31	-->	causenetsofv (~user@148.64.96.161) has joined #emacs
+2019-07-09 16:06:59	johnjay	ancroid sounds like a disease
+2019-07-09 16:07:32	<--	justanotheruser (justanothe@gateway/vpn/nordvpn/justanotheruser) has quit (Ping timeout: 245 seconds)
+2019-07-09 16:09:43	e1f	or a video game
+2019-07-09 16:10:16	<--	im0nde- (~im0nde@2a0a-a546-a090-0-ba27-ebff-fe20-c671.ipv6dyn.netcologne.de) has quit (Ping timeout: 264 seconds)
+2019-07-09 16:10:21	-->	techquila (~techquila@2407:7000:9125:e400:a453:6053:e9c0:bace) has joined #emacs
+2019-07-09 16:10:24	-->	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has joined #emacs
+2019-07-09 16:10:35	-->	im0nde_ (~im0nde@2a0a-a546-ce10-0-ba27-ebff-fe20-c671.ipv6dyn.netcologne.de) has joined #emacs
+2019-07-09 16:10:47	-->	im0nde- (~im0nde@xdsl-89-0-184-31.nc.de) has joined #emacs
+2019-07-09 16:11:00	Sketch	rudybot: my ancroid is flaring up
+2019-07-09 16:11:08	-->	Marlin1113 (~Marlin111@177.42.210.244) has joined #emacs
+2019-07-09 16:11:08	rudybot	Sketch: so my changes will make minimal ancroid version 19, so i guess i need to go from v0.1.5 to v0.2.0
+2019-07-09 16:11:09	-->	twanny796 (~user@antazzo.com) has joined #emacs
+2019-07-09 16:11:38	<--	im0nde (~im0nde@2a0a-a546-a090-0-2ad2-44ff-fe00-9395.ipv6dyn.netcologne.de) has quit (Ping timeout: 252 seconds)
+2019-07-09 16:11:48	causenetsofv	i want #+name:foo to be referenced in #+name:bar's :properties:, but for whatever reason the key-value doesn't get recognized
+2019-07-09 16:12:04	<--	kensanata (~user@fsf/member/kensanata) has quit (Ping timeout: 264 seconds)
+2019-07-09 16:12:34	<--	_thelion_ (~matthias@192-164-8-92.hdsl.highway.telekom.at) has quit (Quit: WeeChat 2.5)
+2019-07-09 16:12:36	causenetsofv	maybe the syntax is wrong, but no idea how to verify
+2019-07-09 16:13:36	<--	isBEKaml (~aaaa@unaffiliated/isbekaml) has quit (Quit: Quitting...)
+2019-07-09 16:13:39	causenetsofv	:var: baz=foo is what goes in the bar's list of properties
+2019-07-09 16:14:41	<--	Ariakenom (~Ariakenom@h-158-174-187-253.NA.cust.bahnhof.se) has quit (Quit: Leaving)
+2019-07-09 16:14:43	<--	aconole (user@nat/redhat/x-ceofjxhpfhdmggkw) has quit (Remote host closed the connection)
+2019-07-09 16:14:47	<--	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has quit (Quit: "Sleep, those little slices of death — how I loathe them.")
+2019-07-09 16:14:55	-->	ur5us (~ur5us@103.247.155.66) has joined #emacs
+2019-07-09 16:15:11	<--	isokee (~isokee@unaffiliated/isokee) has quit (Quit: WeeChat 2.3)
+2019-07-09 16:16:05	<--	pt1 (~pt1@31-208-142-54.cust.bredband2.com) has quit (Ping timeout: 268 seconds)
+2019-07-09 16:17:17	johnjay	propertization. propertize. properlification
+2019-07-09 16:17:22	-->	grettke (~grettke@cpe-65-29-228-30.wi.res.rr.com) has joined #emacs
+2019-07-09 16:17:23	-->	holomorph (~holomorph@unaffiliated/holomorph) has joined #emacs
+2019-07-09 16:19:49	<--	rwp (~invalid@havoc.proulx.com) has quit (Ping timeout: 258 seconds)
+2019-07-09 16:20:02	<--	wafflehunter (~wafflehun@HSI-KBW-046-005-019-014.hsi8.kabel-badenwuerttemberg.de) has quit (Read error: Connection reset by peer)
+2019-07-09 16:20:51	-->	rwp (~invalid@havoc.proulx.com) has joined #emacs
+2019-07-09 16:20:59	--	im0nde- is now known as im0nde
+2019-07-09 16:22:19	-->	shackra (~shackra@ip119-148-64-186.ct.co.cr) has joined #emacs
+2019-07-09 16:22:24	-->	Acron (52174f2b@cpc149990-brnt4-2-0-cust810.4-2.cable.virginm.net) has joined #emacs
+2019-07-09 16:22:33	<--	_0bitcount (~Big_Byte@90.162.105.206) has quit (Quit: Leaving)
+2019-07-09 16:22:37	-->	neuromorphic (~user@2a00:23c7:6e00:d800:95c3:69db:9d08:8c6f) has joined #emacs
+2019-07-09 16:22:42	<--	tromey (~tromey@174-29-36-25.hlrn.qwest.net) has quit (Ping timeout: 248 seconds)
+2019-07-09 16:27:32	<--	theophilusx (~user@ppp118-211-215-23.bras1.syd2.internode.on.net) has left #emacs ("ERC (IRC client for Emacs 26.2)")
+2019-07-09 16:27:49	<--	jlf (~jlf@pdpc/supporter/active/jlf) has quit (Ping timeout: 246 seconds)
+2019-07-09 16:28:53	-->	libertyprime (~libertypr@101.98.42.91) has joined #emacs
+2019-07-09 16:29:01	<--	leotaku (~leotaku@046075064116.atmpu0011.highway.a1.net) has quit (Ping timeout: 258 seconds)
+2019-07-09 16:31:17	<--	myrkraverk (~chatzilla@unaffiliated/myrkraverk) has quit (Ping timeout: 245 seconds)
+2019-07-09 16:31:43	<--	igemnace (~igemnace@120.28.165.200) has quit (Ping timeout: 258 seconds)
+2019-07-09 16:33:14	<--	unknownmosquito (~unknownmo@64.157.240.76) has quit (Remote host closed the connection)
+2019-07-09 16:33:36	-->	leotaku (~leotaku@046075064116.atmpu0011.highway.a1.net) has joined #emacs
+2019-07-09 16:35:12	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 268 seconds)
+2019-07-09 16:35:52	<--	Formbi (~user@user-46-112-71-65.play-internet.pl) has quit (Ping timeout: 245 seconds)
+2019-07-09 16:37:42	-->	knoebber (~knoebber@icsexchange.ics-llc.net) has joined #emacs
+2019-07-09 16:38:03	-->	butterthebuddha (~butterthe@2601:400:c100:c70:ddb4:2366:89a9:b02a) has joined #emacs
+2019-07-09 16:38:05	-->	conceivably (~user@S0106f0f249620ee3.vc.shawcable.net) has joined #emacs
+2019-07-09 16:38:38	causenetsofv	pronfusion
+2019-07-09 16:41:12	-->	mwsb1 (~mwsb@unaffiliated/chu) has joined #emacs
+2019-07-09 16:41:18	<--	mwsb (~mwsb@unaffiliated/chu) has quit (Ping timeout: 245 seconds)
+2019-07-09 16:41:25	<--	JordiGH (jordi@octave/developer/JordiGH) has quit (Ping timeout: 250 seconds)
+2019-07-09 16:42:23	-->	twrk (~user@unaffiliated/twrk) has joined #emacs
+2019-07-09 16:44:23	<--	Acron (52174f2b@cpc149990-brnt4-2-0-cust810.4-2.cable.virginm.net) has quit (Remote host closed the connection)
+2019-07-09 16:44:38	-->	random-jellyfish (5e7f3583@unaffiliated/random-jellyfish) has joined #emacs
+2019-07-09 16:44:54	random-jellyfish	how do I set up emacs in the same way as portacle?
+2019-07-09 16:45:05	-->	igemnace (~igemnace@120.28.165.200) has joined #emacs
+2019-07-09 16:46:20	-->	didi (~user@unaffiliated/didi/x-1022147) has joined #emacs
+2019-07-09 16:46:59	didi	Yeah, something is wrong with Buster's Emacs. My $HOME compiled Emacs can move emails, but not Buster's.
+2019-07-09 16:47:32	<--	CosmicWitch (~darkprinc@unaffiliated/darkprincess) has quit (Ping timeout: 268 seconds)
+2019-07-09 16:48:21	didi	Personally, I think notmuch developers are screwing with gnus on purpose.
+2019-07-09 16:48:31	benaiah	random-jellyfish: portacle's editor is just emacs; the configuration is here: https://github.com/portacle/emacsd
+2019-07-09 16:49:01	<--	twanny796 (~user@antazzo.com) has quit (Remote host closed the connection)
+2019-07-09 16:49:02	didi	rudybot: seen rob
+2019-07-09 16:49:02	rudybot	didi: rob was seen joining in ##namespace one year ago, and then rob was seen changing their nick to Guest41397 in gateway/web/freenode/ip.70.126.177.128 one year ago
+2019-07-09 16:49:13	benaiah	random-jellyfish: idk how easy that will be to use standalone but it should at least get you pointed in the right direction
+2019-07-09 16:50:09	didi	I saw no bug on Buster about it, but still.
+2019-07-09 16:50:27	<--	sameerynho (~lxsameer@unaffiliated/lxsameer) has quit (Ping timeout: 245 seconds)
+2019-07-09 16:50:45	<--	bodiccea_ (~bodiccea@home.raoult.com) has quit (Remote host closed the connection)
+2019-07-09 16:51:15	-->	bodiccea (~bodiccea@home.raoult.com) has joined #emacs
+2019-07-09 16:52:13	kenrestivo	bug busters
+2019-07-09 16:52:20	didi	,ringshot
+2019-07-09 16:52:21	fsbot	*badum TISH*
+2019-07-09 16:52:32	didi	Who you gonna call??
+2019-07-09 16:52:33	fsbot	Of course not!
+2019-07-09 16:54:16	didi	Now I can't take the music out of my brain. Thanks, kenrestivo.
+2019-07-09 16:54:25	johnjay	(make-ghost-buster)
+2019-07-09 16:55:02	<--	zhlyg (~user@c-77ab72d5.021-158-73746f34.bbcust.telenor.se) has quit (Ping timeout: 245 seconds)
+2019-07-09 16:56:14	<--	xrash (~xrash@177.45.178.150) has quit (Ping timeout: 258 seconds)
+2019-07-09 16:56:17	-->	efm (~efm@vpn.tummy.com) has joined #emacs
+2019-07-09 16:56:39	-->	atw (~user@2604:2000:1282:433:1acf:5eff:feda:6c8a) has joined #emacs
+2019-07-09 16:57:03	-->	cpe_ (~cpe@unaffiliated/cpe) has joined #emacs
+2019-07-09 16:57:55	<--	cpe (~cpe@unaffiliated/cpe) has quit (Ping timeout: 246 seconds)
+2019-07-09 16:57:55	--	cpe_ is now known as cpe
+2019-07-09 16:58:57	<--	npostavs (~user@CPE001143542e1f-CMf81d0f809fa0.cpe.net.cable.rogers.com) has quit (Ping timeout: 248 seconds)
+2019-07-09 16:59:16	<--	rippa (~rippa@ppp-vpdn-37.1.85.157.yarnet.ru) has quit (Quit: {#`%${%&`+'${`%&NO CARRIER)
+2019-07-09 16:59:38	didi	You should suffer too: https://www.youtube.com/watch?v=m9We2XsVZfc
+2019-07-09 17:01:43	<--	holomorph (~holomorph@unaffiliated/holomorph) has quit (Quit: holomorph)
+2019-07-09 17:02:47	-->	xrash (~xrash@177.45.178.150) has joined #emacs
+2019-07-09 17:05:19	cvandusen	let's monetize the eschaton
+2019-07-09 17:08:25	<--	gumol (~gumol@ip47-32-173-82.adsl2.static.versatel.nl) has quit (Remote host closed the connection)
+2019-07-09 17:08:37	<--	mwsb1 (~mwsb@unaffiliated/chu) has quit (Ping timeout: 244 seconds)
+2019-07-09 17:09:53	-->	mwsb1 (~mwsb@unaffiliated/chu) has joined #emacs
+2019-07-09 17:14:29	parsnip	okay, going to try to detect long lines in a mu4e email
+2019-07-09 17:15:46	didi	parsnip: No no. Fix Buster's emacs first.
+2019-07-09 17:15:51	parsnip	lol
+2019-07-09 17:16:10	parsnip	rudybot: seen rms
+2019-07-09 17:16:10	rudybot	parsnip: rms was seen changing their nick to parsnip in unaffiliated/parsnip one year ago, and then rms was seen changing their nick to siraben in 184.22.227.228 forty-seven weeks ago
+2019-07-09 17:16:51	pjb	(defun has-long-lines-p () (interactive) (goto-char (point-min)) (re-search-forward "^.\\{73,\\}" nil t))
+2019-07-09 17:17:45	<--	MrZammler (~evas@46.246.242.188.dsl.dyn.forthnet.gr) has quit (Ping timeout: 268 seconds)
+2019-07-09 17:22:16	parsnip	hmm, or i should just define a toggle that toggles _both_ of visual-line-mode and auto-fill-mode
+2019-07-09 17:22:33	parsnip	would take less time for now
+2019-07-09 17:22:40	<--	random-jellyfish (5e7f3583@unaffiliated/random-jellyfish) has left #emacs
+2019-07-09 17:23:05	<--	knoebber (~knoebber@icsexchange.ics-llc.net) has quit (Ping timeout: 258 seconds)
+2019-07-09 17:23:23	<--	leotaku (~leotaku@046075064116.atmpu0011.highway.a1.net) has quit (Quit: ZNC 1.7.3 - https://znc.in)
+2019-07-09 17:23:39	-->	leotaku (~leotaku@046075064116.atmpu0011.highway.a1.net) has joined #emacs

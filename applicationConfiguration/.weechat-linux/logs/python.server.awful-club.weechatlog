@@ -1,0 +1,453 @@
+2019-07-28 03:42:17	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:42:17	--	matrix: Doing SSL handshake...
+2019-07-28 03:42:17	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:42:17	--	matrix: received certificate
+2019-07-28 03:42:17		 - certificate info:
+2019-07-28 03:42:17		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:42:17		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:42:17		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:42:17		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:42:17		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:42:17		        sha256WithRSAEncryption
+2019-07-28 03:42:17		    - period of validity:
+2019-07-28 03:42:17		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:42:17		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:42:17		    - fingerprints:
+2019-07-28 03:42:17		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:42:17		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:42:17	--	matrix: Logging in...
+2019-07-28 03:42:18	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:42:18	--	matrix: disconnected from server
+2019-07-28 03:42:18	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:42:28	--	matrix: reconnecting to server...
+2019-07-28 03:42:28	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:42:28	--	matrix: Doing SSL handshake...
+2019-07-28 03:42:28	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:42:28	--	matrix: received certificate
+2019-07-28 03:42:28		 - certificate info:
+2019-07-28 03:42:28		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:42:28		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:42:28		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:42:28		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:42:28		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:42:28		        sha256WithRSAEncryption
+2019-07-28 03:42:28		    - period of validity:
+2019-07-28 03:42:28		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:42:28		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:42:28		    - fingerprints:
+2019-07-28 03:42:28		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:42:28		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:42:28	--	matrix: Logging in...
+2019-07-28 03:42:29	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:42:29	--	matrix: disconnected from server
+2019-07-28 03:42:29	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:42:39	--	matrix: reconnecting to server...
+2019-07-28 03:42:39	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:42:39	--	matrix: Doing SSL handshake...
+2019-07-28 03:42:39	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:42:39	--	matrix: received certificate
+2019-07-28 03:42:39		 - certificate info:
+2019-07-28 03:42:39		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:42:39		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:42:39		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:42:39		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:42:39		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:42:39		        sha256WithRSAEncryption
+2019-07-28 03:42:39		    - period of validity:
+2019-07-28 03:42:39		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:42:39		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:42:39		    - fingerprints:
+2019-07-28 03:42:39		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:42:39		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:42:39	--	matrix: Logging in...
+2019-07-28 03:42:40	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:42:40	--	matrix: disconnected from server
+2019-07-28 03:42:40	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:42:50	--	matrix: reconnecting to server...
+2019-07-28 03:42:50	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:42:50	--	matrix: Doing SSL handshake...
+2019-07-28 03:42:50	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:42:50	--	matrix: received certificate
+2019-07-28 03:42:50		 - certificate info:
+2019-07-28 03:42:50		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:42:50		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:42:50		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:42:50		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:42:50		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:42:50		        sha256WithRSAEncryption
+2019-07-28 03:42:50		    - period of validity:
+2019-07-28 03:42:50		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:42:50		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:42:50		    - fingerprints:
+2019-07-28 03:42:50		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:42:50		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:42:50	--	matrix: Logging in...
+2019-07-28 03:42:51	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:42:51	--	matrix: disconnected from server
+2019-07-28 03:42:51	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:43:01	--	matrix: reconnecting to server...
+2019-07-28 03:43:01	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:43:01	--	matrix: Doing SSL handshake...
+2019-07-28 03:43:01	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:43:01	--	matrix: received certificate
+2019-07-28 03:43:01		 - certificate info:
+2019-07-28 03:43:01		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:43:01		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:43:01		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:43:01		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:43:01		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:43:01		        sha256WithRSAEncryption
+2019-07-28 03:43:01		    - period of validity:
+2019-07-28 03:43:01		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:43:01		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:43:01		    - fingerprints:
+2019-07-28 03:43:01		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:43:01		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:43:01	--	matrix: Logging in...
+2019-07-28 03:43:02	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:43:02	--	matrix: disconnected from server
+2019-07-28 03:43:02	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:43:12	--	matrix: reconnecting to server...
+2019-07-28 03:43:12	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:43:12	--	matrix: Doing SSL handshake...
+2019-07-28 03:43:12	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:43:12	--	matrix: received certificate
+2019-07-28 03:43:12		 - certificate info:
+2019-07-28 03:43:12		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:43:12		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:43:12		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:43:12		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:43:12		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:43:12		        sha256WithRSAEncryption
+2019-07-28 03:43:12		    - period of validity:
+2019-07-28 03:43:12		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:43:12		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:43:12		    - fingerprints:
+2019-07-28 03:43:12		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:43:12		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:43:12	--	matrix: Logging in...
+2019-07-28 03:43:13	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:43:13	--	matrix: disconnected from server
+2019-07-28 03:43:13	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:43:23	--	matrix: reconnecting to server...
+2019-07-28 03:43:23	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:43:23	--	matrix: Doing SSL handshake...
+2019-07-28 03:43:23	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:43:23	--	matrix: received certificate
+2019-07-28 03:43:23		 - certificate info:
+2019-07-28 03:43:23		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:43:23		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:43:23		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:43:23		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:43:23		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:43:23		        sha256WithRSAEncryption
+2019-07-28 03:43:23		    - period of validity:
+2019-07-28 03:43:23		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:43:23		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:43:23		    - fingerprints:
+2019-07-28 03:43:23		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:43:23		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:43:23	--	matrix: Logging in...
+2019-07-28 03:43:24	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:43:24	--	matrix: disconnected from server
+2019-07-28 03:43:24	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:43:34	--	matrix: reconnecting to server...
+2019-07-28 03:43:34	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:43:34	--	matrix: Doing SSL handshake...
+2019-07-28 03:43:34	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:43:34	--	matrix: received certificate
+2019-07-28 03:43:34		 - certificate info:
+2019-07-28 03:43:34		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:43:34		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:43:34		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:43:34		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:43:34		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:43:34		        sha256WithRSAEncryption
+2019-07-28 03:43:34		    - period of validity:
+2019-07-28 03:43:34		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:43:34		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:43:34		    - fingerprints:
+2019-07-28 03:43:34		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:43:34		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:43:34	--	matrix: Logging in...
+2019-07-28 03:43:35	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:43:35	--	matrix: disconnected from server
+2019-07-28 03:43:35	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:43:45	--	matrix: reconnecting to server...
+2019-07-28 03:43:45	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:43:45	--	matrix: Doing SSL handshake...
+2019-07-28 03:43:45	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:43:45	--	matrix: received certificate
+2019-07-28 03:43:45		 - certificate info:
+2019-07-28 03:43:45		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:43:45		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:43:45		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:43:45		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:43:45		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:43:45		        sha256WithRSAEncryption
+2019-07-28 03:43:45		    - period of validity:
+2019-07-28 03:43:45		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:43:45		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:43:45		    - fingerprints:
+2019-07-28 03:43:45		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:43:45		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:43:45	--	matrix: Logging in...
+2019-07-28 03:43:46	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:43:46	--	matrix: disconnected from server
+2019-07-28 03:43:46	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:43:56	--	matrix: reconnecting to server...
+2019-07-28 03:43:56	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:43:56	--	matrix: Doing SSL handshake...
+2019-07-28 03:43:56	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:43:56	--	matrix: received certificate
+2019-07-28 03:43:56		 - certificate info:
+2019-07-28 03:43:56		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:43:56		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:43:56		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:43:56		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:43:56		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:43:56		        sha256WithRSAEncryption
+2019-07-28 03:43:56		    - period of validity:
+2019-07-28 03:43:56		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:43:56		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:43:56		    - fingerprints:
+2019-07-28 03:43:56		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:43:56		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:43:56	--	matrix: Logging in...
+2019-07-28 03:43:57	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:43:57	--	matrix: disconnected from server
+2019-07-28 03:43:57	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:44:07	--	matrix: reconnecting to server...
+2019-07-28 03:44:07	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:44:07	--	matrix: Doing SSL handshake...
+2019-07-28 03:44:07	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:44:07	--	matrix: received certificate
+2019-07-28 03:44:07		 - certificate info:
+2019-07-28 03:44:07		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:44:07		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:44:07		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:44:07		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:44:07		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:44:07		        sha256WithRSAEncryption
+2019-07-28 03:44:07		    - period of validity:
+2019-07-28 03:44:07		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:44:07		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:44:07		    - fingerprints:
+2019-07-28 03:44:07		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:44:07		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:44:07	--	matrix: Logging in...
+2019-07-28 03:44:08	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:44:08	--	matrix: disconnected from server
+2019-07-28 03:44:08	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:44:14	--	matrix: disconnected from server
+2019-07-28 03:46:57	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:46:57	--	matrix: Doing SSL handshake...
+2019-07-28 03:46:57	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:46:57	--	matrix: received certificate
+2019-07-28 03:46:57		 - certificate info:
+2019-07-28 03:46:57		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:46:57		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:46:57		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:46:57		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:46:57		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:46:57		        sha256WithRSAEncryption
+2019-07-28 03:46:57		    - period of validity:
+2019-07-28 03:46:57		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:46:57		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:46:57		    - fingerprints:
+2019-07-28 03:46:57		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:46:57		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:46:57	--	matrix: Logging in...
+2019-07-28 03:46:58	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:46:58	--	matrix: disconnected from server
+2019-07-28 03:46:58	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:47:08	--	matrix: disconnected from server
+2019-07-28 03:50:52	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:50:52	--	matrix: Doing SSL handshake...
+2019-07-28 03:50:52	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:50:52	--	matrix: received certificate
+2019-07-28 03:50:52		 - certificate info:
+2019-07-28 03:50:52		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:50:52		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:50:52		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:50:52		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:50:52		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:50:52		        sha256WithRSAEncryption
+2019-07-28 03:50:52		    - period of validity:
+2019-07-28 03:50:52		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:50:52		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:50:52		    - fingerprints:
+2019-07-28 03:50:52		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:50:52		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:50:52	--	matrix: Logging in...
+2019-07-28 03:50:53	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:50:53	--	matrix: disconnected from server
+2019-07-28 03:50:53	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:51:03	--	matrix: reconnecting to server...
+2019-07-28 03:51:03	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:51:03	--	matrix: Doing SSL handshake...
+2019-07-28 03:51:03	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:51:03	--	matrix: received certificate
+2019-07-28 03:51:03		 - certificate info:
+2019-07-28 03:51:03		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:51:03		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:51:03		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:51:03		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:51:03		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:51:03		        sha256WithRSAEncryption
+2019-07-28 03:51:03		    - period of validity:
+2019-07-28 03:51:03		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:51:03		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:51:03		    - fingerprints:
+2019-07-28 03:51:03		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:51:03		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:51:03	--	matrix: Logging in...
+2019-07-28 03:51:04	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 03:51:04	--	matrix: disconnected from server
+2019-07-28 03:51:04	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 03:51:09	--	matrix: disconnected from server
+2019-07-28 03:51:43	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 03:51:43	--	matrix: Doing SSL handshake...
+2019-07-28 03:51:43	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 03:51:43	--	matrix: received certificate
+2019-07-28 03:51:43		 - certificate info:
+2019-07-28 03:51:43		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 03:51:43		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 03:51:43		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 03:51:43		        commonName=Let's Encrypt Authority X3
+2019-07-28 03:51:43		    - key info: RSA key 2048 bits, signed using
+2019-07-28 03:51:43		        sha256WithRSAEncryption
+2019-07-28 03:51:43		    - period of validity:
+2019-07-28 03:51:43		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 03:51:43		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 03:51:43		    - fingerprints:
+2019-07-28 03:51:43		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 03:51:43		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 03:51:43	--	matrix: Logging in...
+2019-07-28 03:51:48	--	matrix: Logged in as @jowj:awful.club
+2019-07-28 04:02:01	--	matrix: disconnected from server
+2019-07-28 04:02:04	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 04:02:04	--	matrix: Doing SSL handshake...
+2019-07-28 04:02:04	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 04:02:04	--	matrix: received certificate
+2019-07-28 04:02:04		 - certificate info:
+2019-07-28 04:02:04		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 04:02:04		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 04:02:04		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 04:02:04		        commonName=Let's Encrypt Authority X3
+2019-07-28 04:02:04		    - key info: RSA key 2048 bits, signed using
+2019-07-28 04:02:04		        sha256WithRSAEncryption
+2019-07-28 04:02:04		    - period of validity:
+2019-07-28 04:02:04		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 04:02:04		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 04:02:04		    - fingerprints:
+2019-07-28 04:02:04		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 04:02:04		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 04:02:04	--	matrix: Already logged in, syncing...
+2019-07-28 13:31:34	--	Error while reading from socket: error104 Connection reset by peer
+2019-07-28 13:31:34	--	matrix: disconnecting from server...
+2019-07-28 13:31:34	--	matrix: disconnected from server
+2019-07-28 13:31:34	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 13:31:45	--	matrix: reconnecting to server...
+2019-07-28 13:31:45	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 13:31:45	--	matrix: Doing SSL handshake...
+2019-07-28 13:31:45	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 13:31:45	--	matrix: received certificate
+2019-07-28 13:31:45		 - certificate info:
+2019-07-28 13:31:45		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 13:31:45		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 13:31:45		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 13:31:45		        commonName=Let's Encrypt Authority X3
+2019-07-28 13:31:45		    - key info: RSA key 2048 bits, signed using
+2019-07-28 13:31:45		        sha256WithRSAEncryption
+2019-07-28 13:31:45		    - period of validity:
+2019-07-28 13:31:45		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 13:31:45		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 13:31:45		    - fingerprints:
+2019-07-28 13:31:45		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 13:31:45		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 13:31:45	--	matrix: Already logged in, syncing...
+2019-07-28 14:03:14	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 14:03:14	--	matrix: Doing SSL handshake...
+2019-07-28 14:03:14	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 14:03:14	--	matrix: received certificate
+2019-07-28 14:03:14		 - certificate info:
+2019-07-28 14:03:14		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 14:03:14		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 14:03:14		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 14:03:14		        commonName=Let's Encrypt Authority X3
+2019-07-28 14:03:14		    - key info: RSA key 2048 bits, signed using
+2019-07-28 14:03:14		        sha256WithRSAEncryption
+2019-07-28 14:03:14		    - period of validity:
+2019-07-28 14:03:14		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 14:03:14		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 14:03:14		    - fingerprints:
+2019-07-28 14:03:14		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 14:03:14		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 14:03:14	--	matrix: Logging in...
+2019-07-28 14:03:15	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 14:03:15	--	matrix: disconnected from server
+2019-07-28 14:03:15	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 14:03:25	--	matrix: reconnecting to server...
+2019-07-28 14:03:25	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 14:03:25	--	matrix: Doing SSL handshake...
+2019-07-28 14:03:25	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 14:03:25	--	matrix: received certificate
+2019-07-28 14:03:25		 - certificate info:
+2019-07-28 14:03:25		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 14:03:25		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 14:03:25		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 14:03:25		        commonName=Let's Encrypt Authority X3
+2019-07-28 14:03:25		    - key info: RSA key 2048 bits, signed using
+2019-07-28 14:03:25		        sha256WithRSAEncryption
+2019-07-28 14:03:25		    - period of validity:
+2019-07-28 14:03:25		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 14:03:25		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 14:03:25		    - fingerprints:
+2019-07-28 14:03:25		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 14:03:25		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 14:03:25	--	matrix: Logging in...
+2019-07-28 14:03:26	=!=	matrix: Error: LoginError: 403 Invalid password
+2019-07-28 14:03:26	--	matrix: disconnected from server
+2019-07-28 14:03:26	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 14:03:32	--	matrix: disconnected from server
+2019-07-28 14:08:27	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 14:08:27	--	matrix: Doing SSL handshake...
+2019-07-28 14:08:27	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 14:08:27	--	matrix: received certificate
+2019-07-28 14:08:27		 - certificate info:
+2019-07-28 14:08:27		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 14:08:27		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 14:08:27		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 14:08:27		        commonName=Let's Encrypt Authority X3
+2019-07-28 14:08:27		    - key info: RSA key 2048 bits, signed using
+2019-07-28 14:08:27		        sha256WithRSAEncryption
+2019-07-28 14:08:27		    - period of validity:
+2019-07-28 14:08:27		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 14:08:27		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 14:08:27		    - fingerprints:
+2019-07-28 14:08:27		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 14:08:27		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 14:08:27	--	matrix: Logging in...
+2019-07-28 14:08:28	--	matrix: Logged in as @jowj:awful.club
+2019-07-28 14:43:53	--	matrix: disconnected from server
+2019-07-28 14:43:53	--	matrix: reconnecting to server in 10 seconds
+2019-07-28 14:44:04	--	matrix: reconnecting to server...
+2019-07-28 14:44:04	--	matrix: Connecting to matrix.awful.club:443 (SSL)...
+2019-07-28 14:44:04	--	matrix: Doing SSL handshake...
+2019-07-28 14:44:04	--	matrix: Connected using TLSv1.3, and 256 bit TLS_AES_256_GCM_SHA384 cipher suite.
+2019-07-28 14:44:04	--	matrix: received certificate
+2019-07-28 14:44:04		 - certificate info:
+2019-07-28 14:44:04		    - subject: commonName=matrix.awful.club, serial number
+2019-07-28 14:44:04		        03D2FAE5CFBAC8E87B3FFCD76EC20D7D2458
+2019-07-28 14:44:04		    - issuer: countryName=US, organizationName=Let's Encrypt,
+2019-07-28 14:44:04		        commonName=Let's Encrypt Authority X3
+2019-07-28 14:44:04		    - key info: RSA key 2048 bits, signed using
+2019-07-28 14:44:04		        sha256WithRSAEncryption
+2019-07-28 14:44:04		    - period of validity:
+2019-07-28 14:44:04		        Begins on:  Jul 20 03:16:09 2019 GMT
+2019-07-28 14:44:04		        Expires on: Oct 18 03:16:09 2019 GMT
+2019-07-28 14:44:04		    - fingerprints:
+2019-07-28 14:44:04		        SHA1:   08:A6:42:A2:A2:14:36:7F:62:E0:6A:4E:6C:AD:4D:03:A3:C9:9F:3D
+2019-07-28 14:44:04		        SHA256: 96:BB:26:F7:DB:C9:25:FA:CA:FB:CD:12:EF:C5:AD:95:41:63:DD:BA:45:70:26:EF:CB:02:32:F1:62:64:8E:9B
+2019-07-28 14:44:04	--	matrix: Already logged in, syncing...
