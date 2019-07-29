@@ -19,7 +19,7 @@
     - vault-vars-mojo.yml
   tasks:
   - name: Build from the latest version
-    shell: cd /home/josiah/mojojojo-bot/webclient && docker build -t mojo-web -f dockerfile .
+    shell: cd /home/josiah/mojojojo-bot/mojo-web && docker build -t mojo-web -f dockerfile .
   - name: Check if there are any existing mojo-web containers running and kill them
     # this has to be a shell because command: isn't interactive
     shell: docker ps | grep 'mojo-web' | awk '{print $1}' | xargs docker kill
@@ -33,7 +33,7 @@
     - vault-vars-mojo.yml
   tasks:
   - name: Build from the latest version
-    shell: cd /home/josiah/mojojojo-bot/webclient && docker build -t mojo-rtm -f dockerfile .
+    shell: cd /home/josiah/mojojojo-bot/mojo-rtm && docker build -t mojo-rtm -f dockerfile .
   - name: Check if there are any existing mojo-rtm containers running and kill them
     # this has to be a shell because command: isn't interactive
     shell: docker ps | grep 'mojo-rtm' | awk '{print $1}' | xargs docker kill
