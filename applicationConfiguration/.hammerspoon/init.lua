@@ -32,6 +32,48 @@ hs.hotkey.bind({"cmd","ctrl"}, "Right", function()
   win:setFrame(f)
 end)
 
+hs.hotkey.bind({"cmd", "ctrl"}, "f", function()
+  -- size focused window to size of desktop
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+
+hs.hotkey.bind({"cmd", "ctrl"}, "up", function()
+  -- size focused window to top half of display
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+hs.hotkey.bind({"cmd", "ctrl"}, "down", function()
+  -- size focused window to bottom half of display
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y + (max.h / 2)
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
 
 -- quick reload
 hs.hotkey.bind({"cmd", "ctrl"}, "R", function()
