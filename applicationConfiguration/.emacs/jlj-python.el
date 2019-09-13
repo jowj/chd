@@ -27,7 +27,9 @@
   :ensure t)
 
 (use-package eglot
-  :ensure t)
+  :ensure t
+  :config
+    (add-hook 'python-mode-hook 'eglot-ensure))
 
 ;; (use-package pyvenv
 ;;   :ensure t)
