@@ -48,3 +48,8 @@
 
     - name: Install required system packages
       apt: name={{ sys_packages }} state=latest
+
+    - name: Restart sshd
+      service:
+        name: sshd.service
+        state: restarted
