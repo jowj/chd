@@ -1,0 +1,128 @@
+# playbook to go from a "base configured" server to a strongswan vpn
+
+- hosts: vpn
+  remote_user: josiah
+  gather_facts: false
+  become: yes
+  vars:
+    vpn_packages: [ 'strongswan','strongswan-pki','ufw' ]
+
+  tasks:
+    - name: Update apt
+      apt: update_cache=yes
+
+    - name: Install required system packages
+      apt: name={{ vpn_packages }} state=latest
+
+    - name: Build temp pki dir structure - cacerts
+      shell: mkdir -p ~/pki/cacerts
+    - name: Build temp pki dir structure - certs
+      shell: mkdir -p ~/pki/certs
+    - name: Build temp pki dir structure - private and set perms
+      shell: mkdir -p ~/pki/private && chmod 700 ~/pki
+
+    - name: Generate root key 4096 bit RSA
+      shell: ipsec pki --gen --type rsa --size 4096 --outform pem > ~/pki/private/awful-ca-key.pem
+
+    - name: Create root cert authority & sign with root key
+      become_method: sudo
+      shell:    ipsec pki --self --ca --lifetime 3650 --in ~/pki/private/awful-ca-key.pem --type rsa --dn "CN=vpn.awful.club" --outform pem > ~/pki/cacerts/awful-ca-cert.pem
+
+    - name: Generate cert for the VPN host
+      shell: ipsec pki --gen --type rsa --size 4096 --outform pem > ~/pki/private/awful-server-key.pem
+
+    - name: Create & sign VPN server cert with CA cert.
+      shell: ipsec pki --pub --in ~/pki/private/awful-server-key.pem --type rsa | ipsec pki --issue --lifetime 1825 --cacert ~/pki/cacerts/awful-ca-cert.pem --cakey ~/pki/private/awful-ca-key.pem --dn "CN=vpn.awful.club" --san "vpn.awful.club" --flag serverAuth --flag ikeIntermediate --outform pem >  ~/pki/certs/awful-server-cert.pem
+
+    - name: move temp pki dir structure to proper /etc/ipsec.d/ dir
+      shell: sudo cp -r ~/pki/* /etc/ipsec.d/
+
+    - name: make backup of  default sswan conf file
+      shell: sudo mv /etc/ipsec.conf /etc/ipsec.conf.original
+
+    - name: Copy my ipsec.conf file to the VPN host
+      # this file does a lot. view more info in the readme.md
+      copy:
+        src: ipsec.conf
+        dest: /etc/ipsec.conf
+        owner: root
+        group: root
+
+    - name: Copy my ipsec.secrets file to the VPN host
+      # this file does a lot. view more info in the readme.md
+      copy:
+        src: ipsec.secrets
+        dest: /etc/ipsec.secrets
+        owner: root
+        group: root
+
+    - name: restart strongswan
+      shell: systemctl restart strongswan
+
+    - name: allow SSH connections
+      ufw:
+        rule: allow
+        name: OpenSSH
+        
+    - name: Deny everything and enable UFW
+      ufw:
+        state: enabled
+        policy: deny
+
+    - name: rate limit ssh connections
+      ufw:
+        rule: limit
+        port: ssh
+        proto: tcp
+
+    - name: Allow all access from RFC1918 networks to this host
+      ufw:
+        rule: allow
+        src: '{{ item }}'
+      loop:
+        - 10.0.0.0/8
+        - 172.16.0.0/12
+        - 192.168.0.0/16
+
+
+    - name: Allow tcp ipsec ports
+      ufw:
+        rule: allow
+        port: 500
+        port: 4500
+        proto: tcp
+          
+    - name: Allow udp ipsec ports
+      ufw:
+        rule: allow
+        port: 4500
+        port: 500
+        proto: udp
+
+    - name: copy local before.rules to vpn host
+      copy:
+        src: before.rules
+        dest: /etc/ufw/before.rules
+        owner: root
+        group: root
+      
+    - name: copy local sysctl.conf to vpn host
+      copy:
+        src: sysctl.conf
+        dest: /etc/ufw/sysctl.conf
+        owner: root
+        group: root
+
+    - name: disable ufw to save config
+      ufw:
+        state: disabled
+
+    - name: reload ufw to activate changes
+      ufw:
+        state: enabled
+
+    - name: Copy ca-cert down to local machine
+      fetch:
+        src: /etc/ipsec.d/cacerts/awful-ca-cert.pem
+        dest: awful-ca-cert.pem
+        flat: yes
