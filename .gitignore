@@ -3,3 +3,4 @@
 .vscode
 *~
 jlj-init.el
+/deployments/serverBuild/awful-ca-cert.pem
