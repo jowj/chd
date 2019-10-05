@@ -72,3 +72,17 @@ services:
       - "/Volumes/usenet/audio/:/music"
       - "/Volumes/usenet/movies/:/movies"
       - "/Volumes/usenet/itunes-synology/iTunes Media/Automatically Add to iTunes.localized/:/itunes"
+  lazylibrarian:
+    image: "thraxis/lazylibrarian-calibre"
+    ports:
+      - "5299:5299"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/Users/josiah/Documents/apps/lazylibrarian:/config"
+      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/Volumes/usenet/book-library/books/:/books"
+      - "/Volumes/usenet/book-library/audiobooks:/audiobooks"
