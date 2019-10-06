@@ -102,3 +102,4 @@ services:
       - "/Users/josiah/Documents/apps/calibre:/config"
       - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/book-library/calibre-library/:/calibre-library"
+      - "/Volumes/usenet/book-library/temp/:/import"
