@@ -26,7 +26,7 @@ services:
     volumes:
       - "/home/josiah/Documents/apps/lidarr:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/audio/:/music"
+      - "/media/usenet/audio/:/music"
  # headphones:
  #   image: "linuxserver/headphones"
  #   ports:
@@ -39,7 +39,7 @@ services:
  #   volumes:
  #     - "/home/josiah/Documents/apps/headphones:/config"
  #     - "/home/josiah/Downloads/usenet-complete/:/downloads"
- #     - "/Volumes/usenet/audio/:/music"
+ #     - "/media/usenet/audio/:/music"
   radarr:
     image: "linuxserver/radarr"
     ports:
@@ -52,7 +52,7 @@ services:
     volumes:
       - "/home/josiah/Documents/apps/radarr:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/movies/:/movies"
+      - "/media/usenet/movies/:/movies"
   sabnzb:
     image: "funkypenguin/sabnzbd"
     ports:
@@ -68,11 +68,11 @@ services:
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/home/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
       - "/home/josiah/Downloads/usenet-watched/:/watched-folder"      
-      - "/Volumes/usenet/tv:/tv"
-      - "/Volumes/usenet/audio/:/music"
-      - "/Volumes/usenet/movies/:/movies"
-      - "/Volumes/usenet/itunes-synology/iTunes Media/Automatically Add to iTunes.localized/:/itunes"
-      - "/Volumes/usenet/book-library/books/:/books"
+      - "/media/usenet/tv:/tv"
+      - "/media/usenet/audio/:/music"
+      - "/media/usenet/movies/:/movies"
+      - "/media/usenet/itunes-synology/iTunes Media/Automatically Add to iTunes.localized/:/itunes"
+      - "/media/usenet/book-library/books/:/books"
   lazylibrarian:
     image: "thraxis/lazylibrarian-calibre"
     ports:
@@ -85,9 +85,9 @@ services:
     volumes:
       - "/home/josiah/Documents/apps/lazylibrarian:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/book-library/calibre-library/:/calibre-library"
-      - "/Volumes/usenet/book-library/books/:/books"
-      - "/Volumes/usenet/book-library/audiobooks:/audiobooks"
+      - "/media/usenet/book-library/calibre-library/:/calibre-library"
+      - "/media/usenet/book-library/books/:/books"
+      - "/media/usenet/book-library/audiobooks:/audiobooks"
   calibre:
     image: "linuxserver/calibre"
     container_name: calibre
@@ -102,5 +102,5 @@ services:
     volumes:
       - "/home/josiah/Documents/apps/calibre:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/book-library/calibre-library/:/calibre-library"
-      - "/Volumes/usenet/book-library/temp/:/import"
+      - "/media/usenet/book-library/calibre-library/:/calibre-library"
+      - "/media/usenet/book-library/temp/:/import"
