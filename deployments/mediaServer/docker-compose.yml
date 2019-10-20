@@ -24,8 +24,8 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/lidarr:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/home/josiah/Documents/apps/lidarr:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/audio/:/music"
  # headphones:
  #   image: "linuxserver/headphones"
@@ -37,8 +37,8 @@ services:
  #     PGID: 1000
  #     TZ: America/Chicago
  #   volumes:
- #     - "/Users/josiah/Documents/apps/headphones:/config"
- #     - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+ #     - "/home/josiah/Documents/apps/headphones:/config"
+ #     - "/home/josiah/Downloads/usenet-complete/:/downloads"
  #     - "/Volumes/usenet/audio/:/music"
   radarr:
     image: "linuxserver/radarr"
@@ -50,8 +50,8 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/radarr:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/home/josiah/Documents/apps/radarr:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/movies/:/movies"
   sabnzb:
     image: "funkypenguin/sabnzbd"
@@ -64,10 +64,10 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/sabnzbd:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Users/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
-      - "/Users/josiah/Downloads/usenet-watched/:/watched-folder"      
+      - "/home/josiah/Documents/apps/sabnzbd:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
+      - "/home/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
+      - "/home/josiah/Downloads/usenet-watched/:/watched-folder"      
       - "/Volumes/usenet/tv:/tv"
       - "/Volumes/usenet/audio/:/music"
       - "/Volumes/usenet/movies/:/movies"
@@ -83,8 +83,8 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/lazylibrarian:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/home/josiah/Documents/apps/lazylibrarian:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/book-library/calibre-library/:/calibre-library"
       - "/Volumes/usenet/book-library/books/:/books"
       - "/Volumes/usenet/book-library/audiobooks:/audiobooks"
@@ -100,7 +100,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/calibre:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
+      - "/home/josiah/Documents/apps/calibre:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/book-library/calibre-library/:/calibre-library"
       - "/Volumes/usenet/book-library/temp/:/import"
