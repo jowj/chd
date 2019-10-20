@@ -93,7 +93,7 @@ services:
     container_name: calibre
     ports:
       - "8219:8080"
-      - "8220:8081"
+      - "8081:8081"
     restart: unless-stopped
     environment:
       PUID: 1000
