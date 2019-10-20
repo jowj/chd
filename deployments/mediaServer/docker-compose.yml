@@ -11,7 +11,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/sonarr:/config"
+      - "/Users/josiah/apps/sonarr:/config"
       - "/Users/josiah/Downloads/usenet-complete/:/downloads"
       - "/Volumes/usenet/tv/:/tv"
   lidarr:
@@ -24,7 +24,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/Documents/apps/lidarr:/config"
+      - "/home/josiah/apps/lidarr:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/media/usenet/audio/:/music"
  # headphones:
@@ -50,7 +50,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/Documents/apps/radarr:/config"
+      - "/home/josiah/apps/radarr:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/media/usenet/movies/:/movies"
   sabnzb:
@@ -64,7 +64,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/Documents/apps/sabnzbd:/config"
+      - "/home/josiah/apps/sabnzbd:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/home/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
       - "/home/josiah/Downloads/usenet-watched/:/watched-folder"      
@@ -83,7 +83,7 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/home/josiah/Documents/apps/lazylibrarian:/config"
+      - "/home/josiah/apps/lazylibrarian:/config"
       - "/home/josiah/Downloads/usenet-complete/:/downloads"
       - "/media/usenet/book-library/calibre-library/:/calibre-library"
       - "/media/usenet/book-library/books/:/books"
@@ -100,7 +100,7 @@ services:
   #     PGID: 1000
   #     TZ: America/Chicago
   #   volumes:
-  #     - "/home/josiah/Documents/apps/calibre:/config"
+  #     - "/home/josiah/apps/calibre:/config"
   #     - "/home/josiah/Downloads/usenet-complete/:/downloads"
   #     - "/media/usenet/book-library/calibre-library/:/calibre-library"
   #     - "/media/usenet/book-library/temp/:/import"
