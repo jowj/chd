@@ -13,7 +13,7 @@ services:
     volumes:
       - "/Users/josiah/apps/sonarr:/config"
       - "/Users/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/tv/:/tv"
+      - "/media/usenet/tv/:/tv"
   lidarr:
     image: "linuxserver/lidarr"
     ports:
