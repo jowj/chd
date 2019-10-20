@@ -88,19 +88,19 @@ services:
       - "/media/usenet/book-library/calibre-library/:/calibre-library"
       - "/media/usenet/book-library/books/:/books"
       - "/media/usenet/book-library/audiobooks:/audiobooks"
-  calibre:
-    image: "linuxserver/calibre"
-    container_name: calibre
-    ports:
-      - "8219:8080"
-      - "8081:8081"
-    restart: unless-stopped
-    environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: America/Chicago
-    volumes:
-      - "/home/josiah/Documents/apps/calibre:/config"
-      - "/home/josiah/Downloads/usenet-complete/:/downloads"
-      - "/media/usenet/book-library/calibre-library/:/calibre-library"
-      - "/media/usenet/book-library/temp/:/import"
+  # calibre:
+  #   image: "linuxserver/calibre"
+  #   container_name: calibre
+  #   ports:
+  #     - "8219:8080"
+  #     - "8081:8081"
+  #   restart: unless-stopped
+  #   environment:
+  #     PUID: 1000
+  #     PGID: 1000
+  #     TZ: America/Chicago
+  #   volumes:
+  #     - "/home/josiah/Documents/apps/calibre:/config"
+  #     - "/home/josiah/Downloads/usenet-complete/:/downloads"
+  #     - "/media/usenet/book-library/calibre-library/:/calibre-library"
+  #     - "/media/usenet/book-library/temp/:/import"
