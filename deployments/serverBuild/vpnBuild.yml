@@ -4,45 +4,52 @@
   remote_user: josiah
   gather_facts: false
   become: yes
-  vars:
-    vpn_packages: [ 'strongswan','strongswan-pki','ufw' ]
-    remote_host: 165.22.156.25
-    local_host:  0.0.0.0
 
   tasks:
-    - name: Install required system packages
-      apt: name={{ vpn_packages }} state=latest
-
-    - name: set kernel params
+    - name: add unstable to repos
       shell: |
         echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable.list
         printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' > /etc/apt/preferences.d/limit-unstable
 
-    - name: Update apt
+    - name: Update aptitude
       apt: update_cache=yes
 
     - name: install wireguard
-      apt: install wireguard
+      apt: name=wireguard state=latest
 
+    - name: install linux headers (necessary on older cloud kernels (fuck u digitalocean))
+      # the kernel version is hard coded because this is what DO currently uses
+      # and that's what i use
+      apt: name=linux-headers-4.19.0-6-cloud-amd64
+    - name: install misc other things the internet says i need
+      apt: name=build-essential
+    - name: install misc other things the internet says i need      
+      apt: name=dkms
+
+      # install wg, generate keys, files on local machine
+    - name:
+      
     - name: Generate keys, register public key to be used later
       shell: |
-        printf "[Interface]\nPrivateKey = " > wg0.conf
-        wg genkey | tee -a wg0.conf | wg pubkey > publickey
+        printf "[Interface]\nPrivateKey = " > /etc/wireguard/wg0.conf
+        wg genkey | tee -a /etc/wireguard/wg0.conf | wg pubkey > /etc/wireguard/publickey
       register: server_publickey
       vars:
-        chdir: /etc/wireguard/
         umask: "077"
 
     - name: fill out the rest of the wg0.conf file
-      shell: |
-        ListenPort = 51820
-        Address = 10.200.219.1/24     (this will be the IP given to the wg0 interface)
-        [Peer]
-        PublicKey = (leave this blank for now; you'll paste in your local public key here soon)
-        AllowedIPs = 10.200.219.0/24  (this is the range of Wireguard IP addresses that this Peer's key can be used from)
+      blockinfile:
+        path: /etc/wireguard/wg0.conf
+        block: |
+          ListenPort = 51820
+          Address = 10.200.219.1/24
+          [Peer]
+          PublicKey = 
+          AllowedIPs = 10.200.219.0/24
 
     - name: bring wg up
       shell: wg-quick up wg0
 
     - name: test if it worked
-      ping -c1 10.200.219.1
+      shell: ping -c1 10.200.219.1
+      register: test_result
