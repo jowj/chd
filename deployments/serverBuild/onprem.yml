@@ -1,0 +1,38 @@
+- hosts: onprem
+  remote_user: josiah
+  gather_facts: false
+  become: yes
+  vars:
+    create_user: josiah
+    sys_packages: [ 'curl', 'vim', 'git', '', 'emacs', 'build-essential' ]
+
+  tasks:
+    - name: Install aptitude using apt
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Install required system packages for docker install
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'software-properties-common' ]
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt
+      apt: update_cache=yes
+
+    - name: Install required system packages
+      apt: name={{ sys_packages }} state=latest
+
+    - name: add 'josiah' to docker group
+        user:
+          name='josiah'
+          groups=docker
+          append=yes
+      

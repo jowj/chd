@@ -16,7 +16,7 @@
 - name: Deploy mojo webclient
   hosts: prod
   vars_files:
-    - vault-vars-mojo.yml
+    - mojo-vars-vault.yml
   tasks:
   - name: Build from the latest version
     shell: cd /home/josiah/mojojojo-bot/mojo-web && docker build -t mojo-web -f dockerfile .
@@ -30,7 +30,7 @@
 - name: Deploy mojo rtmclient
   hosts: prod
   vars_files:
-    - vault-vars-mojo.yml
+    - mojo-vars-vault.yml
   tasks:
   - name: Build from the latest version
     shell: cd /home/josiah/mojojojo-bot/mojo-rtm && docker build -t mojo-rtm -f dockerfile .
@@ -70,7 +70,7 @@
       shell: docker container rm znc
       when: result is succeeded
     - name: run the container (assumes the volume is already set up)
-      command: docker run -d -p 5000:5000 --mount type="bind",source="/mnt/volume_sfo2_znc/",target=/znc-data znc
+      command: docker run --restart "always" -d -p 5000:5000 --mount type="bind",source="/mnt/volume_sfo2_znc/",target=/znc-data znc
 
 - name: Deploy Arke
   hosts: dockerhosts

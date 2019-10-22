@@ -11,9 +11,9 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/sonarr:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/tv/:/tv"
+      - "/home/josiah/apps/sonarr:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
+      - "/media/usenet/tv/:/tv"
   lidarr:
     image: "linuxserver/lidarr"
     ports:
@@ -24,9 +24,9 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/lidarr:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/audio/:/music"
+      - "/home/josiah/apps/lidarr:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
+      - "/media/usenet/audio/:/music"
  # headphones:
  #   image: "linuxserver/headphones"
  #   ports:
@@ -37,9 +37,9 @@ services:
  #     PGID: 1000
  #     TZ: America/Chicago
  #   volumes:
- #     - "/Users/josiah/Documents/apps/headphones:/config"
- #     - "/Users/josiah/Downloads/usenet-complete/:/downloads"
- #     - "/Volumes/usenet/audio/:/music"
+ #     - "/home/josiah/Documents/apps/headphones:/config"
+ #     - "/home/josiah/Downloads/usenet-complete/:/downloads"
+ #     - "/media/usenet/audio/:/music"
   radarr:
     image: "linuxserver/radarr"
     ports:
@@ -50,9 +50,9 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/radarr:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Volumes/usenet/movies/:/movies"
+      - "/home/josiah/apps/radarr:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
+      - "/media/usenet/movies/:/movies"
   sabnzb:
     image: "funkypenguin/sabnzbd"
     ports:
@@ -64,11 +64,43 @@ services:
       PGID: 1000
       TZ: America/Chicago
     volumes:
-      - "/Users/josiah/Documents/apps/sabnzbd:/config"
-      - "/Users/josiah/Downloads/usenet-complete/:/downloads"
-      - "/Users/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
-      - "/Users/josiah/Downloads/usenet-watched/:/watched-folder"      
-      - "/Volumes/usenet/tv:/tv"
-      - "/Volumes/usenet/audio/:/music"
-      - "/Volumes/usenet/movies/:/movies"
-      - "/Volumes/usenet/itunes-synology/iTunes Media/Automatically Add to iTunes.localized/:/itunes"
+      - "/home/josiah/apps/sabnzbd:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
+      - "/home/josiah/Downloads/usenet-incomplete/:/incomplete-downloads"
+      - "/home/josiah/Downloads/usenet-watched/:/watched-folder"      
+      - "/media/usenet/tv:/tv"
+      - "/media/usenet/audio/:/music"
+      - "/media/usenet/movies/:/movies"
+      - "/media/usenet/itunes-synology/iTunes Media/Automatically Add to iTunes.localized/:/itunes"
+      - "/media/usenet/book-library/books/:/books"
+  lazylibrarian:
+    image: "thraxis/lazylibrarian-calibre"
+    ports:
+      - "5299:5299"
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: America/Chicago
+    volumes:
+      - "/home/josiah/apps/lazylibrarian:/config"
+      - "/home/josiah/Downloads/usenet-complete/:/downloads"
+      - "/media/usenet/book-library/calibre-library/:/calibre-library"
+      - "/media/usenet/book-library/books/:/books"
+      - "/media/usenet/book-library/audiobooks:/audiobooks"
+  # calibre:
+  #   image: "linuxserver/calibre"
+  #   container_name: calibre
+  #   ports:
+  #     - "8219:8080"
+  #     - "8081:8081"
+  #   restart: unless-stopped
+  #   environment:
+  #     PUID: 1000
+  #     PGID: 1000
+  #     TZ: America/Chicago
+  #   volumes:
+  #     - "/home/josiah/apps/calibre:/config"
+  #     - "/home/josiah/Downloads/usenet-complete/:/downloads"
+  #     - "/media/usenet/book-library/calibre-library/:/calibre-library"
+  #     - "/media/usenet/book-library/temp/:/import"
