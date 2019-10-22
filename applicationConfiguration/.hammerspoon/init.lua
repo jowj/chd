@@ -83,6 +83,7 @@ end)
 -- stolen from @mrled
 appCuts = {
   e = 'Emacs',
+  d = 'Dash',
   h = 'Hammerspoon',
   f = 'Firefox',
   l = 'Slack',
@@ -91,6 +92,7 @@ appCuts = {
   r = 'Riot',
   s = 'Safari',
   t = 'iTerm',
+  c = 'Google Chrome'
 }
 
 modalHotKey = dofile(os.getenv("HOME") .. "/.hammerspoon/modalHotKey.lua")
