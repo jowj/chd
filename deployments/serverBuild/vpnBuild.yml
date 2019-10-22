@@ -1,4 +1,4 @@
-# playbook to go from a "base configured" server to a strongswan vpn
+# playbook to go from a "base configured" server to a wg vpn peer
 
 - hosts: vpn
   remote_user: josiah
@@ -10,49 +10,39 @@
     local_host:  0.0.0.0
 
   tasks:
-    - name: Update apt
-      apt: update_cache=yes
-
     - name: Install required system packages
       apt: name={{ vpn_packages }} state=latest
 
     - name: set kernel params
       shell: |
-        cat >> /etc/sysctl.conf << EOF
-        net.ipv4.ip_forward = 1 
-        net.ipv4.conf.all.accept_redirects = 0 
-        net.ipv4.conf.all.send_redirects = 0
-        EOF
+        echo "deb http://deb.debian.org/debian/ unstable main" > /etc/apt/sources.list.d/unstable.list
+        printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' > /etc/apt/preferences.d/limit-unstable
 
-    - name: save kernel params
-      shell: sysctl -p /etc/sysctl.conf
-      
-    - name: Generate preshared key
-      shell: openssl rand -hex 32
-      register: awful_psk
+    - name: Update apt
+      apt: update_cache=yes
 
-    - debug:
-        msg: got this key {{ awful_psk }}
+    - name: install wireguard
+      apt: install wireguard
 
-    - name: Copy my ipsec.conf file to the VPN host
-      # this file does a lot. view more info in the readme.md
-      copy:
-        src: ipsec.conf
-        dest: /etc/ipsec.conf
-        owner: root
-        group: root
-
-    - name: remove existing ipsec.secerts
-      shell: rm /etc/ipsec.secrets
-
-    - name: create ipsec.secrets with psk info
+    - name: Generate keys, register public key to be used later
       shell: |
-        cat >> /etc/ipsec.secrets << EOF
-        {{ remote_host }} {{local_host}}: PSK "{{awful_psk.stdout}}"
-        EOF
-      
-    - name: update route rules
-      shell: iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -d 10.138.0.0/16 -j MASQUERADE
+        printf "[Interface]\nPrivateKey = " > wg0.conf
+        wg genkey | tee -a wg0.conf | wg pubkey > publickey
+      register: server_publickey
+      vars:
+        chdir: /etc/wireguard/
+        umask: "077"
 
-    # - name: copy psk down to local machine
-    #   local_action: copy_content={{ awful_psk }} dest=psk.txt
+    - name: fill out the rest of the wg0.conf file
+      shell: |
+        ListenPort = 51820
+        Address = 10.200.219.1/24     (this will be the IP given to the wg0 interface)
+        [Peer]
+        PublicKey = (leave this blank for now; you'll paste in your local public key here soon)
+        AllowedIPs = 10.200.219.0/24  (this is the range of Wireguard IP addresses that this Peer's key can be used from)
+
+    - name: bring wg up
+      shell: wg-quick up wg0
+
+    - name: test if it worked
+      ping -c1 10.200.219.1
