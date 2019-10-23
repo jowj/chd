@@ -26,17 +26,70 @@
     - name: install misc other things the internet says i need      
       apt: name=dkms
 
-      # install wg, generate keys, files on local machine
-    - name:
-      
-    - name: Generate keys, register public key to be used later
+    - name: enable kernel relay/forwarding
+      shell: |
+        echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+        echo "net.ipv4.conf.all.proxy_arp = 1" >> /etc/sysctl.conf
+        sudo sysctl -p /etc/sysctl.conf
+        iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+        iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+        iptables -A FORWARD -i wg0 -o wg0 -m conntrack --ctstate NEW -j ACCEPT
+        iptables -t nat -A POSTROUTING -s 10.200.219.0/24 -o eth0 -j MASQUERADE
+
+    - name: ensure /etc/wireguard/ exists
+      file:
+        path: /etc/wireguard/
+        state: directory
+        
+    - name: Generate keys
       shell: |
         printf "[Interface]\nPrivateKey = " > /etc/wireguard/wg0.conf
         wg genkey | tee -a /etc/wireguard/wg0.conf | wg pubkey > /etc/wireguard/publickey
-      register: server_publickey
       vars:
         umask: "077"
 
+    - name: register publickey for later use
+      shell: cat /etc/wireguard/publickey
+      register: server_publickey
+      
+      # install wg, generate keys, files on local machine
+    - name: (local) install wg (i use) arch (btw)
+      pacman:
+        update_cache: yes
+        name: wireguard-tools, wireguard-arch
+        state: present
+      delegate_to: localhost
+
+    - name: (local) ensure /etc/wireguard/ exists
+      file:
+        path: /etc/wireguard/
+        state: directory
+      delegate_to: localhost
+
+    - name: (local) Generate keys
+      shell: |
+        printf "[Interface]\nPrivateKey = " > /etc/wireguard/wg0.conf
+        wg genkey | tee -a /etc/wireguard/wg0.conf | wg pubkey > /etc/wireguard/publickey
+      vars:
+        umask: "077"
+      delegate_to: localhost
+      
+    - name: (local) register publickey for later use
+      shell: cat /etc/wireguard/publickey
+      register: arch_publickey        
+      delegate_to: localhost
+
+    - name: (local) fill out the rest of the wg0.conf file
+      blockinfile:
+        path: /etc/wireguard/wg0.conf
+        block: |
+          ListenPort = 51200
+          Address = 10.200.219.2/32
+          [Peer]
+          PublicKey = {{ server_publickey.stdout }}
+          AllowedIPs = 10.200.219.0/24        
+      delegate_to: localhost
+      
     - name: fill out the rest of the wg0.conf file
       blockinfile:
         path: /etc/wireguard/wg0.conf
@@ -44,12 +97,12 @@
           ListenPort = 51820
           Address = 10.200.219.1/24
           [Peer]
-          PublicKey = 
+          PublicKey ={{ arch_publickey.stdout }}
           AllowedIPs = 10.200.219.0/24
 
-    - name: bring wg up
-      shell: wg-quick up wg0
+    # - name: bring wg up
+    #   shell: wg-quick up wg0
 
-    - name: test if it worked
-      shell: ping -c1 10.200.219.1
-      register: test_result
+    # - name: test if it worked
+    #   shell: ping -c1 10.200.219.1
+    #   register: test_result
