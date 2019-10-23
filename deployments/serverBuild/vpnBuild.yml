@@ -25,6 +25,8 @@
       apt: name=build-essential
     - name: install misc other things the internet says i need      
       apt: name=dkms
+    - name: install misc other things the internet says i need      
+      apt: name=openresolv      
 
     - name: enable kernel relay/forwarding
       shell: |
@@ -83,26 +85,46 @@
       blockinfile:
         path: /etc/wireguard/wg0.conf
         block: |
-          ListenPort = 51200
-          Address = 10.200.219.2/32
+          Address = 10.200.219.2/32, fd86:ea04:1115::2/128
+          DNS = 1.1.1.1
+          
           [Peer]
           PublicKey = {{ server_publickey.stdout }}
-          AllowedIPs = 10.200.219.0/24        
+          Endpoint = vpn.awful.club:51820
+          AllowedIPs = 0.0.0.0/0
       delegate_to: localhost
       
     - name: fill out the rest of the wg0.conf file
       blockinfile:
         path: /etc/wireguard/wg0.conf
         block: |
-          ListenPort = 51820
           Address = 10.200.219.1/24
+          Address = fd86:ea04:1115::1/64          
+          ListenPort = 51820
+          SaveConfig = true
           [Peer]
-          PublicKey ={{ arch_publickey.stdout }}
-          AllowedIPs = 10.200.219.0/24
+          # name = luggable-laptop
+          PublicKey = {{ arch_publickey.stdout }}
+          AllowedIPs = 10.200.219.2/32, fd86:ea04:1115::2/128
 
-    # - name: bring wg up
-    #   shell: wg-quick up wg0
+    - name: bring wg up on the relay node
+      shell: wg-quick up /etc/wireguard/wg0.conf
 
-    # - name: test if it worked
-    #   shell: ping -c1 10.200.219.1
-    #   register: test_result
+    - name: test if wg is up on relay
+      shell: ping -c1 10.200.219.1
+      register: test_result
+
+    - name: (local) bring wg up on local
+      shell: wg-quick up wg0
+      delegate_to: localhost
+      
+    - name: (local) test if it worked on local
+      shell: ping -c1 10.200.219.2
+      register: test_result_local
+      delegate_to: localhost 
+
+    - name: Test tunnel
+      shell: ping -c1 10.200.219.1
+      register: test_tunnel_local
+      delegate_to: localhost
+      ignore_errors: yes
