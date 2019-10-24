@@ -1,0 +1,37 @@
+---
+# tasks file for wg_vpn
+# this is useful for running plays /from/ an arch machine that will join the wg net.
+
+# install wg, generate keys, files on local machine
+- hosts: vpn
+  remote_user: josiah
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: (local) install wg (i use) arch (btw)
+      pacman:
+        update_cache: yes
+        name: wireguard-tools, wireguard-arch
+        state: present
+      delegate_to: localhost
+
+    - name: (local) ensure /etc/wireguard/ exists
+      file:
+        path: /etc/wireguard/
+        state: directory
+      delegate_to: localhost
+
+    - name: (local) Generate keys
+      shell: |
+        printf "[Interface]\nPrivateKey = " > /etc/wireguard/wg0.conf
+        wg genkey | tee -a /etc/wireguard/wg0.conf | wg pubkey > /etc/wireguard/publickey
+      vars:
+        umask: "077"
+      delegate_to: localhost
+      
+    - name: (local) register publickey for later use
+      shell: cat /etc/wireguard/publickey
+      register: arch_publickey        
+      delegate_to: localhost
+

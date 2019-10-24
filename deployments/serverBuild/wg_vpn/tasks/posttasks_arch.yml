@@ -1,0 +1,22 @@
+- hosts: vpn
+  remote_user: josiah
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: (local) fill out the rest of the wg0.conf file
+      blockinfile:
+        path: /etc/wireguard/wg0.conf
+        block: |
+          Address = 10.200.219.2/32, fd86:ea04:1115::2/128
+          DNS = 1.1.1.1
+          
+          [Peer]
+          PublicKey = {{ server_publickey.stdout }}
+          Endpoint = vpn.awful.club:51820
+          AllowedIPs = 0.0.0.0/0
+      delegate_to: localhost
+
+    - name: (local) bring wg up on local
+      shell: wg-quick up wg0
+      delegate_to: localhost
