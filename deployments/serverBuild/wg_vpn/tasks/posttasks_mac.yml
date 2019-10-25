@@ -8,7 +8,7 @@
       [Peer]
       PublicKey = {{ server_publickey.stdout }}
       Endpoint = vpn.awful.club:51820
-      AllowedIPs = 0.0.0.0/0
+      AllowedIPs = 0.0.0.0/0, ::/0
 
 # - name: (local) bring wg up on local
 #   shell: wg-quick up wg0
