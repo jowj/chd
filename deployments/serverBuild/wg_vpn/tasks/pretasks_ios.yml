@@ -1,0 +1,15 @@
+- name: make wg dir since macs are now weird about /etc/anything
+  file:
+    path: ~/wireguard/
+    state: directory
+
+- name: Generate keys
+  shell: |
+    printf "[Interface]\nPrivateKey = " > ~/wireguard/ios.conf
+    wg genkey | tee -a ~/wireguard/ios.conf | wg pubkey > ~/wireguard/ios_publickey
+  vars:
+    umask: "077"      
+
+- name: register publickey for later use
+  shell: cat ~/wireguard/ios_publickey
+  register: ios_publickey        
