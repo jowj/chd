@@ -21,11 +21,10 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+I don't know what to put here because i don't understand how roles work lmao
+	`ansible-playbook -i ../hosts.yml tasks/main.yml -v`
+		 
+useful for generating mobile device configs: qrencode -t ansiutf8 < /etc/wireguard/mobile.conf
 
 License
 -------
