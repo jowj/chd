@@ -3,7 +3,7 @@
 # playbook to go from a "base configured" server to a wg vpn peer
 - hosts: vpn
   remote_user: josiah
-  gather_facts: false
+  gather_facts: True
   vars:
     source_os: macos
 
@@ -27,6 +27,6 @@
       delegate_to: localhost
       when: source_os == 'macos'
     - name: complete config for IOS on local mac
-      include: posttasks_mac.yml
+      include: posttasks_ios.yml
       delegate_to: localhost      
 
