@@ -9,5 +9,3 @@
       PublicKey = {{ server_publickey.stdout }}
       Endpoint = vpn.awful.club:51820
       AllowedIPs = 0.0.0.0/0, ::/0
-
- 
