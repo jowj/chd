@@ -1,21 +1,15 @@
-- hosts: vpn
-  remote_user: josiah
-  gather_facts: false
-  become: yes
+- name: fill out the rest of the wg0.conf file
+  blockinfile:
+    path: /etc/wireguard/wg0.conf
+    block: |
+      Address = 10.200.219.1/24
+      Address = fd86:ea04:1115::1/64          
+      ListenPort = 51820
+      SaveConfig = true
+      [Peer]
+      # name = luggable-laptop
+      PublicKey = {{ client_publickey.stdout }}
+      AllowedIPs = 10.200.219.2/32, fd86:ea04:1115::2/128
 
-  tasks:
-    - name: fill out the rest of the wg0.conf file
-      blockinfile:
-        path: /etc/wireguard/wg0.conf
-        block: |
-          Address = 10.200.219.1/24
-          Address = fd86:ea04:1115::1/64          
-          ListenPort = 51820
-          SaveConfig = true
-          [Peer]
-          # name = luggable-laptop
-          PublicKey = {{ arch_publickey.stdout }}
-          AllowedIPs = 10.200.219.2/32, fd86:ea04:1115::2/128
-
-    - name: bring wg up on the relay node
-      shell: wg-quick up /etc/wireguard/wg0.conf
+- name: bring wg up on the relay node
+  shell: wg-quick up /etc/wireguard/wg0.conf
