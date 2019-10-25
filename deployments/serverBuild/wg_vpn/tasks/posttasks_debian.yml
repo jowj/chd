@@ -7,9 +7,13 @@
       ListenPort = 51820
       SaveConfig = true
       [Peer]
-      # name = luggable-laptop
+      # name = pvl
       PublicKey = {{ client_publickey.stdout }}
-      AllowedIPs = 10.200.219.2/32, fd86:ea04:1115::2/128
+      AllowedIPs = 10.200.219.19/32, fd86:ea04:1115::19/128
+      [Peer]
+      # name = matrix
+      PublicKey = {{ ios_publickey.stdout }}
+      AllowedIPs = 10.200.219.10/32, fd86:ea04:1115::10/128
 
 - name: bring wg up on the relay node
   shell: wg-quick up /etc/wireguard/wg0.conf
