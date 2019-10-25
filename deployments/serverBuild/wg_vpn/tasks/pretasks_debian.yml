@@ -39,3 +39,9 @@
 - name: register publickey for later use
   shell: cat /etc/wireguard/publickey
   register: server_publickey
+
+# do this to avoid idiot "hey you can't start, u already started!!!" erros.
+# fucker.
+- name: register publickey for later use
+  shell: wg-quick down /etc/wireguard/wg0.conf
+  ignore_errors: True
