@@ -25,6 +25,7 @@
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-python.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-rust.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-social.el")
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/org-protocol-capture-html.el")
 
 
 (custom-set-variables
