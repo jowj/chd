@@ -19,13 +19,14 @@
   (require 'use-package))
 
 ;; load my files
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/org-protocol-capture-html.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-generic.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-golang.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-org.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-python.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-rust.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-social.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/org-protocol-capture-html.el")
+
 
 
 (custom-set-variables
