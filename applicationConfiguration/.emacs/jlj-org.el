@@ -63,6 +63,7 @@
 ;; configure the org protocol
 (org-load-modules-maybe t)
 (require 'org-protocol)
+(require 'org-protocol-capture-html)
 (setq org-protocol-default-template-key "w")
 
 (setq org-capture-templates
