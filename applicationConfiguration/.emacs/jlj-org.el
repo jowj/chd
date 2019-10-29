@@ -52,12 +52,6 @@
     (setq org-directory "~/Nextcloud/Documents/org/")                 ; define generic org capture shit
     (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
 
-;; org-capture templates
-(setq org-capture-templates
-    '(("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
-       "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
-    ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
-       "* TODO %?\n%U" :empty-lines 1 :prepend t)))
 
 
 ;; Set up bullets
@@ -65,3 +59,19 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+;; configure the org protocol
+(org-load-modules-maybe t)
+(require 'org-protocol)
+(setq org-protocol-default-template-key "w")
+
+(setq org-capture-templates
+       `(("w" "Web site" entry (file+olp "~/Nextcloud/Documents/org/refile-beorg.org" "Web")
+	"* %c :website:\n%U %?%:initial")
+       ("x" "web snippets with selection" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+         "* %^{Title}\n\n  Source: %u, %c\n\n  %i" :empty-lines 1)
+        ;; ... more templates here ...
+	("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+	   "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
+	  ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+	   "* TODO %?\n%U" :empty-lines 1 :prepend t)))
