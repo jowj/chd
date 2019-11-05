@@ -278,8 +278,9 @@ globalkeys = gears.table.join(
        {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
        {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-       {description = "quit awesome", group = "awesome"}),
+    -- awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+    --    {description = "quit awesome", group = "awesome"}),
+    -- added by josiah for rofi use
     awful.key({ "Control", "Mod1" }, "space",
        function()
 	  awful.util.spawn("rofi -combi-modi window,drun,ssh -theme solarized -font 'hack 10' -show combi")
@@ -330,8 +331,8 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+    -- awful.key({ modkey }, "p", function() menubar.show() end,
+    --    {description = "show the menubar", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
