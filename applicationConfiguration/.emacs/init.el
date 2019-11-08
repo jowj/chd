@@ -20,6 +20,7 @@
 
 ;; load my files
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/org-protocol-capture-html.el")
+(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/src/keychain-environment.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-generic.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-golang.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-org.el")
@@ -27,6 +28,10 @@
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-rust.el")
 (load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-social.el")
 
+;; load keychain (if it exists)
+(when (eq system-type 'gnu/linux)
+  (keychain-refresh-environment)
+  )
 
 
 (custom-set-variables
