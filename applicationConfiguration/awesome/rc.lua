@@ -574,12 +574,19 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- -- enable vertical monitor detection automatically
--- awful.screen.connect_for_each_screen(function(s)
---     if s.geometry.width >= s.geometry.height then
---       awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, s, awful.layout.layouts[1])
---     else
---       awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, s, awful.layout.layouts[2])
---     end
---   end)
+-- Autorun programs
+-- i'm not SURE that this actually works, but i'm going to say 'yes' until i do a hard reboot.
+autorun = true
+autorunApps =
+{
+      "nextcloud",
+      "ssh -X josiah@hatchery -v -Y calibre",
+      "xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --mode 1920x1080 --left-of HDMI-0 --rotate normal --primary  --output DP-2 --mode 1920x1080 --right-of HDMI-0 --rotate left"
+}
+if autorun then
+   for app = 1, #autorunApps do
+       awful.util.spawn(autorunApps[app])
+   end
+end
+
 
