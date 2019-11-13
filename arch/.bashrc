@@ -15,6 +15,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/Users/jowj/Library/Python/3.6/bin:$PATH
 export PATH=/home/josiah/.local/bin:$PATH
+export PATH=/home/josiah/.gem/ruby/2.6.0/bin:$PATH
 
 # blatantly steal micah's ls aliases because they make SO MUCH SENSE omg.
 alias python="python3"
