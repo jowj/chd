@@ -286,7 +286,7 @@ globalkeys = gears.table.join(
     end),
 
     -- added by josiah for rofi use
-    awful.key({ "Control", "Mod1" }, "space",
+    awful.key({ "Control","Mod1" }, "space",
        function()
 	  awful.util.spawn("rofi -combi-modi window,drun,ssh -theme solarized -font 'hack 10' -show combi")
     end),
@@ -339,9 +339,9 @@ end))
     -- awful.key({ modkey }, "p", function() menubar.show() end,
     --    {description = "show the menubar", group = "launcher"}
 
-
+-- clientkeys
 clientkeys = gears.table.join(
-    awful.key({ modkey,           }, "f",
+   awful.key({ modkey,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
             c:raise()
@@ -588,5 +588,3 @@ if autorun then
        awful.util.spawn(autorunApps[app])
    end
 end
-
-
