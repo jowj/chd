@@ -22,7 +22,8 @@
      'org-babel-load-languages
      '((python . t)
        (matlab . t)
-       (restclient . t)))
+       (restclient . t)
+       (shell . t)))
 
     
 
