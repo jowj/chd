@@ -33,3 +33,9 @@
 
 ;; (use-package pyvenv
 ;;   :ensure t)
+(use-package virtualenvwrapper
+  :ensure t
+  :config
+  (venv-initialize-interactive-shells) ;; if you want interactive shell support
+  (venv-initialize-eshell) ;; if you want eshell support
+  (setq venv-location "~/.local/share/virtualenvs/"))
