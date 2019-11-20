@@ -21,7 +21,9 @@
     (org-babel-do-load-languages
      'org-babel-load-languages
      '((python . t)
-       (matlab . t)))
+       (matlab . t)
+       (restclient . t)
+       (shell . t)))
 
     
 
@@ -58,6 +60,10 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package ob-restclient
+  :ensure t
+  :after org)
 
 ;; configure the org protocol
 (org-load-modules-maybe t)
