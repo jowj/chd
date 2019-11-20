@@ -40,7 +40,9 @@ ok, this houses my 'first steps' of building a server. I do not automate telling
 
 
 *** application configuration
+
 there's not really a lot to expound on here.
+
 *** ergodox
 theres a bit to write about here, but i've already written about some of it in a blog post detailing a bit about ~agares~. Link and excerpt below:
 
