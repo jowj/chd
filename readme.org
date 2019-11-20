@@ -1,0 +1,58 @@
+* agares
+** agares was a demon who taught those who summoned him foreign languages, but only vulgar words. it must be true because i read it on the internet
+
+** purpose:
+automate syncing and configuration of machines in my inventory so that i don't have config drift
+
+** subprojects:
+ - sync deployment files
+ - sync application configuration shits
+   - window managers
+     - hammerspoon for macOS (work machines)
+     - awesomeWM for linux machines (personal devices)
+   - emacs configs
+   - firefox ~chrome/usercss~ shits
+ - sync keyboard config for ergodoxes (ergodoxen?)
+
+*** deployments
+i currently am setting all my deployments to live within agares. i use agares as a submodule within my colove project in order to fascilitate deploys from within a container. this allows me to accomplish a few things that are important to my workflow, but are likely not super important to a lot of other people.
+
+**** awful-1
+this is almost everything that lives in digital ocean. this handles VNC, arke, mojobot, and I think one or two other minor things. eventually this will be rewritten to at least docker-compose, and even better if ~swarm~ but that's not really a priority right now.
+
+**** mediaserver
+     this is atypical in that i didn't write an ansible playbook for this. this all runs locally in my network without being exposed to the internet at large. this should be improved with a more automatic solution, but ~git clone~ > ~docker-compose up -d~ isn't really that bad right now.
+
+**** serverbuild
+god i need to fix my naming schemes for shits. and rewrite a bunch of this garbage. 
+
+ok, this houses my 'first steps' of building a server. I do not automate telling my hosting provider to build out a VM, i click that manually. once that's built, I run this serverbuild project. Eventually I'm going to use this project as a way to learn more about ~ansible-galaxy~ and having more modular playbooks, etc etc. but for now, its pretty basic:
+- ~onprem~ defines a sort of ur-local-device list of requirements. its barebones.
+- ~serverbuild~ defines all the regular shit i want to do to a server that's hosted in digital ocean:
+  - enable passwordless sudo
+  - create new non root user
+  - setup my ssh keys
+  - install some apt packages
+  - fuck with the ssh service
+  - restart the ssh service
+- ~vpnbuild~ is the original playbook i've used to automate some of the VPN build steps i've done over and over again. i believe this is now deprecated, but it does function (as inelegantly as possible).
+- ~wg_vpn~ is my first forray into ~ansible-universe~. all the interesting stuff right now is in ~wg_vpn/tasks~
+
+
+*** application configuration
+there's not really a lot to expound on here.
+*** ergodox
+theres a bit to write about here, but i've already written about some of it in a blog post detailing a bit about ~agares~. Link and excerpt below:
+
+i use an [[https://www.massdrop.com/buy/infinity-ergodox]infinity ergodox] at home. this is a fun entry level diy project that taught me to solder (badly) and introduced me to QMK and TMK. I avoid having to dive very deep into those and instead use input.club's online [[https://input.club/configurator-ergodox/]configurator]. i download the output and put them into the keyboard dir of `agares`, along with a screenshot of the configurator tool, so that I know how everything is *currently* configured. this helps especially early on when you're tweaking the keymap every few days trying to remember "where the fuck did i put the _ sign??". 
+
+Once that's downloaded you still have to flash your ergodox. do yourself a favor and keep a "flash" keybinding easily accessible on both sides of your keyboard or you will hate yourself.
+
+Some guides say you only need to flash one side of the keyboard as long as they are plugged into each other. That has never worked for me and I *must* flash both sides or the keymap will be incorrect.
+
+**** flashing the keyboard on windows
+i absolutely can not get this to work unless i'm running a linux guest in virtualbox. instead, I flash from a mac or other *nix computer because its just hilariously easy and I don't have to fuck with loading a new driver first. sorry for this terrible answer, but for the infinity ergodox this is literally the easiest way. if anyone knows one for the love of god please [[mailto:me@jowj.net]email me]
+
+**** flashing the keyboard on *nix
+[[https://www.reddit.com/r/MechanicalKeyboards/comments/5bjtt8/guide_infinity_ergodox_linux_guide_modifying/]read this here poast]
+
