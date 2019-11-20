@@ -25,7 +25,6 @@
 
     
 
-    (setq org-babel-python-command "/usr/local/bin/python3")
     ;; org-agenda configs
     (setq org-habit-show-habits-only-for-today nil)
     (setq org-agenda-repeating-timestamp-show-all nil)
