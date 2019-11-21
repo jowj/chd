@@ -46,7 +46,7 @@ there's not really a lot to expound on here.
 *** ergodox
 theres a bit to write about here, but i've already written about some of it in a blog post detailing a bit about ~agares~. Link and excerpt below:
 
-i use an [[https://www.massdrop.com/buy/infinity-ergodox]infinity ergodox] at home. this is a fun entry level diy project that taught me to solder (badly) and introduced me to QMK and TMK. I avoid having to dive very deep into those and instead use input.club's online [[https://input.club/configurator-ergodox/]configurator]. i download the output and put them into the keyboard dir of `agares`, along with a screenshot of the configurator tool, so that I know how everything is *currently* configured. this helps especially early on when you're tweaking the keymap every few days trying to remember "where the fuck did i put the _ sign??". 
+i use an [[https://www.massdrop.com/buy/infinity-ergodox][infinity ergodox]] at home. this is a fun entry level diy project that taught me to solder (badly) and introduced me to QMK and TMK. I avoid having to dive very deep into those and instead use input.club's online [[https://input.club/configurator-ergodox/][configurator]]. i download the output and put them into the keyboard dir of `agares`, along with a screenshot of the configurator tool, so that I know how everything is *currently* configured. this helps especially early on when you're tweaking the keymap every few days trying to remember "where the fuck did i put the _ sign??". 
 
 Once that's downloaded you still have to flash your ergodox. do yourself a favor and keep a "flash" keybinding easily accessible on both sides of your keyboard or you will hate yourself.
 
@@ -56,5 +56,5 @@ Some guides say you only need to flash one side of the keyboard as long as they 
 i absolutely can not get this to work unless i'm running a linux guest in virtualbox. instead, I flash from a mac or other *nix computer because its just hilariously easy and I don't have to fuck with loading a new driver first. sorry for this terrible answer, but for the infinity ergodox this is literally the easiest way. if anyone knows one for the love of god please [[mailto:me@jowj.net]email me]
 
 **** flashing the keyboard on *nix
-[[https://www.reddit.com/r/MechanicalKeyboards/comments/5bjtt8/guide_infinity_ergodox_linux_guide_modifying/]read this here poast]
+[[https://www.reddit.com/r/MechanicalKeyboards/comments/5bjtt8/guide_infinity_ergodox_linux_guide_modifying/][read this here poast]]
 
