@@ -81,3 +81,6 @@
 	   "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
 	  ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
 	   "* TODO %?\n%U" :empty-lines 1 :prepend t)))
+
+;; configure org exporters
+(require 'ox-md)
