@@ -85,3 +85,9 @@
 
 ;; configure org exporters
 (require 'ox-md)
+
+;; org prettifiers
+(setq org-agenda-format-date (lambda (date) (concat "\n"
+						    (make-string (window-width) 9472)
+						    "\n"
+						    (org-agenda-format-date-aligned date))))
