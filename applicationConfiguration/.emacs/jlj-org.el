@@ -25,7 +25,8 @@
        (restclient . t)
        (shell . t)))
 
-    
+    ;; log state changes to a drawer
+    (setq org-log-into-drawer t)
 
     ;; org-agenda configs
     (setq org-habit-show-habits-only-for-today nil)
