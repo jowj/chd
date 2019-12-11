@@ -106,3 +106,23 @@ appModal = modalHotKey.new(
   appCuts,
   hammerSpoonEmoji .. "Awful App Switcher"
 )
+
+-- stolen from stackoverflow, for moving between monitors.
+-- Get the focused window, its window frame dimensions, its screen frame dimensions,
+-- and the next screen's frame dimensions.
+-- https://stackoverflow.com/questions/54151343/how-to-move-an-application-between-monitors-in-hammerspoon
+hs.hotkey.bind({"cmd", "ctrl"}, "o", function()
+      local focusedWindow = hs.window.focusedWindow()
+      local focusedScreenFrame = focusedWindow:screen():frame()
+      local nextScreenFrame = focusedWindow:screen():next():frame()
+      local windowFrame = focusedWindow:frame()
+
+      -- Calculate the coordinates of the window frame in the next screen and retain aspect ratio
+      windowFrame.x = ((((windowFrame.x - focusedScreenFrame.x) / focusedScreenFrame.w) * nextScreenFrame.w) + nextScreenFrame.x)
+      windowFrame.y = ((((windowFrame.y - focusedScreenFrame.y) / focusedScreenFrame.h) * nextScreenFrame.h) + nextScreenFrame.y)
+      windowFrame.h = ((windowFrame.h / focusedScreenFrame.h) * nextScreenFrame.h)
+      windowFrame.w = ((windowFrame.w / focusedScreenFrame.w) * nextScreenFrame.w)
+
+      -- Set the focused window's new frame dimensions
+      focusedWindow:setFrame(windowFrame)
+end)
