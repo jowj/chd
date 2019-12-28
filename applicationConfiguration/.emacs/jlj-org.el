@@ -74,14 +74,16 @@
 
 (setq org-capture-templates
        `(("w" "Web site" entry (file+olp "~/Nextcloud/Documents/org/refile-beorg.org" "Web")
-	"* %c :website:\n%U %?%:initial")
-       ("x" "web snippets with selection" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
-         "* %^{Title}\n\n  Source: %u, %c\n\n  %i" :empty-lines 1)
-        ;; ... more templates here ...
-	("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
-	   "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
-	  ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
-	   "* TODO %?\n%U" :empty-lines 1 :prepend t)))
+	  "* %c :website:\n%U %?%:initial")
+	 ("x" "web snippets with selection" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+	  "* %^{Title}\n\n  Source: %u, %c\n\n  %i" :empty-lines 1)
+	 ;; ... more templates here ...
+	 ("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
+	 ("q" "quotes" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "quotes")
+	  "* %?\n%U \n " :empty-lines 1 :prepend t)	 
+	 ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+	  "* TODO %?\n%U" :empty-lines 1 :prepend t)))
 
 ;; configure org exporters
 (require 'ox-md)
