@@ -73,10 +73,8 @@
 (setq org-protocol-default-template-key "w")
 
 (setq org-capture-templates
-       `(("w" "Web site" entry (file+olp "~/Nextcloud/Documents/org/refile-beorg.org" "Web")
+       `(("w" "Web site" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "links" "unsorted")
 	  "* %c :website:\n%U %?%:initial")
-	 ("x" "web snippets with selection" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
-	  "* %^{Title}\n\n  Source: %u, %c\n\n  %i" :empty-lines 1)
 	 ;; ... more templates here ...
 	 ("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
 	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
