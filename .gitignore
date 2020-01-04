@@ -1,6 +1,1 @@
-*.retry
-.DS_Store
-.vscode
-*~
-jlj-init.el
-/deployments/serverBuild/awful-ca-cert.pem
+*
