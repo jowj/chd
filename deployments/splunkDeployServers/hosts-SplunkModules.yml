@@ -1,8 +1,0 @@
-all:
-  children:
-    corp:
-      hosts:
-        AUS01GMSPLUNK01:
-    vdc:
-      hosts:
-        v1-cs-sec-splunk01:
