@@ -3,7 +3,6 @@
 ;; Bootstrap's bootstraps
 ;;;; bootstrap's bootstraps
 
-(setq user-init-file "~/Documents/projects/agares/applicationConfiguration/.emacs/init.el")
 (package-initialize)
 (require 'package)
 (setq package-archives
@@ -19,14 +18,13 @@
   (require 'use-package))
 
 ;; load my files
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/org-protocol-capture-html.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/src/keychain-environment.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-generic.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-golang.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-org.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-python.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-rust.el")
-(load-file "~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-social.el")
+(load-file "~/.emacs.d/src/keychain-environment.el")
+(load-file "~/.emacs.d/jlj-generic.el")
+(load-file "~/.emacs.d/jlj-golang.el")
+(load-file "~/.emacs.d/jlj-org.el")
+(load-file "~/.emacs.d/jlj-python.el")
+(load-file "~/.emacs.d/jlj-rust.el")
+(load-file "~/.emacs.d/jlj-social.el")
 
 ;; load keychain (if it exists)
 (when (eq system-type 'gnu/linux)
