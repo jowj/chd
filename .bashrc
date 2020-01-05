@@ -83,12 +83,3 @@ echo -e "\e[31m      ||    BURIED\e[0m       |"
 echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
 echo -e "\e[31m      ||\e[0m                 |"
 echo ""
-
-export GPG_TTY=/dev/pts/6
-
-gpg-connect-agent updatestartuptty /bye
-
-unset SSH_AGENT_PID
-
-export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
-
