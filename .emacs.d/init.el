@@ -18,6 +18,7 @@
   (require 'use-package))
 
 ;; load my files
+(load-file "~/.emacs.d/org-protocol-capture-html.el")
 (load-file "~/.emacs.d/src/keychain-environment.el")
 (load-file "~/.emacs.d/jlj-generic.el")
 (load-file "~/.emacs.d/jlj-golang.el")
