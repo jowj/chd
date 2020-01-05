@@ -1,4 +1,4 @@
-f#!/bin/bash
+#!/bin/bash
 
 shopt -s nocaseglob # glob filenames case-insensitively
 shopt -s histappend # append history to history file, don't overwrite.
