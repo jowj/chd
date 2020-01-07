@@ -1,8 +1,3 @@
-shopt -s nocaseglob # glob filenames case-insensitively
-shopt -s histappend # append history to history file, don't overwrite.
-shopt -s checkwinsize # fix line wrap issues
-
-
 set completion-ignore-case on # ignore case when tab-completing
 
 # find paths inside agares
