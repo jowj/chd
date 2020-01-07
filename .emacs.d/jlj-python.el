@@ -4,32 +4,36 @@
 ;; using jedi requires virtualenv to be installed
 ;; pipenv is mostly acceptable but i could not make a full IDE experience happen
 
-;; (use-package pylint
-;;   :ensure t)
-
-
-;; (setq python-shell-interpreter "/usr/local/bin/python3"
-;;       python-shell-interpreter-args "-i")
-
-;; (use-package py-autopep8
-;;   :ensure t
-;;   :config
-;;   (progn
-;;     (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)))
-
-;; (use-package jedi
-;;   :ensure t
-;;   :init
-;;   (add-hook 'python-mode-hook 'jedi:setup)
-;;   (add-hook 'python-mode-hook 'jedi:ac-setup))
-
 (use-package pipenv
   :ensure t)
 
-(use-package eglot
+(use-package flycheck
+  :ensure t)
+
+; Let's set up company! perhaps not necessary but this is what i like to use
+(use-package company
   :ensure t
   :config
-    (add-hook 'python-mode-hook 'eglot-ensure))
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 1))
+
+; install lsp mode
+(use-package lsp-mode
+  :ensure t
+  :hook (python-mode . lsp-deferred)
+  :commands (lsp lsp-deferred))
+
+; let's add the lsp company backend
+(use-package company-lsp
+  :ensure t
+  :config
+  (push 'company-lsp company-backends))
+
+; also installs lsp as a dependency
+(use-package lsp-ui
+  :ensure t
+  :hook (lsp-mode . lsp-ui-mode))
+
 
 ;; (use-package pyvenv
 ;;   :ensure t)
