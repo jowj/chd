@@ -95,7 +95,7 @@ appCuts = {
   c = 'Google Chrome'
 }
 
-modalHotKey = dofile(os.getenv("HOME") .. "/.hammerspoon/modalHotKey.lua")
+modalHotKey = dofile(os.getenv("HOME") .. "/.config/hammerspoon/modalHotKey.lua")
 appActionTable = {}
 for key, app in pairs(appCuts) do
    appActionTable[key] = function() hs.application.launchOrFocus(app) end
