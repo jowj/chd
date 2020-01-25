@@ -34,12 +34,7 @@ man() {
             man "$@"
 }
 
-# history control variables
-export HISTCONTROL=ignoreboth
-export HISTSIZE="INFINITE"
-export HISTFILESIZE=5000
-export HISTCONTROL="ignorespace"
-export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+setopt appendhistory
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

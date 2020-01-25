@@ -7,6 +7,9 @@
 (use-package pipenv
   :ensure t)
 
+(use-package poetry
+ :ensure t)
+
 (use-package flycheck
   :ensure t)
 
