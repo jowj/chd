@@ -165,6 +165,12 @@
 (use-package powershell
   :ensure t)
 
+(use-package ansible
+  :ensure t)
+
+(use-package yaml-mode
+  :ensure t)
+
 (use-package lua-mode
   :ensure t
   :config
