@@ -45,7 +45,7 @@
  '(znc-servers
    `(("bouncer.awful.club" 5000 t
       ((freenode "blindidiotgod/freenode" ,znc-password)
-       (OFTC "blindidiotgod/OFTC" ,znc-password))))))
+       (OFTC "blindidiotgod/OFTC" ,znc-password)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
