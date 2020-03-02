@@ -37,7 +37,7 @@
     (setq org-columns-default-format
 	  '(("%25ITEM %TODO %3PRIORITY %TAGS")))
 
-;;;; custom org mode hotkeys 
+;;;; custom org mode hotkeys
     (global-set-key "\C-cl" 'org-store-link)
     (global-set-key "\C-ca" 'org-agenda)
     (global-set-key "\C-cc" 'org-capture)
@@ -79,7 +79,7 @@
 	 ("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
 	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
 	 ("q" "quotes" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "quotes")
-	  "* %?\n%U \n " :empty-lines 1 :prepend t)	 
+	  "* %?\n%U \n " :empty-lines 1 :prepend t)
 	 ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
 	  "* TODO %?\n%U" :empty-lines 1 :prepend t)))
 

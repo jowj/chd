@@ -46,7 +46,7 @@
 
 (setq user-home-file "~/Nextcloud/Documents/org/personal.org")
 (defun find-user-home-file ()
-  "Edit the `user-home-file' in this window"
+  "Edit the `user-home-file' in this window."
   (interactive)
   (find-file user-home-file))
 (global-set-key (kbd "C-c C-j h") 'find-user-home-file)
@@ -72,7 +72,7 @@
   :config
   (progn
     (defadvice smex (around space-inserts-hyphen activate compile)
-      (let ((ido-cannot-complete-command 
+      (let ((ido-cannot-complete-command
 	     `(lambda ()
 		(interactive)
 		(if (string= " " (this-command-keys))
