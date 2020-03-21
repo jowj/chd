@@ -32,6 +32,21 @@
   (progn
     (setq pinboard-api-token pinboard-password)))
 
+(require 'org)
+
+(defun org-pinboard-store-link ()
+  "Store a link taken from a pinboard buffer."
+  (when (eq major-mode 'pinboard-mode)
+    (pinboard-with-current-pin pin
+      (org-store-link-props
+       :type "pinboard"
+       :link (alist-get 'href pin)
+       :description (alist-get 'description pin)))))
+
+(org-link-set-parameters "pinboard"
+                         :follow #'browse-url
+                         :store #'org-pinboard-store-link)
+
 ;;;; twitter
 ;;;; the only thing that isn't pretty much stock is
 ;;;; - i rebound C-c C-o to open links, so it would mimic org-mode's layout.
