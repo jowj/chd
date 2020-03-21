@@ -41,7 +41,7 @@
  '(epg-gpg-program "/usr/local/bin/gpg")
  '(global-hl-line-mode t)
  '(package-selected-packages
-    (lsp poetry yasnippet company-lsp ob-restclient virtualenvwrapper flymake-python-pyflakes lsp-ui lsp-mode jedi znc yaml-mode which-key use-package twittering-mode try smex racer python-mode pylint py-autopep8 powershell pdf-tools outline-magic org2blog multiple-cursors magit helm flycheck-rust eyebrowse exec-path-from-shell emojify elpy ein doom-themes dockerfile-mode docker csharp-mode ansible anaconda-mode ace-window)))
+   '(pinboard yaml-mode which-key web-mode virtualenvwrapper use-package twittering-mode try smex racer powershell poetry pipenv ox-reveal outline-magic org-pdfview org-bullets ob-restclient multiple-cursors magit lua-mode lsp-ui iedit helm flycheck-rust exec-path-from-shell eglot edit-indirect company-lsp ansible ace-window)))
  '(znc-servers
    `(("bouncer.awful.club" 5000 t
       ((freenode "blindidiotgod/freenode" ,znc-password)

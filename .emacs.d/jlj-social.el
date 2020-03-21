@@ -5,8 +5,46 @@
 ;; - uncomment if you want to only use emacs to input/manage the gpg key
 ;; - comment out if you want gpg to be handled through seahorse/gnome keyring.
 
-;; (when (eq system-type 'darwin)
-;;   (setf epa-pinentry-mode 'loopback))
+;; configure global auth constants
+(require 'epa)
+(when (eq system-type 'darwin)
+  (setf epa-pinentry-mode 'loopback))
+(setq auth-sources '("~/.emacs.d/jlj-secrets.gpg"))
+(setq auth-source-debug t)
+(custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
+
+;; configure social functions
+;;;; pinboard.el
+(defun lookup-pinboard-password (host)
+  "Lookup encrypted password given HOST."
+  (require 'auth-source)
+  (funcall (plist-get
+	    (car (auth-source-search
+		  :host host
+		  :type 'netrc))
+	    :secret)))
+
+(setq pinboard-password(lookup-pinboard-password "api.pinboard.in"))
+
+(use-package pinboard
+  :ensure t
+  :config
+  (progn
+    (setq pinboard-api-token pinboard-password)))
+
+;;;; twitter
+;;;; the only thing that isn't pretty much stock is
+;;;; - i rebound C-c C-o to open links, so it would mimic org-mode's layout.
+(use-package twittering-mode
+  :ensure t
+  :config
+  (progn
+    (setq twittering-icon-mode t)
+    (setq twittering-reverse-mode t)
+    (setq twittering-enable-unread-status-notifier t)
+    (with-eval-after-load "twittering-mode" (define-key twittering-mode-map (kbd "C-c C-o") `twittering-view-user-page))))
+
+;;;; irc
 ;; (use-package znc
 ;;   :ensure t
 ;;   :config
@@ -14,21 +52,20 @@
 ;;     (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
 ;;     (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
 
-;;     (require 'epa)
 
-;;     ;; handle annoying gpg shit.
-;;     (defun lookup-password (host user port)
-;;       "Lookup encrypted password given HOST, USER and PORT for service."
-;;       (require 'auth-source)
-;;       (funcall (plist-get
-;; 		(car (auth-source-search
-;; 		      :host host
-;; 		      :user user
-;; 		      :type 'netrc
-;; 		      :port port))
-;; 		:secret)))
+    ;; handle annoying gpg shit.
+    (defun lookup-password (host user port)
+      "Lookup encrypted password given HOST, USER and PORT for service."
+      (require 'auth-source)
+      (funcall (plist-get
+		(car (auth-source-search
+		      :host host
+		      :user user
+		      :type 'netrc
+		      :port port))
+		:secret)))
 
-;;     (setq znc-password(lookup-password "bouncer.awful.club" "blindidiotgod/OFTC" 5000))
+    (setq znc-password(lookup-password "bouncer.awful.club" "blindidiotgod/OFTC" 5000))
 
 ;;     ;; by default, erc alerts you on any activity. I only want to hear
 ;;     ;; about mentions of nick or keyword
@@ -47,15 +84,3 @@
 ;;      (setq erc-hide-list '("PART" "QUIT" "JOIN"))
 ;;      (setq erc-join-buffer 'bury)))
 
-
-;; the only thing that isn't pretty much stock is
-;; - i rebound C-c C-o to open links, so it would mimic org-mode's layout.
-
-(use-package twittering-mode
-  :ensure t
-  :config
-  (progn
-    (setq twittering-icon-mode t)
-    (setq twittering-reverse-mode t)
-    (setq twittering-enable-unread-status-notifier t)
-    (with-eval-after-load "twittering-mode" (define-key twittering-mode-map (kbd "C-c C-o") `twittering-view-user-page))))
