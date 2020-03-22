@@ -27,6 +27,9 @@ alias lsli='lsl -i' # lsl+inodes
 alias l1='ls -1'
 alias llm='lsl -r -t' # lsl+ sort by modified time (lastest at bottom)
 
+# emacs aliases lol
+alias social="emacs -q -l '~/.emacs.d/init-social.el'"
+
 # blatantly steal micah's colorized man pages
 # See: http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
 # see: https://github.com/mrled/dhd/blob/800544cae0cc2f4e2b85b5dafae59babf75677fe/hbase/.bashrc

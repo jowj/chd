@@ -41,7 +41,8 @@
  '(epg-gpg-program "/usr/local/bin/gpg")
  '(global-hl-line-mode t)
  '(package-selected-packages
-   '(pinboard yaml-mode which-key web-mode virtualenvwrapper use-package twittering-mode try smex racer powershell poetry pipenv ox-reveal outline-magic org-pdfview org-bullets ob-restclient multiple-cursors magit lua-mode lsp-ui iedit helm flycheck-rust exec-path-from-shell eglot edit-indirect company-lsp ansible ace-window)))
+   (quote
+    (pinboard yaml-mode which-key web-mode virtualenvwrapper use-package twittering-mode try smex racer powershell poetry pipenv ox-reveal outline-magic org-pdfview org-bullets ob-restclient multiple-cursors magit lua-mode lsp-ui iedit helm flycheck-rust exec-path-from-shell eglot edit-indirect company-lsp ansible ace-window))))
  '(znc-servers
    `(("bouncer.awful.club" 5000 t
       ((freenode "blindidiotgod/freenode" ,znc-password)
