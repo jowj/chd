@@ -568,7 +568,7 @@ autorunApps =
 {
       "nextcloud",
       "ssh -X josiah@hatchery -v -Y calibre",
-      "xrandr --output DP-4 --mode 1920x1080 --pos 0x0 --rotate normal --primary --output DP-0 --mode 1920x1080 --left-of DP-4 --rotate normal --output DP-2 --mode 1920x1080 --right-of DP-4 --rotate left"
+      "xrandr --output DP-4 --mode 1920x1080 --left-of DP-2 --rotate right --output HDMI-0 --mode 1920x1080 --rotate left --right-of DP-2 --output DP-2 --mode 1920x1080 --rotate normal --primary --pos 0x0"
 }
 if autorun then
    for app = 1, #autorunApps do
