@@ -60,12 +60,12 @@
     (with-eval-after-load "twittering-mode" (define-key twittering-mode-map (kbd "C-c C-o") `twittering-view-user-page))))
 
 ;;;; irc
-;; (use-package znc
-;;   :ensure t
-;;   :config
-;;   (progn
-;;     (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
-;;     (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
+(use-package znc
+  :ensure t
+  :config
+  (progn
+    (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
+    (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
 
 
     ;; handle annoying gpg shit.
@@ -82,20 +82,19 @@
 
     (setq znc-password(lookup-password "bouncer.awful.club" "blindidiotgod/OFTC" 5000))
 
-;;     ;; by default, erc alerts you on any activity. I only want to hear
-;;     ;; about mentions of nick or keyword
-;;     (custom-set-variables
-;;      '(znc-servers
-;;        `(("bouncer.awful.club" 5000 t
-;; 	  ((freenode "blindidiotgod/freenode" ,znc-password)
-;; 	   (OFTC "blindidiotgod/OFTC" ,znc-password))))))
-;;      (setq erc-current-nick-highlight-type 'all)
-;;      (setq erc-keywords '("security"))
-;;      (setq erc-track-exclude-types '("JOIN" "PART" "NICK" "MODE" "QUIT"))
-;;      (setq erc-track-use-faces t)
-;;      (setq erc-track-faces-priority-list
-;; 	   '(erc-current-nick-face erc-keyword-face))
-;;      (setq erc-track-priority-faces-only 'all)
-;;      (setq erc-hide-list '("PART" "QUIT" "JOIN"))
-;;      (setq erc-join-buffer 'bury)))
-
+    ;; by default, erc alerts you on any activity. I only want to hear
+    ;; about mentions of nick or keyword
+    (custom-set-variables
+     '(znc-servers
+       `(("bouncer.awful.club" 5000 t
+	  ((freenode "blindidiotgod/freenode" ,znc-password)
+	   (comintern "blindidiotgod/comintern" ,znc-password))))))
+     (setq erc-current-nick-highlight-type 'all)
+     (setq erc-keywords '("security"))
+     (setq erc-track-exclude-types '("JOIN" "PART" "NICK" "MODE" "QUIT"))
+     (setq erc-track-use-faces t)
+     (setq erc-track-faces-priority-list
+	   '(erc-current-nick-face erc-keyword-face))
+     (setq erc-track-priority-faces-only 'all)
+     (setq erc-hide-list '("PART" "QUIT" "JOIN"))
+     (setq erc-join-buffer 'bury)))

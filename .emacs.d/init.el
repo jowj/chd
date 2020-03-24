@@ -25,7 +25,7 @@
 (load-file "~/.emacs.d/jlj-org.el")
 (load-file "~/.emacs.d/jlj-python.el")
 (load-file "~/.emacs.d/jlj-rust.el")
-(load-file "~/.emacs.d/jlj-social.el")
+;; (load-file "~/.emacs.d/jlj-social.el")
 
 ;; load keychain (if it exists)
 (when (eq system-type 'gnu/linux)
@@ -42,7 +42,7 @@
  '(global-hl-line-mode t)
  '(package-selected-packages
    (quote
-    (pinboard yaml-mode which-key web-mode virtualenvwrapper use-package twittering-mode try smex racer powershell poetry pipenv ox-reveal outline-magic org-pdfview org-bullets ob-restclient multiple-cursors magit lua-mode lsp-ui iedit helm flycheck-rust exec-path-from-shell eglot edit-indirect company-lsp ansible ace-window))))
+    (znc pinboard yaml-mode which-key web-mode virtualenvwrapper use-package twittering-mode try smex racer powershell poetry pipenv ox-reveal outline-magic org-pdfview org-bullets ob-restclient multiple-cursors magit lua-mode lsp-ui iedit helm flycheck-rust exec-path-from-shell eglot edit-indirect company-lsp ansible ace-window))))
  '(znc-servers
    `(("bouncer.awful.club" 5000 t
       ((freenode "blindidiotgod/freenode" ,znc-password)
