@@ -65,7 +65,6 @@
   :config
   (progn
     (custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
-    (setq auth-sources `("~/Documents/projects/agares/applicationConfiguration/.emacs/jlj-secrets.gpg"))
 
 
     ;; handle annoying gpg shit.
