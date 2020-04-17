@@ -164,6 +164,16 @@
   (setq web-mode-enable-auto-closing t)
   (setq web-mode-enable-auto-quoting t)) ; this fixes the quote problem I mentioned
 
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-register-project-type 'python '("pyproject.toml")
+				    :test "python -m unittest -v"
+				    :test-prefix "test_"))
+
 (use-package powershell
   :ensure t)
 
