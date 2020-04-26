@@ -30,8 +30,11 @@ alias llm='lsl -r -t' # lsl+ sort by modified time (lastest at bottom)
 # emacs aliases lol
 alias social="emacs -q -l '~/.emacs.d/init-social.el'"
 
-# alias for the bullshit xrandr stuff you have to run in the year of our lord 20 fucking 20
-alias fixit='xrandr --output HDMI-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-2 --mode 1920x1080 --right-of HDMI-0 --rotate left --output DP-4 --mode 1920x1080 --left-of HDMI-0 --rotate right --output DP-0 --off'
+# wm aliases to handle stupid xorg problems:
+alias game="xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --primary --output DP-2 --mode 1920x1080 --right-of HDM80 --left-of HDMI-0 --rotate right --output DP-0 --off"
+
+alias fixit="xrandr --output HDMI-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-2 --mode 1920x1080 --right-of HDMI-0 --eft-of HDMI-0 --rotate right --output DP-0 --off"
+
 # blatantly steal micah's colorized man pages
 # See: http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
 # see: https://github.com/mrled/dhd/blob/800544cae0cc2f4e2b85b5dafae59babf75677fe/hbase/.bashrc
