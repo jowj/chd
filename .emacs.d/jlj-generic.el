@@ -31,8 +31,9 @@
 	browse-url-generic-program "open"
 	browse-url-generic-args '("-a" "Firefox")))
 
-(if (eq system-type 'windows-nt)
-    (message "i am windows and suck") ; deal with mac command key problems
+(use-package exec-path-from-shell
+  :ensure t
+  :config
   (exec-path-from-shell-copy-env "PATH"))
 
 ;; (if (string-equal "darwin" (symbol-name system-type))
