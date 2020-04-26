@@ -594,7 +594,8 @@ autorunApps =
       "xrandr --output HDMI-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-2 --mode 1920x1080 --right-of HDMI-0 --rotate left --output DP-4 --mode 1920x1080 --left-of HDMI-0 --rotate right --output DP-0 --off",
       "xset s off",
       "xset -dpms",
-      "xset s noblank"
+      "xset s noblank",
+      "nm-applet"
 }
 if autorun then
    for app = 1, #autorunApps do
