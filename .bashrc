@@ -74,6 +74,14 @@ fi
 # handle key management through `keychain` because its great
 eval $(keychain --eval --quiet ~/.ssh/{awful-git,github,digitalocean,home-net})
 
+# host specific configurations:
+if [ "$HOSTNAME" = "nixon" ]; then
+	printf 'on nixon, applying nixOS config'
+	setxkbmap -option "ctrl:nocaps"
+else
+	printf 'regular config'
+fi
+
 # this looks like garbage but its just color initation and termination
 export PS1="\t \[\e[34m\]ǰ \[\e[91m\]☭\[\e[0m\] "
 
