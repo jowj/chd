@@ -12,3 +12,10 @@
 
 ** adding new files
    - ~git add -f <filename>~
+
+** awesomeWM
+awesome does a lot for me. it also relies on a lot of bullshit:
+ - acpi: battery stuff
+ - arc icons: icons for the task bar
+ - alsamixer: volume widget
+ - more to come lol.

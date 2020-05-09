@@ -21,6 +21,10 @@ require("awful.hotkeys_popup.keys")
 -- volume import
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 
+-- battery import and customization
+local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -48,7 +52,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua") -- this is the OG theme
+-- beautiful.init(gears.filesystem.get_themes_dir() .. "jlj-theme.lua")  -- this is my shitty test theme
 
 -- This is used later as the default terminal and editor to run.
 terminal = "konsole"
@@ -217,6 +222,7 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             mytextclock,
 	    volume_widget({display_notification = true}),
+	    battery_widget,
             s.mylayoutbox,
         },
     }
