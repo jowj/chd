@@ -24,6 +24,8 @@ local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 -- battery import and customization
 local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 
+-- game mode import and customization
+local game_widget = require("awesome-wm-widgets.demomode-widget.demomode")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -52,8 +54,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua") -- this is the OG theme
--- beautiful.init(gears.filesystem.get_themes_dir() .. "jlj-theme.lua")  -- this is my shitty test theme
+-- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua") -- this is the OG theme
+beautiful.init(gears.filesystem.get_configuration_dir() .. "jlj-theme.lua")  -- this is my shitty test theme
 
 -- This is used later as the default terminal and editor to run.
 terminal = "konsole"
@@ -218,6 +220,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+	    game_widget,
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,

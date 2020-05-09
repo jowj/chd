@@ -30,15 +30,6 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
 
--- customize the battery widget
--- as of 2020-05-09 this is not working, fuckin. -jlj
-theme.widget_main_color = "#74aeab"
-theme.widget_red = "#e53935"
-theme.widget_yellow = "#c0ca33"
-theme.widget_green = "#43a047"
-theme.widget_black = "#000000"
-theme.widget_transparent = "#00000000"
-
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -51,6 +42,14 @@ theme.widget_transparent = "#00000000"
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
+
+-- battery customization
+theme.widget_main_color = "#74aeab"
+theme.widget_red = "#e53935"
+theme.widget_yellow = "#c0ca33"
+theme.widget_green = "#43a047"
+theme.widget_black = "#000000"
+theme.widget_transparent = "#00000000"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
