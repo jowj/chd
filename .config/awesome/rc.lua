@@ -27,6 +27,9 @@ local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc"
 -- game mode import and customization
 local game_widget = require("awesome-wm-widgets.demomode-widget.demomode")
 
+-- screen RESOLUTION import and customization
+local screen_widget = require("awesome-wm-widgets.gamemode-widget.gamemode")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -221,6 +224,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
 	    game_widget,
+	    screen_widget,
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
