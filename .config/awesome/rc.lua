@@ -308,6 +308,12 @@ globalkeys = gears.table.join(
 	  awful.util.spawn("rofi -combi-modi window,drun,ssh -theme purple -font 'hack 10' -show combi")
     end),
 
+    -- added by josiah for scrot use
+    awful.key({ "Control","Mod1" }, "4",
+       function()
+	  awful.spawn.with_shell("sleep 0.2 && scrot -s -e 'mv $f ~/Pictures/screenshots/'")
+    end),
+
     
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
        {description = "increase master width factor", group = "layout"}),
