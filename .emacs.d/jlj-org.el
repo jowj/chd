@@ -76,6 +76,8 @@
        `(("w" "Web site" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "links" "unsorted")
 	  "* %c :website:\n%U %?%:initial")
 	 ;; ... more templates here ...
+	 ("b" "Book - capture a book you've read" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "books")
+	  "* %^{TITLE} \n  :PROPERTIES:\n:AUTHOR: %^{AUTHOR}\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
 	 ("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
 	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
 	 ("q" "quotes" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "quotes")
