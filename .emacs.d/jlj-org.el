@@ -48,10 +48,10 @@
 			       (org-agenda-files :maxlevel . 9)))
     (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
     (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
-    (setq org-agenda-files '("~/Nextcloud/Documents/org/"))           ; add files to agenda:
+    (setq org-agenda-files '("~/Sync/Documents/org/"))           ; add files to agenda:
 
 
-    (setq org-directory "~/Nextcloud/Documents/org/")                 ; define generic org capture shit
+    (setq org-directory "~/Sync/Documents/org/")                 ; define generic org capture shit
     (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
 
 
@@ -73,16 +73,16 @@
 (setq org-protocol-default-template-key "w")
 
 (setq org-capture-templates
-       `(("w" "Web site" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "links" "unsorted")
+       `(("w" "Web site" entry (file+olp "~/Sync/Documents/org/webwiki.org" "links" "unsorted")
 	  "* %c :website:\n%U %?%:initial")
 	 ;; ... more templates here ...
-	 ("b" "Book - capture a book you've read" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "books")
+	 ("b" "Book - capture a book you've read" entry (file+olp "~/Sync/Documents/org/webwiki.org" "books")
 	  "* %^{TITLE} \n  :PROPERTIES:\n:AUTHOR: %^{AUTHOR}\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
-	 ("c" "Context-include Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+	 ("c" "Context-include Todo" entry (file "~/Sync/Documents/org/refile-beorg.org")
 	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
-	 ("q" "quotes" entry (file+olp "~/Nextcloud/Documents/org/webwiki.org" "quotes")
+	 ("q" "quotes" entry (file+olp "~/Sync/Documents/org/webwiki.org" "quotes")
 	  "* %?\n%U \n " :empty-lines 1 :prepend t)
-	 ("t" "Todo" entry (file "~/Nextcloud/Documents/org/refile-beorg.org")
+	 ("t" "Todo" entry (file "~/Sync/Documents/org/refile-beorg.org")
 	  "* TODO %?\n%U" :empty-lines 1 :prepend t)))
 
 ;; configure org exporters
