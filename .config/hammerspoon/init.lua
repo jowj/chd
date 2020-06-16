@@ -92,7 +92,8 @@ appCuts = {
   r = 'Riot',
   s = 'Safari',
   t = 'iTerm',
-  c = 'Google Chrome'
+  c = 'Google Chrome',
+  z = 'Zoom.us'  
 }
 
 modalHotKey = dofile(os.getenv("HOME") .. "/.config/hammerspoon/modalHotKey.lua")
