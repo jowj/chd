@@ -93,3 +93,19 @@
 						    (make-string (window-width) 9472)
 						    "\n"
 						    (org-agenda-format-date-aligned date))))
+
+;; org mode hack for screenshots; see org mode hacks page.
+(defun my-org-screenshot ()
+  "Take a screenshot into a time stamped unique-named file in the
+same directory as the org-buffer and insert a link to this file.
+reference: https://orgmode.org/worg/org-hacks.html"
+  (interactive)
+  (setq filename
+        (concat
+         (make-temp-name
+          (concat (buffer-file-name)
+                  "_"
+                  (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
+  (call-process "import" nil nil nil filename)
+  (insert (concat "[[" filename "]]"))
+  (org-display-inline-images))
