@@ -109,3 +109,5 @@ reference: https://orgmode.org/worg/org-hacks.html"
   (call-process "import" nil nil nil filename)
   (insert (concat "[[" filename "]]"))
   (org-display-inline-images))
+
+(global-set-key (kbd "C-c C-s") 'my-org-screenshot)
