@@ -113,6 +113,8 @@ dependency: this relies on imagemagick"
   (insert (concat "[[" filename "]]"))
   (org-display-inline-images))
 
+(if (eq system-type 'darwin)
+    (global-set-key (kbd "C-c C-M-4") 'my-org-screenshot)
+  (global-set-key (kbd "C-c C-4") 'my-org-screenshot))
 
-(global-set-key (kbd "C-c C-M-4") 'my-org-screenshot)
 
