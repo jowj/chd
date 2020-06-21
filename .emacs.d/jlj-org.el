@@ -118,3 +118,6 @@ dependency: this relies on imagemagick"
   (global-set-key (kbd "C-c C-4") 'my-org-screenshot))
 
 
+;; force source blocks to respect the proper indentation.
+(setq org-src-preserve-indentation nil 
+      org-edit-src-content-indentation 0)
