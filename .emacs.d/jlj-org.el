@@ -98,7 +98,8 @@
 (defun my-org-screenshot ()
   "Take a screenshot into a time stamped unique-named file in the
 same directory as the org-buffer and insert a link to this file.
-reference: https://orgmode.org/worg/org-hacks.html"
+reference: https://orgmode.org/worg/org-hacks.html
+dependency: this relies on imagemagick"
   (interactive)
   (setq filename
         (concat
@@ -106,8 +107,12 @@ reference: https://orgmode.org/worg/org-hacks.html"
           (concat (buffer-file-name)
                   "_"
                   (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
-  (call-process "import" nil nil nil filename)
+  (if (eq system-type 'darwin)
+      (shell-command (format "screencapture -i %s" filename))
+    (call-process "import" nil nil nil filename))
   (insert (concat "[[" filename "]]"))
   (org-display-inline-images))
 
-(global-set-key (kbd "C-c C-s") 'my-org-screenshot)
+
+(global-set-key (kbd "C-c C-M-4") 'my-org-screenshot)
+
