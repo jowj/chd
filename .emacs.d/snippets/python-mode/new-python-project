@@ -1,0 +1,35 @@
+# -*- mode: snippet -*-
+# name: new python project
+# key: npp
+# --
+import argparse
+import sys
+
+
+def idb_excepthook(type, value, tb):
+    """Call an interactive debugger in post-mortem mode
+    If you do "sys.excepthook = idb_excepthook", then an interactive debugger
+    will be spawned at an unhandled exception
+    """
+    if hasattr(sys, 'ps1') or not sys.stderr.isatty():
+        sys.__excepthook__(type, value, tb)
+    else:
+        import pdb, traceback
+        traceback.print_exception(type, value, tb)
+        print
+        pdb.pm()
+
+
+def main(*args, **kwargs):
+    parser = argparse.ArgumentParser(
+        description="")
+    parser.add_argument(
+        "--debug", "-d", action='store_true', help="Include debugging output")
+    
+    parsed = parser.parse_args()
+    if parsed.debug:
+        sys.excepthook = idb_excepthook
+            
+
+if __name__ == "__main__":
+    sys.exit(main(*sys.argv))

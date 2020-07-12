@@ -21,7 +21,7 @@ alias l1='ls -1'
 alias llm='lsl -r -t' # lsl+ sort by modified time (lastest at bottom)
 
 # emacs aliases lol
-alias social="emacs -q -l '~/.emacs.d/init-social.el'"
+alias social="/Applications/Emacs.app/Contents/MacOS/Emacs -q -l '~/.emacs.d/init-social.el'"
 
 # blatantly steal micah's colorized man pages
 # See: http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
@@ -71,3 +71,4 @@ echo -e "\e[31m      ||    BURIED\e[0m       |"
 echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
 echo -e "\e[31m      ||\e[0m                 |"
 echo ""
+
