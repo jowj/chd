@@ -19,6 +19,13 @@
 (find-file "~/Sync/Documents/org/personal.org") ;open primary org file on launch
 (electric-pair-mode 1)                               ; create paired brackets.
 
+
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-minor-mode-on))
+
 ;; lets you find all instance of string @ point with C-;
 (use-package iedit
   :ensure t)
@@ -127,9 +134,6 @@
   :ensure t
   :config
   (pdf-tools-install))
-
-(use-package org-pdfview
-  :ensure t)
 
 (use-package magit
   :ensure t)
