@@ -50,6 +50,7 @@
 	vim
 	konsole
 	firefox
+	next
 	emacs
 	git
 	rofi
