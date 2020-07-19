@@ -8,7 +8,7 @@
 
 (setq case-fold-search t)            ; ignore case when searching
 (fset 'yes-or-no-p 'y-or-n-p)        ; make it easier to answer qs.
-(set-frame-font "Consolas 12")       ; set default font
+(set-frame-font "fira code 12")       ; set default font
 (transient-mark-mode 1)              ; Enable transient mark mode (highlights)
 (load-theme 'manoj-dark)             ; loads my favorite default theme
 (global-hl-line-mode t)              ; highlights the line you're on
@@ -25,6 +25,10 @@
   :ensure t
   :config
   (yas-minor-mode-on))
+
+(use-package fira-code-mode
+  :custom (fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
+  :config (global-fira-code-mode)) ;; Enables fira-code-mode globally
 
 ;; lets you find all instance of string @ point with C-;
 (use-package iedit
