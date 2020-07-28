@@ -50,11 +50,13 @@
 	vim
 	konsole
 	firefox
+	chromium
 	next
 	emacs
 	git
 	rofi
 	# jlj utils
+	ansible
 	python38Packages.syncthing-gtk
 	bitwarden
 	keychain
