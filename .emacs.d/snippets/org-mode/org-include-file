@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: org include file
+# key: oif
+# --
+
+#+INCLUDE: "" src 

@@ -15,14 +15,15 @@
   # boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "nix-hive"; # Define your hostname.
+  networking.hostName = "nix-ling"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.enp34s0.useDHCP = true;
+  networking.interfaces.enp2s0f1.useDHCP = true;
+  networking.interfaces.wlp3s0.useDHCP = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -31,7 +32,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    font = "Lat2-Terminus16";
+    font = "fira-code";
     keyMap = "us";
   };
 
@@ -49,10 +50,13 @@
 	vim
 	konsole
 	firefox
+	chromium
+	next
 	emacs
 	git
 	rofi
 	# jlj utils
+	ansible
 	python38Packages.syncthing-gtk
 	bitwarden
 	keychain
@@ -60,6 +64,10 @@
 	os-prober
 	breeze-grub
 	grub2_efi
+	lsof
+	gnupg
+	# jlj sound
+	pavucontrol
 	# jlj comms
 	riot-desktop
 	slack
@@ -78,14 +86,27 @@
 	vulkan-tools
   ];
 
+  fonts.fonts = with pkgs; [
+	noto-fonts
+  	noto-fonts-cjk
+  	noto-fonts-emoji
+  	liberation_ttf
+  	fira-code
+	fira-code-symbols
+	mplus-outline-fonts
+  	dina-font
+  	proggyfonts
+  ];
+
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  #   pinentryFlavor = "gnome3";
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryFlavor = "qt";
+  };
 
   # List services that you want to enable:
 
@@ -104,6 +125,7 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;    ## If compatibility with 32-bit applications is desired. games need this.
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -113,7 +135,6 @@
   # Enable vulkan support
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.enable = true;
-  hardware.pulseaudio.support32Bit = true;
   # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable touchpad support.
@@ -127,7 +148,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.josiah = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" "sound" "video"]; # Enable ‘sudo’ for the user.
   };
 
   # This value determines the NixOS release from which the default

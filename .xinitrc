@@ -1,1 +1,1 @@
-exec awesome
+awesome
