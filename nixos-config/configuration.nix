@@ -47,6 +47,8 @@
 	automake
 	gnumake
 	wget
+        gcc-arm-embedded
+	xorg.libX11
 	vim
 	konsole
 	firefox
@@ -57,6 +59,9 @@
 	rofi
 	# jlj utils
 	ansible
+	python38
+	python38Packages.pip
+	python38Packages.setuptools
 	python38Packages.syncthing-gtk
 	bitwarden
 	keychain
@@ -66,6 +71,9 @@
 	grub2_efi
 	lsof
 	gnupg
+	wireguard
+	gcc8
+	dfu-util
 	# jlj sound
 	pavucontrol
 	# jlj comms
