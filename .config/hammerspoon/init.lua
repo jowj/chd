@@ -6,7 +6,7 @@ hs.alert.show(hammerSpoonEmoji .. " Config Loaded")
 animationDuration = 0
 
 -- window sizing
-hs.hotkey.bind({"cmd", "ctrl"}, "Left", function()
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "Left", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -19,7 +19,7 @@ hs.hotkey.bind({"cmd", "ctrl"}, "Left", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd","ctrl"}, "Right", function()
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "Right", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -32,7 +32,7 @@ hs.hotkey.bind({"cmd","ctrl"}, "Right", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "ctrl"}, "f", function()
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "f", function()
   -- size focused window to size of desktop
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -47,7 +47,7 @@ hs.hotkey.bind({"cmd", "ctrl"}, "f", function()
 end)
 
 
-hs.hotkey.bind({"cmd", "ctrl"}, "up", function()
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "up", function()
   -- size focused window to top half of display
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -61,7 +61,7 @@ hs.hotkey.bind({"cmd", "ctrl"}, "up", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "ctrl"}, "down", function()
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "down", function()
   -- size focused window to bottom half of display
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -76,7 +76,7 @@ hs.hotkey.bind({"cmd", "ctrl"}, "down", function()
 end)
 
 -- quick reload
-hs.hotkey.bind({"cmd", "ctrl"}, "R", function()
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "R", function()
   hs.reload()
 end)
 
@@ -89,7 +89,7 @@ appCuts = {
   l = 'Slack',
   o = 'Microsoft Outlook',
   p = 'Bitwarden',
-  r = 'Element (Riot)',
+  r = 'Element',
   s = 'Safari',
   t = 'iTerm',
   c = 'Google Chrome',
@@ -102,7 +102,7 @@ for key, app in pairs(appCuts) do
    appActionTable[key] = function() hs.application.launchOrFocus(app) end
 end
 appModal = modalHotKey.new(
-  hs.hotkey.modal.new({"cmd", "ctrl"}, "Space"),
+  hs.hotkey.modal.new({"cmd", "ctrl", "alt", "shift"}, "Space"),
   appActionTable,
   appCuts,
   hammerSpoonEmoji .. "Awful App Switcher"
@@ -112,7 +112,7 @@ appModal = modalHotKey.new(
 -- Get the focused window, its window frame dimensions, its screen frame dimensions,
 -- and the next screen's frame dimensions.
 -- https://stackoverflow.com/questions/54151343/how-to-move-an-application-between-monitors-in-hammerspoon
-hs.hotkey.bind({"cmd", "ctrl"}, "o", function()
+hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "o", function()
       local focusedWindow = hs.window.focusedWindow()
       local focusedScreenFrame = focusedWindow:screen():frame()
       local nextScreenFrame = focusedWindow:screen():next():frame()
