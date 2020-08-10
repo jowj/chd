@@ -293,23 +293,23 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ "Control", "Mod1" }, "k", function () awful.spawn(terminal) end,
        {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, "Control" }, "r", awesome.restart,
+    awful.key({ "Control","Mod1", "Shift", "Mod4" }, "r", awesome.restart,
        {description = "reload awesome", group = "awesome"}),
     -- awful.key({ modkey, "Shift"   }, "q", awesome.quit,
     --    {description = "quit awesome", group = "awesome"}),
-    awful.key({ "Control", "Mod1" }, "q",
+    awful.key({"Control","Mod1", "Shift", "Mod4" }, "q",
        function()
 	  awful.util.spawn("i3lock --color=000000")
     end),
 
     -- added by josiah for rofi use
-    awful.key({ "Control","Mod1" }, "space",
+    awful.key({ "Control","Mod1", "Shift", "Mod4"}, "space",
        function()
 	  awful.util.spawn("rofi -combi-modi window,drun,ssh -theme purple -font 'hack 10' -show combi")
     end),
 
     -- added by josiah for scrot use
-    awful.key({ "Control","Mod1" }, "4",
+    awful.key({  "Control","Mod1", "Shift", "Mod4"  }, "s",
        function()
 	  awful.spawn.with_shell("sleep 0.2 && scrot -s -e 'mv $f ~/Pictures/screenshots/'")
     end),
@@ -364,7 +364,7 @@ end))
 
 -- clientkeys
 clientkeys = gears.table.join(
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({  "Control","Mod1", "Shift", "Mod4"    }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -374,7 +374,7 @@ clientkeys = gears.table.join(
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
-    awful.key({ "Mod1", "Control"}, "f",
+    awful.key({  "Control","Mod1", "Shift", "Mod4" }, "f",
        function (c)
 	  c.maximized = not c.maximized
 	  c:raise()
@@ -400,7 +400,7 @@ clientkeys = gears.table.join(
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
-        awful.key({ modkey }, "#" .. i + 9,
+        awful.key({  "Control","Mod1", "Shift", "Mod4"  }, "#" .. i + 9,
                   function ()
                         local screen = awful.screen.focused()
                         local tag = screen.tags[i]
