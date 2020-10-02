@@ -43,7 +43,9 @@
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+	# build shit
 	autoconf
+	yarn
 	automake
 	gnumake
 	wget
@@ -51,12 +53,6 @@
 	xorg.libX11
 	vim
 	konsole
-	firefox
-	chromium
-	next
-	emacs
-	git
-	rofi
 	# jlj utils
 	ansible
 	python38
@@ -64,6 +60,11 @@
 	python38Packages.setuptools
 	python38Packages.syncthing-gtk
 	bitwarden
+	chromium
+	firefox
+	next
+	emacs
+	git
 	keychain
 	next
 	os-prober
@@ -74,6 +75,10 @@
 	wireguard
 	gcc8
 	dfu-util
+	scrot
+	qbittorrent
+	appimage-run
+	fuse
 	# jlj sound
 	pavucontrol
 	# jlj comms
@@ -81,6 +86,7 @@
 	slack
 	discord
 	konversation
+	signal-desktop
 	# jlj de
 	acpi
 	awesome
@@ -88,6 +94,7 @@
 	gnome3.adwaita-icon-theme
 	arc-icon-theme	
 	dolphin
+	rofi
 	# jlj games
 	lutris
 	steam
