@@ -38,6 +38,7 @@
 
   # Set your time zone.
   time.timeZone = "US/Central";
+  # nixpkgs.config.allowBroken = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -53,17 +54,19 @@
 	xorg.libX11
 	vim
 	konsole
+	rxvt-unicode
 	# jlj utils
 	ansible
 	python38
 	python38Packages.pip
 	python38Packages.setuptools
-	python38Packages.syncthing-gtk
+	syncthing-gtk
 	bitwarden
 	chromium
 	firefox
 	next
 	emacs
+	zeal
 	git
 	keychain
 	next
@@ -79,14 +82,19 @@
 	qbittorrent
 	appimage-run
 	fuse
+	obs-studio
 	# jlj sound
 	pavucontrol
 	# jlj comms
-	riot-desktop
+	element-desktop
 	slack
 	discord
 	konversation
 	signal-desktop
+	feedreader # older rss reader
+	newsflash # same maker as feedreader, newer, less features, actively maintained.
+	zoom-us
+	jitsi-meet-electron
 	# jlj de
 	acpi
 	awesome
@@ -95,6 +103,8 @@
 	arc-icon-theme	
 	dolphin
 	rofi
+	i3lock
+	vlc
 	# jlj games
 	lutris
 	steam

@@ -79,7 +79,7 @@ awful.layout.layouts = {
     -- awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
-    -- awful.layout.suit.fair,
+    awful.layout.suit.fair,
     -- awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
@@ -610,7 +610,7 @@ autorunApps =
 {
       "syncthing-gtk",
       "ssh -X josiah@hatchery -v -Y calibre",
-      "xrandr --output HDMI-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-2 --off  --output DP-4 --off  --output DP-0 --off",
+      "xrandr --output HDMI-1 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 1920x1200 --left-of HDMI-1  --output DP-4 --off  --output DP-0 --off",
       "xset s off",
       "xset -dpms",
       "xset s noblank",
