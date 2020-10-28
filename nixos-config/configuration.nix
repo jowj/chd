@@ -4,6 +4,9 @@
 
 { config, pkgs, ... }:
 
+let
+  unstable = import <nixos-unstable> {};
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -54,7 +57,6 @@
 	xorg.libX11
 	vim
 	konsole
-	rxvt-unicode
 	# jlj utils
 	ansible
 	python38
@@ -91,15 +93,19 @@
 	discord
 	konversation
 	signal-desktop
-	feedreader # older rss reader
 	newsflash # same maker as feedreader, newer, less features, actively maintained.
 	zoom-us
 	jitsi-meet-electron
+	gnome3.evolution
+	gnome3.gnome-calendar
 	# jlj de
 	acpi
 	awesome
 	gnome3.networkmanagerapplet
 	gnome3.adwaita-icon-theme
+	gnome3.gnome-keyring
+	gnome-online-accounts
+	gnome3.gnome-settings-daemon
 	arc-icon-theme	
 	dolphin
 	rofi
@@ -134,6 +140,12 @@
   };
 
   # List services that you want to enable:
+  # configure gnome environment for use outside of gnome.
+  services.xserver.desktopManager.gnome3.enable = true;
+  programs.dconf.enable = true;
+  services.gnome3.evolution-data-server.enable = true;
+  services.gnome3.gnome-online-accounts.enable = true;
+  services.gnome3.gnome-keyring.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -167,7 +179,7 @@
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
   programs.qt5ct.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
