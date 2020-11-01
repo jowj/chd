@@ -6,6 +6,7 @@
 
 let
   unstable = import <nixos-unstable> {};
+  stable = import <nixos-stable> {};
 in
 {
   imports =
@@ -97,20 +98,20 @@ in
 	zoom-us
 	jitsi-meet-electron
 	gnome3.evolution
-	gnome3.gnome-calendar
 	# jlj de
 	acpi
 	awesome
 	gnome3.networkmanagerapplet
-	gnome3.adwaita-icon-theme
-	gnome3.gnome-keyring
-	gnome-online-accounts
-	gnome3.gnome-settings-daemon
 	arc-icon-theme	
-	dolphin
 	rofi
 	i3lock
 	vlc
+	gnome3.gnome-tweaks
+	gnome3.adwaita-icon-theme
+	gnome-breeze
+	# espanso # text expander
+	xclip # c&p from cli / required for espanso
+	libnotify # required for espanso
 	# jlj games
 	lutris
 	steam
@@ -136,7 +137,7 @@ in
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryFlavor = "qt";
+    pinentryFlavor = "gnome3";
   };
 
   # List services that you want to enable:
@@ -146,6 +147,10 @@ in
   services.gnome3.evolution-data-server.enable = true;
   services.gnome3.gnome-online-accounts.enable = true;
   services.gnome3.gnome-keyring.enable = true;
+
+
+  # enable espanso globally:
+  services.espanso.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

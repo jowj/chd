@@ -614,7 +614,8 @@ autorunApps =
       "xset s off",
       "xset -dpms",
       "xset s noblank",
-      "nm-applet"
+      "nm-applet",
+      "espanso daemon"
 }
 if autorun then
    for app = 1, #autorunApps do
