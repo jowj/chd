@@ -308,6 +308,11 @@ globalkeys = gears.table.join(
 	  awful.util.spawn("rofi -combi-modi window,drun,ssh -theme purple -font 'hack 10' -show combi")
     end),
 
+    awful.key({ "Mod1"}, "space",
+       function()
+	  awful.util.spawn("rofi -combi-modi window,drun,ssh -theme purple -font 'hack 10' -show drun")
+    end),
+
     -- added by josiah for scrot use
     awful.key({  "Control","Mod1", "Shift", "Mod4"  }, "s",
        function()

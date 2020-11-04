@@ -109,7 +109,7 @@ in
 	gnome3.gnome-tweaks
 	gnome3.adwaita-icon-theme
 	gnome-breeze
-	# espanso # text expander
+	espanso # text expander
 	xclip # c&p from cli / required for espanso
 	libnotify # required for espanso
 	# jlj games

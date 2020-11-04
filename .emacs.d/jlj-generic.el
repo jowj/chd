@@ -199,4 +199,12 @@
       (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
       (add-to-list 'interpreter-mode-alist '("lua" . lua-mode)))
 
+(use-package json-mode
+  :ensure t)
+
+(use-package nix-mode
+  :ensure t
+  :mode "\\.nix\\'")
+
+
 (server-start)
