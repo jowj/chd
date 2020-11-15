@@ -96,6 +96,7 @@ in
 	signal-desktop
 	newsflash # same maker as feedreader, newer, less features, actively maintained.
 	zoom-us
+  teams # pretty much required for a ton of interviews, jesus.
 	jitsi-meet-electron
 	gnome3.evolution
 	# jlj de
