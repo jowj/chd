@@ -337,7 +337,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
        {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "n",
+    awful.key({ "Control","Mod1", "Shift", "Mod4" }, "n",
        function ()
 	  local c = awful.client.restore()
 	  -- Focus restored client
@@ -620,7 +620,8 @@ autorunApps =
       "xset -dpms",
       "xset s noblank",
       "nm-applet",
-      "espanso daemon"
+      "espanso daemon",
+      "pyls"
 }
 if autorun then
    for app = 1, #autorunApps do

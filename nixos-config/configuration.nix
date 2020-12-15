@@ -48,16 +48,23 @@ in
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-	# build shit
+  # build shit
 	autoconf
 	yarn
 	automake
 	gnumake
 	wget
-        gcc-arm-embedded
+  gcc-arm-embedded
 	xorg.libX11
 	vim
 	konsole
+  patchelf
+  docker
+	# jlj dev
+	poetry
+	python38Packages.pycairo
+  # python-language-server
+  python38Packages.python-language-server
 	# jlj utils
 	ansible
 	python38
@@ -84,6 +91,8 @@ in
 	scrot
 	qbittorrent
 	appimage-run
+  appimagekit
+  file
 	fuse
 	obs-studio
 	# jlj sound
@@ -149,10 +158,9 @@ in
   services.gnome3.gnome-online-accounts.enable = true;
   services.gnome3.gnome-keyring.enable = true;
 
-
   # enable espanso globally:
   services.espanso.enable = true;
-
+    
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
@@ -188,10 +196,14 @@ in
   # services.xserver.desktopManager.plasma5.enable = true;
   programs.qt5ct.enable = true;
 
+  # enable docker, virtualbox, virtualization shit
+  virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.josiah = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "sound" "video"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" "sound" "video" "docker" "vboxusers"];
   };
 
   # This value determines the NixOS release from which the default
