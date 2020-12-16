@@ -73,6 +73,7 @@ in
 	syncthing-gtk
 	bitwarden
 	chromium
+  magic-wormhole
 	firefox
 	next
 	emacs
