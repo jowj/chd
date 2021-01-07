@@ -106,6 +106,8 @@ in
 	signal-desktop
 	newsflash # same maker as feedreader, newer, less features, actively maintained.
 	zoom-us
+	unstable.neochat
+	spectral
   teams # pretty much required for a ton of interviews, jesus.
 	jitsi-meet-electron
 	gnome3.evolution
@@ -199,8 +201,8 @@ in
 
   # enable docker, virtualbox, virtualization shit
   virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.host.enable = false;
+  virtualisation.virtualbox.host.enableExtensionPack = false;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.josiah = {
     isNormalUser = true;
