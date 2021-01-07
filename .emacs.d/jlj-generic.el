@@ -206,5 +206,12 @@
   :ensure t
   :mode "\\.nix\\'")
 
+(use-package neotree
+  :ensure t
+  :mode "\\.org\\'"
+  :config
+  (progn
+    (global-set-key [f8] 'neotree-toggle)))
+
 
 (server-start)
