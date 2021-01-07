@@ -69,6 +69,9 @@
 (global-set-key (kbd "C-x W") 'delete-frame)
 (global-set-key "\M-`" 'other-frame) ; mimic the way macosx switches
 
+;; experiment with mouse bindings
+(global-set-key [mouse-8] 'yank)
+
 (use-package helm
   :ensure t
   :config
@@ -208,10 +211,11 @@
 
 (use-package neotree
   :ensure t
-  :mode "\\.org\\'"
   :config
   (progn
     (global-set-key [f8] 'neotree-toggle)))
+
+
 
 
 (server-start)
