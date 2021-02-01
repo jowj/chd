@@ -46,7 +46,16 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: with pkgs; {
+      pidgin-with-plugins = pkgs.pidgin-with-plugins.override {
+        ## Add whatever plugins are desired (see nixos.org package listing).
+        plugins = [ pidginotr purple-matrix pidgin-opensteamworks ];
+      };
+    };
+  };
   environment.systemPackages = with pkgs; [
   # build shit
 	autoconf
@@ -96,6 +105,7 @@ in
   file
 	fuse
 	obs-studio
+	texlive.combined.scheme-full
 	# jlj sound
 	pavucontrol
 	# jlj comms
@@ -108,9 +118,11 @@ in
 	zoom-us
 	unstable.neochat
 	spectral
+  nheko
   teams # pretty much required for a ton of interviews, jesus.
 	jitsi-meet-electron
 	gnome3.evolution
+  pidgin-with-plugins
 	# jlj de
 	acpi
 	awesome
