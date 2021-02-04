@@ -36,6 +36,9 @@
 	  '(("Effort_ALL". "0 0:10 0:30 1:00 2:00 3:00 4:00")))
     (setq org-columns-default-format
 	  '(("%25ITEM %TODO %3PRIORITY %TAGS")))
+    ;; have to add _archive or beorg throws a fit!!! it doesn't work on tags the dumby!
+    (setq org-archive-location "~/Sync/Documents/org/archive.org_archive::* From %s")
+
 
 ;;;; custom org mode hotkeys
     (global-set-key "\C-cl" 'org-store-link)
@@ -104,7 +107,8 @@ dependency: this relies on imagemagick"
   (setq filename
         (concat
          (make-temp-name
-          (concat (buffer-file-name)
+          (concat "pictures"
+		  (buffer-file-name)
                   "_"
                   (format-time-string "%Y%m%d_%H%M%S_")) ) ".png"))
   (if (eq system-type 'darwin)
