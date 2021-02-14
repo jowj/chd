@@ -8,7 +8,10 @@
 
 (setq case-fold-search t)            ; ignore case when searching
 (fset 'yes-or-no-p 'y-or-n-p)        ; make it easier to answer qs.
-(set-frame-font "fira code 12")       ; set default font
+;; set default font
+(set-frame-font "fira code 12")
+(add-to-list 'default-frame-alist '(font . "fira code 12" ))
+(set-face-attribute 'default t :font "fira code 12" )
 (transient-mark-mode 1)              ; Enable transient mark mode (highlights)
 (load-theme 'manoj-dark)             ; loads my favorite default theme
 (global-hl-line-mode t)              ; highlights the line you're on
