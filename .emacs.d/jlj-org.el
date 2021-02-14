@@ -57,7 +57,25 @@
     (setq org-directory "~/Sync/Documents/org/")                 ; define generic org capture shit
     (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
 
-
+;; setup special block extras!
+(use-package org-special-block-extras
+  :ensure t
+  :hook (org-mode . org-special-block-extras-mode)
+  :custom
+    ;; The places where I keep my ‘#+documentation’
+    (org-special-block-extras--docs-libraries
+     '("~/Sync/Documents/org/documentation.org"))
+    ;; Disable the in-Emacs fancy-links feature?
+    ;; (org-special-block-extras-fancy-links nil)
+    ;; Details heading “flash pink” whenever the user hovers over them?
+    (org-html-head-extra (concat org-html-head-extra "<style>  summary:hover {background:pink;} </style>"))
+    ;; The message prefixing a ‘tweet:url’ badge
+    (org-special-block-extras-link-twitter-excitement
+     "This looks super neat (•̀ᴗ•́)و:")
+  :config
+  ;; Use short names like ‘defblock’ instead of the fully qualified name
+  ;; ‘org-special-block-extras-defblock’
+  (org-special-block-extras-short-names))
 
 ;; Set up bullets
 (use-package org-bullets
@@ -72,7 +90,7 @@
 ;; configure the org protocol
 (org-load-modules-maybe t)
 (require 'org-protocol)
-(require 'org-protocol-capture-html)
+;; (require 'org-protocol-capture-html)
 (setq org-protocol-default-template-key "w")
 
 (setq org-capture-templates
