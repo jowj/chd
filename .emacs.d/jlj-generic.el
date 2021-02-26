@@ -148,18 +148,6 @@
 (use-package magit
   :ensure t)
 
-(require 'desktop)
-(desktop-save-mode 1)
-(setq desktop-restore-eager 5)
-
-(defun jlj-desktop-save ()
-  (interactive)
-  ;; Don't call desktop-save-in-desktop-dir, as it prints a message.
-  (if (eq (desktop-owner) (emacs-pid))
-      (desktop-save desktop-dirname)))
-(add-hook 'auto-save-hook 'jlj-desktop-save)
-
-
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
 
