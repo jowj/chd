@@ -82,17 +82,16 @@ end)
 
 -- stolen from @mrled
 appCuts = {
+  c = 'Google Chrome',
   e = 'Emacs',
   d = 'Dash',
+  f = 'Firefox',  
   h = 'Hammerspoon',
-  f = 'Firefox',
   l = 'Slack',
-  o = 'Microsoft Outlook',
+  m = 'Mail.app',
+  o = 'Calendar.app',
   p = 'Bitwarden',
-  r = 'Element',
-  s = 'Safari',
-  t = 'iTerm',
-  c = 'Google Chrome',
+  t = 'Terminal.app',
   z = 'Zoom.us'  
 }
 
