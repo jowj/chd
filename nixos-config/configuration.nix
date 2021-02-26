@@ -138,6 +138,7 @@ in
 	xclip # c&p from cli / required for espanso
 	libnotify # required for espanso
 	# jlj games
+  minecraft
 	lutris
 	steam
 	vulkan-tools
