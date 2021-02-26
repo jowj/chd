@@ -143,3 +143,15 @@ dependency: this relies on imagemagick"
 ;; force source blocks to respect the proper indentation.
 (setq org-src-preserve-indentation nil 
       org-edit-src-content-indentation 0)
+
+;; calender integration
+(use-package org-caldav
+  :ensure t
+  :config
+  (setq org-caldav-sync-direction 'cal->org)
+  (setq org-caldav-url "https://caldav.fastmail.com/dav/calendars/user/me@jowj.net/")
+  (setq org-caldav-calendars
+	'((:calendar-id "654a6e55-b777-4603-b009-0058d35aa5ca"
+			:inbox "~/Sync/Documents/org/fromworkcal.org")))
+  (setq org-icalendar-timezone "America/Chicago"))
+
