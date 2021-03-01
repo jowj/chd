@@ -13,7 +13,7 @@
 (add-to-list 'default-frame-alist '(font . "fira code 12" ))
 (set-face-attribute 'default t :font "fira code 12" )
 (transient-mark-mode 1)              ; Enable transient mark mode (highlights)
-(load-theme 'manoj-dark)             ; loads my favorite default theme
+
 (global-hl-line-mode t)              ; highlights the line you're on
 
 (setq indent-tabs-mode nil)                          ; always use spaces when indenting
@@ -22,6 +22,23 @@
 (find-file "~/Sync/Documents/org/personal.org") ;open primary org file on launch
 (electric-pair-mode 1)                               ; create paired brackets.
 
+
+;; experiemtning with the modus themes that will be native come emacs 28
+;; they are more acciessble for r/g color blind stuff
+;; (load-theme 'manoj-dark) loads my favorite default theme
+(use-package modus-themes
+  :ensure
+  :init
+  ;; Add all your customizations prior to loading the themes
+  (setq modus-themes-slanted-constructs t
+        modus-themes-bold-constructs nil)
+
+  ;; Load the theme files before enabling a theme
+  (modus-themes-load-themes)
+  :config
+  ;; Load the theme of your choice:
+  (modus-themes-load-vivendi)  ;; (modus-themes-load-operandi)
+  :bind ("<f5>" . modus-themes-toggle))
 
 
 (use-package yasnippet
