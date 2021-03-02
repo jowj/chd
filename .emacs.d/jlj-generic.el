@@ -3,9 +3,6 @@
 ;;   (global-display-line-numbers-mode)); show line numbers; use this instead of linum if you can
 
 (global-visual-line-mode t)          ; turn on word-wrap globally
-(menu-bar-mode -1)                   ; disable visual menu on emacs
-(tool-bar-mode -1)                   ; disable toolbar
-
 (setq case-fold-search t)            ; ignore case when searching
 (fset 'yes-or-no-p 'y-or-n-p)        ; make it easier to answer qs.
 ;; set default font
