@@ -1,10 +1,14 @@
-(setq inhibit-splash-screen t)       ; Disable the splash screen
-;; (when (version<= "26.0.50" emacs-version )
-;;   (global-display-line-numbers-mode)); show line numbers; use this instead of linum if you can
+;;; jlj-generic.el --- generic changes that don't fit in a general category go here -*- lexical-binding: t -*-
+;;; Commentary:
 
+;; this file is messy by default, because its just a bucket
+;; i.e. "this doesn't have a real category, so lets put it here."
+
+;;; Code:
 (global-visual-line-mode t)          ; turn on word-wrap globally
 (setq case-fold-search t)            ; ignore case when searching
 (fset 'yes-or-no-p 'y-or-n-p)        ; make it easier to answer qs.
+
 ;; set default font
 (set-frame-font "fira code 12")
 (add-to-list 'default-frame-alist '(font . "fira code 12" ))
@@ -19,7 +23,7 @@
 (find-file "~/Sync/Documents/org/personal.org") ;open primary org file on launch
 (electric-pair-mode 1)                               ; create paired brackets.
 
-
+;; themes
 ;; experiemtning with the modus themes that will be native come emacs 28
 ;; they are more acciessble for r/g color blind stuff
 ;; (load-theme 'manoj-dark) loads my favorite default theme
@@ -220,7 +224,6 @@
   (progn
     (global-set-key [f8] 'neotree-toggle)))
 
-
-
-
 (server-start)
+
+;;; jlj-generic.el ends here

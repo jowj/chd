@@ -1,8 +1,16 @@
+;;; jlj-python.el --- python customizations -*- lexical-binding: t -*-
+;;; Commentary:
+
 ;; pylint is required (pip install pylint)
 ;; pep8 (pip install pep8)
-;; don't use python-mode because JESUS. CHRIST. it throws everything off.
+;; don't use python-mode because JESUS.  CHRIST.  it throws everything off.
 ;; using jedi requires virtualenv to be installed
 ;; pipenv is mostly acceptable but i could not make a full IDE experience happen
+
+;;; Code:
+;; Initialise installed packages
+
+
 
 (use-package pipenv
   :ensure t)
@@ -53,3 +61,5 @@
   (venv-initialize-interactive-shells) ;; if you want interactive shell support
   (venv-initialize-eshell) ;; if you want eshell support
   (setq venv-location "~/.local/share/virtualenvs/"))
+
+;;; jlj-python.el ends here

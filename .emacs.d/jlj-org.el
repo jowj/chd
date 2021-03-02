@@ -1,3 +1,10 @@
+;;; jlj-org.el --- Customize my org setup -*- lexical-binding: t -*-
+;;; Commentary:
+;; Anything that customizes org-mode goes here.
+;; this could probably be cleaned up more but its fine for now.
+;;; Code:
+;; Initialise installed packages
+
 (use-package org
   :ensure t
   :config
@@ -117,9 +124,9 @@
 
 ;; org mode hack for screenshots; see org mode hacks page.
 (defun my-org-screenshot ()
-  "Take a screenshot into a time stamped unique-named file in the
-same directory as the org-buffer and insert a link to this file.
-reference: https://orgmode.org/worg/org-hacks.html
+  "Take a screenshot and save a file.
+The file is saved into a time stamped unique-named file in the same directory as the buffer.
+Then insert a link to this file.reference: https://orgmode.org/worg/org-hacks.html
 dependency: this relies on imagemagick"
   (interactive)
   (setq filename
@@ -141,7 +148,7 @@ dependency: this relies on imagemagick"
 
 
 ;; force source blocks to respect the proper indentation.
-(setq org-src-preserve-indentation nil 
+(setq org-src-preserve-indentation nil
       org-edit-src-content-indentation 0)
 
 ;; calender integration
@@ -155,3 +162,5 @@ dependency: this relies on imagemagick"
 			:inbox "~/Sync/Documents/org/fromworkcal.org")))
   (setq org-icalendar-timezone "America/Chicago"))
 
+
+;;; jlj-org.el ends here
