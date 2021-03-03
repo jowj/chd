@@ -9,6 +9,9 @@
 (setq case-fold-search t)            ; ignore case when searching
 (fset 'yes-or-no-p 'y-or-n-p)        ; make it easier to answer qs.
 
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
 ;; set default font
 (set-frame-font "fira code 12")
 (add-to-list 'default-frame-alist '(font . "fira code 12" ))
@@ -32,7 +35,8 @@
   :init
   ;; Add all your customizations prior to loading the themes
   (setq modus-themes-slanted-constructs t
-        modus-themes-bold-constructs nil)
+        modus-themes-bold-constructs t
+	modus-themes-paren-match 'intense-bold)
 
   ;; Load the theme files before enabling a theme
   (modus-themes-load-themes)
