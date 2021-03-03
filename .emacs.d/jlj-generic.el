@@ -9,6 +9,9 @@
 (setq case-fold-search t)            ; ignore case when searching
 (fset 'yes-or-no-p 'y-or-n-p)        ; make it easier to answer qs.
 
+;; Preserve contents of system clipboard
+(setq save-interprogram-paste-before-kill t)
+
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
