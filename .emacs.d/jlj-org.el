@@ -34,6 +34,7 @@
 
     ;; log state changes to a drawer
     (setq org-log-into-drawer t)
+    (setq org-log-done 'time)
 
     ;; org-agenda configs
     (setq org-habit-show-habits-only-for-today nil)
