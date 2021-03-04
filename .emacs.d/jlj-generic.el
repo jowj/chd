@@ -231,6 +231,9 @@
   (progn
     (global-set-key [f8] 'neotree-toggle)))
 
+(use-package sudo-edit
+  :ensure t)
+
 (server-start)
 
 ;;; jlj-generic.el ends here
