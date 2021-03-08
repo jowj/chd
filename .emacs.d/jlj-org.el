@@ -153,6 +153,13 @@ dependency: this relies on imagemagick"
       org-edit-src-content-indentation 0)
 
 ;; calender integration
+
+(require 'epa)
+(when (eq system-type 'darwin)
+  (setf epa-pinentry-mode 'loopback))
+(setq auth-sources '("~/.emacs.d/jlj-secrets2.gpg"))
+(setq auth-source-debug t)
+
 (use-package org-caldav
   :ensure t
   :config
