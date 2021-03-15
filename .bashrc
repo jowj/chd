@@ -7,26 +7,7 @@ shopt -s checkwinsize # fix line wrap issues
 
 set completion-ignore-case on # ignore case when tab-completing
 
-# find paths inside agares
-export AGARES=${AGARES:-"$HOME/.agares"}
-
-# guix stuff
-export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
-export GUIX_PROFILE="$HOME/.guix-profile"
-source "$GUIX_PROFILE/etc/profile"
-
-# fuck with nix stuff
-export XDG_DATA_DIRS="/home/josiah/.nix-profile/share:$XDG_DATA_DIRS"
-if [ -e /home/josiah/.nix-profile/etc/profile.d/nix.sh ]; then 
-        . /home/josiah/.nix-profile/etc/profile.d/nix.sh
-fi
-# update paths with installed executables:
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
-export PATH=/Users/jowj/Library/Python/3.6/bin:$PATH
-export PATH=/home/josiah/.local/bin:$PATH
-export PATH=/home/josiah/.gem/ruby/2.6.0/bin:$PATH
-export PATH=/home/josiah/.config/guix/current/bin/:$PATH
+source ~/.paths
 export EDITOR=emacsclient
 
 # blatantly steal micah's ls aliases because they make SO MUCH SENSE omg.
