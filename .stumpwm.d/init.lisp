@@ -51,6 +51,10 @@
 (define-key *top-map* (kbd "C-M-s-$") "gselect 4")
 (define-key *top-map* (kbd "C-M-s-%") "gselect 5")
 
+;; ok only one of these definitely did not work, the fucker
+(define-key *top-map* (kbd "C-M-s-f") "fullscreen")
+(define-key *top-map* (kbd "C-M-s-F") "fullscreen")
+
 ;; app menu keys
 ;;;; you defcommands as wrapper to running/raising/shelling out, so you can call it later.
 (defcommand firefox () ()
@@ -73,3 +77,4 @@
 (define-key *root-map* (kbd "m") "mail")
 (define-key *root-map* (kbd "t") "terminal")
 (define-key *root-map* (kbd "r") "element")
+
