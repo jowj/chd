@@ -7,15 +7,7 @@ shopt -s checkwinsize # fix line wrap issues
 
 set completion-ignore-case on # ignore case when tab-completing
 
-# find paths inside agares
-export AGARES=${AGARES:-"$HOME/.agares"}
-
-# update paths with installed executables:
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
-export PATH=/Users/jowj/Library/Python/3.6/bin:$PATH
-export PATH=/home/josiah/.local/bin:$PATH
-export PATH=/home/josiah/.gem/ruby/2.6.0/bin:$PATH
+source ~/.paths
 export EDITOR=emacsclient
 
 # blatantly steal micah's ls aliases because they make SO MUCH SENSE omg.
