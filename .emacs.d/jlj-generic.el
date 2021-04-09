@@ -12,6 +12,8 @@
 ;; Preserve contents of system clipboard
 (setq save-interprogram-paste-before-kill t)
 
+;; Remove the FUCKING frustrating C-z mnimize. Change to undo.
+(global-set-key (kbd "C-z") 'undo)
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
