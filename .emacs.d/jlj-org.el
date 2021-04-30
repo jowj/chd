@@ -108,7 +108,7 @@
 	 ("b" "Book - capture a book you've read" entry (file+olp "~/Sync/Documents/org/webwiki.org" "books")
 	  "* %^{TITLE} \n  :PROPERTIES:\n:AUTHOR: %^{AUTHOR}\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
 	 ("c" "Context-include Todo" entry (file "~/Sync/Documents/org/refile-beorg.org")
-	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
+	  * TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
 	 ("q" "quotes" entry (file+olp "~/Sync/Documents/org/webwiki.org" "quotes")
 	  "* %?\n%U \n " :empty-lines 1 :prepend t)
 	 ("t" "Todo" entry (file "~/Sync/Documents/org/refile-beorg.org")

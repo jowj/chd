@@ -21,6 +21,9 @@
 (use-package flycheck
   :ensure t)
 
+; helps with LSP, generally.
+(yas-global-mode 1)
+
 ; Let's set up company! perhaps not necessary but this is what i like to use
 (use-package company
   :ensure t
