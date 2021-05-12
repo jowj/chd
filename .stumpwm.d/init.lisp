@@ -40,8 +40,13 @@
   "Start Emacs or switch to it, if it is already running."
   (run-shell-command "rofi -combi-modi window,drun,ssh -theme purple -font 'hack 10' -show combi"))
 
+(defcommand jlj/scrot () ()
+  "Run scrot!"
+  (run-shell-command "sleep 0.2 && scrot -s -e 'mv $f ~/Pictures/screenshots/'"))
+
 (define-key *root-map* (kbd "R") "restart-hard")
 (define-key *top-map* (kbd "M-SPC") "jlj/rofi")
+(define-key *top-map* (kbd "C-M-s-S") "jlj/scrot")
 
 ;; group management
 ;;;; note that this is still the hyper key, its just that shift + 1 = !, etc.
