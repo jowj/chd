@@ -1,3 +1,4 @@
 *
 .weechat/logs/
 .emacs.d/emojis/
+.emacs.d/.cache/lsp/

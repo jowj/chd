@@ -54,7 +54,8 @@
 (use-package yasnippet
   :ensure t
   :config
-  (yas-minor-mode-on))
+  (yas-minor-mode-on)
+  (yas-global-mode 1))
 
 (use-package fira-code-mode
   :custom (fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
