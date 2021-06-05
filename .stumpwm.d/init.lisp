@@ -42,7 +42,8 @@
 
 (defcommand jlj/scrot () ()
   "Run scrot!"
-  (run-shell-command "sleep 0.2 && scrot -s -e 'mv $f ~/Pictures/screenshots/'"))
+  (run-shell-command "sleep 0.2 && scrot -s /home/josiah/Pictures/screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"))
+
 
 (define-key *root-map* (kbd "R") "restart-hard")
 (define-key *top-map* (kbd "M-SPC") "jlj/rofi")
