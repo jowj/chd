@@ -3,7 +3,7 @@
 shopt -s nocaseglob # glob filenames case-insensitively
 shopt -s histappend # append history to history file, don't overwrite.
 shopt -s checkwinsize # fix line wrap issues
-
+nn
 
 set completion-ignore-case on # ignore case when tab-completing
 
@@ -73,6 +73,16 @@ eval $(keychain --eval --quiet ~/.ssh/{awful-git,github,digitalocean,home-net})
 if [ "$HOSTNAME" = "nixon" ]; then
 	printf 'on nixon, applying nixOS config'
 	setxkbmap -option "ctrl:nocaps"
+else
+	printf 'regular config\n'
+fi
+
+# use pyenv where appropriate:
+if [ "$HOSTNAME" = "popling" ]; then
+	printf 'on home, applying home config'
+        export PATH="$HOME/.pyenv/bin:$PATH"
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
 else
 	printf 'regular config'
 fi
