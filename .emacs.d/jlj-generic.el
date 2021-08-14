@@ -17,10 +17,11 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
-;; set default font
-(set-frame-font "fira code 12")
-(add-to-list 'default-frame-alist '(font . "fira code 12" ))
-(set-face-attribute 'default t :font "fira code 12" )
+;; set default font for macos
+(when (eq system-type 'darwin)
+  (set-frame-font "fira code 12")
+  (add-to-list 'default-frame-alist '(font . "fira code 12" ))
+  (set-face-attribute 'default t :font "fira code 12" ))
 (transient-mark-mode 1)              ; Enable transient mark mode (highlights)
 
 (global-hl-line-mode t)              ; highlights the line you're on
@@ -235,6 +236,9 @@
     (global-set-key [f8] 'neotree-toggle)))
 
 (use-package sudo-edit
+  :ensure t)
+
+(use-package dockerfile-mode
   :ensure t)
 
 (server-start)
