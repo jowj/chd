@@ -59,7 +59,8 @@
 			       (org-agenda-files :maxlevel . 9)))
     (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
     (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
-    (setq org-agenda-files '("~/Sync/Documents/org/"))           ; add files to agenda:
+    (setq org-agenda-files '("~/Sync/Documents/org/"))           ; add files to agenda
+    (find-file-noselect "~/Documents/projects/molly/data/matrix-refile.org")
     (setq org-agenda-files (list "~/Sync/Documents/org"
 				 "~/Documents/projects/molly/data/matrix-refile.org"))
     (with-current-buffer "matrix-refile.org" (auto-revert-mode))
