@@ -316,7 +316,7 @@ globalkeys = gears.table.join(
     -- added by josiah for scrot use
     awful.key({  "Control","Mod1", "Shift", "Mod4"  }, "s",
        function()
-	  awful.spawn.with_shell("sleep 0.2 && scrot -s -e 'mv $f ~/Pictures/screenshots/'")
+	  awful.spawn.with_shell("sleep 0.2 && scrot -s /home/josiah/Pictures/screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'")
     end),
 
     
