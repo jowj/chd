@@ -31,8 +31,8 @@
 
 (setq indent-tabs-mode nil)                          ; always use spaces when indenting
 (setq require-final-newline t)
-(setq backup-directory-alist `(("." . "~/Sync/Documents/org/.saves")))
-(find-file "~/Sync/Documents/org/personal.org") ;open primary org file on launch
+(setq backup-directory-alist `(("." . "~/dhd/org/.saves")))
+(find-file "~/dhd/org/personal.org") ;open primary org file on launch
 (electric-pair-mode 1)                               ; create paired brackets.
 
 ;; themes
@@ -89,7 +89,7 @@
   (find-file-other-window user-init-file))
 (global-set-key (kbd "C-c J") 'find-user-init-file)
 
-(setq user-home-file "~/Sync/Documents/org/personal.org")
+(setq user-home-file "~/dhd/org/personal.org")
 (defun find-user-home-file ()
   "Edit the `user-home-file' in this window."
   (interactive)
