@@ -620,6 +620,7 @@ autorunApps =
       "xset -dpms",
       "xset s noblank",
       "nm-applet",
+      "tailscale-systray",
       "espanso daemon",
       "pyls"
 }
