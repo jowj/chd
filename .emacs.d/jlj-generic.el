@@ -14,6 +14,18 @@
 
 ;; Remove the FUCKING frustrating C-z mnimize. Change to undo.
 (global-set-key (kbd "C-z") 'undo)
+(global-set-key (kbd "C-w") 'backward-kill-word)
+
+;; Use C-w to delete a word backwards
+;; with region bind mode,though, i can do that while retaining kill region usage!
+(use-package region-bindings-mode
+  :ensure t
+  :config
+  (region-bindings-mode-enable))
+
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(define-key region-bindings-mode-map (kbd "C-w") 'kill-region)
+
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
