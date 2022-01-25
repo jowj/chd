@@ -615,7 +615,7 @@ autorunApps =
 {
       "syncthing-gtk",
       "ssh -X josiah@hatchery -v -Y calibre",
-      "xrandr --output HDMI-1 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --off  --output DP-4 --off  --output DP-0 --off --output eDP-1 --mode 1920x1080 --left-of HDMI-1",
+      "xrandr --output HDMI-1 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 1920x1200 --left-of HDMI-1",
       "xset s off",
       "xset -dpms",
       "xset s noblank",
