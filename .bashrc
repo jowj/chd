@@ -3,7 +3,10 @@
 shopt -s nocaseglob # glob filenames case-insensitively
 shopt -s histappend # append history to history file, don't overwrite.
 shopt -s checkwinsize # fix line wrap issues
-nn
+
+# This allows for more reasonable C-w backspace behavior (stops at /s, etc)
+#stty werase undef
+bind '\C-w:unix-filename-rubout'
 
 set completion-ignore-case on # ignore case when tab-completing
 
