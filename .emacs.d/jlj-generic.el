@@ -71,7 +71,8 @@
   :ensure t
   :config
   (yas-minor-mode-on)
-  (yas-global-mode 1))
+  (yas-global-mode 1)
+  (add-hook 'python-mode-hook '(lambda () (set (make-local-variable 'yas-indent-line) 'fixed))))
 
 
 
