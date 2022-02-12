@@ -613,16 +613,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 autorun = true
 autorunApps =
 {
-      "syncthing-gtk",
-      "ssh -X josiah@hatchery -v -Y calibre",
       "xrandr --output HDMI-1 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 1920x1200 --left-of HDMI-1",
       "xset s off",
       "xset -dpms",
       "xset s noblank",
-      "nm-applet",
-      "tailscale-systray",
-      "espanso daemon",
-      "pyls"
 }
 if autorun then
    for app = 1, #autorunApps do
