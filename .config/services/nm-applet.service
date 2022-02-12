@@ -1,0 +1,17 @@
+[Unit]
+Description=runs the nm applet for the system tray
+After=network.target
+
+[Service]
+User=josiah
+ExecStart=/usr/bin/nm-applet
+LimitNOFILE=1024
+
+Restart=always
+RestartSec=10
+Environment=DISPLAY=:0
+
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,20 @@
+[Unit]
+Description=Runs the SyncthingTray process.
+After=network.target
+
+[Service]
+User=josiah
+WorkingDirectory=/home/josiah/bin/
+# workingdir didn't seem to function, had to pass full path to execstart
+ExecStart=/home/josiah/bin/syncthingtray-1.1.15-Build56.1.glibc2.17-x86_64.AppImage
+LimitNOFILE=1024
+
+Restart=always
+RestartSec=10
+startLimitIntervalSec=60
+Environment=DISPLAY=:0
+
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=default.target

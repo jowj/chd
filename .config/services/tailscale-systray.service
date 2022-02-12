@@ -1,0 +1,18 @@
+[Unit]
+Description=Runs the tailscale systray
+After=network.target
+Wants=tailscaled.service
+
+[Service]
+User=josiah
+ExecStart=/home/josiah/go/bin/tailscale-systray
+LimitNOFILE=1024
+
+Restart=always
+RestartSec=10
+Environment=DISPLAY=:0
+
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=default.target
