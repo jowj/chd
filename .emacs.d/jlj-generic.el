@@ -146,6 +146,13 @@
     ;; This is your old M-x.
     (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)))
 
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (ido-mode 1)
+  (ido-vertical-mode 1)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only))
+
 (use-package try
   :ensure t)
 
