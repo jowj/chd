@@ -106,7 +106,7 @@ theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/m
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
 -- i edited this thing
-theme.wallpaper = "~/.config/awesome/weeb-shit-2.jpg"
+theme.wallpaper = "~/.config/awesome/Hi_Fi_Girl_Remix_by_cycloidbeta.jpg"
 theme.awesome_icon = "~/.config/awesome/tiny-purple-bat.png"
 
 -- You can use your own layout icons like this:
