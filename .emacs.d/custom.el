@@ -12,7 +12,7 @@
  '(epg-gpg-program "/usr/local/bin/gpg")
  '(global-hl-line-mode t)
  '(package-selected-packages
-   '(ido-vertical-mode dash-functional region-bindings-mode jinja2-mode dockerfile-mode sudo-edit modus-themes org-caldav json-mode pdf-tools org-special-block-extras neotree sr-speedbar lsp-python-ms fira-code-mode yasnippet org-pdftools phps-mode projectile webfeeder znc pinboard yaml-mode which-key web-mode virtualenvwrapper use-package twittering-mode try smex racer powershell poetry pipenv ox-reveal outline-magic org-pdfview org-bullets ob-restclient multiple-cursors magit lua-mode lsp-ui iedit helm flycheck-rust exec-path-from-shell eglot edit-indirect company-lsp ansible ace-window)))
+   '(lsp-pyright ido-vertical-mode dash-functional region-bindings-mode jinja2-mode dockerfile-mode sudo-edit modus-themes org-caldav json-mode pdf-tools org-special-block-extras neotree sr-speedbar lsp-python-ms fira-code-mode yasnippet org-pdftools phps-mode projectile webfeeder znc pinboard yaml-mode which-key web-mode virtualenvwrapper use-package twittering-mode try smex racer powershell poetry pipenv ox-reveal outline-magic org-pdfview org-bullets ob-restclient multiple-cursors magit lua-mode lsp-ui iedit helm flycheck-rust exec-path-from-shell eglot edit-indirect company-lsp ansible ace-window)))
  '(znc-servers
    `(("bouncer.awful.club" 5000 t
       ((freenode "blindidiotgod/freenode" ,znc-password)

@@ -31,29 +31,12 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1))
 
-; install lsp mode
-(use-package lsp-mode
+(use-package project :ensure t)
+
+(use-package eglot
   :ensure t
-  :hook (python-mode . lsp-deferred)
-  :commands (lsp lsp-deferred))
-
-;; ; let's add the lsp company backend
-;; (use-package company-lsp
-;;   :config
-;;   (push 'company-lsp company-backends))
-
-; also installs lsp as a dependency
-(use-package lsp-ui
-  :ensure t
-  :hook (lsp-mode . lsp-ui-mode))
-
-(use-package lsp-python-ms
-  :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms)
-                          (lsp))))  ; or lsp-deferred
-
+  :config
+  (add-hook 'python-mode-hook 'eglot-ensure))
 
 ;; (use-package pyvenv
 ;;   :ensure t)
