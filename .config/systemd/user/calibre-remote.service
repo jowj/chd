@@ -1,0 +1,14 @@
+[Unit]
+Description=Runs Calibre remotely from Hatchery
+After=network.target
+
+[Service]
+ExecStart=/run/current-system/sw/bin/ssh -i /home/josiah/.ssh/home-net -X josiah@hatchery -v -Y calibre
+Restart=always
+RestartSec=10
+Environment=DISPLAY=:0
+
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=default.target
