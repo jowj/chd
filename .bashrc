@@ -1,5 +1,4 @@
 #!/bin/bash
-
 shopt -s nocaseglob # glob filenames case-insensitively
 shopt -s histappend # append history to history file, don't overwrite.
 shopt -s checkwinsize # fix line wrap issues
@@ -11,7 +10,8 @@ bind '\C-w:unix-filename-rubout'
 set completion-ignore-case on # ignore case when tab-completing
 
 source ~/.paths
-export EDITOR=emacsclient
+export VISUAL=emacsclient
+export editor=emacsclient
 
 # blatantly steal micah's ls aliases because they make SO MUCH SENSE omg.
 alias python="python3"
@@ -23,16 +23,12 @@ alias lsli='lsl -i' # lsl+inodes
 alias l1='ls -1'
 alias llm='lsl -r -t' # lsl+ sort by modified time (lastest at bottom)
 
-# emacs aliases lol
-alias social="emacs -q -l '~/.emacs.d/init-social.el'"
-
-# wm aliases to handle stupid xorg problems:
-alias game="xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal --primary --output DP-2 --mode 1920x1080 --right-of HDMI-0 --rotate left --output DP-4 --mode 1920x1080 --left-of HDMI-0 --rotate right --output DP-0 --off"
-alias fixit="xrandr --output HDMI-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-2 --mode 1920x1080 --right-of HDMI-0 --rotate left --output DP-4 --mode 1920x1080 --left-of HDMI-0 --rotate right --output DP-0 --off"
-
-
 # nixos aliases that don't matter elsewhere:
 alias open=xdg-open
+alias e='emacsclient'
+
+# awesomewm xdg fixes
+xdg-mime default emacsclient.desktop text/plain
 
 # blatantly steal micah's colorized man pages
 # See: http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
