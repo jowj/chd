@@ -615,6 +615,7 @@ autorunApps =
 {
       "xrandr --output HDMI-1 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 1920x1200 --left-of HDMI-1",
       "xset s off",
+      "xset r rate 200",
       "xset -dpms",
       "xset s noblank",
 }
