@@ -24,7 +24,7 @@ alias l1='ls -1'
 alias llm='lsl -r -t' # lsl+ sort by modified time (lastest at bottom)
 
 # nixos aliases that don't matter elsewhere:
-alias open=xdg-open
+alias open=kde-open5
 alias e='emacsclient'
 
 # awesomewm xdg fixes
