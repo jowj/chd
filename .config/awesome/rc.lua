@@ -21,9 +21,6 @@ require("awful.hotkeys_popup.keys")
 -- volume import
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 
--- battery import and customization
-local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-
 -- game mode import and customization
 local game_widget = require("awesome-wm-widgets.demomode-widget.demomode")
 
