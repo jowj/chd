@@ -15,7 +15,8 @@ local naughty = require("naughty")
 local gfs = require("gears.filesystem")
 local dpi = require('beautiful').xresources.apply_dpi
 
-local PATH_TO_ICONS = "/usr/share/icons/Arc/status/symbolic/"
+-- local PATH_TO_ICONS = "/usr/share/icons/Arc/status/symbolic/"
+local PATH_TO_ICONS = "/run/current-system/sw/share/icons/Arc/status/symbolic"
 local volume_icon_name="audio-volume-high-symbolic"
 local GET_VOLUME_CMD = 'amixer sget Master'
 
