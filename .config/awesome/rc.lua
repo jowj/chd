@@ -605,22 +605,10 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Autorun programs
--- i'm not SURE that this actually works, but i'm going to say 'yes' until i do a hard reboot.
-autorun = true
-autorunApps =
-{
-      "xrandr --output HDMI-1 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 1920x1200 --left-of HDMI-1",
-      "xset s off",
-      "xset r rate 200",
-      "xset -dpms",
-      "xset s noblank",
-}
-if autorun then
-   for app = 1, #autorunApps do
-       awful.util.spawn(autorunApps[app])
-   end
-end
+-- configure xset stuff:
+os.execute("xset s off")
+os.execute("xset -dpms")
+os.execute("xset s noblank")
 
 
 tag.connect_signal("request::screen", function(t)
