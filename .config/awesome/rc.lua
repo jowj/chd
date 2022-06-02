@@ -21,9 +21,6 @@ require("awful.hotkeys_popup.keys")
 -- volume import
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 
--- battery import and customization
-local battery_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-
 -- game mode import and customization
 local game_widget = require("awesome-wm-widgets.demomode-widget.demomode")
 
@@ -608,18 +605,26 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Autorun programs
--- i'm not SURE that this actually works, but i'm going to say 'yes' until i do a hard reboot.
-autorun = true
-autorunApps =
-{
-      "xrandr --output HDMI-1 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-1 --mode 1920x1200 --left-of HDMI-1",
-      "xset s off",
-      "xset -dpms",
-      "xset s noblank",
-}
-if autorun then
-   for app = 1, #autorunApps do
-       awful.util.spawn(autorunApps[app])
-   end
-end
+-- configure xset stuff:
+os.execute("xset s off")
+os.execute("xset -dpms")
+os.execute("xset s noblank")
+
+
+tag.connect_signal("request::screen", function(t)
+    for s in screen do
+        if s ~= t.screen and
+           s.geometry.x == t.screen.geometry.x and
+           s.geometry.y == t.screen.geometry.y and
+           s.geometry.width == t.screen.geometry.width and
+           s.geometry.height == t.screen.geometry.height then
+            local t2 = awful.tag.find_by_name(s, t.name)
+            if t2 then
+                t:swap(t2)
+            else
+                t.screen = s
+            end
+            return
+        end
+    end
+end)
