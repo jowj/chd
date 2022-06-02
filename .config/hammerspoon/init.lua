@@ -82,17 +82,17 @@ end)
 
 -- stolen from @mrled
 appCuts = {
-  c = 'Google Chrome',
+  c = 'Microsoft Edge',
   e = 'Emacs',
   d = 'Dash',
-  f = 'Firefox',  
+  f = 'Firefox',
   h = 'Hammerspoon',
   l = 'Slack',
   m = 'Mail.app',
   o = 'Calendar.app',
   p = 'Bitwarden',
-  t = 'Terminal.app',
-  z = 'Zoom.us'  
+  t = 'iTerm.app',
+  z = 'Zoom.us'
 }
 
 modalHotKey = dofile(os.getenv("HOME") .. "/.config/hammerspoon/modalHotKey.lua")
