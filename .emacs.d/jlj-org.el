@@ -10,11 +10,13 @@
   :config
   (progn
     ;;Org mode configuration
+    (require 'ox)
     (require 'org)                                       ; Enable Org mode
-    (setq ispell-program-name "/usr/local/bin/ispell")   ; set flyspell's spellchecker
+    (setq ispell-program-name "/run/current-system/sw/bin/ispell")   ; set flyspell's spellchecker
     (add-hook 'org-mode-hook 'turn-on-flyspell)          ; enable flyspell-mode in all org-mode enabled files
     (setq org-src-fontify-natively t
 	  org-src-window-setup 'current-window
+	  org-export-in-background t
 	  org-src-strip-leading-and-trailing-blank-lines t
 	  org-src-preserve-indentation t
 	  org-src-tab-acts-natively t
@@ -121,7 +123,6 @@
 
 ;; configure org exporters
 (require 'ox-md)
-
 ;; org prettifiers
 (setq org-agenda-format-date (lambda (date) (concat "\n"
 						    (make-string (window-width) 9472)
