@@ -8,6 +8,7 @@
 (setq package-archives
       
       '(("melpa" . "https://melpa.org/packages/")
+	("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
         ("gnu" . "http://elpa.gnu.org/packages/")
 	("elpy" . "http://jorgenschaefer.github.io/packages/")))
 
