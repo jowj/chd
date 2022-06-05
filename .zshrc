@@ -81,3 +81,6 @@ if [ -f '/Users/josiah.ledbetter/google-cloud-sdk/completion.zsh.inc' ]; then . 
 if [ -e /Users/josiah.ledbetter/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/josiah.ledbetter/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
