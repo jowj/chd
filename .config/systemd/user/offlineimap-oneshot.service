@@ -1,0 +1,10 @@
+[Unit]
+Description=Run offlineimap with my specifications
+After=network.target
+
+[Service]
+ExecStart=/run/current-system/sw/bin/docker run -v /home/josiah/.config/offlineimap/:/mnt/config -v /home/josiah/qj/fastmail:/mnt/mail -v /home/josiah/qj/mail.log:/mnt/log -e MAILLOG=TRUE maxkratz/offlineimap:latest
+TimeoutStartSec=3600
+
+[Install]
+WantedBy=default.target
