@@ -27,6 +27,9 @@ local game_widget = require("awesome-wm-widgets.demomode-widget.demomode")
 -- screen RESOLUTION import and customization
 local screen_widget = require("awesome-wm-widgets.gamemode-widget.gamemode")
 
+-- limit notification size so they don't blow up your whole goddamn screen
+naughty.config.defaults['icon_size'] = 100
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
