@@ -1,0 +1,16 @@
+[Unit]
+Description=Runs the birdtray process.
+After=network.target
+
+[Service]
+ExecStart=/run/current-system/sw/bin/birdtray
+
+Restart=always
+RestartSec=10
+Environment=DISPLAY=:0
+
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=default.target
