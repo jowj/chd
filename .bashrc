@@ -83,21 +83,12 @@ eval $(keychain --eval --quiet ~/.ssh/{awful-git,github,digitalocean,home-net})
 eval $(keychain --gpg2 --agents gpg)
 
 # host specific configurations:
-if [ "$HOSTNAME" = "nixon" ]; then
-	printf 'on nixon, applying nixOS config'
+if [ "$HOSTNAME" = "hoyden" ]; then
+	printf 'on hoyden, applying nixOS config \n'
 	setxkbmap -option "ctrl:nocaps"
+	fortune invisiblestates/invisiblestates | fold -w 80 -s
 else
 	printf 'regular config\n'
-fi
-
-# use pyenv where appropriate:
-if [ "$HOSTNAME" = "popling" ]; then
-	printf 'on home, applying home config'
-        export PATH="$HOME/.pyenv/bin:$PATH"
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
-else
-	printf 'regular config'
 fi
 
 # this looks like garbage but its just color initation and termination
