@@ -12,7 +12,7 @@
  '(epg-gpg-program "/usr/local/bin/gpg")
  '(global-hl-line-mode t)
  '(org-agenda-files
-   '("/home/josiah/dhd/org/big-bend-notes.org" "/home/josiah/dhd/org/documentation.org" "/home/josiah/dhd/org/finances.org" "/home/josiah/dhd/org/fitness.org" "/home/josiah/dhd/org/housing.org" "/home/josiah/dhd/org/hoyden.org" "/home/josiah/dhd/org/jlj-template.org" "/home/josiah/dhd/org/pagedout.org" "/home/josiah/dhd/org/pagedout2.org" "/home/josiah/dhd/org/personal.org" "/home/josiah/dhd/org/refile-beorg.org" "/home/josiah/dhd/org/someday.org" "/home/josiah/dhd/org/stjohns-trello.org" "/home/josiah/dhd/org/stjohns.org" "/home/josiah/dhd/org/webwiki.org" "/home/josiah/dhd/org/work.org"))
+   '("/home/josiah/dhd/org/big-bend-notes.org" "/home/josiah/dhd/org/documentation.org" "/home/josiah/dhd/org/finances.org" "/home/josiah/dhd/org/fitness.org" "/home/josiah/dhd/org/housing.org" "/home/josiah/dhd/org/hoyden.org" "/home/josiah/dhd/org/interview-notes.org" "/home/josiah/dhd/org/jlj-template.org" "/home/josiah/dhd/org/pagedout.org" "/home/josiah/dhd/org/pagedout2.org" "/home/josiah/dhd/org/personal.org" "/home/josiah/dhd/org/refile-beorg.org" "/home/josiah/dhd/org/someday.org" "/home/josiah/dhd/org/stjohns-trello.org" "/home/josiah/dhd/org/stjohns.org" "/home/josiah/dhd/org/vehicles.org" "/home/josiah/dhd/org/webwiki.org" "/home/josiah/dhd/org/work.org"))
  '(org-trello-current-prefix-keybinding "C-c o" nil (org-trello))
  '(org-trello-files '("~/dhd/org/stjohns-trello.org") nil (org-trello))
  '(package-selected-packages
