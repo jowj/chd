@@ -1,4 +1,4 @@
--- If LuaRocks is installed, make sure that packages installed through it are
+ -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
@@ -388,7 +388,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ "Mod1",           }, "Tab",
+    awful.key({ "Control","Mod1", "Shift", "Mod4"}, "o",
        function ()
 	  awful.client.focus.byidx( 1)
        end,
@@ -412,7 +412,7 @@ globalkeys = gears.table.join(
        {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
        {description = "focus the previous screen", group = "screen"}),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
+    awful.key({ "Control","Mod1", "Shift", "Mod4" }, "u", awful.client.urgent.jumpto,
        {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "j",
        function ()
@@ -470,6 +470,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
        {description = "select previous", group = "layout"}),
 
+    -- this will restore a client on the active tag + focus it
     awful.key({ "Control","Mod1", "Shift", "Mod4" }, "n",
        function ()
 	  local c = awful.client.restore()
@@ -486,15 +487,18 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
        {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey }, "x",
-       function ()
-	  awful.prompt.run {
-	     prompt       = "Run Lua code: ",
-	     textbox      = awful.screen.focused().mypromptbox.widget,
-	     exe_callback = awful.util.eval,
-	     history_path = awful.util.get_cache_dir() .. "/history_eval"
-	  }
-end))
+
+    -- This is maybe something usefull for folks but honestly always gets in my way. Just commenting out.
+    -- awful.key({ modkey }, "x",
+    --    function ()
+    -- 	  awful.prompt.run {
+    -- 	     prompt       = "Run Lua code: ",
+    -- 	     textbox      = awful.screen.focused().mypromptbox.widget,
+    -- 	     exe_callback = awful.util.eval,
+    -- 	     history_path = awful.util.get_cache_dir() .. "/history_eval"
+    -- 	  }
+    -- end)
+)
        -- {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     -- awful.key({ modkey }, "p", function() menubar.show() end,
