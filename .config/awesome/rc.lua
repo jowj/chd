@@ -488,16 +488,16 @@ globalkeys = gears.table.join(
        {description = "run prompt", group = "launcher"}),
 
 
-    -- This is maybe something usefull for folks but honestly always gets in my way. Just commenting out.
-    -- awful.key({ modkey }, "x",
-    --    function ()
-    -- 	  awful.prompt.run {
-    -- 	     prompt       = "Run Lua code: ",
-    -- 	     textbox      = awful.screen.focused().mypromptbox.widget,
-    -- 	     exe_callback = awful.util.eval,
-    -- 	     history_path = awful.util.get_cache_dir() .. "/history_eval"
-    -- 	  }
-    -- end)
+    -- This is maybe something usefull for folks but honestly always gets in my way.
+    awful.key({ modkey }, "|",
+       function ()
+	  awful.prompt.run {
+	     prompt       = "Run Lua code: ",
+	     textbox      = awful.screen.focused().mypromptbox.widget,
+	     exe_callback = awful.util.eval,
+	     history_path = awful.util.get_cache_dir() .. "/history_eval"
+	  }
+    end)
 )
        -- {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
