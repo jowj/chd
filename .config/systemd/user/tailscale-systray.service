@@ -4,7 +4,6 @@ After=network.target
 Wants=tailscaled.service
 
 [Service]
-User=josiah
 ExecStart=/home/josiah/go/bin/tailscale-systray
 LimitNOFILE=1024
 
