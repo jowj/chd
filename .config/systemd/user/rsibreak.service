@@ -1,0 +1,16 @@
+[Unit]
+Description=runs the nm applet for the system tray
+After=network.target
+
+[Service]
+ExecStart=/run/current-system/sw/bin/rsibreak
+LimitNOFILE=1024
+
+Restart=always
+RestartSec=10
+Environment=DISPLAY=:0
+
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=default.target
