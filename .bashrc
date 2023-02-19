@@ -91,7 +91,7 @@ else
     if [ "$HOSTNAME" = "hoyden" ]; then
 	printf 'on hoyden, applying nixOS config \n'
 	setxkbmap -option "ctrl:nocaps"
-	fortune invisiblestates/invisiblestates | fold -w 80 -s
+	fortune ~/bin/fortunate/invisiblestates/invisiblestates | fold -w 80 -s
     else
 	printf 'regular config\n'
     fi
