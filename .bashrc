@@ -11,7 +11,7 @@ set completion-ignore-case on # ignore case when tab-completing
 
 source ~/.paths
 export VISUAL=emacsclient
-export editor=emacsclient
+export EDITOR=emacsclient
 
 # blatantly steal micah's ls aliases because they make SO MUCH SENSE omg.
 alias python="python3"
@@ -84,7 +84,7 @@ eval $(keychain --gpg2 --agents gpg)
 
 # host specific configurations:
 if [ "$HOSTNAME" = "hoyden" ]; then
-	printf 'on hoyden, applying nixOS config \n'
+	# printf 'on hoyden, applying nixOS config \n'
 	setxkbmap -option "ctrl:nocaps"
 	fortune invisiblestates/invisiblestates | fold -w 80 -s
 else
@@ -97,11 +97,11 @@ export PS1="\t \[\e[34m\]ǰ \[\e[91m\]☭\[\e[0m\] "
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-echo ""
-echo "  /'-./\_                |  $HOSTNAME"
-echo " :    ||,>               |"
-echo "  \.-'||                 |  $0"
-echo -e "\e[31m      ||    BURIED\e[0m       |"
-echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
-echo -e "\e[31m      ||\e[0m                 |"
-echo ""
+# echo ""
+# echo "  /'-./\_                |  $HOSTNAME"
+# echo " :    ||,>               |"
+# echo "  \.-'||                 |  $0"
+# echo -e "\e[31m      ||    BURIED\e[0m       |"
+# echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
+# echo -e "\e[31m      ||\e[0m                 |"
+# echo ""
