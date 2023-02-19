@@ -83,25 +83,33 @@ eval $(keychain --eval --quiet ~/.ssh/{awful-git,github,digitalocean,home-net})
 eval $(keychain --gpg2 --agents gpg)
 
 # host specific configurations:
-if [ "$HOSTNAME" = "hoyden" ]; then
-	# printf 'on hoyden, applying nixOS config \n'
+if [[ $(shopt login_shell | cut -f2) == "on" ]]
+then
+    : # this is a no op cmd in bash, i guess. GOD.
+
+else
+    if [ "$HOSTNAME" = "hoyden" ]; then
+	printf 'on hoyden, applying nixOS config \n'
 	setxkbmap -option "ctrl:nocaps"
 	fortune invisiblestates/invisiblestates | fold -w 80 -s
-else
+    else
 	printf 'regular config\n'
+    fi
+
+    # this looks like garbage but its just color initation and termination
+    export PS1="\t \[\e[34m\]ǰ \[\e[91m\]☭\[\e[0m\] "
+
+    export CLICOLOR=1
+    export LSCOLORS=GxFxCxDxBxegedabagaced
+
+    echo ""
+    echo "  /'-./\_                |  $HOSTNAME"
+    echo " :    ||,>               |"
+    echo "  \.-'||                 |  $0"
+    echo -e "\e[31m      ||    BURIED\e[0m       |"
+    echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
+    echo -e "\e[31m      ||\e[0m                 |"
+    echo ""
 fi
 
-# this looks like garbage but its just color initation and termination
-export PS1="\t \[\e[34m\]ǰ \[\e[91m\]☭\[\e[0m\] "
 
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
-# echo ""
-# echo "  /'-./\_                |  $HOSTNAME"
-# echo " :    ||,>               |"
-# echo "  \.-'||                 |  $0"
-# echo -e "\e[31m      ||    BURIED\e[0m       |"
-# echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
-# echo -e "\e[31m      ||\e[0m                 |"
-# echo ""
