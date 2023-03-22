@@ -21,6 +21,16 @@
 (use-package flycheck
   :ensure t)
 
+(use-package python-black
+  :demand t
+  :after python
+  :hook (python-mode . python-black-on-save-mode-enable-dwim))
+
+(use-package py-isort
+    :ensure t
+    :after python
+    )
+
 ; helps with LSP, generally.
 (yas-global-mode 1)
 
@@ -31,7 +41,13 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1))
 
-(use-package project :ensure t)
+;; this is hardcoded like this to force a load of the CORRECT project.el function.
+;; reference this url: https://github.com/joaotavora/eglot/issues/549
+
+(load-file "~/.emacs.d/elpa/project-0.8.1/project.el") 
+
+(use-package project
+  :ensure t)
 
 (use-package eglot
   :ensure t
@@ -47,4 +63,15 @@
   (venv-initialize-eshell) ;; if you want eshell support
   (setq venv-location "~/.local/share/virtualenvs/"))
 
+(defun jlj/python_format ()
+    "Format python buffer with isort and black."
+    (interactive)
+    (py-isort-buffer)
+    (python-black-buffer)
+    (save-buffer))
+
+(add-hook 'python-mode-hook
+    (lambda () (local-set-key (kbd "C-c r") 'jlj/python_format)))
+
 ;;; jlj-python.el ends here
+
