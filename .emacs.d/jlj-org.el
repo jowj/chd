@@ -102,6 +102,12 @@
   :ensure t
   :after org)
 
+(use-package org-trello
+  :ensure t
+  :after org
+  :config
+  (custom-set-variables '(org-trello-files '("~/dhd/org/stjohns-trello.org"))))
+
 ;; configure the org protocol
 (org-load-modules-maybe t)
 (require 'org-protocol)

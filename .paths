@@ -2,9 +2,9 @@
 export AGARES=${AGARES:-"$HOME/.agares"}
 
 # guix stuff
-export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
-export GUIX_PROFILE="$HOME/.guix-profile"
-source "$GUIX_PROFILE/etc/profile"
+# export GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
+# export GUIX_PROFILE="$HOME/.guix-profile"
+# source "$GUIX_PROFILE/etc/profile"
 
 # fuck with nix stuff
 export XDG_DATA_DIRS="/home/josiah/.nix-profile/share:$XDG_DATA_DIRS"
@@ -17,5 +17,5 @@ export PATH=/usr/local/share/python:$PATH
 export PATH=/Users/jowj/Library/Python/3.6/bin:$PATH
 export PATH=/home/josiah/.local/bin:$PATH
 export PATH=/home/josiah/.gem/ruby/2.6.0/bin:$PATH
-export PATH=/home/josiah/.config/guix/current/bin/:$PATH
+# export PATH=/home/josiah/.config/guix/current/bin/:$PATH
 export PATH=/home/josiah/go/bin:$PATH

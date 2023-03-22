@@ -247,6 +247,27 @@
 (use-package dockerfile-mode
   :ensure t)
 
+;; add weird mu4e path to emacs
+;; THIS IS A HARD CODED NIX DERIV rather than something better. be careful.
+;; I expect this to break a decent amount
+(when (string= (system-name) "hoyden")
+  (add-to-list 'load-path "~/.emacs.d/src/mu4e")
+  (require 'mu4e)
+  (require 'mu4e-view-gnus) ; this is required on nixos for some reason; maybe in other places? if you don't, you can't view messages
+  (setq mail-user-agent 'mu4e-user-agent)
+  ;; use 'fancy' non-ascii characters in various places in mu4e
+  (setq mu4e-use-fancy-chars t)
+  ;; attempt to show images when viewing messages
+  (setq mu4e-view-show-images t))
+
+
+(defun magit-add-current-buffer ()
+  "Adds (with force) the file from the current buffer to the git repo"
+  (interactive)
+  (shell-command (concat "git add -f "
+			 (shell-quote-argument buffer-file-name))))
+
+
 (server-start)
 
 ;;; jlj-generic.el ends here

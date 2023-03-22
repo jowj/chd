@@ -1,31 +1,167 @@
--- If LuaRocks is installed, make sure that packages installed through it are
+ -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
+
+-- lain stuff
+local lain  = require("lain")
+local dpi   = require("beautiful.xresources").apply_dpi
 
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+
 -- Widget and layout library
 local wibox = require("wibox")
+
 -- Theme handling library
 local beautiful = require("beautiful")
+
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- volume import
-local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+-- Shit to enable the use of lain themes and templates
+local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
+
+local theme                                     = {}
+theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/copland"
+theme.wallpaper                                 = theme.dir .. "/wall.png"
+theme.font                                      = "Terminus 10.5"
+theme.fg_normal                                 = "#BBBBBB"
+theme.fg_focus                                  = "#78A4FF"
+theme.bg_normal                                 = "#111111"
+theme.bg_focus                                  = "#111111"
+theme.fg_urgent                                 = "#000000"
+theme.bg_urgent                                 = "#FFFFFF"
+theme.border_width                              = dpi(1)
+theme.border_normal                             = "#141414"
+theme.border_focus                              = "#93B6FF"
+theme.taglist_fg_focus                          = "#FFFFFF"
+theme.taglist_bg_focus                          = "#111111"
+theme.taglist_bg_normal                         = "#111111"
+theme.titlebar_bg_normal                        = "#191919"
+theme.titlebar_bg_focus                         = "#262626"
+theme.menu_height                               = dpi(16)
+theme.menu_width                                = dpi(130)
+theme.tasklist_disable_icon                     = true
+theme.awesome_icon                              = theme.dir .."/icons/awesome.png"
+theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
+theme.taglist_squares_sel                       = theme.dir .. "/icons/square_unsel.png"
+theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
+theme.vol                                       = theme.dir .. "/icons/vol.png"
+theme.vol_low                                   = theme.dir .. "/icons/vol_low.png"
+theme.vol_no                                    = theme.dir .. "/icons/vol_no.png"
+theme.vol_mute                                  = theme.dir .. "/icons/vol_mute.png"
+theme.disk                                      = theme.dir .. "/icons/disk.png"
+theme.ac                                        = theme.dir .. "/icons/ac.png"
+theme.bat                                       = theme.dir .. "/icons/bat.png"
+theme.bat_low                                   = theme.dir .. "/icons/bat_low.png"
+theme.bat_no                                    = theme.dir .. "/icons/bat_no.png"
+theme.play                                      = theme.dir .. "/icons/play.png"
+theme.pause                                     = theme.dir .. "/icons/pause.png"
+theme.stop                                      = theme.dir .. "/icons/stop.png"
+theme.layout_tile                               = theme.dir .. "/icons/tile.png"
+theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
+theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
+theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
+theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
+theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
+theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
+theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
+theme.layout_max                                = theme.dir .. "/icons/max.png"
+theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
+theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
+theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+theme.useless_gap                               = 0
+theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
+theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
+theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active       = theme.dir .. "/icons/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_inactive      = theme.dir .. "/icons/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_inactive     = theme.dir .. "/icons/titlebar/ontop_normal_inactive.png"
+theme.titlebar_sticky_button_focus_active       = theme.dir .. "/icons/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_active      = theme.dir .. "/icons/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_inactive     = theme.dir .. "/icons/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_inactive    = theme.dir .. "/icons/titlebar/sticky_normal_inactive.png"
+theme.titlebar_floating_button_focus_active     = theme.dir .. "/icons/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_active    = theme.dir .. "/icons/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_inactive   = theme.dir .. "/icons/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_inactive  = theme.dir .. "/icons/titlebar/floating_normal_inactive.png"
+theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active   = theme.dir .. "/icons/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
+
+-- lain related
+theme.layout_centerfair                         = theme.dir .. "/icons/centerfair.png"
+theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
+theme.layout_centerwork                         = theme.dir .. "/icons/centerwork.png"
+
+local markup = lain.util.markup
+local blue   = theme.fg_focus
+local red    = "#EB8F8F"
+local green  = "#8FEB8F"
+
+
+-- ALSA volume bar
+local volicon = wibox.widget.imagebox(theme.vol)
+theme.volume = lain.widget.alsabar {
+    width = dpi(59), border_width = 0, ticks = true, ticks_size = dpi(6),
+    notification_preset = { font = theme.font },
+    --togglechannel = "IEC958,3",
+    settings = function()
+        if volume_now.status == "off" then
+            volicon:set_image(theme.vol_mute)
+        elseif volume_now.level == 0 then
+            volicon:set_image(theme.vol_no)
+        elseif volume_now.level <= 50 then
+            volicon:set_image(theme.vol_low)
+        else
+            volicon:set_image(theme.vol)
+        end
+    end,
+    colors = {
+        background   = theme.bg_normal,
+        mute         = red,
+        unmute       = theme.fg_normal
+    }
+}
+theme.volume.tooltip.wibox.fg = theme.fg_focus
+theme.volume.bar:buttons(my_table.join (
+          awful.button({}, 1, function()
+            awful.spawn(string.format("%s -e alsamixer", awful.util.terminal))
+          end),
+          awful.button({}, 2, function()
+            os.execute(string.format("%s set %s 100%%", theme.volume.cmd, theme.volume.channel))
+            theme.volume.update()
+          end),
+          awful.button({}, 3, function()
+            os.execute(string.format("%s set %s toggle", theme.volume.cmd, theme.volume.togglechannel or theme.volume.channel))
+            theme.volume.update()
+          end),
+          awful.button({}, 4, function()
+            os.execute(string.format("%s set %s 1%%+", theme.volume.cmd, theme.volume.channel))
+            theme.volume.update()
+          end),
+          awful.button({}, 5, function()
+            os.execute(string.format("%s set %s 1%%-", theme.volume.cmd, theme.volume.channel))
+            theme.volume.update()
+          end)
+))
+local volumebg = wibox.container.background(theme.volume.bar, "#474747", gears.shape.rectangle)
+local volumewidget = wibox.container.margin(volumebg, dpi(2), dpi(7), dpi(4), dpi(4))
 
 -- game mode import and customization
 local game_widget = require("awesome-wm-widgets.demomode-widget.demomode")
 
--- screen RESOLUTION import and customization
-local screen_widget = require("awesome-wm-widgets.gamemode-widget.gamemode")
+-- limit notification size so they don't blow up your whole goddamn screen
+naughty.config.defaults['icon_size'] = 100
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -225,8 +361,8 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
-	    volume_widget({display_notification = true}),
-	    battery_widget,
+            volicon,
+            volumewidget,	    
             s.mylayoutbox,
         },
     }
@@ -252,7 +388,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ "Mod1",           }, "Tab",
+    awful.key({ "Control","Mod1", "Shift", "Mod4"}, "o",
        function ()
 	  awful.client.focus.byidx( 1)
        end,
@@ -276,7 +412,7 @@ globalkeys = gears.table.join(
        {description = "focus the next screen", group = "screen"}),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
        {description = "focus the previous screen", group = "screen"}),
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
+    awful.key({ "Control","Mod1", "Shift", "Mod4" }, "u", awful.client.urgent.jumpto,
        {description = "jump to urgent client", group = "client"}),
     awful.key({ modkey,           }, "j",
        function ()
@@ -334,6 +470,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
        {description = "select previous", group = "layout"}),
 
+    -- this will restore a client on the active tag + focus it
     awful.key({ "Control","Mod1", "Shift", "Mod4" }, "n",
        function ()
 	  local c = awful.client.restore()
@@ -350,7 +487,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
        {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey }, "x",
+
+    -- This is maybe something usefull for folks but honestly always gets in my way.
+    awful.key({ modkey }, "|",
        function ()
 	  awful.prompt.run {
 	     prompt       = "Run Lua code: ",
@@ -358,7 +497,8 @@ globalkeys = gears.table.join(
 	     exe_callback = awful.util.eval,
 	     history_path = awful.util.get_cache_dir() .. "/history_eval"
 	  }
-end))
+    end)
+)
        -- {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     -- awful.key({ modkey }, "p", function() menubar.show() end,

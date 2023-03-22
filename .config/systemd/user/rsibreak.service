@@ -1,10 +1,9 @@
 [Unit]
-Description=Runs the tailscale systray
+Description=runs the nm applet for the system tray
 After=network.target
-Wants=tailscaled.service
 
 [Service]
-ExecStart=/home/josiah/go/bin/tailscale-systray
+ExecStart=/run/current-system/sw/bin/rsibreak
 LimitNOFILE=1024
 
 Restart=always

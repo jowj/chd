@@ -1,0 +1,9 @@
+[Unit]
+Description=Run offlineimap every 30 minutes
+
+[Timer]
+OnBootSec=30min
+OnUnitActiveSec=1day
+
+[Install]
+WantedBy=timers.target

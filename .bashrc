@@ -11,7 +11,7 @@ set completion-ignore-case on # ignore case when tab-completing
 
 source ~/.paths
 export VISUAL=emacsclient
-export editor=emacsclient
+export EDITOR=emacsclient
 
 # blatantly steal micah's ls aliases because they make SO MUCH SENSE omg.
 alias python="python3"
@@ -70,37 +70,46 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # handle key management through `keychain` because its great
+## first set up gpg agent
+[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+   export GPG_AGENT_INFO
+else
+   eval $( gpg-agent --daemon )
+fi
+
+## then configure keychain
 eval $(keychain --eval --quiet ~/.ssh/{awful-git,github,digitalocean,home-net})
+eval $(keychain --gpg2 --agents gpg)
 
 # host specific configurations:
-if [ "$HOSTNAME" = "nixon" ]; then
-	printf 'on nixon, applying nixOS config'
+if [[ $(shopt login_shell | cut -f2) == "on" ]]
+then
+    : # this is a no op cmd in bash, i guess. GOD.
+
+else
+    if [ "$HOSTNAME" = "hoyden" ]; then
+	printf 'on hoyden, applying nixOS config \n'
 	setxkbmap -option "ctrl:nocaps"
-else
+	fortune ~/bin/fortunate/invisiblestates/invisiblestates | fold -w 80 -s
+    else
 	printf 'regular config\n'
+    fi
+
+    # this looks like garbage but its just color initation and termination
+    export PS1="\t \[\e[34m\]ǰ \[\e[91m\]☭\[\e[0m\] "
+
+    export CLICOLOR=1
+    export LSCOLORS=GxFxCxDxBxegedabagaced
+
+    echo ""
+    echo "  /'-./\_                |  $HOSTNAME"
+    echo " :    ||,>               |"
+    echo "  \.-'||                 |  $0"
+    echo -e "\e[31m      ||    BURIED\e[0m       |"
+    echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
+    echo -e "\e[31m      ||\e[0m                 |"
+    echo ""
 fi
 
-# use pyenv where appropriate:
-if [ "$HOSTNAME" = "popling" ]; then
-	printf 'on home, applying home config'
-        export PATH="$HOME/.pyenv/bin:$PATH"
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
-else
-	printf 'regular config'
-fi
 
-# this looks like garbage but its just color initation and termination
-export PS1="\t \[\e[34m\]ǰ \[\e[91m\]☭\[\e[0m\] "
-
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
-echo ""
-echo "  /'-./\_                |  $HOSTNAME"
-echo " :    ||,>               |"
-echo "  \.-'||                 |  $0"
-echo -e "\e[31m      ||    BURIED\e[0m       |"
-echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
-echo -e "\e[31m      ||\e[0m                 |"
-echo ""
