@@ -36,3 +36,4 @@
 (when (eq system-type 'gnu/linux)
   (keychain-refresh-environment)
   )
+(put 'upcase-region 'disabled nil)

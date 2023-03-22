@@ -82,7 +82,7 @@ end)
 
 -- stolen from @mrled
 appCuts = {
-  c = 'Microsoft Edge',
+  c = 'Brave Browser',
   e = 'Emacs',
   d = 'Dash',
   f = 'Firefox',
