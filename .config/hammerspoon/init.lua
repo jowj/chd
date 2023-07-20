@@ -92,7 +92,8 @@ appCuts = {
   o = 'Calendar.app',
   p = 'Bitwarden',
   t = 'iTerm.app',
-  z = 'Zoom.us'
+  z = 'Zoom.us',
+  v = 'Visual Studio Code'  
 }
 
 modalHotKey = dofile(os.getenv("HOME") .. "/.config/hammerspoon/modalHotKey.lua")
