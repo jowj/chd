@@ -62,15 +62,21 @@
     (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
     (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
     (setq org-agenda-files '("~/dhd/org/"))           ; add files to agenda
-    (find-file-noselect "~/Documents/projects/molly/data/matrix-refile.org")
-    (setq org-agenda-files (list "~/dhd/org"
-				 "~/Documents/projects/molly/data/matrix-refile.org"))
+    ;; (find-file-noselect "~/Documents/projects/molly/data/matrix-refile.org")
+    ;; (setq org-agenda-files (list "~/dhd/org"
+    ;; 				 "~/Documents/projects/molly/data/matrix-refile.org"))
     (with-current-buffer "matrix-refile.org" (auto-revert-mode))
 
 
 
     (setq org-directory "~/dhd/org/")                 ; define generic org capture shit
     (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
+
+
+;; needed setup for special block extras modes.
+(defun org-special-block-extras-short-names ())
+(setq o--supported-blocks nil)
+(setq org-confirm-elisp-link-function nil)
 
 ;; setup special block extras!
 (use-package org-special-block-extras
@@ -92,6 +98,7 @@
   ;; ‘org-special-block-extras-defblock’
   (org-special-block-extras-short-names))
 
+
 ;; Set up bullets
 (use-package org-bullets
   :ensure t
@@ -102,11 +109,11 @@
   :ensure t
   :after org)
 
-(use-package org-trello
-  :ensure t
-  :after org
-  :config
-  (custom-set-variables '(org-trello-files '("~/dhd/org/stjohns-trello.org"))))
+;; (use-package org-trello
+;;   :ensure t
+;;   :after org
+;;   :config
+;;   (custom-set-variables '(org-trello-files '("~/dhd/org/stjohns-trello.org"))))
 
 ;; configure the org protocol
 (org-load-modules-maybe t)
