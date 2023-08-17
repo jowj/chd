@@ -120,6 +120,12 @@
 	 ;; ... more templates here ...
 	 ("b" "Book - capture a book you've read" entry (file+olp "~/dhd/org/webwiki.org" "books")
 	  "* %^{TITLE} \n  :PROPERTIES:\n:AUTHOR: %^{AUTHOR}\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
+	 ("v" "TV - capture a TV show you've finished. Include season in title like (s01)." entry (file+olp "~/dhd/org/webwiki.org" "tv")
+	  "* %^{TITLE} \n  :PROPERTIES:\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
+	 ("m" "Movies - capture a movie you've finished" entry (file+olp "~/dhd/org/webwiki.org" "movies")
+	  "* %^{TITLE} \n  :PROPERTIES:\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
+	 ("g" "Game - capture a game you've finished" entry (file+olp "~/dhd/org/webwiki.org" "games")
+	  "* %^{TITLE} \n  :PROPERTIES:\n:PLATFORM: %^{PLATFORM}\n:TAGS: %^{TAGS}\n:MULTIPLAYER: %^{MULTIPLAYER}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)	 
 	 ("c" "Context-include Todo" entry (file "~/dhd/org/refile-beorg.org")
 	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
 	 ("q" "quotes" entry (file+olp "~/dhd/org/webwiki.org" "quotes")
