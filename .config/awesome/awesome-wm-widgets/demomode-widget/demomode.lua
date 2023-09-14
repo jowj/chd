@@ -15,7 +15,7 @@ local gears = require("gears")
 
 local XSCREENSAVER_DEACTIVATE_COMMAND = "xscreensaver-command -deactivate"
 local XSCREENSAVER_TIMER = 61
-local iconpath = "/home/josiah/.config/awesome/demomode.png"
+local iconpath = "/home/josiah/.config/awesome/themes/jlj/icons/demomode.png"
 
 local demoMode_widget = wibox.widget {
   wibox.widget {

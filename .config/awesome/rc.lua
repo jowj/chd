@@ -28,7 +28,6 @@ require("awful.hotkeys_popup.keys")
 
 -- Shit to enable the use of lain themes and templates
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
-
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/copland"
 theme.wallpaper                                 = theme.dir .. "/wall.png"
@@ -191,7 +190,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua") -- this is the OG theme
-beautiful.init(gears.filesystem.get_configuration_dir() .. "jlj-theme.lua")  -- this is my shitty test theme
+beautiful.init(gears.filesystem.get_configuration_dir() .. "themes/jlj/jlj-theme.lua")  -- this is my shitty test theme
 
 -- This is used later as the default terminal and editor to run.
 terminal = "konsole"

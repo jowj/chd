@@ -18,7 +18,7 @@ local XRANDR_GAME_RESOLUTION_COMMAND = "xrandr --output HDMI-0 --mode 1920x1080 
 
 local XRANDR_NORMAL_RESOLUTION_COMMAND = "xrandr --output HDMI-0 --mode 2560x1440 --pos 0x0 --rotate normal --primary --output DP-2 --mode 1920x1080 --right-of HDMI-0 --rotate left --output DP-4 --mode 1920x1080 --left-of HDMI-0 --rotate right --output DP-0 --off"
 
-local iconpath = "/home/josiah/.config/awesome/gamemode.png"
+local iconpath = "/home/josiah/.config/awesome/themes/jlj/icons/gamemode.png"
 
 local toggle = 0
 
