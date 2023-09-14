@@ -71,16 +71,16 @@ fi
 
 # handle key management through `keychain` because its great
 ## first set up gpg agent
-[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-   export GPG_AGENT_INFO
-else
-   eval $( gpg-agent --daemon )
-fi
+# [ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+# if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+#    export GPG_AGENT_INFO
+# else
+#    eval $( gpg-agent --daemon )
+# fi
 
 ## then configure keychain
-eval $(keychain --eval --quiet ~/.ssh/{awful-git,github,digitalocean,home-net})
-eval $(keychain --gpg2 --agents gpg)
+eval $(keychain --eval ~/.ssh/{awful-git,github,digitalocean,home-net})
+eval $(keychain --agents gpg)
 
 # host specific configurations:
 if [[ $(shopt login_shell | cut -f2) == "on" ]]
