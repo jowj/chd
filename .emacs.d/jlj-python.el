@@ -15,9 +15,6 @@
 (use-package pipenv
   :ensure t)
 
-(use-package poetry
- :ensure t)
-
 (use-package flycheck
   :ensure t)
 
@@ -44,7 +41,7 @@
 ;; this is hardcoded like this to force a load of the CORRECT project.el function.
 ;; reference this url: https://github.com/joaotavora/eglot/issues/549
 
-(load-file "~/.emacs.d/elpa/project-0.8.1/project.el") 
+;;(load-file "~/.emacs.d/elpa/project-0.8.1/project.el") 
 
 (use-package project
   :ensure t)
