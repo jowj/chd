@@ -47,7 +47,7 @@
     (setq org-columns-default-format
 	  '(("%25ITEM %TODO %3PRIORITY %TAGS")))
     ;; have to add _archive or beorg throws a fit!!! it doesn't work on tags the dumby!
-    (setq org-archive-location "~/dhd/org/archive.org_archive::* From %s")
+    (setq org-archive-location "~/iCloud/dhd/org/archive.org_archive::* From %s")
 
 
 ;;;; custom org mode hotkeys
@@ -61,15 +61,9 @@
 			       (org-agenda-files :maxlevel . 9)))
     (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
     (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
-    (setq org-agenda-files '("~/dhd/org/"))           ; add files to agenda
-    ;; (find-file-noselect "~/Documents/projects/molly/data/matrix-refile.org")
-    ;; (setq org-agenda-files (list "~/dhd/org"
-    ;; 				 "~/Documents/projects/molly/data/matrix-refile.org"))
-    (with-current-buffer "matrix-refile.org" (auto-revert-mode))
+    (setq org-agenda-files '("~/iCloud/dhd/org/"))           ; add files to agenda
 
-
-
-    (setq org-directory "~/dhd/org/")                 ; define generic org capture shit
+    (setq org-directory "~/iCloud/dhd/org/")                 ; define generic org capture shit
     (setq org-default-notes-file (concat org-directory "/refile-beorg.org"))))
 
 
@@ -85,7 +79,7 @@
   :custom
     ;; The places where I keep my ‘#+documentation’
     (org-special-block-extras--docs-libraries
-     '("~/dhd/org/documentation.org"))
+     '("~/iCloud/dhd/org/documentation.org"))
     ;; Disable the in-Emacs fancy-links feature?
     ;; (org-special-block-extras-fancy-links nil)
     ;; Details heading “flash pink” whenever the user hovers over them?
@@ -113,7 +107,7 @@
 ;;   :ensure t
 ;;   :after org
 ;;   :config
-;;   (custom-set-variables '(org-trello-files '("~/dhd/org/stjohns-trello.org"))))
+;;   (custom-set-variables '(org-trello-files '("~/iCloud/dhd/org/stjohns-trello.org"))))
 
 ;; configure the org protocol
 (org-load-modules-maybe t)
@@ -122,22 +116,22 @@
 (setq org-protocol-default-template-key "w")
 
 (setq org-capture-templates
-       `(("w" "Web site" entry (file+olp "~/dhd/org/webwiki.org" "links" "unsorted")
+       `(("w" "Web site" entry (file+olp "~/iCloud/dhd/org/webwiki.org" "links" "unsorted")
 	  "* %c :website:\n%U %?%:initial")
 	 ;; ... more templates here ...
-	 ("b" "Book - capture a book you've read" entry (file+olp "~/dhd/org/webwiki.org" "books")
+	 ("b" "Book - capture a book you've read" entry (file+olp "~/iCloud/dhd/org/webwiki.org" "books")
 	  "* %^{TITLE} \n  :PROPERTIES:\n:AUTHOR: %^{AUTHOR}\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
-	 ("v" "TV - capture a TV show you've finished. Include season in title like (s01)." entry (file+olp "~/dhd/org/webwiki.org" "tv")
+	 ("v" "TV - capture a TV show you've finished. Include season in title like (s01)." entry (file+olp "~/iCloud/dhd/org/webwiki.org" "tv")
 	  "* %^{TITLE} \n  :PROPERTIES:\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
-	 ("m" "Movies - capture a movie you've finished" entry (file+olp "~/dhd/org/webwiki.org" "movies")
+	 ("m" "Movies - capture a movie you've finished" entry (file+olp "~/iCloud/dhd/org/webwiki.org" "movies")
 	  "* %^{TITLE} \n  :PROPERTIES:\n:GENRE: %^{GENRE}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)
-	 ("g" "Game - capture a game you've finished" entry (file+olp "~/dhd/org/webwiki.org" "games")
+	 ("g" "Game - capture a game you've finished" entry (file+olp "~/iCloud/dhd/org/webwiki.org" "games")
 	  "* %^{TITLE} \n  :PROPERTIES:\n:PLATFORM: %^{PLATFORM}\n:TAGS: %^{TAGS}\n:MULTIPLAYER: %^{MULTIPLAYER}\n:FINISHED: %U \n:END:\n " :empty-lines 1 :prepend t)	 
-	 ("c" "Context-include Todo" entry (file "~/dhd/org/refile-beorg.org")
+	 ("c" "Context-include Todo" entry (file "~/iCloud/dhd/org/refile-beorg.org")
 	  "* TODO %?\n%U \n '%a'" :empty-lines 1 :prepend t)
-	 ("q" "quotes" entry (file+olp "~/dhd/org/webwiki.org" "quotes")
+	 ("q" "quotes" entry (file+olp "~/iCloud/dhd/org/webwiki.org" "quotes")
 	  "* %?\n%U \n " :empty-lines 1 :prepend t)
-	 ("t" "Todo" entry (file "~/dhd/org/refile-beorg.org")
+	 ("t" "Todo" entry (file "~/iCloud/dhd/org/refile-beorg.org")
 	  "* TODO %?\n%U" :empty-lines 1 :prepend t)))
 
 ;; configure org exporters
@@ -192,7 +186,7 @@ dependency: this relies on imagemagick"
   (setq org-caldav-url "https://caldav.fastmail.com/dav/calendars/user/me@jowj.net/")
   (setq org-caldav-calendars
 	'((:calendar-id "654a6e55-b777-4603-b009-0058d35aa5ca"
-			:inbox "~/dhd/org/fromworkcal.org")))
+			:inbox "~/iCloud/dhd/org/fromworkcal.org")))
   (setq org-icalendar-timezone "America/Chicago"))
 
 
