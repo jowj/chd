@@ -31,7 +31,6 @@
 (load-file "~/.emacs.d/jlj-org.el")
 (load-file "~/.emacs.d/jlj-python.el")
 (load-file "~/.emacs.d/jlj-rust.el")
-;; (load-file "~/.emacs.d/jlj-social.el")
 
 ;; load keychain (if it exists)
 (when (eq system-type 'gnu/linux)

@@ -82,16 +82,14 @@ end)
 
 -- stolen from @mrled
 appCuts = {
-  c = 'Brave Browser',
   e = 'Emacs',
   d = 'Dash',
   f = 'Firefox',
   h = 'Hammerspoon',
-  l = 'Slack',
   m = 'Mail.app',
   o = 'Calendar.app',
   p = 'Bitwarden',
-  t = 'iTerm.app',
+  t = 'terminal',
   z = 'Zoom.us',
   v = 'Visual Studio Code'  
 }
