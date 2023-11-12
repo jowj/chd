@@ -72,15 +72,10 @@ echo -e "\e[31m      ||        HATCHET\e[0m  |  $OSTYPE"
 echo -e "\e[31m      ||\e[0m                 |"
 echo ""
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/josiah.ledbetter/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/josiah.ledbetter/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/josiah.ledbetter/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/josiah.ledbetter/google-cloud-sdk/completion.zsh.inc'; fi
 if [ -e /Users/josiah.ledbetter/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/josiah.ledbetter/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/terraform terraform
+autoload -Uz compinit
+compinit
+
