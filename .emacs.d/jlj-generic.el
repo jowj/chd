@@ -29,42 +29,29 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
-;; set default font for macos
-(when (eq system-type 'darwin)
-  (use-package fira-code-mode
-    :custom (fira-code-mode-disabled-ligatures '("[]" "#{" "#(" "#_" "#_(" "x")) ;; List of ligatures to turn off
-    :config (global-fira-code-mode)) ;; Enables fira-code-mode globally
-  (set-frame-font "fira code 12")
-  (add-to-list 'default-frame-alist '(font . "fira code 12" ))
-  (set-face-attribute 'default t :font "fira code 12" ))
 (transient-mark-mode 1)              ; Enable transient mark mode (highlights)
 
 (global-hl-line-mode t)              ; highlights the line you're on
 
 (setq indent-tabs-mode nil)                          ; always use spaces when indenting
 (setq require-final-newline t)
-(setq backup-directory-alist `(("." . "~/dhd/org/.saves")))
-(find-file "~/dhd/org/personal.org") ;open primary org file on launch
+(setq backup-directory-alist `(("." . "~/iCloud/dhd/org/.saves")))
+(find-file "~/iCloud/dhd/org/personal.org") ;open primary org file on launch
 (electric-pair-mode 1)                               ; create paired brackets.
 
 ;; themes
 ;; experiemtning with the modus themes that will be native come emacs 28
 ;; they are more acciessble for r/g color blind stuff
 ;; (load-theme 'manoj-dark) loads my favorite default theme
-(use-package modus-themes
-  :ensure
-  :init
-  ;; Add all your customizations prior to loading the themes
-  (setq modus-themes-slanted-constructs t
-        modus-themes-bold-constructs t
-	modus-themes-paren-match 'intense-bold)
 
-  ;; Load the theme files before enabling a theme
-  (modus-themes-load-themes)
-  :config
-  ;; Load the theme of your choice:
-  (modus-themes-load-vivendi)  ;; (modus-themes-load-operandi)
-  :bind ("<f5>" . modus-themes-toggle))
+(add-to-list 'load-path "~/.emacs.d/modus-themes")
+(setq modus-themes-slanted-constructs t
+      modus-themes-bold-constructs t
+      modus-themes-paren-match 'intense-bold)
+;(load-theme 'modus-vivendi)
+(load-theme 'modus-operandi)
+
+;;:bind ("<f5>" . modus-themes-toggle))
 
 
 (use-package yasnippet
@@ -80,13 +67,15 @@
 (use-package iedit
   :ensure t)
 
-(when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta)
-  ;; Make emacs use a different default than the OS
-  ;; only really useful on work computers, but there we go.
-  (setq browse-url-browser-function #'browse-url-generic
-	browse-url-generic-program "open"
-	browse-url-generic-args '("-a" "Firefox")))
+;; As far as I can tell I don't need this if you are using the better mac version of the emacs app?
+;; Weird.
+;; (when (eq system-type 'darwin)
+;;   (setq mac-command-modifier 'meta)
+;;   ;; Make emacs use a different default than the OS
+;;   ;; only really useful on work computers, but there we go.
+;;   (setq browse-url-browser-function #'browse-url-generic
+;; 	browse-url-generic-program "open"
+;; 	browse-url-generic-args '("-a" "Firefox")))
 
 (use-package exec-path-from-shell
   :ensure t
@@ -102,7 +91,7 @@
   (find-file-other-window user-init-file))
 (global-set-key (kbd "C-c J") 'find-user-init-file)
 
-(setq user-home-file "~/dhd/org/personal.org")
+(setq user-home-file "~/iCloud/dhd/org/personal.org")
 (defun find-user-home-file ()
   "Edit the `user-home-file' in this window."
   (interactive)
