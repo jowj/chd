@@ -18,7 +18,8 @@ alias lsa='ls -a'
 alias lsl='ls -a -l'
 alias lsli='lsl -i' # lsl+inodes
 alias l1='ls -1'
-alias llm='lsl -r -t' # lsl+ sort by modified time (lastest at bottom)
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # emacs aliases lol
 alias social="/Applications/Emacs.app/Contents/MacOS/Emacs -q -l '~/.emacs.d/init-social.el'"
@@ -36,8 +37,25 @@ man() {
         LESS_TERMCAP_us=$'\e[1;32m' \
             man "$@"
 }
+# Configure history! Ref:  https://martinheinz.dev/blog/110
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
 
-setopt appendhistory
+HISTORY_IGNORE="(ls|cd|pwd|exit|cd)*" # this works
+HIST_STAMPS="yyyy-mm-dd"
+
+# setopt EXTENDED_HISTORY      # Write the history file in the ':start:elapsed;command' format. also, this appears to do nothing?
+setopt INC_APPEND_HISTORY    # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY         # Share history between all sessions.
+setopt HIST_IGNORE_DUPS      # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS  # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_SPACE     # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS     # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY           # Do not execute immediately upon history expansion.
+setopt APPEND_HISTORY        # append to history file (Default)
+setopt HIST_NO_STORE         # Don't store history commands
+setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"

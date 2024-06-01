@@ -86,12 +86,14 @@ appCuts = {
   d = 'Dash',
   f = 'Firefox',
   h = 'Hammerspoon',
+  l = "Mattermost.app",  
   m = 'Mail.app',
   o = 'Calendar.app',
   p = 'Bitwarden',
   t = 'terminal',
   z = 'Zoom.us',
-  v = 'Visual Studio Code'  
+  v = 'Visual Studio Code',
+  x = "xcode"
 }
 
 modalHotKey = dofile(os.getenv("HOME") .. "/.config/hammerspoon/modalHotKey.lua")
