@@ -82,9 +82,9 @@ end)
 
 -- stolen from @mrled
 appCuts = {
-  e = 'Emacs',
-  d = 'Dash',
-  f = 'Firefox',
+  e = 'Omnifocus',
+  d = 'Drafts',
+  f = 'Microsoft Edge',
   h = 'Hammerspoon',
   l = "Mattermost.app",  
   m = 'Mail.app',
