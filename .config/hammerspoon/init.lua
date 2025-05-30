@@ -128,88 +128,55 @@ hs.hotkey.bind({ "cmd", "ctrl", "alt", "shift" }, "o", function()
     focusedWindow:setFrame(windowFrame)
 end)
 
-local GridCraft = require("GridCraft")
--- nested modal
-local chatModal = GridCraft.modal(nil, nil, {
+-- The "@diagnostic" and "spoon = spoon" lines tell VS Code's Lua extension
+-- that 'spoon' is a global variable injected before running this code.
+-- You don't need them in your Hammerspoon config (but they won't hurt).
+---@diagnostic disable-next-line: undefined-global, lowercase-global
+spoon = spoon or {}
+
+-- Load the GridCraft spoon
+hs.loadSpoon("GridCraft")
+
+local chatSubmenu = {
     {
-        GridCraft.action { key = "s", appName = "Slack" },
-        GridCraft.action { key = "m", appName = "Mattermost" },
-        GridCraft.action { key = "d", appName = "Discord" },
+        spoon.GridCraft.action { key = "d", application = "Discord" },
+        spoon.GridCraft.action { key = "s", application = "Slack" },
+        spoon.GridCraft.action { key = "f", application = "Mattermost" },
+    },
+}
+
+
+local primaryMenu = {
+    {
+        spoon.GridCraft.action { key = "w", application = "Fantastical" },
+        spoon.GridCraft.action { key = "e", application = "Omnifocus" },
+        spoon.GridCraft.action { key = "r", application = "Finder" },
+        spoon.GridCraft.action { key = "t", application = "Ghostty" },
+    },
+    {
+        spoon.GridCraft.action { key = "s", application = "1password.app" },
+        spoon.GridCraft.action { key = "d", application = "Drafts" },
+        spoon.GridCraft.action { key = "f", application = "Firefox" },
+    },
+    {
+        -- spoon.GridCraft.action { key = "z", application = "Chrome" },
+        spoon.GridCraft.action { key = "x", application = "xcode" },
+        spoon.GridCraft.action { key = "v", application = "Zed" },
+        spoon.GridCraft.action {
+            key = "c",
+            submenu = chatSubmenu,
+            description = "coms",
+            icon = spoon.GridCraft.iconPhosphor("chats", "regular")
+        },
     }
-}, "Chat Apps")
+}
 
-local leader
-
-
-leader = GridCraft.modal(
+spoon.GridCraft.grid(
 -- The hokey to invoke this is ctrl-shift-f11
     { "cmd", "ctrl", "alt", "shift" },
     "Space",
-    -- Now we have a table of tables to represent the grid.
-    -- (Lua has a data structure called "tables" which can array-like, as we have them here.
-    -- They can also be associative key=value tables, but we don't need to know about those to configure GridCraft.)
-    -- Our 3x3 grid has 3 rows, and aeach row has 3 keys
-    {
-        -- The table for the top row
-        {
-            -- Regular applications passed with appName pull the icon from the application
-            GridCraft.action { key = "w", appName = "Terminal" },
-            GridCraft.action { key = "e", appName = "ChatGPT" },
-            -- Here's a more complicated action
-            GridCraft.action {
-                key = "r",
-                -- You can make custom actions by passing any Lua function to the action parameter,
-                -- even one you define yourself!
-                -- Here we use one that is built in to Hammerspoon that will lock the screen.
-                action = hs.caffeinate.lockScreen,
-                actionDesc = "Lock screen",
-                -- To use a Phosphor icon, pass the icon name and weight.
-                -- Phosphor icons are automatically colored the same color as the description text.
-                icon = GridCraft.iconPhosphor("lock", "regular")
-            },
-        },
-        -- The table for the middle row
-        {
-            GridCraft.action { key = "s", appName = "1Password" },
-            GridCraft.action { key = "d", appName = "OmniFocus" },
-            GridCraft.action { key = "f", appName = "Finder" },
-        },
-        -- The table for the bottom row
-        {
-            GridCraft.action { key = "x", appName = "Firefox" },
-            -- By default it displays the application name, override that with actionDesc
-            GridCraft.action {
-                key = "c",
-                actionDesc = "Chat Apps",
-                action = function()
-                    leader:stop()
-                    chatModal:start()
-                end,
-                icon = "<span>💬</span>",
-            },
-            GridCraft.action {
-                key = "v",
-                action = hs.reload,
-                actionDesc = "hs.reload",
-                -- The icon can be anything that returns a <svg> or <img> tag.
-                -- This one is using a raw Phosphor icon to show how it works.
-                -- (In lua, strings starting with [[ and ending with ]] can include single and double quotes,
-                -- as well as newlines, so they are convenient for HTML/SVG elements.)
-                icon = [[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><polyline points="184 104 232 104 232 56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M188.4,192a88,88,0,1,1,1.83-126.23L232,104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>]]
-            },
-        },
-    },
+    -- The table of tables for the hotkey grid, defined above
+    primaryMenu,
     -- This a title that is just nice for logging in the Hammerspoon console.
-    "GridKeys Example"
+    "Awful Grid"
 )
-
--- -- bind the top-level hotkey manually
--- hs.hotkey.bind({ "cmd", "ctrl" }, "space", function()
---     leader:start()
--- end)
-
--- escape from submodal back to leader
-chatModal.triggerKey:bind({}, "escape", function()
-    chatModal:stop()
-    leader:start()
-end)
