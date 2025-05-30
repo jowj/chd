@@ -162,13 +162,14 @@ local primaryMenu = {
     {
         -- spoon.GridCraft.action { key = "z", application = "Chrome" },
         spoon.GridCraft.action { key = "x", application = "xcode" },
-        spoon.GridCraft.action { key = "v", application = "Zed" },
         spoon.GridCraft.action {
             key = "c",
             submenu = chatSubmenu,
             description = "coms",
             icon = spoon.GridCraft.iconPhosphor("chats", "regular")
         },
+        spoon.GridCraft.action { key = "v", application = "Zed" },
+        spoon.GridCraft.action { key = "b", application = "Bear" },
     }
 }
 
