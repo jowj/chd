@@ -157,6 +157,7 @@ local primaryMenu = {
         spoon.GridCraft.action { key = "s", application = "1password.app" },
         spoon.GridCraft.action { key = "d", application = "Drafts" },
         spoon.GridCraft.action { key = "f", application = "Firefox" },
+        spoon.GridCraft.action { key = "g", application = "Chatgpt" },
     },
     {
         -- spoon.GridCraft.action { key = "z", application = "Chrome" },
