@@ -80,27 +80,6 @@ hs.hotkey.bind({ "cmd", "ctrl", "alt", "shift" }, "R", function()
     hs.reload()
 end)
 
--- stolen from @mrled
-appCuts = {
-    e = 'Omnifocus',
-    d = 'Drafts',
-    f = 'Firefox.app',
-    h = 'Hammerspoon',
-    l = "Mattermost.app",
-    m = 'Mail.app',
-    o = 'Fantastical.app',
-    p = '1password.app',
-    t = 'ghostty.app',
-    z = 'Chrome.app',
-    v = 'Zed',
-    x = "xcode"
-}
-
-modalHotKey = dofile(os.getenv("HOME") .. "/.config/hammerspoon/modalHotKey.lua")
-appActionTable = {}
-for key, app in pairs(appCuts) do
-    appActionTable[key] = function() hs.application.launchOrFocus(app) end
-end
 -- appModal = modalHotKey.new(
 --     hs.hotkey.modal.new({ "cmd", "ctrl", "alt", "shift" }, "Space"),
 --     appActionTable,
@@ -139,9 +118,11 @@ hs.loadSpoon("GridCraft")
 
 local chatSubmenu = {
     {
-        spoon.GridCraft.action { key = "d", application = "Discord" },
+        spoon.GridCraft.action { key = "a", application = "Messages" },
         spoon.GridCraft.action { key = "s", application = "Slack" },
+        spoon.GridCraft.action { key = "d", application = "Discord" },
         spoon.GridCraft.action { key = "f", application = "Mattermost" },
+        spoon.GridCraft.action { key = "g", application = "Signal" },
     },
 }
 
